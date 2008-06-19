@@ -1,7 +1,8 @@
 class CreateTowns < ActiveRecord::Migration
   def self.up
     create_table :towns do |t|
-
+      t.string :name
+      t.integer :state_id
       t.timestamps
     end
   end
