@@ -1,8 +1,8 @@
 body {
-	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;	 
+	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
+	color: #c1c1d5;	 
 	text-align: center;
 	background: #4E6995;
-	color: #1C2F5A;
 }
 
 div#container
@@ -23,7 +23,7 @@ margin: 0 auto;
 #header {
 	margin-top:  10px;
 	background: #FF7800;
-	background-image: url(everest.jpg);
+	background-image: url(/everest.jpg);
 	background-repeat: no-repeat;
 	background-position: top right; 
 	color: #FFFFFF;
