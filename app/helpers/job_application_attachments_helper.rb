@@ -1,0 +1,2 @@
+module JobApplicationAttachmentsHelper
+end

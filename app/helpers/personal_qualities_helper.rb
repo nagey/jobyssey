@@ -1,0 +1,2 @@
+module PersonalQualitiesHelper
+end

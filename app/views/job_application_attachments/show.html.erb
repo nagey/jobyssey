@@ -1,0 +1,28 @@
+<p>
+  <b>Job application:</b>
+  <%=h @job_application_attachment.job_application_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @job_application_attachment.type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @job_application_attachment.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @job_application_attachment.url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @job_application_attachment.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_application_attachment_path(@job_application_attachment) %> |
+<%= link_to 'Back', job_application_attachments_path %>

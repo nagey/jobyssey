@@ -1,0 +1,2 @@
+module JobysseyHelper
+end

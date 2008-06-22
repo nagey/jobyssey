@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @personal_quality.user_id %>
+</p>
+
+<p>
+  <b>Metric:</b>
+  <%=h @personal_quality.metric_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @personal_quality.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_personal_quality_path(@personal_quality) %> |
+<%= link_to 'Back', personal_qualities_path %>

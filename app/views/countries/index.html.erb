@@ -1,0 +1,36 @@
+<h1>Listing countries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Administrative division name</th>
+    <th>Post code name</th>
+    <th>Post code format</th>
+    <th>Phone number format</th>
+    <th>Dialing code</th>
+    <th>Geo position</th>
+    <th>Use administrative division</th>
+    <th>Use post code</th>
+  </tr>
+
+<% for country in @countries %>
+  <tr>
+    <td><%=h country.name %></td>
+    <td><%=h country.administrative_division_name %></td>
+    <td><%=h country.post_code_name %></td>
+    <td><%=h country.post_code_format %></td>
+    <td><%=h country.phone_number_format %></td>
+    <td><%=h country.dialing_code %></td>
+    <td><%=h country.geo_position_id %></td>
+    <td><%=h country.use_administrative_division %></td>
+    <td><%=h country.use_post_code %></td>
+    <td><%= link_to 'Show', country %></td>
+    <td><%= link_to 'Edit', edit_country_path(country) %></td>
+    <td><%= link_to 'Destroy', country, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New country', new_country_path %>

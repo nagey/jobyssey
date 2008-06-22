@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @user_benefit_preferences.user_id %>
+</p>
+
+<p>
+  <b>Benefit:</b>
+  <%=h @user_benefit_preferences.benefit_id %>
+</p>
+
+<p>
+  <b>Benefit preference:</b>
+  <%=h @user_benefit_preferences.benefit_preference %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_benefit_preferences_path(@user_benefit_preferences) %> |
+<%= link_to 'Back', user_benefit_preferences_path %>

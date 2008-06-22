@@ -1,0 +1,28 @@
+<h1>Editing transition</h1>
+
+<% form_for(@transition) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :current_state_id %><br />
+    <%= f.text_field :current_state_id %>
+  </p>
+  <p>
+    <%= f.label :next_state_id %><br />
+    <%= f.text_field :next_state_id %>
+  </p>
+  <p>
+    <%= f.label :workflow_id %><br />
+    <%= f.text_field :workflow_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @transition %> |
+<%= link_to 'Back', transitions_path %>

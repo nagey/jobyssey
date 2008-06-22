@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @transition.name %>
+</p>
+
+<p>
+  <b>Current state:</b>
+  <%=h @transition.current_state_id %>
+</p>
+
+<p>
+  <b>Next state:</b>
+  <%=h @transition.next_state_id %>
+</p>
+
+<p>
+  <b>Workflow:</b>
+  <%=h @transition.workflow_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_transition_path(@transition) %> |
+<%= link_to 'Back', transitions_path %>

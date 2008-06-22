@@ -1,0 +1,24 @@
+<h1>Listing personal_qualities</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Metric</th>
+    <th>Value</th>
+  </tr>
+
+<% for personal_quality in @personal_qualities %>
+  <tr>
+    <td><%=h personal_quality.user_id %></td>
+    <td><%=h personal_quality.metric_id %></td>
+    <td><%=h personal_quality.value %></td>
+    <td><%= link_to 'Show', personal_quality %></td>
+    <td><%= link_to 'Edit', edit_personal_quality_path(personal_quality) %></td>
+    <td><%= link_to 'Destroy', personal_quality, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New personal_quality', new_personal_quality_path %>

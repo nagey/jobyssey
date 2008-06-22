@@ -1,0 +1,13 @@
+<p>
+  <b>Employer:</b>
+  <%=h @account.employer_id %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%=h @account.balance %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

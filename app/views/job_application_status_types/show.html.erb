@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @job_application_status_type.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @job_application_status_type.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_application_status_type_path(@job_application_status_type) %> |
+<%= link_to 'Back', job_application_status_types_path %>

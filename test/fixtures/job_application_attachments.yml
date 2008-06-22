@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  job_application_id: 1
+  type: MyString
+  name: MyString
+  url: MyString
+  description: MyText
+
+two:
+  job_application_id: 1
+  type: MyString
+  name: MyString
+  url: MyString
+  description: MyText

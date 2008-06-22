@@ -1,4 +1,68 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :user_benefit_preferences
+
+  map.resources :job_application_statuses
+
+  map.resources :transactions
+
+  map.resources :accounts
+
+  map.resources :job_application_attachments
+
+  map.resources :job_applications
+
+  map.resources :job_application_status_types
+
+  map.resources :job_application_states
+
+  map.resources :workflows
+
+  map.resources :roles
+
+  map.resources :transitions
+
+  map.resources :post_codes
+
+  map.resources :towns
+
+  map.resources :addresses
+
+  map.resources :phone_number_types
+
+  map.resources :phone_numbers
+
+  map.resources :working_times
+
+  map.resources :employment_types
+
+  map.resources :job_titles
+
+  map.resources :currencies
+
+  map.resources :work_history_items
+
+  map.resources :benefits
+
+  map.resources :personal_qualities
+
+  map.resources :metrics
+
+  map.resources :administrative_divisions
+
+  map.resources :countries
+
+  map.resources :geo_positions
+
+  map.resources :logins
+
+  map.resources :users
+
+  map.resources :industries
+
+  map.resources :employers
+
+  map.resources :countries
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -31,7 +95,10 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  map.root :controller => "jobyssey"
+  
+  map.connect 'it-professionals/:action/:id', :controller => 'professionals'
+  map.connect 'it-employers/:action/:id', :controller => 'employers'
 
   # See how all your routes lay out with "rake routes"
 

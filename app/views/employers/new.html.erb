@@ -1,0 +1,39 @@
+<h1>New employer</h1>
+
+<% form_for(@employer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :tagline %><br />
+    <%= f.text_field :tagline %>
+  </p>
+  <p>
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :industry_id %><br />
+    <%= f.text_field :industry_id %>
+  </p>
+  <p>
+    <%= f.label :search_position %><br />
+    <%= f.text_field :search_position %>
+  </p>
+  <p>
+    <%= f.label :geo_position_id %><br />
+    <%= f.text_field :geo_position_id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', employers_path %>

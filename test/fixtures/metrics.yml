@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  lower_bound: MyString
+  upper_bound: MyString
+  type: MyString
+
+two:
+  name: MyString
+  lower_bound: MyString
+  upper_bound: MyString
+  type: MyString

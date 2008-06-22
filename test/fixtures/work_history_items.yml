@@ -1,7 +1,31 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+one:
+  user_id: MyString
+  start_date: 2008-06-21 15:12:16
+  end_date: 2008-06-21 15:12:16
+  salary: 9.99
+  description: MyText
+  job_title_id: 1
+  geo_position_id: 1
+  administrative_division_id: 1
+  city_id: 1
+  country_id: 1
+  employer_id: 1
+  employment_type_id: 1
+  working_time_id: 1
+
+two:
+  user_id: MyString
+  start_date: 2008-06-21 15:12:16
+  end_date: 2008-06-21 15:12:16
+  salary: 9.99
+  description: MyText
+  job_title_id: 1
+  geo_position_id: 1
+  administrative_division_id: 1
+  city_id: 1
+  country_id: 1
+  employer_id: 1
+  employment_type_id: 1
+  working_time_id: 1

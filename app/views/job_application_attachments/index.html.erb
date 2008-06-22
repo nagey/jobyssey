@@ -1,0 +1,28 @@
+<h1>Listing job_application_attachments</h1>
+
+<table>
+  <tr>
+    <th>Job application</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Description</th>
+  </tr>
+
+<% for job_application_attachment in @job_application_attachments %>
+  <tr>
+    <td><%=h job_application_attachment.job_application_id %></td>
+    <td><%=h job_application_attachment.type %></td>
+    <td><%=h job_application_attachment.name %></td>
+    <td><%=h job_application_attachment.url %></td>
+    <td><%=h job_application_attachment.description %></td>
+    <td><%= link_to 'Show', job_application_attachment %></td>
+    <td><%= link_to 'Edit', edit_job_application_attachment_path(job_application_attachment) %></td>
+    <td><%= link_to 'Destroy', job_application_attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New job_application_attachment', new_job_application_attachment_path %>

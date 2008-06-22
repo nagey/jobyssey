@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @job_application_state.name %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%=h @job_application_state.order %>
+</p>
+
+<p>
+  <b>Workflow:</b>
+  <%=h @job_application_state.workflow_id %>
+</p>
+
+<p>
+  <b>Job application status type:</b>
+  <%=h @job_application_state.job_application_status_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_application_state_path(@job_application_state) %> |
+<%= link_to 'Back', job_application_states_path %>

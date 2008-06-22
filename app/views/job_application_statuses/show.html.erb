@@ -1,0 +1,18 @@
+<p>
+  <b>Job application:</b>
+  <%=h @job_application_status.job_application_id %>
+</p>
+
+<p>
+  <b>Job application state:</b>
+  <%=h @job_application_status.job_application_state_id %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @job_application_status.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_application_status_path(@job_application_status) %> |
+<%= link_to 'Back', job_application_statuses_path %>

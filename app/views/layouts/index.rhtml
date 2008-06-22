@@ -1,92 +1,50 @@
 <html>
 <head>
-	<title>Title Goes Here</title>
-	<!--meta stuff goes here-->
-	 	<link href="current.css" rel="stylesheet" type="text/css" />
+	<title><%= title :site_name => "Jobyssey – IT Jobs in Ireland" %></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+	<%= stylesheet_link_tag "current" %>
 </head>
 
 <body>	
-		<div id="header">
-				<a class="headerlinks" href="http://jobyssey.com"><h1><span id="bigj">J</span>obyssey</h1></a>
-			<h3>BETA</h3>
-		</div>
-	<div id="navbar">
-			<ul>
-<!--for non-logged in users-->
-				 <li><a href="http://jobyssey.com/IT-professionals.php">Professionals</a></li>
-				<li><a href="http://jobyssey.com/IT-employers.php">Employers</a></li>
+<div id="header">
+	<a class="headerlinks" href="http://jobyssey.com"><h1><span id="bigj">J</span>obyssey</h1></a>
+	<h3>BETA</h3>
+</div>
+<div id="navbar">
+	<ul>
+		<li><a href="/it-professionals">Professionals</a></li>
+		<li><a href="/it-employers">Employers</a></li>
+	</ul>
+</div>
 
-	<!--for logged in users
-					{if $result->loggedOnUser}
-					<li><a id="logAction" href="{$result->makeUrl('logout','login','user')}" title="logout">Logout</a></li>
-					{else}
-				<li><a href="javascript:ShowLoginBar();">Login</a></li>
-					{/if}
-			</ul>
-		</div>	
-			{if $result->loggedOnUser}
-					<div id="loggedinnavbar">
-						<ul>
-					{if $result->isEmployer}
-						<li><a href="{$result->makeUrl('','ticket','')}">Activity </a></li>
-						<li><a href="http://www.jobyssey.com/jobyssey/www/index.php/jobs/JobsEmployer/action/add/New Role">New Role</a></li>
-							<li><a href="{$result->makeUrl('','jobsemployer','jobs')}" title="jobs">Manage jobs</a></li>
-						<li><a href="{$result->makeUrl('profile','employer','jobs')}">Profile </a></li>
-						<li><a href="{$result->makeUrl('','employer','jobs')}" title="jobs">Account</a></li>
-						<li><a href="{$result->makeUrl('','info','jobs','','on|employer-tips.html')}">Tips</a></li>
-						<li><span id="white">&nbsp;&nbsp;<b>&nbsp; CREDIT {$result->credit}</b></span></li>
+<div id="loginbar" style="visibility:hidden;display:none">
+	<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
+		<input type="hidden" name="action" value="login" />
+		<label><%=l(:email)%></label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
+		<label><%=l(:password)%></label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
+		<input type="submit" name="submittedlogin" value="<%=l(:login)%>"  />
+		<a class="small" href="{$result->makeUrl('','password','jobs')}"><%=l(:forgot_password)%></a>
+	</form>
+</div>
 
-					{/if}
-					{if !$result->isEmployer}
-						<li><a href="{$result->makeUrl('','Search','jobs')}">Jobs</a></li>
-						<li><a href="{$result->makeUrl('','profile','jobs')}">Profile</a></li>
-						<li><a href="{$result->makeUrl('portfolio','account','jobs')}">Portfolio</a></li>
-						<li><a  href="{$result->makeUrl('','ticket','')}">Activity</a></li>
-						<li><a href="{$result->makeUrl('','info','jobs','','on|user-tips.html')}">Tips</a></li>
-
-						{*<li><a href="{$result->makeUrl('','account','jobs')}" title="My account">My account</a></li>*}
-						<!--<li><a href="{$result->makeUrl('','ticket','jobs')}" title="jobs">My messages</a></li>This should be incorporated into activity manager--> 
-					
-			</div>
-			<!--For admins
-				{if $result->isSuperAdmin}
-				<div id="adminbar">
-				<ul>
-				<li><a href="{$result->makeUrl('','module','default')}" title="Admin panel">Admin panel</a></li>
-				<li><a href="{$result->makeUrl('','loginuser','jobs')}" title="Add new Employer">Add new Employer</a></li>
-				</div>
-			-->
-
-			<div id="loginbar" style="visibility:hidden;display:none">
-			<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
-				<input type="hidden" name="action" value="login" />
-
-				<label>Email</label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
-				<label> Password </label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
-				<input type="submit" name="submittedlogin" value="Login"  />
-<a class="small" href="{$result->makeUrl('','password','jobs')}">Forgot Password?</a>
-
-			</form>
-	</div>
 <div id="content">
-	<p>Content goes here</p>
+<%=@content_for_layout%>
+</div>
+
+<div id="footer">
+	<div id="bottomnavbar">
+		<ul>
+			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
+			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
+			<li><a href="/jobyssey/contact"><%=l(:contact_us)%></a></li>
+		</ul>
 	</div>
-	<div id="footer">
-			<div id="bottomnavbar">
-				<ul>
-					<li><a href="/wordpress/">Our Blog</a></li>
-					<li><a href="/about-us.php">About Us</a></li>
-					<li><a href="http://www.jobyssey.com/jobyssey/www/index.php/jobs/contactus/">Questions?</a></li>
-				</ul>
-			</div>
 
-			<div id="copyright">
-				<p class="snug">&#169; 2008 Jobyssey Ltd.  All rights reserved. </p>
-				<p class="snug">Photo taken by topgold and used under Creative Commons License; click <a href="http://commons.wikimedia.org/wiki/Image:Mount_Everest_%28topgold%29.jpg">here</a> for details.</a></p>
-			</div>
+	<div id="copyright">
+		<p class="snug"><%=l(:copyright_footer)%></p>
+		<p class="snug"><%= link_to l(:additional_copyright_information), {:action => :copyright, :controller => :jobyssey} %>
+	</div>
 
-		</div>	
-		</body>
-		</html>
-
-		
+</div>	
+</body>
+</html>

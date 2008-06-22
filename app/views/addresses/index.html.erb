@@ -1,0 +1,26 @@
+<h1>Listing addresses</h1>
+
+<table>
+  <tr>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Town</th>
+    <th>Geo location</th>
+  </tr>
+
+<% for address in @addresses %>
+  <tr>
+    <td><%=h address.address1 %></td>
+    <td><%=h address.address2 %></td>
+    <td><%=h address.town_id %></td>
+    <td><%=h address.geo_position_id %></td>
+    <td><%= link_to 'Show', address %></td>
+    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New address', new_address_path %>

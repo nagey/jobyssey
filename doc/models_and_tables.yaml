@@ -1,0 +1,231 @@
+account:
+    employer_id:integer
+    balance:integer
+
+address:
+    address1:string
+    address2:string
+    town_id:string
+    geo_location_id:string
+
+addresses_users:    
+
+addresses_employers:
+
+administrative_division:
+    name:string
+    country_id:string
+    geo_position_id:string
+
+benefit:
+    name:string
+
+benefits_job_postings:
+
+benefits_work_history_items:
+
+country:
+    name:string
+    administrative_division_name:string
+    post_code_name:string
+    phone_number_format:string
+    post_code_format:string
+    dialing_code:integer
+    geo_position_id:integer
+    use_administrative_division:boolean
+    use_post_code:boolean
+
+countries_currencies:
+    
+
+currency:
+    name:string
+    symbol:string
+    currency_code:string
+
+differentiator_questions:
+    type:string
+    name:string
+
+differentiator_answers:
+    differentiator_question_id:integer
+    employer_id:integer
+    user_id:integer
+    job_posting_id:integer
+    name:text
+
+education_concentration:
+    name:string
+
+educational_qualification:
+    name:string
+    level:integer
+
+educational_institution:
+    name:string
+    town_id:integer
+    geo_position_id:integer
+
+employer:
+    name:string
+    tagline:string
+    size:string
+    description:text
+    industry_id:integer
+    search_position:string
+    geo_position_id:string
+
+employers_workflows:
+    
+
+employment_type:
+    name:string
+
+geo_position:
+    longitude:decimal
+    latitude:decimal
+
+industry:
+    name:string
+    location:string
+
+job_application:
+    user_id:integer
+    job_posting_id:integer
+
+job_application_attachment:
+    job_application_id:integer
+    type:string
+    name:string
+    url:string
+    description:text
+
+job_application_state:
+    name:string
+    order:integer
+    workflow_id:integer
+    job_application_status_type:string
+
+job_application_status:
+    job_application_id:integer
+    job_application_state_id:integer
+    note:text
+
+job_application_status_type:
+    name:string
+    cost:integer
+
+job_title:
+    name:string
+
+job_posting:
+    title:string
+    employer_id:integer
+    description:text
+    search_position:string
+    maximum_salary:decimal
+    minimum_salary:decimal
+
+job_postings_educational_qualifications:
+
+job_postings_roles:
+    
+
+login:
+    user_id:integer
+    geo_position_id:integer
+    ip_address:string
+
+metric:
+    name:string
+    lower_bound:string
+    upper_bound:string
+    type:string
+
+personal_quality:
+    user_id:integer
+    metric_id:integer
+    value:integer
+
+phone_number:
+    number:string
+    phone_number_type_id:integer
+    country_id:integer
+    user_id:integer
+
+phone_number_type:
+    name:string
+
+post_code:
+    name:string
+    town_id:integer
+    geo_position_id:integer
+
+role:
+    name:string
+    employer_id:integer
+
+roles_users:
+    role_id:integer
+    user_id:integer
+
+town:
+    name:string
+    administrative_division_id:integer
+    country_id:integer
+    geo_position_id:integer
+
+transaction:
+    account_id:integer
+    transaction_type:string
+    amount:integer
+    reference:string
+    job_application_id:integer
+
+transition:
+    name:string
+    current_state_id:integer
+    next_state_id:integer
+    workflow_id:integer
+
+transitions_roles:
+    transition_id:integer
+    role_id:integer
+
+user:
+    first_name:string
+    middle_names:string
+    last_name:string
+    email:string
+    password:string
+    code_name:string
+    type:string
+    employer_id:integer
+    search_position:string
+
+user_benefit_preferences:
+    user_id:integer
+    benefit_id:integer
+    benefit_preference:integer
+
+workflow:
+    name:string
+
+working_time:
+    name:string
+
+work_history_item:
+    user_id:string
+    start_date:datetime
+    end_date:datetime
+    salary:decimal
+    description:text
+    job_title_id:integer
+    geo_location_id:integer
+    administrative_division_id:integer
+    city_id:integer
+    country_id:integer
+    employer_id:integer
+    empoyment_type_id:integer
+    working_time_id:integer
+

@@ -1,7 +1,23 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+one:
+  first_name: MyString
+  middle_names: MyString
+  last_name: MyString
+  email: MyString
+  password: MyString
+  code_name: MyString
+  type: MyString
+  employer_id: 1
+  search_position: MyString
+
+two:
+  first_name: MyString
+  middle_names: MyString
+  last_name: MyString
+  email: MyString
+  password: MyString
+  code_name: MyString
+  type: MyString
+  employer_id: 1
+  search_position: MyString

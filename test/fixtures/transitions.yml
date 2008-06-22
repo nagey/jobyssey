@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  current_state_id: 1
+  next_state_id: 1
+  workflow_id: 1
+
+two:
+  name: MyString
+  current_state_id: 1
+  next_state_id: 1
+  workflow_id: 1

@@ -1,0 +1,23 @@
+<h1>New user_benefit_preferences</h1>
+
+<% form_for(@user_benefit_preferences) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :benefit_id %><br />
+    <%= f.text_field :benefit_id %>
+  </p>
+  <p>
+    <%= f.label :benefit_preference %><br />
+    <%= f.text_field :benefit_preference %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', user_benefit_preferences_path %>

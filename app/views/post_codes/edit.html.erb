@@ -1,0 +1,24 @@
+<h1>Editing post_code</h1>
+
+<% form_for(@post_code) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :town_id %><br />
+    <%= f.text_field :town_id %>
+  </p>
+  <p>
+    <%= f.label :geo_position_id %><br />
+    <%= f.text_field :geo_position_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @post_code %> |
+<%= link_to 'Back', post_codes_path %>

@@ -1,0 +1,26 @@
+<h1>Listing metrics</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Lower bound</th>
+    <th>Upper bound</th>
+    <th>Type</th>
+  </tr>
+
+<% for metric in @metrics %>
+  <tr>
+    <td><%=h metric.name %></td>
+    <td><%=h metric.lower_bound %></td>
+    <td><%=h metric.upper_bound %></td>
+    <td><%=h metric.type %></td>
+    <td><%= link_to 'Show', metric %></td>
+    <td><%= link_to 'Edit', edit_metric_path(metric) %></td>
+    <td><%= link_to 'Destroy', metric, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New metric', new_metric_path %>

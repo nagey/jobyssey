@@ -1,0 +1,24 @@
+<h1>Listing logins</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Geo position</th>
+    <th>Ip address</th>
+  </tr>
+
+<% for login in @logins %>
+  <tr>
+    <td><%=h login.user_id %></td>
+    <td><%=h login.geo_position_id %></td>
+    <td><%=h login.ip_address %></td>
+    <td><%= link_to 'Show', login %></td>
+    <td><%= link_to 'Edit', edit_login_path(login) %></td>
+    <td><%= link_to 'Destroy', login, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New login', new_login_path %>

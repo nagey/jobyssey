@@ -1,0 +1,28 @@
+<h1>Editing metric</h1>
+
+<% form_for(@metric) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :lower_bound %><br />
+    <%= f.text_field :lower_bound %>
+  </p>
+  <p>
+    <%= f.label :upper_bound %><br />
+    <%= f.text_field :upper_bound %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @metric %> |
+<%= link_to 'Back', metrics_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @post_code.name %>
+</p>
+
+<p>
+  <b>Town:</b>
+  <%=h @post_code.town_id %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @post_code.geo_position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_code_path(@post_code) %> |
+<%= link_to 'Back', post_codes_path %>

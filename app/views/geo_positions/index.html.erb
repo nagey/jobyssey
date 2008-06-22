@@ -1,0 +1,22 @@
+<h1>Listing geo_positions</h1>
+
+<table>
+  <tr>
+    <th>Longitude</th>
+    <th>Latitude</th>
+  </tr>
+
+<% for geo_position in @geo_positions %>
+  <tr>
+    <td><%=h geo_position.longitude %></td>
+    <td><%=h geo_position.latitude %></td>
+    <td><%= link_to 'Show', geo_position %></td>
+    <td><%= link_to 'Edit', edit_geo_position_path(geo_position) %></td>
+    <td><%= link_to 'Destroy', geo_position, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New geo_position', new_geo_position_path %>

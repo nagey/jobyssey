@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @login.user_id %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @login.geo_position_id %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%=h @login.ip_address %>
+</p>
+
+
+<%= link_to 'Edit', edit_login_path(@login) %> |
+<%= link_to 'Back', logins_path %>

@@ -1,0 +1,64 @@
+<h1>Editing work_history_item</h1>
+
+<% form_for(@work_history_item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.datetime_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :end_date %><br />
+    <%= f.datetime_select :end_date %>
+  </p>
+  <p>
+    <%= f.label :salary %><br />
+    <%= f.text_field :salary %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :job_title_id %><br />
+    <%= f.text_field :job_title_id %>
+  </p>
+  <p>
+    <%= f.label :geo_position_id %><br />
+    <%= f.text_field :geo_position_id %>
+  </p>
+  <p>
+    <%= f.label :administrative_division_id %><br />
+    <%= f.text_field :administrative_division_id %>
+  </p>
+  <p>
+    <%= f.label :city_id %><br />
+    <%= f.text_field :city_id %>
+  </p>
+  <p>
+    <%= f.label :country_id %><br />
+    <%= f.text_field :country_id %>
+  </p>
+  <p>
+    <%= f.label :employer_id %><br />
+    <%= f.text_field :employer_id %>
+  </p>
+  <p>
+    <%= f.label :employment_type_id %><br />
+    <%= f.text_field :employment_type_id %>
+  </p>
+  <p>
+    <%= f.label :working_time_id %><br />
+    <%= f.text_field :working_time_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @work_history_item %> |
+<%= link_to 'Back', work_history_items_path %>

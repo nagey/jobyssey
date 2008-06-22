@@ -1,0 +1,24 @@
+<h1>Listing user_benefit_preferences</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Benefit</th>
+    <th>Benefit preference</th>
+  </tr>
+
+<% for user_benefit_preferences in @user_benefit_preferences %>
+  <tr>
+    <td><%=h user_benefit_preferences.user_id %></td>
+    <td><%=h user_benefit_preferences.benefit_id %></td>
+    <td><%=h user_benefit_preferences.benefit_preference %></td>
+    <td><%= link_to 'Show', user_benefit_preferences %></td>
+    <td><%= link_to 'Edit', edit_user_benefit_preferences_path(user_benefit_preferences) %></td>
+    <td><%= link_to 'Destroy', user_benefit_preferences, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user_benefit_preferences', new_user_benefit_preferences_path %>

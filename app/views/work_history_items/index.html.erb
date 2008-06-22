@@ -1,0 +1,44 @@
+<h1>Listing work_history_items</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Salary</th>
+    <th>Description</th>
+    <th>Job title</th>
+    <th>Geo location</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Employer</th>
+    <th>Employment type</th>
+    <th>Working time</th>
+  </tr>
+
+<% for work_history_item in @work_history_items %>
+  <tr>
+    <td><%=h work_history_item.user_id %></td>
+    <td><%=h work_history_item.start_date %></td>
+    <td><%=h work_history_item.end_date %></td>
+    <td><%=h work_history_item.salary %></td>
+    <td><%=h work_history_item.description %></td>
+    <td><%=h work_history_item.job_title_id %></td>
+    <td><%=h work_history_item.geo_position_id %></td>
+    <td><%=h work_history_item.administrative_division_id %></td>
+    <td><%=h work_history_item.city_id %></td>
+    <td><%=h work_history_item.country_id %></td>
+    <td><%=h work_history_item.employer_id %></td>
+    <td><%=h work_history_item.employment_type_id %></td>
+    <td><%=h work_history_item.working_time_id %></td>
+    <td><%= link_to 'Show', work_history_item %></td>
+    <td><%= link_to 'Edit', edit_work_history_item_path(work_history_item) %></td>
+    <td><%= link_to 'Destroy', work_history_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New work_history_item', new_work_history_item_path %>

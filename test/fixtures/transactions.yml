@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  account_id: 1
+  transaction_type: MyString
+  amount: 1
+  reference: MyString
+  job_application_id: 1
+
+two:
+  account_id: 1
+  transaction_type: MyString
+  amount: 1
+  reference: MyString
+  job_application_id: 1

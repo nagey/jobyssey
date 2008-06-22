@@ -1,0 +1,2 @@
+module UserBenefitPreferencesHelper
+end

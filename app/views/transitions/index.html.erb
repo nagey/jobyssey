@@ -1,0 +1,26 @@
+<h1>Listing transitions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Current state</th>
+    <th>Next state</th>
+    <th>Workflow</th>
+  </tr>
+
+<% for transition in @transitions %>
+  <tr>
+    <td><%=h transition.name %></td>
+    <td><%=h transition.current_state_id %></td>
+    <td><%=h transition.next_state_id %></td>
+    <td><%=h transition.workflow_id %></td>
+    <td><%= link_to 'Show', transition %></td>
+    <td><%= link_to 'Edit', edit_transition_path(transition) %></td>
+    <td><%= link_to 'Destroy', transition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New transition', new_transition_path %>

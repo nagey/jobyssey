@@ -1,7 +1,23 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+one:
+  name: MyString
+  administrative_division_name: MyString
+  post_code_name: MyString
+  post_code_format: MyString
+  phone_number_format: MyString
+  dialing_code: 1
+  geo_position_id: 1
+  use_administrative_division: false
+  use_post_code: false
+
+two:
+  name: MyString
+  administrative_division_name: MyString
+  post_code_name: MyString
+  post_code_format: MyString
+  phone_number_format: MyString
+  dialing_code: 1
+  geo_position_id: 1
+  use_administrative_division: false
+  use_post_code: false

@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @employer.name %>
+</p>
+
+<p>
+  <b>Tagline:</b>
+  <%=h @employer.tagline %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @employer.size %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @employer.description %>
+</p>
+
+<p>
+  <b>Industry:</b>
+  <%=h @employer.industry_id %>
+</p>
+
+<p>
+  <b>Search position:</b>
+  <%=h @employer.search_position %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @employer.geo_position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_employer_path(@employer) %> |
+<%= link_to 'Back', employers_path %>

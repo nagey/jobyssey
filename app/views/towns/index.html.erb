@@ -1,0 +1,26 @@
+<h1>Listing towns</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Geo position</th>
+  </tr>
+
+<% for town in @towns %>
+  <tr>
+    <td><%=h town.name %></td>
+    <td><%=h town.administrative_division_id %></td>
+    <td><%=h town.country_id %></td>
+    <td><%=h town.geo_position_id %></td>
+    <td><%= link_to 'Show', town %></td>
+    <td><%= link_to 'Edit', edit_town_path(town) %></td>
+    <td><%= link_to 'Destroy', town, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New town', new_town_path %>

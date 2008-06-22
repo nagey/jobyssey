@@ -1,0 +1,68 @@
+<p>
+  <b>User:</b>
+  <%=h @work_history_item.user_id %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @work_history_item.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @work_history_item.end_date %>
+</p>
+
+<p>
+  <b>Salary:</b>
+  <%=h @work_history_item.salary %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @work_history_item.description %>
+</p>
+
+<p>
+  <b>Job title:</b>
+  <%=h @work_history_item.job_title_id %>
+</p>
+
+<p>
+  <b>Geo location:</b>
+  <%=h @work_history_item.geo_position_id %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @work_history_item.administrative_division_id %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @work_history_item.city_id %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @work_history_item.country_id %>
+</p>
+
+<p>
+  <b>Employer:</b>
+  <%=h @work_history_item.employer_id %>
+</p>
+
+<p>
+  <b>Employment type:</b>
+  <%=h @work_history_item.employment_type_id %>
+</p>
+
+<p>
+  <b>Working time:</b>
+  <%=h @work_history_item.working_time_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_work_history_item_path(@work_history_item) %> |
+<%= link_to 'Back', work_history_items_path %>

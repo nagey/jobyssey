@@ -1,0 +1,27 @@
+<h1>New town</h1>
+
+<% form_for(@town) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :administrative_division_id %><br />
+    <%= f.text_field :administrative_division_id %>
+  </p>
+  <p>
+    <%= f.label :country_id %><br />
+    <%= f.text_field :country_id %>
+  </p>
+  <p>
+    <%= f.label :geo_position_id %><br />
+    <%= f.text_field :geo_position_id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', towns_path %>

@@ -1,0 +1,23 @@
+<p>
+  <b>Address1:</b>
+  <%=h @address.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%=h @address.address2 %>
+</p>
+
+<p>
+  <b>Town:</b>
+  <%=h @address.town_id %>
+</p>
+
+<p>
+  <b>Geo location:</b>
+  <%=h @address.geo_position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

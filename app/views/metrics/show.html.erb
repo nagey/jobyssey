@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @metric.name %>
+</p>
+
+<p>
+  <b>Lower bound:</b>
+  <%=h @metric.lower_bound %>
+</p>
+
+<p>
+  <b>Upper bound:</b>
+  <%=h @metric.upper_bound %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @metric.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>

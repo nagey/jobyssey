@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @town.name %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @town.administrative_division_id %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @town.country_id %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @town.geo_position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_town_path(@town) %> |
+<%= link_to 'Back', towns_path %>

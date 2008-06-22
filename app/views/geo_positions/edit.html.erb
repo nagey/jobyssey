@@ -1,0 +1,20 @@
+<h1>Editing geo_position</h1>
+
+<% form_for(@geo_position) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @geo_position %> |
+<%= link_to 'Back', geo_positions_path %>

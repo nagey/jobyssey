@@ -1,0 +1,387 @@
+
+.clear
+{
+	clear: left;
+}
+
+
+body {
+	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
+	background: #4E6995;	 
+	text-align: center;
+	color: #fbfbfb;
+}
+
+div#container
+{
+margin: 0 auto; 
+	width: 850px; 
+	text-align: left;
+	background: #ffffff;
+	padding-top: 0px;
+}
+
+#header {
+
+	background: #FF7800;
+	background-image: url(/everest.jpg);
+	background-repeat: no-repeat;
+	background-position: top right; 
+	color: #FFFFFF;
+	height: 125px;
+}
+
+#header a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#header h1
+{
+	font-size:40px;
+	text-indent: 16px;
+	margin-top: 0 auto;
+	line-height: 1.7em;
+	}
+	
+#header	h3 {
+		font-size: 16px;
+		margin: -25px 15px 0px 155px;
+
+		}
+
+#bigJ span
+{
+	font-size: 36px;
+	color: black;
+}
+
+h1 {
+	font-size: 20px;
+	margin: 10px 25px 10px 20px;
+	padding-top: 10px;
+	text-indent: -20px;
+	}
+
+h2
+{
+	font-size: 16px;
+}
+
+h3 {
+	font-size: 14px;
+
+}
+
+h4{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+p
+{
+	margin-bottom: 24px;
+}
+
+.snug
+{
+	margin-bottom: 0px;
+}
+
+#snug
+{
+	margin-bottom: 0px;
+}
+
+#small
+{
+	font-size: 10px;
+}
+
+#navbar {
+	background-color:#242463;
+	position:relative;
+	text-align:right;
+}
+
+#navbar a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#navbar ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+#navbar li {
+	display:inline;
+	margin-right:10px;
+	font-weight: bold;
+}
+
+#loggedinnavbar {
+	background-color:#8888B8;
+	position:relative;
+	text-align:left;
+}
+
+#loggedinnavbar a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#loggedinnavbar ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+#loggedinnavbar li {
+	display:inline;
+	margin-right:10px;
+
+}
+
+#loginbar {
+	background-color:#8888B8;
+	position:relative;
+	text-align:left;
+	height: 24px;
+}
+
+#loginbar a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#loginbar ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+#loginbar li {
+	display:inline;
+	margin-right:10px;
+	font-weight: bold;
+}
+#loginbar label
+{
+	color: #fff;
+	font-weight: bold;
+}
+
+#adminbar {
+	background-color:#c1c1d5;
+	position:relative;
+	text-align:left;
+}
+
+#adminbar a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#adminbar ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+#adminbar li {
+	display:inline;
+	margin-right:10px;
+
+}
+
+em
+{	
+	font-weight: bold;
+	font-style: normal;
+}
+
+#content {
+	font-size:14px;
+	color: #141414;
+	padding: 0px 20px 20px 20px;
+}
+
+#content img
+{
+	margin-left: 100px;
+}
+
+#frontcontent {
+	font-size:14px;
+	color: #1C2F5A;
+
+	padding: 10px 10px 10px 20px;
+		display: inline;
+}
+
+#frontcontent img
+{
+	margin-left: 45px;
+}
+
+
+#left
+{
+	width: 530px;
+	margin-top: 10px; 
+	padding-top: 0px;
+	padding-left: 20px;
+	border-right-style: inset;
+	border-color: #888888;
+	float: left;
+}
+
+#right
+{
+	width: 220px;
+	height: 280px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0px 0px 0px 550px;
+	min-height: 0;	
+}
+
+#right h1
+{
+	line-height: 10px;
+}
+
+#right h2
+{
+	line-height: 8px;
+}
+
+
+
+#content a
+{
+	color: #000000;
+}
+
+ul 
+{
+	margin: 0;
+	list-style-type: none;
+}
+
+#faq ul
+{
+	list-style-type: square;
+}
+
+form fieldset
+{
+	padding:  10px;
+	margin-bottom: 30px;
+}
+
+form legend
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+}
+
+form label.fixedwidth
+{
+	display: block; 
+	width:  150px;
+	float:  left;
+	font-weight: bold;
+}
+
+
+#bottomnavbar {
+	background-color:#242463;
+	position:relative;
+	text-align:  right;
+	width: 850px;
+}
+
+#bottomnavbar a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#bottomnavbar ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+#bottomnavbar li {
+	display:inline;
+	margin-right:10px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#copyright
+{
+	font-size: 10px;
+	color: ##1C2F5A; 
+	text-align: right;
+	background-color:#FFFFFF;
+	font-weight:bold;
+	}
+	
+#copyright a
+{
+	color:#000;
+	text-decoration: underline;
+}
+
+
+form fieldset label {
+	width:150px;
+	float: left;
+	text-align: right;
+	padding-right:1em;
+}
+
+
+ fieldset
+{
+	padding:  10px;
+}
+
+form legend
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+}
+
+form label.fixedwidth
+{
+	display: block; 
+	width:  150px;
+	float:  left;
+	font-weight: bold;
+}
+
+div#employerprofiledetails
+{
+	width: 400px; 
+}
+
+#employerprofiledetails h3
+{
+	font-size: 16px;
+}
+
+
+div#employerphotos
+{
+	width: 250px;
+	float: right;
+}
+
+#employerphotos h3
+{
+	font-size: 16px;
+}

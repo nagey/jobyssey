@@ -1,0 +1,48 @@
+<p>
+  <b>Name:</b>
+  <%=h @country.name %>
+</p>
+
+<p>
+  <b>Administrative division name:</b>
+  <%=h @country.administrative_division_name %>
+</p>
+
+<p>
+  <b>Post code name:</b>
+  <%=h @country.post_code_name %>
+</p>
+
+<p>
+  <b>Post code format:</b>
+  <%=h @country.post_code_format %>
+</p>
+
+<p>
+  <b>Phone number format:</b>
+  <%=h @country.phone_number_format %>
+</p>
+
+<p>
+  <b>Dialing code:</b>
+  <%=h @country.dialing_code %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @country.geo_position_id %>
+</p>
+
+<p>
+  <b>Use administrative division:</b>
+  <%=h @country.use_administrative_division %>
+</p>
+
+<p>
+  <b>Use post code:</b>
+  <%=h @country.use_post_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @administrative_division.name %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @administrative_division.country_id %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @administrative_division.geo_position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_administrative_division_path(@administrative_division) %> |
+<%= link_to 'Back', administrative_divisions_path %>

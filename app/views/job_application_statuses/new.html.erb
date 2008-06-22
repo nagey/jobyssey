@@ -1,0 +1,23 @@
+<h1>New job_application_status</h1>
+
+<% form_for(@job_application_status) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :job_application_id %><br />
+    <%= f.text_field :job_application_id %>
+  </p>
+  <p>
+    <%= f.label :job_application_state_id %><br />
+    <%= f.text_field :job_application_state_id %>
+  </p>
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', job_application_statuses_path %>

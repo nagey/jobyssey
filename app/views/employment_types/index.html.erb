@@ -1,0 +1,20 @@
+<h1>Listing employment_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for employment_type in @employment_types %>
+  <tr>
+    <td><%=h employment_type.name %></td>
+    <td><%= link_to 'Show', employment_type %></td>
+    <td><%= link_to 'Edit', edit_employment_type_path(employment_type) %></td>
+    <td><%= link_to 'Destroy', employment_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New employment_type', new_employment_type_path %>

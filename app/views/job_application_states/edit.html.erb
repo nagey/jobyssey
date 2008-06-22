@@ -1,0 +1,28 @@
+<h1>Editing job_application_state</h1>
+
+<% form_for(@job_application_state) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :order %><br />
+    <%= f.text_field :order %>
+  </p>
+  <p>
+    <%= f.label :workflow_id %><br />
+    <%= f.text_field :workflow_id %>
+  </p>
+  <p>
+    <%= f.label :job_application_status_type %><br />
+    <%= f.text_field :job_application_status_type %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @job_application_state %> |
+<%= link_to 'Back', job_application_states_path %>
