@@ -9,7 +9,7 @@ class CreateWorkHistoryItems < ActiveRecord::Migration
       t.integer :job_title_id
       t.integer :geo_position_id
       t.integer :administrative_division_id
-      t.integer :city_id
+      t.integer :town_id
       t.integer :country_id
       t.integer :employer_id
       t.integer :employment_type_id

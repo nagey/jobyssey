@@ -4,8 +4,12 @@ one:
   job_application_id: 1
   job_application_state_id: 1
   note: MyText
+  active: false
+  user_id: 1
 
 two:
   job_application_id: 1
   job_application_state_id: 1
   note: MyText
+  active: false
+  user_id: 1

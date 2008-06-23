@@ -1,0 +1,36 @@
+<h1>Listing job_postings</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Employer</th>
+    <th>Description</th>
+    <th>Search position</th>
+    <th>Maximum salary</th>
+    <th>Minimum salary</th>
+    <th>Education required</th>
+    <th>Employment type</th>
+    <th>Working time</th>
+  </tr>
+
+<% for job_posting in @job_postings %>
+  <tr>
+    <td><%=h job_posting.title %></td>
+    <td><%=h job_posting.employer_id %></td>
+    <td><%=h job_posting.description %></td>
+    <td><%=h job_posting.search_position %></td>
+    <td><%=h job_posting.maximum_salary %></td>
+    <td><%=h job_posting.minimum_salary %></td>
+    <td><%=h job_posting.education_required %></td>
+    <td><%=h job_posting.employment_type_id %></td>
+    <td><%=h job_posting.working_time_id %></td>
+    <td><%= link_to 'Show', job_posting %></td>
+    <td><%= link_to 'Edit', edit_job_posting_path(job_posting) %></td>
+    <td><%= link_to 'Destroy', job_posting, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New job_posting', new_job_posting_path %>

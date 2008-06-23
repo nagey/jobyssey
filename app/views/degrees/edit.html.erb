@@ -1,0 +1,32 @@
+<h1>Editing degree</h1>
+
+<% form_for(@degree) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :educational_institution_id %><br />
+    <%= f.text_field :educational_institution_id %>
+  </p>
+  <p>
+    <%= f.label :educational_qualification_id %><br />
+    <%= f.text_field :educational_qualification_id %>
+  </p>
+  <p>
+    <%= f.label :education_concentration_id %><br />
+    <%= f.text_field :education_concentration_id %>
+  </p>
+  <p>
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @degree %> |
+<%= link_to 'Back', degrees_path %>

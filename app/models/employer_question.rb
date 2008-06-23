@@ -1,0 +1,2 @@
+class EmployerQuestion < DifferentiatorQuestion
+end

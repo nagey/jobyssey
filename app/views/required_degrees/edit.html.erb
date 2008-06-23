@@ -1,0 +1,24 @@
+<h1>Editing required_degree</h1>
+
+<% form_for(@required_degree) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :job_posting_id %><br />
+    <%= f.text_field :job_posting_id %>
+  </p>
+  <p>
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </p>
+  <p>
+    <%= f.label :education_concentration_id %><br />
+    <%= f.text_field :education_concentration_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @required_degree %> |
+<%= link_to 'Back', required_degrees_path %>

@@ -5473,3 +5473,1238 @@ Migrating to CreateUserBenefitPreferences (20080621164239)
   [4;35;1mSQL (0.000041)[0m   [0mPRAGMA index_list("work_history_items")[0m
   [4;36;1mSQL (0.000041)[0m   [0;1mPRAGMA index_list("workflows")[0m
   [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("working_times")[0m
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+reload_lang_filefoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers, reload_lang_file
+  disabled features: localized_templates, class_based_field_error_proc
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-06-22 18:27:45) [GET]
+  Session ID: a42b552d24b787ba0e76ddba0ebb6841
+  Parameters: {"action"=>"index", "controller"=>"countries"}
+  [4;36;1mCountry Load (0.001506)[0m   [0;1mSELECT * FROM "countries" [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 0.03321 (30 reqs/sec) | Rendering: 0.00653 (19%) | DB: 0.00151 (4%) | 200 OK [http://localhost/countries]
+
+
+Processing JobysseyController#index (for 127.0.0.1 at 2008-06-22 18:27:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOWM5Njc3MGUzNTM2MDVmZWYwMjE2NDZkNmZjNzU1
+OWEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--88a6001f6a54cde0be97779ae65e0f83720f1346
+  Parameters: {"action"=>"index", "controller"=>"jobyssey"}
+Rendering template within layouts/index
+Rendering jobyssey/index
+Completed in 0.02851 (35 reqs/sec) | Rendering: 0.00613 (21%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing ProfessionalsController#index (for 127.0.0.1 at 2008-06-22 18:27:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOWM5Njc3MGUzNTM2MDVmZWYwMjE2NDZkNmZjNzU1
+OWEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--88a6001f6a54cde0be97779ae65e0f83720f1346
+  Parameters: {"action"=>"index", "controller"=>"professionals"}
+Rendering template within layouts/index
+Rendering professionals/index
+Completed in 0.02143 (46 reqs/sec) | Rendering: 0.00269 (12%) | DB: 0.00000 (0%) | 200 OK [http://localhost/it-professionals]
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000207)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000130)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.003497)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002946)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000513)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000155)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000072)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000073)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000072)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000072)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployers (20080621135457)
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002608)[0m   [0mCREATE TABLE "employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "tagline" varchar(255) DEFAULT NULL NULL, "size" varchar(255) DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "industry_id" integer DEFAULT NULL NULL, "search_position" varchar(255) DEFAULT NULL NULL, "geo_position_id" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002404)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621135457')[0m
+Migrating to CreateIndustries (20080621135601)
+  [4;35;1mSQL (0.000341)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002110)[0m   [0;1mCREATE TABLE "industries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "search_position" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002472)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621135601')[0m
+Migrating to CreateUsers (20080621135651)
+  [4;36;1mSQL (0.000590)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002683)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) DEFAULT NULL NULL, "middle_names" varchar(255) DEFAULT NULL NULL, "last_name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "password" varchar(255) DEFAULT NULL NULL, "code_name" varchar(255) DEFAULT NULL NULL, "type" varchar(255) DEFAULT NULL NULL, "employer_id" integer DEFAULT NULL NULL, "search_position" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002277)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621135651')[0m
+Migrating to CreateLogins (20080621135818)
+  [4;35;1mSQL (0.000680)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002769)[0m   [0;1mCREATE TABLE "logins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "ip_address" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002525)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621135818')[0m
+Migrating to CreateGeoPositions (20080621135837)
+  [4;36;1mSQL (0.000556)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002709)[0m   [0mCREATE TABLE "geo_positions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "longitude" decimal(6) DEFAULT NULL NULL, "latitude" decimal(6) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002351)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621135837')[0m
+Migrating to CreateCountries (20080621140508)
+  [4;35;1mSQL (0.000913)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003154)[0m   [0;1mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrative_division_name" varchar(255) DEFAULT NULL NULL, "post_code_name" varchar(255) DEFAULT NULL NULL, "post_code_format" varchar(255) DEFAULT NULL NULL, "phone_number_format" varchar(255) DEFAULT NULL NULL, "dialing_code" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "use_administrative_division" boolean DEFAULT NULL NULL, "use_post_code" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002659)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621140508')[0m
+Migrating to CreateAdministrativeDivisions (20080621140552)
+  [4;36;1mSQL (0.000715)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002878)[0m   [0mCREATE TABLE "administrative_divisions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002540)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621140552')[0m
+Migrating to CreateMetrics (20080621140625)
+  [4;35;1mSQL (0.000962)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003286)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "lower_bound" varchar(255) DEFAULT NULL NULL, "upper_bound" varchar(255) DEFAULT NULL NULL, "type" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002280)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621140625')[0m
+Migrating to CreatePersonalQualities (20080621140722)
+  [4;36;1mSQL (0.001124)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002826)[0m   [0mCREATE TABLE "personal_qualities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "metric_id" integer DEFAULT NULL NULL, "value" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002248)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621140722')[0m
+Migrating to CreateBenefits (20080621140953)
+  [4;35;1mSQL (0.001222)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002878)[0m   [0;1mCREATE TABLE "benefits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002117)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621140953')[0m
+Migrating to CreateWorkHistoryItems (20080621141216)
+  [4;36;1mSQL (0.000884)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002968)[0m   [0mCREATE TABLE "work_history_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar(255) DEFAULT NULL NULL, "start_date" datetime DEFAULT NULL NULL, "end_date" datetime DEFAULT NULL NULL, "salary" decimal DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "job_title_id" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "administrative_division_id" integer DEFAULT NULL NULL, "town_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "employer_id" integer DEFAULT NULL NULL, "employment_type_id" integer DEFAULT NULL NULL, "working_time_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002807)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621141216')[0m
+Migrating to CreateCurrencies (20080621141249)
+  [4;35;1mSQL (0.001347)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003379)[0m   [0;1mCREATE TABLE "currencies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "symbol" varchar(255) DEFAULT NULL NULL, "currency_code" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002633)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621141249')[0m
+Migrating to CreateJobTitles (20080621141302)
+  [4;36;1mSQL (0.001113)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002833)[0m   [0mCREATE TABLE "job_titles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002656)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621141302')[0m
+Migrating to CreateEmploymentTypes (20080621141319)
+  [4;35;1mSQL (0.001584)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002906)[0m   [0;1mCREATE TABLE "employment_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002133)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621141319')[0m
+Migrating to CreateWorkingTimes (20080621141329)
+  [4;36;1mSQL (0.001272)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003427)[0m   [0mCREATE TABLE "working_times" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002588)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621141329')[0m
+Migrating to CreatePhoneNumbers (20080621141352)
+  [4;35;1mSQL (0.001888)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002536)[0m   [0;1mCREATE TABLE "phone_numbers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" varchar(255) DEFAULT NULL NULL, "phone_number_type_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.003128)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621141352')[0m
+Migrating to CreatePhoneNumberTypes (20080621141413)
+  [4;36;1mSQL (0.001336)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002637)[0m   [0mCREATE TABLE "phone_number_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002952)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621141413')[0m
+Migrating to CreateAddresses (20080621141501)
+  [4;35;1mSQL (0.002141)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.004034)[0m   [0;1mCREATE TABLE "addresses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address1" varchar(255) DEFAULT NULL NULL, "address2" varchar(255) DEFAULT NULL NULL, "town_id" varchar(255) DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002599)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621141501')[0m
+Migrating to CreateTowns (20080621141555)
+  [4;36;1mSQL (0.001826)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002474)[0m   [0mCREATE TABLE "towns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrative_division_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002270)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621141555')[0m
+Migrating to CreatePostCodes (20080621141656)
+  [4;35;1mSQL (0.002354)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002978)[0m   [0;1mCREATE TABLE "post_codes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "town_id" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002580)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621141656')[0m
+Migrating to CreateTransitions (20080621161607)
+  [4;36;1mSQL (0.001682)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003556)[0m   [0mCREATE TABLE "transitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "current_state_id" integer DEFAULT NULL NULL, "next_state_id" integer DEFAULT NULL NULL, "workflow_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002382)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621161607')[0m
+Migrating to CreateRolesTransitions (20080621161633)
+  [4;35;1mSQL (0.002068)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002517)[0m   [0;1mCREATE TABLE "roles_transitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role_id" integer DEFAULT NULL NULL, "transition_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002355)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621161633')[0m
+Migrating to CreateRoles (20080621161658)
+  [4;36;1mSQL (0.002592)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003016)[0m   [0mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "employer_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002452)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621161658')[0m
+Migrating to CreateRolesUsers (20080621161707)
+  [4;35;1mSQL (0.002424)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002264)[0m   [0;1mCREATE TABLE "roles_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002909)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621161707')[0m
+Migrating to CreateWorkflows (20080621161753)
+  [4;36;1mSQL (0.001714)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002792)[0m   [0mCREATE TABLE "workflows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002729)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621161753')[0m
+Migrating to CreateEmployersWorkflows (20080621161823)
+  [4;35;1mSQL (0.002201)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003820)[0m   [0;1mCREATE TABLE "employers_workflows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employer_id" integer DEFAULT NULL NULL, "workflow_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002268)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621161823')[0m
+Migrating to CreateJobApplicationStatusTypes (20080621162228)
+  [4;36;1mSQL (0.002072)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002831)[0m   [0mCREATE TABLE "job_application_status_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "cost" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002654)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621162228')[0m
+Migrating to CreateJobApplications (20080621162325)
+  [4;35;1mSQL (0.002541)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002777)[0m   [0;1mCREATE TABLE "job_applications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "job_posting_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001851)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621162325')[0m
+Migrating to CreateJobApplicationAttachments (20080621162446)
+  [4;36;1mSQL (0.002183)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003195)[0m   [0mCREATE TABLE "job_application_attachments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_application_id" integer DEFAULT NULL NULL, "type" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "url" varchar(255) DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002700)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621162446')[0m
+Migrating to CreateAccounts (20080621162547)
+  [4;35;1mSQL (0.002510)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002582)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employer_id" integer DEFAULT NULL NULL, "balance" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002222)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621162547')[0m
+Migrating to CreateTransactions (20080621162628)
+  [4;36;1mSQL (0.002940)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002971)[0m   [0mCREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer DEFAULT NULL NULL, "transaction_type" varchar(255) DEFAULT NULL NULL, "amount" integer DEFAULT NULL NULL, "reference" varchar(255) DEFAULT NULL NULL, "job_application_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002582)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621162628')[0m
+Migrating to CreateJobPostingsWorkflows (20080621163113)
+  [4;35;1mSQL (0.002756)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.004058)[0m   [0;1mCREATE TABLE "job_postings_workflows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer DEFAULT NULL NULL, "workflow_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002864)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621163113')[0m
+Migrating to CreateJobPostingsRoles (20080621163256)
+  [4;36;1mSQL (0.002899)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003060)[0m   [0mCREATE TABLE "job_postings_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer DEFAULT NULL NULL, "role_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002428)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621163256')[0m
+Migrating to CreateCountriesCurrencies (20080621163341)
+  [4;35;1mSQL (0.002927)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002920)[0m   [0;1mCREATE TABLE "countries_currencies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country_id" integer DEFAULT NULL NULL, "currency_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002580)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621163341')[0m
+Migrating to CreateAddressesUsers (20080621163451)
+  [4;36;1mSQL (0.002943)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002478)[0m   [0mCREATE TABLE "addresses_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.003809)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621163451')[0m
+Migrating to CreateAddressesEmployers (20080621163456)
+  [4;35;1mSQL (0.002676)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002680)[0m   [0;1mCREATE TABLE "addresses_employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address_id" integer DEFAULT NULL NULL, "employer_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002257)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621163456')[0m
+Migrating to CreateBenefitsJobPostings (20080621163857)
+  [4;36;1mSQL (0.003034)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002815)[0m   [0mCREATE TABLE "benefits_job_postings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "benefit_id" integer DEFAULT NULL NULL, "job_posting_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002611)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080621163857')[0m
+Migrating to CreateUserBenefitPreferences (20080621164239)
+  [4;35;1mSQL (0.003340)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003373)[0m   [0;1mCREATE TABLE "user_benefit_preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "benefit_id" integer DEFAULT NULL NULL, "benefit_preference" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002713)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080621164239')[0m
+Migrating to CreateDifferentiatorQuestions (20080623195502)
+  [4;36;1mSQL (0.002784)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003021)[0m   [0mCREATE TABLE "differentiator_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002147)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080623195502')[0m
+Migrating to CreateDifferentiatorAnswers (20080623195600)
+  [4;35;1mSQL (0.003338)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003672)[0m   [0;1mCREATE TABLE "differentiator_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "differentiator_question_id" integer DEFAULT NULL NULL, "employer_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "job_posting_id" integer DEFAULT NULL NULL, "name" text DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002116)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080623195600')[0m
+Migrating to CreateJobPositingsRoles (20080623195659)
+  [4;36;1mSQL (0.003299)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table "job_postings_roles" already exists: CREATE TABLE "job_postings_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer DEFAULT NULL NULL, "role_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.002709)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001615)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001483)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001480)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001492)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001492)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001496)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001486)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001495)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001499)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001485)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001486)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001495)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001488)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001476)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001475)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001487)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001471)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001476)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001498)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001477)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001475)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001479)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001484)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001479)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001476)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001473)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001472)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001474)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001468)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001465)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001468)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001463)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001463)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001469)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001469)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001464)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001463)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001463)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001467)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001466)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployers (20080621135457)
+  [4;35;1mSQL (0.001501)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIndustries (20080621135601)
+  [4;36;1mSQL (0.001456)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080621135651)
+  [4;35;1mSQL (0.001455)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLogins (20080621135818)
+  [4;36;1mSQL (0.001454)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateGeoPositions (20080621135837)
+  [4;35;1mSQL (0.001450)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCountries (20080621140508)
+  [4;36;1mSQL (0.001461)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAdministrativeDivisions (20080621140552)
+  [4;35;1mSQL (0.001452)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMetrics (20080621140625)
+  [4;36;1mSQL (0.001455)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePersonalQualities (20080621140722)
+  [4;35;1mSQL (0.001459)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBenefits (20080621140953)
+  [4;36;1mSQL (0.001448)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateWorkHistoryItems (20080621141216)
+  [4;35;1mSQL (0.001454)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCurrencies (20080621141249)
+  [4;36;1mSQL (0.001462)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateJobTitles (20080621141302)
+  [4;35;1mSQL (0.001458)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmploymentTypes (20080621141319)
+  [4;36;1mSQL (0.001451)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateWorkingTimes (20080621141329)
+  [4;35;1mSQL (0.001458)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhoneNumbers (20080621141352)
+  [4;36;1mSQL (0.001459)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhoneNumberTypes (20080621141413)
+  [4;35;1mSQL (0.001463)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddresses (20080621141501)
+  [4;36;1mSQL (0.001451)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTowns (20080621141555)
+  [4;35;1mSQL (0.001436)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePostCodes (20080621141656)
+  [4;36;1mSQL (0.001452)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTransitions (20080621161607)
+  [4;35;1mSQL (0.001451)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRolesTransitions (20080621161633)
+  [4;36;1mSQL (0.001445)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRoles (20080621161658)
+  [4;35;1mSQL (0.001460)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRolesUsers (20080621161707)
+  [4;36;1mSQL (0.001447)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateWorkflows (20080621161753)
+  [4;35;1mSQL (0.001453)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployersWorkflows (20080621161823)
+  [4;36;1mSQL (0.001552)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateJobApplicationStatusTypes (20080621162228)
+  [4;35;1mSQL (0.001452)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateJobApplications (20080621162325)
+  [4;36;1mSQL (0.001460)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateJobApplicationAttachments (20080621162446)
+  [4;35;1mSQL (0.001450)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20080621162547)
+  [4;36;1mSQL (0.001453)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTransactions (20080621162628)
+  [4;35;1mSQL (0.001487)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateJobPostingsWorkflows (20080621163113)
+  [4;36;1mSQL (0.001485)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateJobPostingsRoles (20080621163256)
+  [4;35;1mSQL (0.001473)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCountriesCurrencies (20080621163341)
+  [4;36;1mSQL (0.001455)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddressesUsers (20080621163451)
+  [4;35;1mSQL (0.001496)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddressesEmployers (20080621163456)
+  [4;36;1mSQL (0.001539)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBenefitsJobPostings (20080621163857)
+  [4;35;1mSQL (0.001449)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUserBenefitPreferences (20080621164239)
+  [4;36;1mSQL (0.001442)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDifferentiatorQuestions (20080623195502)
+  [4;35;1mSQL (0.001445)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDifferentiatorAnswers (20080623195600)
+  [4;36;1mSQL (0.001443)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEducationConcentrations (20080623195905)
+  [4;35;1mSQL (0.001445)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.004787)[0m   [0mCREATE TABLE "education_concentrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002622)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080623195905')[0m
+Migrating to CreateEducationalQualifications (20080623195935)
+  [4;35;1mSQL (0.003729)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002363)[0m   [0;1mCREATE TABLE "educational_qualifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "educational_level_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002142)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080623195935')[0m
+Migrating to CreateEducationalInstitutions (20080623200104)
+  [4;36;1mSQL (0.003445)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003893)[0m   [0mCREATE TABLE "educational_institutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "url" varchar(255) DEFAULT NULL NULL, "town_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "geo_position_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002765)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080623200104')[0m
+Migrating to CreateEducationQualificationsJobPostings (20080623202321)
+  [4;35;1mSQL (0.005053)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002769)[0m   [0;1mCREATE TABLE "educational_qualifications_job_postings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer DEFAULT NULL NULL, "educational_qualification_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002901)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080623202321')[0m
+Migrating to CreateDegrees (20080623202855)
+  [4;36;1mSQL (0.003681)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003616)[0m   [0mCREATE TABLE "degrees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "educational_institution_id" integer DEFAULT NULL NULL, "educational_qualification_id" integer DEFAULT NULL NULL, "education_concentration_id" integer DEFAULT NULL NULL, "educational_level_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002563)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080623202855')[0m
+Migrating to CreateJobPostings (20080623204731)
+  [4;35;1mSQL (0.003248)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002979)[0m   [0;1mCREATE TABLE "job_postings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) DEFAULT NULL NULL, "employer_id" integer DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "search_position" varchar(255) DEFAULT NULL NULL, "maximum_salary" decimal DEFAULT NULL NULL, "minimum_salary" decimal DEFAULT NULL NULL, "education_required" boolean DEFAULT NULL NULL, "employment_type_id" integer DEFAULT NULL NULL, "working_time_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002746)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080623204731')[0m
+Migrating to CreateJobApplicationStates (20080623205605)
+  [4;36;1mSQL (0.004721)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003411)[0m   [0mCREATE TABLE "job_application_states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "order" integer DEFAULT NULL NULL, "workflow_id" integer DEFAULT NULL NULL, "job_application_status_type_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002523)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080623205605')[0m
+Migrating to CreateJobApplicationStatuses (20080623210329)
+  [4;35;1mSQL (0.003391)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003011)[0m   [0;1mCREATE TABLE "job_application_statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_application_id" integer DEFAULT NULL NULL, "job_application_state_id" integer DEFAULT NULL NULL, "note" text DEFAULT NULL NULL, "active" boolean DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002729)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080623210329')[0m
+Migrating to CreateRequiredDegrees (20080623211129)
+  [4;36;1mSQL (0.003824)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002859)[0m   [0mCREATE TABLE "required_degrees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer DEFAULT NULL NULL, "educational_level_id" integer DEFAULT NULL NULL, "education_concentration_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002686)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080623211129')[0m
+Migrating to CreateEducationalLevels (20080623213118)
+  [4;35;1mSQL (0.004907)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003127)[0m   [0;1mCREATE TABLE "educational_levels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "level" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.003064)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080623213118')[0m
+  [4;36;1mSQL (0.003101)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003004)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list("addresses")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("addresses_employers")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("addresses_users")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("administrative_divisions")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("benefits")[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mPRAGMA index_list("benefits_job_postings")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("countries_currencies")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("currencies")[0m
+  [4;36;1mSQL (0.000038)[0m   [0;1mPRAGMA index_list("degrees")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("differentiator_answers")[0m
+  [4;36;1mSQL (0.000038)[0m   [0;1mPRAGMA index_list("differentiator_questions")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("education_concentrations")[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list("educational_institutions")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("educational_levels")[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list("educational_qualifications")[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list("educational_qualifications_job_postings")[0m
+  [4;36;1mSQL (0.000040)[0m   [0;1mPRAGMA index_list("employers")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("employers_workflows")[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mPRAGMA index_list("employment_types")[0m
+  [4;35;1mSQL (0.000082)[0m   [0mPRAGMA index_list("geo_positions")[0m
+  [4;36;1mSQL (0.000040)[0m   [0;1mPRAGMA index_list("industries")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("job_application_attachments")[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mPRAGMA index_list("job_application_states")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("job_application_status_types")[0m
+  [4;36;1mSQL (0.000040)[0m   [0;1mPRAGMA index_list("job_application_statuses")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("job_applications")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("job_postings")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("job_postings_roles")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("job_postings_workflows")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("job_titles")[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list("logins")[0m
+  [4;35;1mSQL (0.000041)[0m   [0mPRAGMA index_list("metrics")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("personal_qualities")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("phone_number_types")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("phone_numbers")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("post_codes")[0m
+  [4;36;1mSQL (0.000040)[0m   [0;1mPRAGMA index_list("required_degrees")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("roles")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("roles_transitions")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("roles_users")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("towns")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("transactions")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("transitions")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("user_benefit_preferences")[0m
+  [4;36;1mSQL (0.000040)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("work_history_items")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("workflows")[0m
+  [4;35;1mSQL (0.000040)[0m   [0mPRAGMA index_list("working_times")[0m

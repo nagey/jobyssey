@@ -1,0 +1,31 @@
+<h1>New differentiator_answer</h1>
+
+<% form_for(@differentiator_answer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :differentiator_question_id %><br />
+    <%= f.text_field :differentiator_question_id %>
+  </p>
+  <p>
+    <%= f.label :employer_id %><br />
+    <%= f.text_field :employer_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :job_posting_id %><br />
+    <%= f.text_field :job_posting_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', differentiator_answers_path %>

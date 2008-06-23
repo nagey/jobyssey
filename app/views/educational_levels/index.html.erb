@@ -1,0 +1,20 @@
+<h1>Listing educational_levels</h1>
+
+<table>
+  <tr>
+    <th>Level</th>
+  </tr>
+
+<% for educational_level in @educational_levels %>
+  <tr>
+    <td><%=h educational_level.level %></td>
+    <td><%= link_to 'Show', educational_level %></td>
+    <td><%= link_to 'Edit', edit_educational_level_path(educational_level) %></td>
+    <td><%= link_to 'Destroy', educational_level, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New educational_level', new_educational_level_path %>

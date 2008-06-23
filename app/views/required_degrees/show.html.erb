@@ -1,0 +1,18 @@
+<p>
+  <b>Job posting:</b>
+  <%=h @required_degree.job_posting_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%=h @required_degree.level %>
+</p>
+
+<p>
+  <b>Education concentration:</b>
+  <%=h @required_degree.education_concentration_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_required_degree_path(@required_degree) %> |
+<%= link_to 'Back', required_degrees_path %>

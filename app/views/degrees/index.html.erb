@@ -1,0 +1,28 @@
+<h1>Listing degrees</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Educational institution</th>
+    <th>Educational qualification</th>
+    <th>Education concentration</th>
+    <th>Level</th>
+  </tr>
+
+<% for degree in @degrees %>
+  <tr>
+    <td><%=h degree.user_id %></td>
+    <td><%=h degree.educational_institution_id %></td>
+    <td><%=h degree.educational_qualification_id %></td>
+    <td><%=h degree.education_concentration_id %></td>
+    <td><%=h degree.level %></td>
+    <td><%= link_to 'Show', degree %></td>
+    <td><%= link_to 'Edit', edit_degree_path(degree) %></td>
+    <td><%= link_to 'Destroy', degree, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New degree', new_degree_path %>

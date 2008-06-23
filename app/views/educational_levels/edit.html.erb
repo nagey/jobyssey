@@ -1,0 +1,16 @@
+<h1>Editing educational_level</h1>
+
+<% form_for(@educational_level) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @educational_level %> |
+<%= link_to 'Back', educational_levels_path %>

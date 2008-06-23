@@ -1,0 +1,16 @@
+<h1>Editing education_concentration</h1>
+
+<% form_for(@education_concentration) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @education_concentration %> |
+<%= link_to 'Back', education_concentrations_path %>

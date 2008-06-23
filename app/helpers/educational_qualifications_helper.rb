@@ -1,0 +1,2 @@
+module EducationalQualificationsHelper
+end

@@ -1,0 +1,22 @@
+<h1>Listing educational_qualifications</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+  </tr>
+
+<% for educational_qualification in @educational_qualifications %>
+  <tr>
+    <td><%=h educational_qualification.name %></td>
+    <td><%=h educational_qualification.level %></td>
+    <td><%= link_to 'Show', educational_qualification %></td>
+    <td><%= link_to 'Edit', edit_educational_qualification_path(educational_qualification) %></td>
+    <td><%= link_to 'Destroy', educational_qualification, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New educational_qualification', new_educational_qualification_path %>

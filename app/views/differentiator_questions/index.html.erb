@@ -1,0 +1,22 @@
+<h1>Listing differentiator_questions</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Name</th>
+  </tr>
+
+<% for differentiator_question in @differentiator_questions %>
+  <tr>
+    <td><%=h differentiator_question.type %></td>
+    <td><%=h differentiator_question.name %></td>
+    <td><%= link_to 'Show', differentiator_question %></td>
+    <td><%= link_to 'Edit', edit_differentiator_question_path(differentiator_question) %></td>
+    <td><%= link_to 'Destroy', differentiator_question, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New differentiator_question', new_differentiator_question_path %>

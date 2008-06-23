@@ -1,0 +1,20 @@
+<h1>Listing education_concentrations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for education_concentration in @education_concentrations %>
+  <tr>
+    <td><%=h education_concentration.name %></td>
+    <td><%= link_to 'Show', education_concentration %></td>
+    <td><%= link_to 'Edit', edit_education_concentration_path(education_concentration) %></td>
+    <td><%= link_to 'Destroy', education_concentration, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New education_concentration', new_education_concentration_path %>

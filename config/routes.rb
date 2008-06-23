@@ -1,7 +1,27 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :user_benefit_preferences
+  map.resources :educational_levels
+
+  map.resources :required_degrees
 
   map.resources :job_application_statuses
+
+  map.resources :job_application_states
+
+  map.resources :job_postings
+
+  map.resources :degrees
+
+  map.resources :educational_institutions
+
+  map.resources :educational_qualifications
+
+  map.resources :education_concentrations
+
+  map.resources :differentiator_answers
+
+  map.resources :differentiator_questions
+
+  map.resources :user_benefit_preferences
 
   map.resources :transactions
 
@@ -12,8 +32,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :job_applications
 
   map.resources :job_application_status_types
-
-  map.resources :job_application_states
 
   map.resources :workflows
 

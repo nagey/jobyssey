@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080621164239) do
+ActiveRecord::Schema.define(:version => 20080623213118) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "employer_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
     t.string   "address1"
     t.string   "address2"
     t.string   "town_id"
-    t.integer  "geo_location_id"
+    t.integer  "geo_position_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,6 +91,69 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
     t.datetime "updated_at"
   end
 
+  create_table "degrees", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "educational_institution_id"
+    t.integer  "educational_qualification_id"
+    t.integer  "education_concentration_id"
+    t.integer  "educational_level_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "differentiator_answers", :force => true do |t|
+    t.integer  "differentiator_question_id"
+    t.integer  "employer_id"
+    t.integer  "user_id"
+    t.integer  "job_posting_id"
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "differentiator_questions", :force => true do |t|
+    t.string   "type"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "education_concentrations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "educational_institutions", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "town_id"
+    t.integer  "country_id"
+    t.integer  "geo_position_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "educational_levels", :force => true do |t|
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "educational_qualifications", :force => true do |t|
+    t.string   "name"
+    t.integer  "educational_level_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "educational_qualifications_job_postings", :force => true do |t|
+    t.integer  "job_posting_id"
+    t.integer  "educational_qualification_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "employers", :force => true do |t|
     t.string   "name"
     t.string   "tagline"
@@ -144,7 +207,7 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
     t.string   "name"
     t.integer  "order"
     t.integer  "workflow_id"
-    t.string   "job_application_status_type"
+    t.integer  "job_application_status_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -160,6 +223,8 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
     t.integer  "job_application_id"
     t.integer  "job_application_state_id"
     t.text     "note"
+    t.boolean  "active"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -167,6 +232,20 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
   create_table "job_applications", :force => true do |t|
     t.integer  "user_id"
     t.integer  "job_posting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "job_postings", :force => true do |t|
+    t.string   "title"
+    t.integer  "employer_id"
+    t.text     "description"
+    t.string   "search_position"
+    t.decimal  "maximum_salary"
+    t.decimal  "minimum_salary"
+    t.boolean  "education_required"
+    t.integer  "employment_type_id"
+    t.integer  "working_time_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -235,6 +314,14 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
     t.string   "name"
     t.integer  "town_id"
     t.integer  "geo_position_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "required_degrees", :force => true do |t|
+    t.integer  "job_posting_id"
+    t.integer  "educational_level_id"
+    t.integer  "education_concentration_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -317,9 +404,9 @@ ActiveRecord::Schema.define(:version => 20080621164239) do
     t.decimal  "salary"
     t.text     "description"
     t.integer  "job_title_id"
-    t.integer  "geo_location_id"
+    t.integer  "geo_position_id"
     t.integer  "administrative_division_id"
-    t.integer  "city_id"
+    t.integer  "town_id"
     t.integer  "country_id"
     t.integer  "employer_id"
     t.integer  "employment_type_id"

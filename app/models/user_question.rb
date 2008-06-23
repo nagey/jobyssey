@@ -1,0 +1,2 @@
+class UserQuestion < DifferentiatorQuestion
+end

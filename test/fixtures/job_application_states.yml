@@ -4,10 +4,10 @@ one:
   name: MyString
   order: 1
   workflow_id: 1
-  job_application_status_type: MyString
+  job_application_status_type_id: 1
 
 two:
   name: MyString
   order: 1
   workflow_id: 1
-  job_application_status_type: MyString
+  job_application_status_type_id: 1

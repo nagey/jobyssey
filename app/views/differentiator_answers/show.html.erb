@@ -1,0 +1,28 @@
+<p>
+  <b>Differentiator question:</b>
+  <%=h @differentiator_answer.differentiator_question_id %>
+</p>
+
+<p>
+  <b>Employer:</b>
+  <%=h @differentiator_answer.employer_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @differentiator_answer.user_id %>
+</p>
+
+<p>
+  <b>Job posting:</b>
+  <%=h @differentiator_answer.job_posting_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @differentiator_answer.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_differentiator_answer_path(@differentiator_answer) %> |
+<%= link_to 'Back', differentiator_answers_path %>

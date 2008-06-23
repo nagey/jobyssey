@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  job_posting_id: 1
+  level: 1
+  education_concentration_id: 1
+
+two:
+  job_posting_id: 1
+  level: 1
+  education_concentration_id: 1

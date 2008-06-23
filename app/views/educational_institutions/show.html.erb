@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @educational_institution.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @educational_institution.url %>
+</p>
+
+<p>
+  <b>Town:</b>
+  <%=h @educational_institution.town_id %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @educational_institution.country_id %>
+</p>
+
+<p>
+  <b>Geo position:</b>
+  <%=h @educational_institution.geo_position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_educational_institution_path(@educational_institution) %> |
+<%= link_to 'Back', educational_institutions_path %>

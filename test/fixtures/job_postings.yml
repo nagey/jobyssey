@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  employer_id: 1
+  description: MyText
+  search_position: MyString
+  maximum_salary: 9.99
+  minimum_salary: 9.99
+  education_required: false
+  employment_type_id: 1
+  working_time_id: 1
+
+two:
+  title: MyString
+  employer_id: 1
+  description: MyText
+  search_position: MyString
+  maximum_salary: 9.99
+  minimum_salary: 9.99
+  education_required: false
+  employment_type_id: 1
+  working_time_id: 1

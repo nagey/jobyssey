@@ -1,0 +1,28 @@
+<p>
+  <b>User:</b>
+  <%=h @degree.user_id %>
+</p>
+
+<p>
+  <b>Educational institution:</b>
+  <%=h @degree.educational_institution_id %>
+</p>
+
+<p>
+  <b>Educational qualification:</b>
+  <%=h @degree.educational_qualification_id %>
+</p>
+
+<p>
+  <b>Education concentration:</b>
+  <%=h @degree.education_concentration_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%=h @degree.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_degree_path(@degree) %> |
+<%= link_to 'Back', degrees_path %>

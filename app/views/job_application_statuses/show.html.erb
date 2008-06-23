@@ -13,6 +13,16 @@
   <%=h @job_application_status.note %>
 </p>
 
+<p>
+  <b>Active:</b>
+  <%=h @job_application_status.active %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @job_application_status.user_id %>
+</p>
+
 
 <%= link_to 'Edit', edit_job_application_status_path(@job_application_status) %> |
 <%= link_to 'Back', job_application_statuses_path %>
