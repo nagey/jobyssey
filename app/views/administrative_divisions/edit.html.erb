@@ -3,6 +3,16 @@
 <% form_for(@administrative_division) do |f| %>
   <%= f.error_messages %>
 
+	<%= f.collection_select :country, @country, :name, :name %>
+	<br>
+	<% link_to l(:add_country), new_country_path %>
+
+	<br>
+	<%= f.collection_select :geo_position, @geo_position, :name, :name %>
+	<br>
+	<% link_to l(:add_geo_position), new_geo_position_path %>
+
+
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>

@@ -11,11 +11,11 @@
 
 <% for degree in @degrees %>
   <tr>
-    <td><%=h degree.user_id %></td>
-    <td><%=h degree.educational_institution_id %></td>
-    <td><%=h degree.educational_qualification_id %></td>
-    <td><%=h degree.education_concentration_id %></td>
-    <td><%=h degree.level %></td>
+    <td><%=h degree.user.name %></td>
+    <td><%=h degree.educational_institution.name %></td>
+    <td><%=h degree.educational_qualification.name %></td>
+    <td><%=h degree.educational_concentration.name %></td>
+    <td><%=h degree.educational_level.name %></td>
     <td><%= link_to 'Show', degree %></td>
     <td><%= link_to 'Edit', edit_degree_path(degree) %></td>
     <td><%= link_to 'Destroy', degree, :confirm => 'Are you sure?', :method => :delete %></td>

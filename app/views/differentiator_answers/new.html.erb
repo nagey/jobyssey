@@ -3,25 +3,27 @@
 <% form_for(@differentiator_answer) do |f| %>
   <%= f.error_messages %>
 
+  @job_posting = JobPosting.find :all
+
   <p>
-    <%= f.label :differentiator_question_id %><br />
-    <%= f.text_field :differentiator_question_id %>
+    <%= f.collection_select :differentiator_question, @differentiator_question, :name, :name %>
+	<br>
+	<% link_to l(:add_differentiator_question), new_differentiator_question_path %>
   </p>
   <p>
-    <%= f.label :employer_id %><br />
-    <%= f.text_field :employer_id %>
+    <%= f.collection_select :employer, @employer, :name, :name %>
+	<br>
+	<% link_to l(:add_employer), new_employer_path %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.collection_select :user, @user, :name, :name %>
+	<br>
+	<% link_to l(:add_user), new_user_path %>
   </p>
   <p>
-    <%= f.label :job_posting_id %><br />
-    <%= f.text_field :job_posting_id %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_area :name %>
+  <%= f.collection_select :job_posting, @job_posting, :name, :name %>
+	<br>
+	<% link_to l(:add_job_posting), new_job_posting_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

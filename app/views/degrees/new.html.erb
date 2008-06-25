@@ -4,24 +4,29 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+   	<%= f.collection_select :user, @user, :name, :name %>
+	<br>
+	<% link_to l(:add_user), new_user_path %>
   </p>
   <p>
-    <%= f.label :educational_institution_id %><br />
-    <%= f.text_field :educational_institution_id %>
+    <%= f.collection_select :educational_institution, @educational_institution, :name, :name %>
+	<br>
+	<% link_to l(:add_educational_institution), new_educational_institutional_path %>
   </p>
   <p>
-    <%= f.label :educational_qualification_id %><br />
-    <%= f.text_field :educational_qualification_id %>
+    <%= f.collection_select :educational_qualification, @educational_qualification, :name, :name %>
+	<br>
+	<% link_to l(:add_educational_qualification), new_educational_qualification_path %>
   </p>
   <p>
-    <%= f.label :education_concentration_id %><br />
-    <%= f.text_field :education_concentration_id %>
+  <%= f.collection_select :educational_concentration, @educational_concentration, :name, :name %>
+	<br>
+	<% link_to l(:add_educational_concentration), new_educational_concentration_path %>
   </p>
   <p>
-    <%= f.label :level %><br />
-    <%= f.text_field :level %>
+    <%= f.collection_select :educational_level, @educational_level, :name, :name %>
+	<br>
+	<% link_to l(:add_educational_level, new_educational_level_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

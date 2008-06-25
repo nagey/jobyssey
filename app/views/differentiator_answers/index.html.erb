@@ -11,10 +11,10 @@
 
 <% for differentiator_answer in @differentiator_answers %>
   <tr>
-    <td><%=h differentiator_answer.differentiator_question_id %></td>
-    <td><%=h differentiator_answer.employer_id %></td>
-    <td><%=h differentiator_answer.user_id %></td>
-    <td><%=h differentiator_answer.job_posting_id %></td>
+    <td><%=h differentiator_answer.differentiator_question.name %></td>
+    <td><%=h differentiator_answer.employer.name %></td>
+    <td><%=h differentiator_answer.user.name %></td>
+    <td><%=h differentiator_answer.job_posting.name %></td>
     <td><%=h differentiator_answer.name %></td>
     <td><%= link_to 'Show', differentiator_answer %></td>
     <td><%= link_to 'Edit', edit_differentiator_answer_path(differentiator_answer) %></td>

@@ -8,8 +8,8 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :level %><br />
-    <%= f.text_field :level %>
+  <%= f.collection_select :educational_level, @educational_level, :name, :name %><br />
+  <%= link_to l(:add_educational_level), new_educational_level_path %>
   </p>
   <p>
     <%= f.submit "Update" %>
