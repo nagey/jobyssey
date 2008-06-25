@@ -109,6 +109,7 @@ models:
 # localized_application feature. The entries defined here are accesable by the
 # global method "l". See the RDoc for details.
 app:
+    add_employer: Add new employer
     additional_copyright_information: Additional Copyright Information
     photo_credit: Photo taken by topgold and used under Creative Commons License; click <a href="http://commons.wikimedia.org/wiki/Image:Mount_Everest_%28topgold%29.jpg">here</a> for details.</a>
     copyright_footer: © 2008 Jobyssey, Ltd. All Rights Reserved

@@ -5,7 +5,9 @@
 
   <p>
     <%= f.label :employer_id %><br />
-    <%= f.text_field :employer_id %>
+    <%= f.collection_select :employer, @employers, :name, :name %>
+	<br />
+	<%= link_to l(:add_employer), :controller => 'admin/employers', :action => "new" %>
   </p>
   <p>
     <%= f.label :balance %><br />
@@ -17,4 +19,4 @@
 <% end %>
 
 <%= link_to 'Show', @account %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to 'Back', :controller => 'admin/account', :action => 'index' %>

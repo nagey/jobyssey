@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
-  # GET /accounts
-  # GET /accounts.xml
+  # GET /admin/accounts
+  # GET /admin/accounts.xml
   def index
     @accounts = Account.find(:all)
 
@@ -10,8 +10,8 @@ class AccountsController < ApplicationController
     end
   end
 
-  # GET /accounts/1
-  # GET /accounts/1.xml
+  # GET /admin/accounts/1
+  # GET /admin/accounts/1.xml
   def show
     @account = Account.find(params[:id])
 
@@ -21,24 +21,25 @@ class AccountsController < ApplicationController
     end
   end
 
-  # GET /accounts/new
-  # GET /accounts/new.xml
+  # GET /admin/accounts/new
+  # GET /admin/accounts/new.xml
   def new
     @account = Account.new
-
+    @employers = Employer.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @account }
     end
   end
 
-  # GET /accounts/1/edit
+  # GET /admin/accounts/1/edit
   def edit
     @account = Account.find(params[:id])
+    @employers = Employer.find :all
   end
 
-  # POST /accounts
-  # POST /accounts.xml
+  # POST /admin/accounts
+  # POST /admin/accounts.xml
   def create
     @account = Account.new(params[:account])
 
@@ -54,8 +55,8 @@ class AccountsController < ApplicationController
     end
   end
 
-  # PUT /accounts/1
-  # PUT /accounts/1.xml
+  # PUT /admin/accounts/1
+  # PUT /admin/accounts/1.xml
   def update
     @account = Account.find(params[:id])
 
@@ -71,8 +72,8 @@ class AccountsController < ApplicationController
     end
   end
 
-  # DELETE /accounts/1
-  # DELETE /accounts/1.xml
+  # DELETE /admin/accounts/1
+  # DELETE /admin/accounts/1.xml
   def destroy
     @account = Account.find(params[:id])
     @account.destroy

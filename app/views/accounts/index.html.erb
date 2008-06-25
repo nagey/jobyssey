@@ -8,7 +8,7 @@
 
 <% for account in @accounts %>
   <tr>
-    <td><%=h account.employer_id %></td>
+    <td><%=h account.employer.name %></td>
     <td><%=h account.balance %></td>
     <td><%= link_to 'Show', account %></td>
     <td><%= link_to 'Edit', edit_account_path(account) %></td>
