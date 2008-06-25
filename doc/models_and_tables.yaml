@@ -99,6 +99,7 @@ feedback_item:
     on_time:boolean
     serious:boolean
     honest:boolean
+    description:text
 
 geo_position:
     longitude:decimal

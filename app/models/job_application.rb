@@ -6,4 +6,5 @@ class JobApplication < ActiveRecord::Base
   has_many :job_application_attachments
   has_many :transactions
   has_many :transitions
+  has_one :feedback_item
 end

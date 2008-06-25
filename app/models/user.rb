@@ -13,4 +13,5 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   belongs_to :employer
   has_many :work_history_items
+  has_many :feedback_items
 end
