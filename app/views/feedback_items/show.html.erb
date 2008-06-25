@@ -1,0 +1,33 @@
+<p>
+  <b>Job application:</b>
+  <%=h @feedback_item.job_application_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @feedback_item.user_id %>
+</p>
+
+<p>
+  <b>On time:</b>
+  <%=h @feedback_item.on_time %>
+</p>
+
+<p>
+  <b>Serious:</b>
+  <%=h @feedback_item.serious %>
+</p>
+
+<p>
+  <b>Honest:</b>
+  <%=h @feedback_item.honest %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @feedback_item.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_feedback_item_path(@feedback_item) %> |
+<%= link_to 'Back', feedback_items_path %>

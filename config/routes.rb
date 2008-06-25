@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :feedback_items
+
   map.resources :educational_levels
 
   map.resources :required_degrees
