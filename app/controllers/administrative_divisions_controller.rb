@@ -25,7 +25,8 @@ class AdministrativeDivisionsController < ApplicationController
   # GET /administrative_divisions/new.xml
   def new
     @administrative_division = AdministrativeDivision.new
-
+      @country = Country.find :all
+      @geo_position = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @administrative_division }
@@ -35,6 +36,8 @@ class AdministrativeDivisionsController < ApplicationController
   # GET /administrative_divisions/1/edit
   def edit
     @administrative_division = AdministrativeDivision.find(params[:id])
+     @country = Country.find :all
+      @geo_position = GeoPosition.find :all
   end
 
   # POST /administrative_divisions

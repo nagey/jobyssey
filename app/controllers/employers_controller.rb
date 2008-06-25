@@ -4,6 +4,7 @@ class EmployersController < ApplicationController
   def index
     @employers = Employer.find(:all)
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @employers }
@@ -14,7 +15,8 @@ class EmployersController < ApplicationController
   # GET /employers/1.xml
   def show
     @employer = Employer.find(params[:id])
-
+ 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @employer }
@@ -25,7 +27,8 @@ class EmployersController < ApplicationController
   # GET /employers/new.xml
   def new
     @employer = Employer.new
-
+    @industry = Industry.find(:all)
+    @geo_position = GeoPosition.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @employer }
@@ -35,6 +38,8 @@ class EmployersController < ApplicationController
   # GET /employers/1/edit
   def edit
     @employer = Employer.find(params[:id])
+    @industry = Industry.find(:all)
+    @geo_position = GeoPosition.find(:all)
   end
 
   # POST /employers

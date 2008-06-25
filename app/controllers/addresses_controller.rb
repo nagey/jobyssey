@@ -25,7 +25,8 @@ class AddressesController < ApplicationController
   # GET /addresses/new.xml
   def new
     @address = Address.new
-
+    @town = Town.find :all
+    @geo_position = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @address }
@@ -35,6 +36,8 @@ class AddressesController < ApplicationController
   # GET /addresses/1/edit
   def edit
     @address = Address.find(params[:id])
+    @town = Town.find :all
+    @geo_position = Geo_position.find :all
   end
 
   # POST /addresses

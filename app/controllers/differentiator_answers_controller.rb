@@ -25,6 +25,10 @@ class DifferentiatorAnswersController < ApplicationController
   # GET /differentiator_answers/new.xml
   def new
     @differentiator_answer = DifferentiatorAnswer.new
+    @differentiator_question = DifferentiatorQuestion.find :all
+    @employer = Employer.find :all
+    @user = User.find :all
+    @job_posting = JobPosting.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +39,10 @@ class DifferentiatorAnswersController < ApplicationController
   # GET /differentiator_answers/1/edit
   def edit
     @differentiator_answer = DifferentiatorAnswer.find(params[:id])
+    @differentiator_question = DifferentiatorQuestion.find :all
+    @employer = Employer.find :all
+    @user = User.find :all
+    @job_posting = JobPosting.find :all
   end
 
   # POST /differentiator_answers

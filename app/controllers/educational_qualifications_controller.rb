@@ -25,7 +25,7 @@ class EducationalQualificationsController < ApplicationController
   # GET /educational_qualifications/new.xml
   def new
     @educational_qualification = EducationalQualification.new
-
+    @educational_level = EducationalLevel.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @educational_qualification }

@@ -110,6 +110,17 @@ models:
 # global method "l". See the RDoc for details.
 app:
     add_employer: Add new employer
+    add_town: Add new town
+    add_country: Add new country
+    add_geo_position: Add new geoposition
+    add_user: Add new user
+    add_educational_institution: Add new educational institution
+    add_educational_qualification: Add new educational qualification 
+    add_educational_concentration: Add new educational concentration
+    add_educational_level: Add new educational level
+    add_differentiator_question: Add new differentiator question
+    add_job_posting: Add new job posting
+    
     additional_copyright_information: Additional Copyright Information
     photo_credit: Photo taken by topgold and used under Creative Commons License; click <a href="http://commons.wikimedia.org/wiki/Image:Mount_Everest_%28topgold%29.jpg">here</a> for details.</a>
     copyright_footer: © 2008 Jobyssey, Ltd. All Rights Reserved

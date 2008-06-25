@@ -13,9 +13,9 @@
   <tr>
     <td><%=h educational_institution.name %></td>
     <td><%=h educational_institution.url %></td>
-    <td><%=h educational_institution.town_id %></td>
-    <td><%=h educational_institution.country_id %></td>
-    <td><%=h educational_institution.geo_position_id %></td>
+    <td><%=h educational_institution.town.name %></td>
+    <td><%=h educational_institution.country.name %></td>
+    <td><%=h educational_institution.geo_position.name %></td>
     <td><%= link_to 'Show', educational_institution %></td>
     <td><%= link_to 'Edit', edit_educational_institution_path(educational_institution) %></td>
     <td><%= link_to 'Destroy', educational_institution, :confirm => 'Are you sure?', :method => :delete %></td>
