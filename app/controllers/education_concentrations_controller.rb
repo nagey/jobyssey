@@ -1,6 +1,9 @@
 class EducationConcentrationsController < ApplicationController
   # GET /education_concentrations
   # GET /education_concentrations.xml
+  
+   layout 'index'
+  
   def index
     @education_concentrations = EducationConcentration.find(:all)
 

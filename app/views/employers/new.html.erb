@@ -20,17 +20,22 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :industry_id %><br />
-    <%= f.text_field :industry_id %>
+     <%= f.label :industry %><br />
+   	<%= f.collection_select :industry_id, @industries, :id, :name %>
+	<br>
+	<%= link_to l(:add_industry), new_industry_path %>
+	
   </p>
   <p>
     <%= f.label :search_position %><br />
     <%= f.text_field :search_position %>
   </p>
   <p>
-    <%= f.label :geo_position_id %><br />
-    <%= f.text_field :geo_position_id %>
-  </p>
+     <%= f.label :geo_position %><br />
+   	<%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
+	<br>
+	<%= link_to l(:add_geo_position), new_geo_position_path %>
+	</p>
   <p>
     <%= f.submit "Create" %>
   </p>

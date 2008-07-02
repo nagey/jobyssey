@@ -4,14 +4,18 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+   	<%=f.label :user %><br />
+  	<%= f.collection_select :user_id, @users, :id, :name %>
+	<br>
+	<%= link_to l(:add_user), new_user_path %>
   </p>
   <p>
-    <%= f.label :job_posting_id %><br />
-    <%= f.text_field :job_posting_id %>
-  </p>
-  <p>
+	<%=f.label :job_posting %><br />
+ 	<%= f.collection_select :job_posting_id, @job_postings, :id, :title %>
+	<br>
+	<%= link_to l(:add_job_posting), new_job_posting_path %>
+	</p>
+	<p>
     <%= f.submit "Create" %>
   </p>
 <% end %>

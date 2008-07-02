@@ -13,7 +13,7 @@
     <td><%=h job_application_state.name %></td>
     <td><%=h job_application_state.order %></td>
     <td><%=h job_application_state.workflow_id %></td>
-    <td><%=h job_application_state.job_application_status_type_id %></td>
+    <td><%=h job_application_state.job_application_status_type.name %></td>
     <td><%= link_to 'Show', job_application_state %></td>
     <td><%= link_to 'Edit', edit_job_application_state_path(job_application_state) %></td>
     <td><%= link_to 'Destroy', job_application_state, :confirm => 'Are you sure?', :method => :delete %></td>

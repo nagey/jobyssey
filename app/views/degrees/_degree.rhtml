@@ -1,0 +1,11 @@
+
+<tr>
+    <td><%=h degree.user.name %></td>
+    <td><%=h degree.educational_institution.name unless degree.educational_institution.nil? %></td>
+    <td><%=h degree.educational_qualification.name unless degree.educational_qualification.nil? %></td>
+    <td><%=h degree.education_concentration.name unless degree.education_concentration.nil? %></td>
+    <td><%=h degree.educational_level.level unless degree.educational_level.nil? %></td>
+    <td><%= link_to 'Show', degree %></td>
+    <td><%= link_to 'Edit', edit_degree_path(degree) %></td>
+    <td><%= link_to 'Destroy', degree, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

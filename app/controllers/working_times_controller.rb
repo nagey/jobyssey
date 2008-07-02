@@ -1,6 +1,9 @@
 class WorkingTimesController < ApplicationController
   # GET /working_times
   # GET /working_times.xml
+  
+     layout 'index'
+  
   def index
     @working_times = WorkingTime.find(:all)
 

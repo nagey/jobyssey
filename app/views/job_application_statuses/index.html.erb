@@ -11,11 +11,11 @@
 
 <% for job_application_status in @job_application_statuses %>
   <tr>
-    <td><%=h job_application_status.job_application_id %></td>
-    <td><%=h job_application_status.job_application_state_id %></td>
+    <td><%=h job_application_status.job_application.job_title unless job_application_status.job_application.nil? %></td>
+    <td><%=h job_application_status.job_application_state.name unless job_application_status.job_application_state.nil? %></td>
     <td><%=h job_application_status.note %></td>
     <td><%=h job_application_status.active %></td>
-    <td><%=h job_application_status.user_id %></td>
+    <td><%=h job_application_status.user.name unless job_application_status.user.nil? %></td>
     <td><%= link_to 'Show', job_application_status %></td>
     <td><%= link_to 'Edit', edit_job_application_status_path(job_application_status) %></td>
     <td><%= link_to 'Destroy', job_application_status, :confirm => 'Are you sure?', :method => :delete %></td>

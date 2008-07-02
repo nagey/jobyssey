@@ -1,6 +1,9 @@
 class UserBenefitPreferencesController < ApplicationController
   # GET /user_benefit_preferences
   # GET /user_benefit_preferences.xml
+  
+   layout 'index'
+  
   def index
     @user_benefit_preferences = UserBenefitPreferences.find(:all)
 
@@ -25,7 +28,9 @@ class UserBenefitPreferencesController < ApplicationController
   # GET /user_benefit_preferences/new.xml
   def new
     @user_benefit_preferences = UserBenefitPreferences.new
-
+    @users = User.find :all
+    @benefits = Benefit.find :all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @user_benefit_preferences }
@@ -35,6 +40,8 @@ class UserBenefitPreferencesController < ApplicationController
   # GET /user_benefit_preferences/1/edit
   def edit
     @user_benefit_preferences = UserBenefitPreferences.find(params[:id])
+    @users = User.find :all
+    @preferences = Preference.find :all
   end
 
   # POST /user_benefit_preferences

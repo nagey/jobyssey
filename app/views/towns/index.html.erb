@@ -11,9 +11,9 @@
 <% for town in @towns %>
   <tr>
     <td><%=h town.name %></td>
-    <td><%=h town.administrative_division_id %></td>
-    <td><%=h town.country_id %></td>
-    <td><%=h town.geo_position_id %></td>
+    <td><%=h town.administrative_division.name unless town.administrative_division.nil?%></td>
+    <td><%=h town.country.name unless town.country.nil?%></td>
+    <td><%=h town.geo_position.name unless town.geo_position.nil?%></td>
     <td><%= link_to 'Show', town %></td>
     <td><%= link_to 'Edit', edit_town_path(town) %></td>
     <td><%= link_to 'Destroy', town, :confirm => 'Are you sure?', :method => :delete %></td>

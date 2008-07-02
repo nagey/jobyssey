@@ -1,26 +1,10 @@
 <h1>Listing differentiator_answers</h1>
 
 <table>
-  <tr>
-    <th>Differentiator question</th>
-    <th>Employer</th>
-    <th>User</th>
-    <th>Job posting</th>
-    <th>Name</th>
-  </tr>
+ <%= render :partial => 'differentiator_answer_header' %>
 
-<% for differentiator_answer in @differentiator_answers %>
-  <tr>
-    <td><%=h differentiator_answer.differentiator_question.name %></td>
-    <td><%=h differentiator_answer.employer.name %></td>
-    <td><%=h differentiator_answer.user.name %></td>
-    <td><%=h differentiator_answer.job_posting.name %></td>
-    <td><%=h differentiator_answer.name %></td>
-    <td><%= link_to 'Show', differentiator_answer %></td>
-    <td><%= link_to 'Edit', edit_differentiator_answer_path(differentiator_answer) %></td>
-    <td><%= link_to 'Destroy', differentiator_answer, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <%= render :partial => 'differentiator_answer', :collection => @differentiator_answers, :locals => { :type => 'admin' } %>
+
 </table>
 
 <br />

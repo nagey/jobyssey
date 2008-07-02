@@ -1,13 +1,21 @@
 <p>
   <b>User:</b>
-  <%=h @job_application.user_id %>
+  <%=h @job_application.user.name %>
 </p>
 
 <p>
   <b>Job posting:</b>
-  <%=h @job_application.job_posting_id %>
+  <%=h @job_application.job_posting.id %>
 </p>
 
+
+<% # show job application attachments %>
+<h2><%=l(:job_application_attachments)%></h2>
+<table>
+<%= render :partial => 'job_application_attachments/job_application_attachment_header' %>
+<%= render :partial => 'job_application_attachments/job_application_attachment', :collection => @job_application.job_application_attachments %>
+</table>
+<% # end job application attachments %>
 
 <%= link_to 'Edit', edit_job_application_path(@job_application) %> |
 <%= link_to 'Back', job_applications_path %>

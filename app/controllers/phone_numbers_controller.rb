@@ -1,6 +1,9 @@
 class PhoneNumbersController < ApplicationController
   # GET /phone_numbers
   # GET /phone_numbers.xml
+  
+   layout 'index'
+  
   def index
     @phone_numbers = PhoneNumber.find(:all)
 
@@ -25,7 +28,11 @@ class PhoneNumbersController < ApplicationController
   # GET /phone_numbers/new.xml
   def new
     @phone_number = PhoneNumber.new
-
+    @phone_number_types = PhoneNumberType.find :all
+    @users = User.find :all
+    @countries = Country.find :all
+    
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @phone_number }
@@ -35,6 +42,9 @@ class PhoneNumbersController < ApplicationController
   # GET /phone_numbers/1/edit
   def edit
     @phone_number = PhoneNumber.find(params[:id])
+    @phone_number_types = PhoneNumberType.find :all
+     @users = User.find :all
+     @countries = Country.find :all
   end
 
   # POST /phone_numbers

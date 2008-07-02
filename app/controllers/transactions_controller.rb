@@ -1,6 +1,9 @@
 class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.xml
+  
+   layout 'index'
+  
   def index
     @transactions = Transaction.find(:all)
 
@@ -25,7 +28,9 @@ class TransactionsController < ApplicationController
   # GET /transactions/new.xml
   def new
     @transaction = Transaction.new
-
+    @accounts = Account.find :all
+    @job_applications = JobApplication.find :all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @transaction }
@@ -35,6 +40,8 @@ class TransactionsController < ApplicationController
   # GET /transactions/1/edit
   def edit
     @transaction = Transaction.find(params[:id])
+    @accounts = Account.find :all
+    @job_applications = JobApplication.find :all
   end
 
   # POST /transactions

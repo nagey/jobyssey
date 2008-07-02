@@ -1,0 +1,12 @@
+<% type = '' unless type == 'admin' %>
+
+<tr>
+    <td><%=h differentiator_answer.differentiator_question.name unless differentiator_answer.differentiator_question.nil? %></td>
+    <td><%=h differentiator_answer.employer.name unless differentiator_answer.employer.nil? %></td>
+    <td><%=h differentiator_answer.user.name unless differentiator_answer.user.nil? %></td>
+    <td><%=h differentiator_answer.job_posting.name unless differentiator_answer.job_posting.nil? %></td>
+    <td><%=h differentiator_answer.name unless differentiator_answer.nil? %></td>
+    <td><%= link_to 'Show', differentiator_answer %></td>
+    <td><%= link_to 'Edit', edit_differentiator_answer_path(differentiator_answer) %></td>
+    <td><%= link_to 'Destroy', differentiator_answer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

@@ -1,0 +1,10 @@
+ <tr>
+    <td><%=h transaction.account.id %></td>
+    <td><%=h transaction.transaction_type %></td>
+    <td><%=h transaction.amount %></td>
+    <td><%=h transaction.reference %></td>
+    <td><%=h transaction.job_application.name unless transaction.job_application.nil? %></td>
+    <td><%= link_to 'Show', transaction %></td>
+    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

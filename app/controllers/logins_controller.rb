@@ -1,6 +1,9 @@
 class LoginsController < ApplicationController
   # GET /logins
   # GET /logins.xml
+  
+   layout 'index'
+  
   def index
     @logins = Login.find(:all)
 
@@ -25,6 +28,8 @@ class LoginsController < ApplicationController
   # GET /logins/new.xml
   def new
     @login = Login.new
+    @users = User.find :all
+    @geo_positions = GeoPosition.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +40,8 @@ class LoginsController < ApplicationController
   # GET /logins/1/edit
   def edit
     @login = Login.find(params[:id])
+    @users = User.find :all
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /logins

@@ -43,6 +43,38 @@
   <%=h @user.search_position %>
 </p>
 
+<% # show phone numbers %>
+<h2><%=l(:phone_numbers)%></h2>
+<table>
+<%= render :partial => 'phone_numbers/phone_number_header' %>
+<%= render :partial => 'phone_numbers/phone_number', :collection => @user.phone_numbers %>
+</table>
+<% # end phone numbers %>
+
+<% # show differentiator answers %>
+<h2><%=l(:differentiator_answers)%></h2>
+<table>
+<%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
+<%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @user.differentiator_answers %>
+</table>
+<% # end differentiator answers %>
+
+<% # show work history %>
+<h2><%=l(:work_history_items)%></h2>
+<table>
+<%= render :partial => 'work_history_items/work_history_header' %>
+<%= render :partial => 'work_history_items/work_history_item', :collection => @user.work_history_items %>
+</table>
+<% # end work history %>
+
+<% # show job applications %>
+<h2><%=l(:job_applications)%></h2>
+<table>
+<%= render :partial => 'job_applications/job_application_header' %>
+<%= render :partial => 'job_applications/job_application', :collection => @user.job_applications %>
+</table>
+<% # end job applications %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', user_path %>

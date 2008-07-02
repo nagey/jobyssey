@@ -10,9 +10,9 @@
 <% for administrative_division in @administrative_divisions %>
   <tr>
     <td><%=h administrative_division.name %></td>
-    <td><%=h administrative_division.country.name %></td>
-    <td><%=h administrative_division.geo_position.name %></td>
-    <td><%= link_to 'Show', administrative_division %></td>
+    <td><%=h administrative_division.country.name unless administrative_division.country.nil? %></td>
+    <td><%=h administrative_division.geo_position.name unless administrative_division.geo_position.nil? %></td>
+    <td><%= link_to 'Show', administrative_division  %></td>
     <td><%= link_to 'Edit', edit_administrative_division_path(administrative_division) %></td>
     <td><%= link_to 'Destroy', administrative_division, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

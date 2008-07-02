@@ -1,6 +1,9 @@
 class IndustriesController < ApplicationController
   # GET /industries
   # GET /industries.xml
+  
+   layout 'index'
+  
   def index
     @industries = Industry.find(:all)
 

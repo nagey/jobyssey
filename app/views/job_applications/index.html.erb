@@ -1,20 +1,10 @@
 <h1>Listing job_applications</h1>
 
 <table>
-  <tr>
-    <th>User</th>
-    <th>Job posting</th>
-  </tr>
+  <%= render :partial => 'job_application_header' %>
 
-<% for job_application in @job_applications %>
-  <tr>
-    <td><%=h job_application.user_id %></td>
-    <td><%=h job_application.job_posting_id %></td>
-    <td><%= link_to 'Show', job_application %></td>
-    <td><%= link_to 'Edit', edit_job_application_path(job_application) %></td>
-    <td><%= link_to 'Destroy', job_application, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <%= render :partial => 'job_application', :collection => @job_applications, :locals => { :type => 'admin' }  %>
+
 </table>
 
 <br />

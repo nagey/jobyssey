@@ -8,6 +8,13 @@
   <%=h @account.balance %>
 </p>
 
+<% # show transactions %>
+<h2><%=l(:transactions)%></h2>
+<table>
+<%= render :partial => 'transactions/transaction_header' %>
+<%= render :partial => 'transactions/transactions', :collection => @account.transactions %>
+</table>
+<% # end work history %>
 
 <%= link_to 'Edit', edit_account_path(@account) %> |
 <%= link_to 'Back', accounts_path %>

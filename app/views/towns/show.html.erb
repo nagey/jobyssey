@@ -19,5 +19,12 @@
 </p>
 
 
+<h2><%=l(:post_codes)%></h2>
+<table>
+<%= render :partial => 'post_codes/post_code_header' %>
+<%= render :partial => 'post_codes/post_code', :collection => @town.post_codes %>
+</table>
+<% # end work history %>
+
 <%= link_to 'Edit', edit_town_path(@town) %> |
 <%= link_to 'Back', towns_path %>

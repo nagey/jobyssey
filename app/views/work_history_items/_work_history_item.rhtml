@@ -1,0 +1,19 @@
+<% type = '' unless type == 'admin' %>
+  <tr>
+    <td><%=h work_history_item.user.name %></td>
+    <td><%=h work_history_item.start_date %></td>
+    <td><%=h work_history_item.end_date %></td>
+    <td><%=h work_history_item.salary %></td>
+    <td><%=h work_history_item.description %></td>
+    <td><%=h work_history_item.job_title.name %></td>
+    <td><%=h work_history_item.geo_position.name %></td>
+    <td><%=h work_history_item.administrative_division.name %></td>
+    <td><%=h work_history_item.town.name %></td>
+    <td><%=h work_history_item.country.name %></td>
+    <td><%=h work_history_item.employer.name %></td>
+    <td><%=h work_history_item.employment_type.name %></td>
+    <td><%=h work_history_item.working_time.name %></td>
+    <td><%= link_to 'Show', work_history_item if type == 'admin' %></td>
+    <td><%= link_to 'Edit', edit_work_history_item_path(work_history_item) if type == 'admin' %></td>
+    <td><%= link_to 'Destroy', work_history_item, :confirm => 'Are you sure?', :method => :delete if type == 'admin' %></td>
+  </tr>

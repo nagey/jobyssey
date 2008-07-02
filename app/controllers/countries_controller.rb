@@ -1,6 +1,9 @@
 class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.xml
+  
+   layout 'index'
+  
   def index
     @countries = Country.find(:all)
 

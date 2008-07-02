@@ -1,6 +1,9 @@
 class EducationalLevelsController < ApplicationController
   # GET /educational_levels
   # GET /educational_levels.xml
+  
+   layout 'index'
+  
   def index
     @educational_levels = EducationalLevel.find(:all)
 

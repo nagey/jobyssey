@@ -1,6 +1,9 @@
 class AccountsController < ApplicationController
   # GET /admin/accounts
   # GET /admin/accounts.xml
+  
+   layout 'index'
+  
   def index
     @accounts = Account.find(:all)
 

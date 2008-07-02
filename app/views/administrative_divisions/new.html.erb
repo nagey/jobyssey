@@ -2,28 +2,23 @@
 
 <% form_for(@administrative_division) do |f| %>
   <%= f.error_messages %>
+<p>
+ 	<%= f.label :name %><br \>
+	<%=f.text_field :name %>
+	</p>
+	<p>
 
-	<%= f.collection_select :country, @country, :name, :name %>
+	<%=f.label :country %><br />
+	<%= f.collection_select :country_id, @countries, :id, :name %>
 	<br>
-	<% link_to l(:add_country), new_country_path %>
+	<%= link_to l(:add_country), new_country_path %>
 
 	<br>
-	<%= f.collection_select :geo_position, @geo_position, :name, :name %>
+	<%=f.label :geo_position_id %><br />
+   	<%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
 	<br>
-	<% link_to l(:add_geo_position), new_geo_position_path %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :country_id %><br />
-    <%= f.text_field :country_id %>
-  </p>
-  <p>
-    <%= f.label :geo_position_id %><br />
-    <%= f.text_field :geo_position_id %>
-  </p>
+	<%= link_to l(:add_geo_position), new_geo_position_path %>
+	
   <p>
     <%= f.submit "Create" %>
   </p>

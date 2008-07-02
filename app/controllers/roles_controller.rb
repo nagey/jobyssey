@@ -1,6 +1,9 @@
 class RolesController < ApplicationController
   # GET /roles
   # GET /roles.xml
+  
+   layout 'index'
+  
   def index
     @roles = Role.find(:all)
 
@@ -25,7 +28,7 @@ class RolesController < ApplicationController
   # GET /roles/new.xml
   def new
     @role = Role.new
-
+    @employers = Employer.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @role }
@@ -35,6 +38,7 @@ class RolesController < ApplicationController
   # GET /roles/1/edit
   def edit
     @role = Role.find(params[:id])
+    @employers = Employers.find :all
   end
 
   # POST /roles

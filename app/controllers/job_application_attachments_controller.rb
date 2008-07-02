@@ -1,6 +1,9 @@
 class JobApplicationAttachmentsController < ApplicationController
   # GET /job_application_attachments
   # GET /job_application_attachments.xml
+  
+   layout 'index'
+  
   def index
     @job_application_attachments = JobApplicationAttachment.find(:all)
 
@@ -25,6 +28,7 @@ class JobApplicationAttachmentsController < ApplicationController
   # GET /job_application_attachments/new.xml
   def new
     @job_application_attachment = JobApplicationAttachment.new
+    @job_applications = JobApplication.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +39,7 @@ class JobApplicationAttachmentsController < ApplicationController
   # GET /job_application_attachments/1/edit
   def edit
     @job_application_attachment = JobApplicationAttachment.find(params[:id])
+    @job_applications = JobApplication.find :all
   end
 
   # POST /job_application_attachments

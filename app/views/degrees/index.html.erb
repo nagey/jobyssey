@@ -1,26 +1,11 @@
 <h1>Listing degrees</h1>
 
 <table>
-  <tr>
-    <th>User</th>
-    <th>Educational institution</th>
-    <th>Educational qualification</th>
-    <th>Education concentration</th>
-    <th>Level</th>
-  </tr>
+ <%= render :partial => 'degree_header' %>
 
-<% for degree in @degrees %>
-  <tr>
-    <td><%=h degree.user.name %></td>
-    <td><%=h degree.educational_institution.name %></td>
-    <td><%=h degree.educational_qualification.name %></td>
-    <td><%=h degree.educational_concentration.name %></td>
-    <td><%=h degree.educational_level.name %></td>
-    <td><%= link_to 'Show', degree %></td>
-    <td><%= link_to 'Edit', edit_degree_path(degree) %></td>
-    <td><%= link_to 'Destroy', degree, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+
+ <%= render :partial => 'degree', :collection => @degrees %>
+
 </table>
 
 <br />

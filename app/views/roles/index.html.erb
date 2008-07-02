@@ -1,20 +1,12 @@
 <h1>Listing roles</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Employer</th>
-  </tr>
+ <%= render :partial => 'role_header' %>
 
-<% for role in @roles %>
-  <tr>
-    <td><%=h role.name %></td>
-    <td><%=h role.employer_id %></td>
-    <td><%= link_to 'Show', role %></td>
-    <td><%= link_to 'Edit', edit_role_path(role) %></td>
-    <td><%= link_to 'Destroy', role, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+
+
+  <%= render :partial => 'role', :collection => @roles %>
+
 </table>
 
 <br />

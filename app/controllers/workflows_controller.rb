@@ -1,6 +1,9 @@
 class WorkflowsController < ApplicationController
   # GET /workflows
   # GET /workflows.xml
+  
+     layout 'index'
+  
   def index
     @workflows = Workflow.find(:all)
 

@@ -1,6 +1,9 @@
 class BenefitsController < ApplicationController
   # GET /benefits
   # GET /benefits.xml
+  
+   layout 'index'
+  
   def index
     @benefits = Benefit.find(:all)
 

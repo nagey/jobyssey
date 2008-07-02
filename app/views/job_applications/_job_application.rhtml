@@ -1,0 +1,9 @@
+<% type = '' unless type == 'admin' %>
+<tr>
+    <td><%=h job_application.user.name unless job_application.user.nil? %></td>
+    <td><%=h job_application.job_posting.title unless job_application.job_posting.nil? %></td>
+    <td>Can we add status here?</td>
+    <td><%= link_to 'Show', job_application %></td>
+    <td><%= link_to 'Edit', edit_job_application_path(job_application) %></td>
+    <td><%= link_to 'Destroy', job_application, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

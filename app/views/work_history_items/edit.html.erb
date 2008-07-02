@@ -3,9 +3,11 @@
 <% form_for(@work_history_item) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+   <p>
+    <%=f.label :user %><br />
+   	<%= f.collection_select :user_id, @users, :id, :name %>
+	<br>
+	<%= link_to l(:add_user), new_user_path %>
   </p>
   <p>
     <%= f.label :start_date %><br />
@@ -24,36 +26,52 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :job_title_id %><br />
-    <%= f.text_field :job_title_id %>
+     <%=f.label :job_title %><br />
+ 	<%= f.collection_select :job_title_id, @job_titles, :id, :name %>
+	<br>
+	<%= link_to l(:add_job_title), new_job_title_path %>
   </p>
   <p>
-    <%= f.label :geo_position_id %><br />
-    <%= f.text_field :geo_position_id %>
+     <%=f.label :geo_position %><br />
+ 	<%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
+	<br>
+	<%= link_to l(:add_geo_position), new_geo_position_path %>
   </p>
   <p>
-    <%= f.label :administrative_division_id %><br />
-    <%= f.text_field :administrative_division_id %>
+     <%=f.label :administrative_division %><br />
+ 	<%= f.collection_select :administrative_division_id, @administrative_divisions, :id, :name %>
+	<br>
+	<%= link_to l(:add_administrative_division), new_administrative_division_path %>
   </p>
   <p>
-    <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
+     <%=f.label :town %><br />
+ 	<%= f.collection_select :town_id, @towns, :id, :name %>
+	<br>
+	<%= link_to l(:add_town), new_town_path %>
   </p>
   <p>
-    <%= f.label :country_id %><br />
-    <%= f.text_field :country_id %>
+     <%=f.label :country %><br />
+ 	<%= f.collection_select :country_id, @countries, :id, :name %>
+	<br>
+	<%= link_to l(:add_country), new_country_path %>
   </p>
   <p>
-    <%= f.label :employer_id %><br />
-    <%= f.text_field :employer_id %>
+	 <%=f.label :employer %><br />
+	<%= f.collection_select :employer_id, @employers, :id, :name %>
+	<br>
+	<%= link_to l(:add_employer), new_employer_path %>
   </p>
   <p>
-    <%= f.label :employment_type_id %><br />
-    <%= f.text_field :employment_type_id %>
+	 <%=f.label :employment_type %><br />
+	<%= f.collection_select :employment_type_id, @employment_types, :id, :name %>
+	<br>
+	<%= link_to l(:add_employment_type), new_employment_type_path %>
   </p>
   <p>
-    <%= f.label :working_time_id %><br />
-    <%= f.text_field :working_time_id %>
+  	 <%=f.label :working_time %><br />
+ 	<%= f.collection_select :working_time_id, @working_times, :id, :name %>
+	<br>
+	<%= link_to l(:add_working_time), new_working_time_path %>
   </p>
   <p>
     <%= f.submit "Update" %>

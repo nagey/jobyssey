@@ -1,6 +1,9 @@
 class JobApplicationStatesController < ApplicationController
   # GET /job_application_states
   # GET /job_application_states.xml
+  
+   layout 'index'
+  
   def index
     @job_application_states = JobApplicationState.find(:all)
 
@@ -25,7 +28,7 @@ class JobApplicationStatesController < ApplicationController
   # GET /job_application_states/new.xml
   def new
     @job_application_state = JobApplicationState.new
-
+    @job_application_status_types = JobApplicationStatusType.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @job_application_state }
@@ -35,6 +38,7 @@ class JobApplicationStatesController < ApplicationController
   # GET /job_application_states/1/edit
   def edit
     @job_application_state = JobApplicationState.find(params[:id])
+    @job_application_status_types = JobApplicationStatusType.find :all
   end
 
   # POST /job_application_states

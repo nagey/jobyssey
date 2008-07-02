@@ -1,6 +1,9 @@
 class PhoneNumberTypesController < ApplicationController
   # GET /phone_number_types
   # GET /phone_number_types.xml
+  
+   layout 'index'
+  
   def index
     @phone_number_types = PhoneNumberType.find(:all)
 

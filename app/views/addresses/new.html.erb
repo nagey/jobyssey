@@ -2,10 +2,6 @@
 
 <% form_for(@address) do |f| %>
   <%= f.error_messages %>
-
-
-	<br>
-
 <p>
     <%= f.label :address1 %><br />
     <%= f.text_field :address1 %>
@@ -15,14 +11,16 @@
     <%= f.text_field :address2 %>
   </p>
   <p>
-    <%= f.collection_select :town, @town, :name, :name %>
+    <%=f.label :town_id %><br />
+	<%= f.collection_select :town_id, @towns, :id, :name %>
 	<br>
-	<% link_to l(:add_town), new_town_path %>
+	<%= link_to l(:add_town), new_town_path %>
   </p>
   <p>
-   	<%= f.collection_select :geo_position, @geo_position, :name, :name %>
+	 <%=f.label :geo_position_id %><br />
+   	<%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
 	<br>
-	<% link_to l(:add_geo_position), new_geo_position_path %>
+	<%= link_to l(:add_geo_position), new_geo_position_path %>
 
   </p>
   <p>

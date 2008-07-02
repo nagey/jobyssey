@@ -1,6 +1,9 @@
 class JobPostingsController < ApplicationController
   # GET /job_postings
   # GET /job_postings.xml
+  
+   layout 'index'
+  
   def index
     @job_postings = JobPosting.find(:all)
 
@@ -25,7 +28,9 @@ class JobPostingsController < ApplicationController
   # GET /job_postings/new.xml
   def new
     @job_posting = JobPosting.new
-
+    @employers = Employer.find :all
+    @working_times = WorkingTime.find :all
+    @employment_types = EmploymentType.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @job_posting }
@@ -35,6 +40,9 @@ class JobPostingsController < ApplicationController
   # GET /job_postings/1/edit
   def edit
     @job_posting = JobPosting.find(params[:id])
+    @employers = Employer.find :all
+    @working_times = WorkingTime.find :all
+    @employment_types = EmploymentType.find :all
   end
 
   # POST /job_postings

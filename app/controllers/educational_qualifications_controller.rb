@@ -1,6 +1,9 @@
 class EducationalQualificationsController < ApplicationController
   # GET /educational_qualifications
   # GET /educational_qualifications.xml
+  
+   layout 'index'
+  
   def index
     @educational_qualifications = EducationalQualification.find(:all)
 
@@ -25,7 +28,7 @@ class EducationalQualificationsController < ApplicationController
   # GET /educational_qualifications/new.xml
   def new
     @educational_qualification = EducationalQualification.new
-    @educational_level = EducationalLevel.new
+    @educational_levels = EducationalLevel.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @educational_qualification }
@@ -35,6 +38,7 @@ class EducationalQualificationsController < ApplicationController
   # GET /educational_qualifications/1/edit
   def edit
     @educational_qualification = EducationalQualification.find(params[:id])
+    @educational_levels = EducationalLevel.find :all
   end
 
   # POST /educational_qualifications

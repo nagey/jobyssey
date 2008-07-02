@@ -12,8 +12,8 @@
   <tr>
     <td><%=h address.address1 %></td>
     <td><%=h address.address2 %></td>
-    <td><%=h address.town.name %></td>
-    <td><%=h address.geo_position.name %></td>
+    <td><%=h address.town.name unless address.town.nil? %>
+    <td><%=h address.geo_position.name unless address.geo_position.nil? %></td>
     <td><%= link_to 'Show', address %></td>
     <td><%= link_to 'Edit', edit_address_path(address) %></td>
     <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>

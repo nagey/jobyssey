@@ -1,6 +1,9 @@
 class DegreesController < ApplicationController
   # GET /degrees
   # GET /degrees.xml
+  
+   layout 'index'
+  
   def index
     @degrees = Degree.find(:all)
 
@@ -25,11 +28,11 @@ class DegreesController < ApplicationController
   # GET /degrees/new.xml
   def new
     @degree = Degree.new
-    @user = User.find :all
-    @educational_institution = EducationalInstitution.find :all
-    @educational_qualification = EducationalQualification.find :all
-    @education_concentration = EducationalConcentration.find :all
-    @educational_level = EducationalLevel.find :all
+    @users = User.find :all
+    @educational_institutions = EducationalInstitution.find :all
+    @educational_qualifications = EducationalQualification.find :all
+    @education_concentrations = EducationConcentration.find :all
+    @educational_levels = EducationalLevel.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +43,11 @@ class DegreesController < ApplicationController
   # GET /degrees/1/edit
   def edit
     @degree = Degree.find(params[:id])
-    @user = User.find :all
-    @educational_institution = EducationalInstitution.find :all
-    @educational_qualification = EducationalQualification.find :all
-    @education_concentration = EducationalConcentration.find :all
-    @educational_level = EducationalLevel.find :all
+    @users = User.find :all
+    @educational_institutions = EducationalInstitution.find :all
+    @educational_qualifications = EducationalQualification.find :all
+    @education_concentrations = EducationConcentration.find :all
+    @educational_levels = EducationalLevel.find :all
   end
 
   # POST /degrees

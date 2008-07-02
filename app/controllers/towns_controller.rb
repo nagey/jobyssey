@@ -1,6 +1,9 @@
 class TownsController < ApplicationController
   # GET /towns
   # GET /towns.xml
+  
+   layout 'index'
+  
   def index
     @towns = Town.find(:all)
 
@@ -25,7 +28,9 @@ class TownsController < ApplicationController
   # GET /towns/new.xml
   def new
     @town = Town.new
-
+    @countries = Country.find :all
+    @administrative_divisions = AdministrativeDivision.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @town }
@@ -35,6 +40,9 @@ class TownsController < ApplicationController
   # GET /towns/1/edit
   def edit
     @town = Town.find(params[:id])
+    @countries = Country.find :all
+    @administrative_divisions = AdministrativeDivision.find :all
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /towns

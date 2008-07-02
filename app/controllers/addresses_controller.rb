@@ -1,6 +1,9 @@
 class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.xml
+  
+  layout 'index'
+  
   def index
     @addresses = Address.find(:all)
 
@@ -25,8 +28,8 @@ class AddressesController < ApplicationController
   # GET /addresses/new.xml
   def new
     @address = Address.new
-    @town = Town.find :all
-    @geo_position = GeoPosition.find :all
+    @towns = Town.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @address }
@@ -36,15 +39,15 @@ class AddressesController < ApplicationController
   # GET /addresses/1/edit
   def edit
     @address = Address.find(params[:id])
-    @town = Town.find :all
-    @geo_position = Geo_position.find :all
+    @towns = Town.find :all
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /addresses
   # POST /addresses.xml
   def create
+    debugger
     @address = Address.new(params[:address])
-
     respond_to do |format|
       if @address.save
         flash[:notice] = 'Address was successfully created.'

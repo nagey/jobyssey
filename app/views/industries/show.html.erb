@@ -9,5 +9,13 @@
 </p>
 
 
+<% # show employers %>
+<h2><%=l(:employers)%></h2>
+<table>
+<%= render :partial => 'employers/employer_header' %>
+<%= render :partial => 'employers/employer', :collection => @industry.employers %>
+</table>
+<% # end job applications %>
+
 <%= link_to 'Edit', edit_industry_path(@industry) %> |
 <%= link_to 'Back', industries_path %>

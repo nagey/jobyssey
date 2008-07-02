@@ -1,6 +1,9 @@
 class EmploymentTypesController < ApplicationController
   # GET /employment_types
   # GET /employment_types.xml
+  
+   layout 'index'
+  
   def index
     @employment_types = EmploymentType.find(:all)
 
