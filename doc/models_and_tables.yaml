@@ -93,6 +93,14 @@ employers_workflows:
 employment_type:
     name:string
 
+feedback_item:
+    job_application_id:integer
+    user_id:integer
+    on_time:boolean
+    serious:boolean
+    honest:boolean
+    description:text
+
 geo_position:
     longitude:decimal
     latitude:decimal

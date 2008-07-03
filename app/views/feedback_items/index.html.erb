@@ -1,0 +1,30 @@
+<h1>Listing feedback_items</h1>
+
+<table>
+  <tr>
+    <th>Job application</th>
+    <th>User</th>
+    <th>On time</th>
+    <th>Serious</th>
+    <th>Honest</th>
+    <th>Description</th>
+  </tr>
+
+<% for feedback_item in @feedback_items %>
+  <tr>
+    <td><%=h feedback_item.job_application_id %></td>
+    <td><%=h feedback_item.user_id %></td>
+    <td><%=h feedback_item.on_time %></td>
+    <td><%=h feedback_item.serious %></td>
+    <td><%=h feedback_item.honest %></td>
+    <td><%=h feedback_item.description %></td>
+    <td><%= link_to 'Show', feedback_item %></td>
+    <td><%= link_to 'Edit', edit_feedback_item_path(feedback_item) %></td>
+    <td><%= link_to 'Destroy', feedback_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New feedback_item', new_feedback_item_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  job_application_id: 1
+  user_id: 1
+  on_time: false
+  serious: false
+  honest: false
+  description: MyText
+
+two:
+  job_application_id: 1
+  user_id: 1
+  on_time: false
+  serious: false
+  honest: false
+  description: MyText
