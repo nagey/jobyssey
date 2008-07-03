@@ -260,11 +260,9 @@ em
 	line-height: 8px;
 }
 
-
-
 #content a
 {
-	color: #000000;
+	color: #242463;
 }
 
 ul 
@@ -431,7 +429,7 @@ tbody tr {
  border-bottom: 2px solid #c0c0c0;
 }
 tbody td {
- color:#002084;
+ color:#222222;
  padding:5px;
  text-align:left;
 }
