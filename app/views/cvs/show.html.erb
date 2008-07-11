@@ -1,0 +1,18 @@
+<p>
+  <b>Attachment:</b>
+  <%=h @cv.attachment %>
+</p>
+
+<p>
+  <b>Entity:</b>
+  <%=h @cv.entity_id %>
+</p>
+
+<p>
+  <b>Entity type:</b>
+  <%=h @cv.entity_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_cv_path(@cv) %> |
+<%= link_to 'Back', cvs_path %>

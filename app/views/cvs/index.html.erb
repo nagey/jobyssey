@@ -1,0 +1,24 @@
+<h1>Listing cvs</h1>
+
+<table>
+  <tr>
+    <th>Attachment</th>
+    <th>Entity</th>
+    <th>Entity type</th>
+  </tr>
+
+<% for cv in @cvs %>
+  <tr>
+    <td><%=h cv.attachment %></td>
+    <td><%=h cv.entity_id %></td>
+    <td><%=h cv.entity_type %></td>
+    <td><%= link_to 'Show', cv %></td>
+    <td><%= link_to 'Edit', edit_cv_path(cv) %></td>
+    <td><%= link_to 'Destroy', cv, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cv', new_cv_path %>

@@ -17,6 +17,15 @@ administrative_division:
     country_id:string
     geo_position_id:string
 
+attachment:
+    entity_id:integer
+    entity_type:string
+    name:string
+    url:string
+    description:text
+    attachment:binary
+    file_name:string
+    content_type:string
 benefit:
     name:string
 

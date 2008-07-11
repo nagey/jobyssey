@@ -3,22 +3,24 @@ class ProfessionalsController < ApplicationController
   layout 'index'
   
   def index
-    @professional = Professional.new
+    @cv = Cv.new
   end
   
   def signup
-    @professional = Professional.new params[:professional]
-    session[:professional] = @professional
-    render :action => :index unless @professional.valid?
+    @cv = Cv.new params[:cv]
+    @professional = Professional.new
+    session[:cv] = @cv
+    render :action => :index unless @cv.valid?
   end
 
   def create
-    @professional = session[:professional]
+    @professional = Professional.new
+    @professional.cv = session[:cv]
     @professional.update_attributes params[:professional]
     if @professional.save
       session[:user_id] = @professional.id
       session[:professional] = nil
-      redirect_to :controller => :skills, :action => :define
+      redirect_to :controller => :skillset, :action => :start
     else
       render :action => :signup
     end

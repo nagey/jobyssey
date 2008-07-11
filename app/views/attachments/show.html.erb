@@ -1,0 +1,43 @@
+<p>
+  <b>Entity:</b>
+  <%=h @attachment.entity_id %>
+</p>
+
+<p>
+  <b>Entity type:</b>
+  <%=h @attachment.entity_type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @attachment.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @attachment.url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @attachment.description %>
+</p>
+
+<p>
+  <b>Attachment:</b>
+  <%=h @attachment.attachment %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%=h @attachment.file_name %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h @attachment.content_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+<%= link_to 'Back', attachments_path %>

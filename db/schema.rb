@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080711073151) do
+ActiveRecord::Schema.define(:version => 20080711111639) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "employer_id"
@@ -45,6 +45,20 @@ ActiveRecord::Schema.define(:version => 20080711073151) do
     t.string   "name"
     t.integer  "country_id"
     t.integer  "geo_position_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.integer  "entity_id"
+    t.string   "entity_type"
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
+    t.binary   "attachment"
+    t.string   "file_name"
+    t.string   "content_type"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -298,6 +312,7 @@ ActiveRecord::Schema.define(:version => 20080711073151) do
     t.datetime "updated_at"
     t.string   "display_name"
     t.string   "trait_type",   :default => "job_posting"
+    t.integer  "synonym_id"
   end
 
   create_table "personal_qualities", :force => true do |t|
