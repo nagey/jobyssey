@@ -1,6 +1,9 @@
 class RequiredDegreesController < ApplicationController
   # GET /required_degrees
   # GET /required_degrees.xml
+  
+   layout 'index'
+  
   def index
     @required_degrees = RequiredDegree.find(:all)
 
@@ -25,7 +28,9 @@ class RequiredDegreesController < ApplicationController
   # GET /required_degrees/new.xml
   def new
     @required_degree = RequiredDegree.new
-
+    @job_postings = JobPosting.find :all
+    @education_concentrations = EducationConcentration.find :all
+    @educational_levels = EducationalLevel.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @required_degree }
@@ -35,6 +40,9 @@ class RequiredDegreesController < ApplicationController
   # GET /required_degrees/1/edit
   def edit
     @required_degree = RequiredDegree.find(params[:id])
+    @job_postings = JobPosting.find :all
+    @education_concentrations = EducationConcentrations.find :all
+    @educational_levels = EducationalLevel.find :all
   end
 
   # POST /required_degrees

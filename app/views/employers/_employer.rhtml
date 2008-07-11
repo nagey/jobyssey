@@ -1,0 +1,12 @@
+ <tr>
+    <td><%=h employer.name %></td>
+    <td><%=h employer.tagline %></td>
+    <td><%=h employer.size %></td>
+    <td><%=h employer.description %></td>
+    <td><%=h employer.industry.name unless employer.industry.nil?%></td>
+    <td><%=h employer.search_position %></td>
+    <td><%=h employer.geo_position.latitude unless employer.geo_position.nil? %></td>
+    <td><%= link_to 'Show', employer %></td>
+    <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
+    <td><%= link_to 'Destroy', employer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

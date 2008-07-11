@@ -1,0 +1,8 @@
+<tr>
+    <td><%=h post_code.name %></td>
+    <td><%=h post_code.town.name %></td>
+    <td><%=h post_code.geo_position.latitude %></td>
+    <td><%= link_to 'Show', post_code %></td>
+    <td><%= link_to 'Edit', edit_post_code_path(post_code) %></td>
+    <td><%= link_to 'Destroy', post_code, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

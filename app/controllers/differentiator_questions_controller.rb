@@ -1,6 +1,9 @@
 class DifferentiatorQuestionsController < ApplicationController
   # GET /differentiator_questions
   # GET /differentiator_questions.xml
+  
+   layout 'index'
+  
   def index
     @differentiator_questions = DifferentiatorQuestion.find(:all)
 

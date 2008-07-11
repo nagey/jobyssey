@@ -16,8 +16,10 @@
     <%= f.text_field :workflow_id %>
   </p>
   <p>
-    <%= f.label :job_application_status_type_id %><br />
-    <%= f.text_field :job_application_status_type_id %>
+    <%= f.label :job_application_status_type %><br />
+   	<%= f.collection_select :job_application_status_type, @ob_application_status_types, :name, :name %>
+	<br>
+	<%= link_to l(:add_ob_application_status_type), new_ob_application_status_type_path %>
   </p>
   <p>
     <%= f.submit "Update" %>

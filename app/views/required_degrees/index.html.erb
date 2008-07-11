@@ -1,22 +1,11 @@
 <h1>Listing required_degrees</h1>
 
 <table>
-  <tr>
-    <th>Job posting</th>
-    <th>Level</th>
-    <th>Education concentration</th>
-  </tr>
+ <%= render :partial => 'required_degrees_header' %>
 
-<% for required_degree in @required_degrees %>
-  <tr>
-    <td><%=h required_degree.job_posting_id %></td>
-    <td><%=h required_degree.level %></td>
-    <td><%=h required_degree.education_concentration_id %></td>
-    <td><%= link_to 'Show', required_degree %></td>
-    <td><%= link_to 'Edit', edit_required_degree_path(required_degree) %></td>
-    <td><%= link_to 'Destroy', required_degree, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+
+  <%= render :partial => 'required_degree', :collection => @required_degrees %>
+
 </table>
 
 <br />

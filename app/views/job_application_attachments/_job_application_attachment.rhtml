@@ -1,0 +1,10 @@
+<tr>
+    <td><%=h job_application_attachment.job_application.job_title unless job_application_attachment.job_application.nil? %></td>
+    <td><%=h job_application_attachment.type %></td>
+    <td><%=h job_application_attachment.name %></td>
+    <td><%=h job_application_attachment.url %></td>
+    <td><%=h job_application_attachment.description %></td>
+    <td><%= link_to 'Show', job_application_attachment %></td>
+    <td><%= link_to 'Edit', edit_job_application_attachment_path(job_application_attachment) %></td>
+    <td><%= link_to 'Destroy', job_application_attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

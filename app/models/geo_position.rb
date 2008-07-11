@@ -7,4 +7,8 @@ class GeoPosition < ActiveRecord::Base
   has_many :post_codes
   has_many :towns
   has_many :work_history_items
+ 
+  def name
+    latitude.to_s + longitude.to_s
+  end
 end

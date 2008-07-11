@@ -1,6 +1,9 @@
 class EducationalInstitutionsController < ApplicationController
   # GET /educational_institutions
   # GET /educational_institutions.xml
+  
+   layout 'index'
+  
   def index
     @educational_institutions = EducationalInstitution.find(:all)
 
@@ -25,9 +28,9 @@ class EducationalInstitutionsController < ApplicationController
   # GET /educational_institutions/new.xml
   def new
     @educational_institution = EducationalInstitution.new
-    @town = Town.find :all
-    @country = Country.find :all
-    @geo_position = GeoPosition.find :all
+    @towns = Town.find :all
+    @countries = Country.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @educational_institution }
@@ -37,14 +40,15 @@ class EducationalInstitutionsController < ApplicationController
   # GET /educational_institutions/1/edit
   def edit
     @educational_institution = EducationalInstitution.find(params[:id])
-     @town = Town.find :all
-      @country = Country.find :all
-      @geo_position = GeoPosition.find :all
+    @towns = Town.find :all
+    @countries = Country.find :all
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /educational_institutions
   # POST /educational_institutions.xml
   def create
+    debugger
     @educational_institution = EducationalInstitution.new(params[:educational_institution])
 
     respond_to do |format|

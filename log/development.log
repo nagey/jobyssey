@@ -1,3 +1,4 @@
+<<<<<<< HEAD:log/development.log
   [4;36;1mSQL (0.019565)[0m   [0;1mselect sqlite_version(*)[0m
   [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
   [4;36;1mSQL (0.000205)[0m   [0;1m SELECT name
@@ -29412,3 +29413,5 @@ Processing JobPostingsController#new (for 127.0.0.1 at 2008-07-11 09:23:57) [GET
 Rendering template within layouts/job_postings
 Rendering job_postings/new
 Completed in 0.03541 (28 reqs/sec) | Rendering: 0.00741 (20%) | DB: 0.00206 (5%) | 200 OK [http://localhost/job_postings/new]
+=======
+>>>>>>> 5139b08b75a029db03fd094d1214d9da20a802d0:log/development.log

@@ -1,6 +1,9 @@
 class WorkHistoryItemsController < ApplicationController
   # GET /work_history_items
   # GET /work_history_items.xml
+  
+     layout 'index'
+  
   def index
     @work_history_items = WorkHistoryItem.find(:all)
 
@@ -25,7 +28,16 @@ class WorkHistoryItemsController < ApplicationController
   # GET /work_history_items/new.xml
   def new
     @work_history_item = WorkHistoryItem.new
-
+    @users = User.find :all
+    @job_titles = JobTitle.find :all
+    @geo_positions = GeoPosition.find :all
+    @administrative_divisions = AdministrativeDivision.find :all
+    @towns = Town.find :all
+    @countries = Country.find :all
+    @employers = Employer.find :all
+    @employment_types = EmploymentType.find :all
+    @working_times = WorkingTime.find :all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @work_history_item }
@@ -35,6 +47,15 @@ class WorkHistoryItemsController < ApplicationController
   # GET /work_history_items/1/edit
   def edit
     @work_history_item = WorkHistoryItem.find(params[:id])
+    @users = User.find :all
+    @job_titles = JobTitle.find :all
+    @geo_positions = GeoPosition.find :all
+    @administrative_divisions = AdministrativeDivision.find :all
+    @towns = Town.find :all
+    @countries = Country.find :all
+    @employers = Employer.find :all
+    @employment_types = EmploymentType.find :all
+    @working_times = WorkingTime.find :all
   end
 
   # POST /work_history_items

@@ -11,6 +11,7 @@
     <th>Type</th>
     <th>Employer</th>
     <th>Search position</th>
+    <th>Work History Items</th>
   </tr>
 
 <% for user in @users %>
@@ -22,8 +23,9 @@
     <td><%=h user.password %></td>
     <td><%=h user.code_name %></td>
     <td><%=h user.type %></td>
-    <td><%=h user.employer_id %></td>
+    <td><%=h user.employer.name unless user.employer.nil? %></td>
     <td><%=h user.search_position %></td>
+    <td><%=h user.work_history_items.length%></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

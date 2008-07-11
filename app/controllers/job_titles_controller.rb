@@ -1,6 +1,9 @@
 class JobTitlesController < ApplicationController
   # GET /job_titles
   # GET /job_titles.xml
+  
+   layout 'index'
+  
   def index
     @job_titles = JobTitle.find(:all)
 

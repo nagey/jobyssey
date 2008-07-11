@@ -4,12 +4,16 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :job_application_id %><br />
-    <%= f.text_field :job_application_id %>
+    <%= f.label :job_application %><br />
+   	<%= f.collection_select :job_application_id, @job_applications, :id, :job_title %>
+	<br>
+	<%= link_to l(:add_job_application), new_job_application_path %>
   </p>
   <p>
-    <%= f.label :job_application_state_id %><br />
-    <%= f.text_field :job_application_state_id %>
+    <%= f.label :job_application_state %><br />
+   	<%= f.collection_select :job_application_state_id, @job_application_states, :id, :name %>
+	<br>
+	<%= link_to l(:add_job_application_state), new_job_application_state_path %>
   </p>
   <p>
     <%= f.label :note %><br />
@@ -20,8 +24,10 @@
     <%= f.check_box :active %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :user %><br />
+    <%= f.collection_select :user_id, @users, :id, :name %>
+	<br>
+	<%= link_to l(:add_user), new_user_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

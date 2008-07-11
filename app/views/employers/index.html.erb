@@ -1,30 +1,12 @@
 <h1>Listing employers</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Tagline</th>
-    <th>Size</th>
-    <th>Description</th>
-    <th>Industry</th>
-    <th>Search position</th>
-    <th>Geo position</th>
-  </tr>
+  <%= render :partial => 'employer_header' %>
 
-<% for employer in @employers %>
-  <tr>
-    <td><%=h employer.name %></td>
-    <td><%=h employer.tagline %></td>
-    <td><%=h employer.size %></td>
-    <td><%=h employer.description %></td>
-    <td><%=h employer.industry_id %></td>
-    <td><%=h employer.search_position %></td>
-    <td><%=h employer.geo_position_id %></td>
-    <td><%= link_to 'Show', employer %></td>
-    <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
-    <td><%= link_to 'Destroy', employer, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+
+
+ <%= render :partial => 'employer', :collection => @employers %>
+
 </table>
 
 <br />

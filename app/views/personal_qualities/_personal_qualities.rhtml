@@ -1,0 +1,10 @@
+  <tr>
+    <td><%=h personal_quality.user.name %></td>
+    <td><%=h personal_quality.metric.name unless personal_quality.metric.nil? %></td>
+    <td><%=h personal_quality.value %></td>
+    <td><%= link_to 'Show', personal_quality %></td>
+    <td><%= link_to 'Edit', edit_personal_quality_path(personal_quality) %></td>
+    <td><%= link_to 'Destroy', personal_quality, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+
+</table>

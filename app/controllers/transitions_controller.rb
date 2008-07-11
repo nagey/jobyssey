@@ -1,6 +1,9 @@
 class TransitionsController < ApplicationController
   # GET /transitions
   # GET /transitions.xml
+  
+   layout 'index'
+  
   def index
     @transitions = Transition.find(:all)
 

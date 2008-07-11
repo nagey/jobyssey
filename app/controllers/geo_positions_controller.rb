@@ -1,8 +1,11 @@
 class GeoPositionsController < ApplicationController
   # GET /geo_positions
   # GET /geo_positions.xml
+  
+   layout 'index'
+  
   def index
-    @geo_positions = Geo_position.find(:all)
+    @geo_positions = GeoPosition.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb

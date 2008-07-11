@@ -1,6 +1,9 @@
 class DifferentiatorAnswersController < ApplicationController
   # GET /differentiator_answers
   # GET /differentiator_answers.xml
+  
+   layout 'index'
+  
   def index
     @differentiator_answers = DifferentiatorAnswer.find(:all)
 
@@ -25,10 +28,10 @@ class DifferentiatorAnswersController < ApplicationController
   # GET /differentiator_answers/new.xml
   def new
     @differentiator_answer = DifferentiatorAnswer.new
-    @differentiator_question = DifferentiatorQuestion.find :all
-    @employer = Employer.find :all
-    @user = User.find :all
-    @job_posting = JobPosting.find :all
+    @differentiator_questions = DifferentiatorQuestion.find :all
+    @employers = Employer.find :all
+    @users = User.find :all
+    @job_postings = JobPosting.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,10 +42,10 @@ class DifferentiatorAnswersController < ApplicationController
   # GET /differentiator_answers/1/edit
   def edit
     @differentiator_answer = DifferentiatorAnswer.find(params[:id])
-    @differentiator_question = DifferentiatorQuestion.find :all
-    @employer = Employer.find :all
-    @user = User.find :all
-    @job_posting = JobPosting.find :all
+    @differentiator_questions = DifferentiatorQuestion.find :all
+    @employers = Employer.find :all
+    @users = User.find :all
+    @job_postings = JobPosting.find :all
   end
 
   # POST /differentiator_answers

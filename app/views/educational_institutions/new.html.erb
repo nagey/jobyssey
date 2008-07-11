@@ -12,16 +12,16 @@
     <%= f.text_field :url %>
   </p>
   <p>
-    <%= f.collection_select :town, @town, :name, :name  %><br />
+    <%= f.collection_select :town_id, @towns, :id, :name  %><br />
     <%= link_to l(:add_town), new_town_path %>
   </p>
   <p>
-    <%= f.collection_select :country, @country, :name, :name %><br />
+    <%= f.collection_select :country_id, @countries, :id, :name %><br />
     <%= link_to l(:add_country), new_country_path %>
   </p>
   <p>
-    <%= f.collection_select :geo_position, @geo_position, :name, :name %><br />
-    <%= link_to l(add_geo_position), new_geo_position_path %>
+    <%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %><br />
+    <%= link_to l(:add_geo_position), new_geo_position_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

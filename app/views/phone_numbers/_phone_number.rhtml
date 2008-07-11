@@ -1,0 +1,10 @@
+<% type = '' unless type == 'admin' %>
+<tr>
+   <td><%=h phone_number.number %></td>
+   <td><%=h phone_number.phone_number_type.name unless phone_number.phone_number_type.nil? %></td>
+   <td><%=h phone_number.country.name %></td>
+   <td><%=h phone_number.user.name %></td>
+   <td><%= link_to 'Show', phone_number %></td>
+   <td><%= link_to 'Edit', edit_phone_number_path(phone_number) %></td>
+   <td><%= link_to 'Destroy', phone_number, :confirm => 'Are you sure?', :method => :delete %></td>
+ </tr>

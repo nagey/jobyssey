@@ -7,7 +7,13 @@
   <b>Name:</b>
   <%=h @differentiator_question.name %>
 </p>
-
+<% # show differentiator answers %>
+<h2><%=l(:differentiator_answers)%></h2>
+<table>
+<%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
+<%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @differentiator_question.differentiator_answers %>
+</table>
+<% # end differentiator answers %>
 
 <%= link_to 'Edit', edit_differentiator_question_path(@differentiator_question) %> |
 <%= link_to 'Back', differentiator_questions_path %>

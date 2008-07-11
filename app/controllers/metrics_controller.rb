@@ -1,6 +1,9 @@
 class MetricsController < ApplicationController
   # GET /metrics
   # GET /metrics.xml
+  
+   layout 'index'
+  
   def index
     @metrics = Metric.find(:all)
 

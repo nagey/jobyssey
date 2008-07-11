@@ -4,12 +4,17 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+   <p>
+   	 <%=f.label :user %><br />
+  	<%= f.collection_select :user_id, @users, :id, :name %>
+	<br>
+	<%= link_to l(:add_user), new_user_path %>
   </p>
   <p>
-    <%= f.label :benefit_id %><br />
-    <%= f.text_field :benefit_id %>
+   	 <%=f.label :benefit %><br />
+ 	<%= f.collection_select :benefit_id, @benefits, :id, :name %>
+	<br>
+	<%= link_to l(:add_benefit), new_benefit_path %>
   </p>
   <p>
     <%= f.label :benefit_preference %><br />

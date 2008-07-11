@@ -8,16 +8,22 @@
     <%= f.text_field :number %>
   </p>
   <p>
-    <%= f.label :phone_number_type_id %><br />
-    <%= f.text_field :phone_number_type_id %>
+    <%= f.label :phone_number_type %><br />
+    <%= f.collection_select :phone_number_type_id, @phone_number_types, :id, :name %>
+	<br>
+	<%= link_to l(:add_phone_number_type), new_phone_number_type_path %>
   </p>
   <p>
-    <%= f.label :country_id %><br />
-    <%= f.text_field :country_id %>
+    <%= f.label :country %><br />
+   	<%= f.collection_select :country_id, @countries, :id, :name %>
+	<br>
+	<%= link_to l(:add_country), new_country_path %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :user %><br />
+   	<%= f.collection_select :user_id, @users, :id, :name %>
+	<br>
+	<%= link_to l(:add_user), new_user_path %>
   </p>
   <p>
     <%= f.submit "Update" %>

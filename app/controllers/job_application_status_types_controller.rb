@@ -1,6 +1,9 @@
 class JobApplicationStatusTypesController < ApplicationController
   # GET /job_application_status_types
   # GET /job_application_status_types.xml
+  
+   layout 'index'
+  
   def index
     @job_application_status_types = JobApplicationStatusType.find(:all)
 

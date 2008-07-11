@@ -1,0 +1,8 @@
+<tr>
+    <td><%=h required_degree.job_posting.title unless required_degree.job_posting.nil? %></td>
+    <td><%=h required_degree.educational_level.level unless required_degree.educational_level.nil? %></td>
+    <td><%=h required_degree.education_concentration.name unless required_degree.education_concentration.nil? %></td>
+    <td><%= link_to 'Show', required_degree %></td>
+    <td><%= link_to 'Edit', edit_required_degree_path(required_degree) %></td>
+    <td><%= link_to 'Destroy', required_degree, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

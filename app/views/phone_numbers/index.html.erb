@@ -1,24 +1,11 @@
 <h1>Listing phone_numbers</h1>
 
 <table>
-  <tr>
-    <th>Number</th>
-    <th>Phone number type</th>
-    <th>Country</th>
-    <th>User</th>
-  </tr>
+<%= render :partial => 'phone_number_header' %>
 
-<% for phone_number in @phone_numbers %>
-  <tr>
-    <td><%=h phone_number.number %></td>
-    <td><%=h phone_number.phone_number_type_id %></td>
-    <td><%=h phone_number.country_id %></td>
-    <td><%=h phone_number.user_id %></td>
-    <td><%= link_to 'Show', phone_number %></td>
-    <td><%= link_to 'Edit', edit_phone_number_path(phone_number) %></td>
-    <td><%= link_to 'Destroy', phone_number, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+
+<%= render :partial => 'phone_number', :collection => @phone_number_items, :locals => { :type => 'admin' } %>
+
 </table>
 
 <br />

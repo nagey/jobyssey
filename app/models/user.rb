@@ -18,7 +18,14 @@ class User < ActiveRecord::Base
   
   validates_confirmation_of :email
   validates_confirmation_of :password
-  
+  validates_presence_of :first_name, :last_name
+  validates_acceptance_of :terms_of_service, :message => "You must agree to the Terms of Service to continue.", :on => :create
+  validates_presence_of :password_confirmation, :if => :password_changed?
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you've forgotten yours."
+  validates_length_of :password, :within => 6..20, :too_long => "pick a shorter password", :too_short => "pick a longer password"
+
+
   def name=(name_field)
     names = name_field.split(' ')
     self.first_name = names.shift
@@ -29,7 +36,7 @@ class User < ActiveRecord::Base
   def name
     self.first_name + ' ' + self.middle_names + ' ' + self.last_name unless self.first_name.nil?
   end
-  
+
   def skills
     metrics.collect {|x| x unless x.class != Skill}.delete_if { |x| x.nil? }
   end
@@ -38,5 +45,8 @@ class User < ActiveRecord::Base
     metrics.collect {|x| x unless x.class != Trait}.delete_if { |x| x.nil? }
   end
 
+  def name
+    first_name + " " + middle_names.chars.first + " " + last_name
+  end  
   
 end

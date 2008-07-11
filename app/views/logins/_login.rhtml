@@ -1,0 +1,9 @@
+<% type = '' unless type == 'admin' %>
+  <tr>
+    <td><%=h login.user.name unless login.user.nil? %></td>
+    <td><%=h login.geo_position.latitude unless login.geoposition.nil? %></td>
+    <td><%=h login.ip_address %></td>
+    <td><%= link_to 'Show', login %></td>
+    <td><%= link_to 'Edit', edit_login_path(login) %></td>
+    <td><%= link_to 'Destroy', login, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

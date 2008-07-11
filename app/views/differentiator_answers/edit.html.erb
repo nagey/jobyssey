@@ -4,24 +4,28 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :differentiator_question_id %><br />
-    <%= f.text_field :differentiator_question_id %>
+    <%= f.label :differentiator_question %>
+	<%= f.collection_select :differentiator_question_id, @differentiator_questions, :id, :name %>
+	<br>
+	<% link_to l(:add_differentiator_question), new_differentiator_question_path %>
   </p>
   <p>
-    <%= f.label :employer_id %><br />
-    <%= f.text_field :employer_id %>
+	 <%= f.label :employer %>
+    <%= f.collection_select :employer_id, @employers, :id, :name %>
+	<br>
+	<% link_to l(:add_employer), new_employer_path %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+	 <%= f.label :user %>
+    <%= f.collection_select :user_id, @users, :id, :name %>
+	<br>
+	<% link_to l(:add_user), new_user_path %>
   </p>
   <p>
-    <%= f.label :job_posting_id %><br />
-    <%= f.text_field :job_posting_id %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_area :name %>
+	 <%= f.label :job_posting %>
+  	<%= f.collection_select :job_posting_id, @job_postings, :id, :name %>
+	<br>
+	<% link_to l(:add_job_posting), new_job_posting_path %>
   </p>
   <p>
     <%= f.submit "Update" %>

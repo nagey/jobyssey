@@ -4,29 +4,35 @@
   <%= f.error_messages %>
 
   <p>
-   	<%= f.collection_select :user, @user, :name, :name %>
+   	<%= f.label :user %><br \>
+	<%= f.collection_select :user_id, @users, :id, :name %>
 	<br>
-	<% link_to l(:add_user), new_user_path %>
+	<%= link_to l(:add_user), new_user_path %>
   </p>
   <p>
-    <%= f.collection_select :educational_institution, @educational_institution, :name, :name %>
+   	<%= f.label :educational_institution %><br \>
+    <%= f.collection_select :educational_institution_id, @educational_institutions, :id, :name %>
 	<br>
-	<% link_to l(:add_educational_institution), new_educational_institutional_path %>
+	<%= link_to l(:add_educational_institution), new_educational_institution_path %>
+	
   </p>
   <p>
-    <%= f.collection_select :educational_qualification, @educational_qualification, :name, :name %>
+	   	<%= f.label :educational_qualification %><br \>
+    <%= f.collection_select :educational_qualification_id, @educational_qualifications, :id, :name %>
 	<br>
-	<% link_to l(:add_educational_qualification), new_educational_qualification_path %>
+	<%= link_to l(:add_educational_qualification), new_educational_qualification_path %>
   </p>
   <p>
-  <%= f.collection_select :educational_concentration, @educational_concentration, :name, :name %>
+   	<%= f.label :education_concentration %><br \>
+  <%= f.collection_select :education_concentration_id, @education_concentrations, :id, :name %>
 	<br>
-	<% link_to l(:add_educational_concentration), new_educational_concentration_path %>
+	<%= link_to l(:add_education_concentration), new_education_concentration_path %>
   </p>
   <p>
-    <%= f.collection_select :educational_level, @educational_level, :name, :name %>
+	<%= f.label :educational_level %><br \>
+    <%= f.collection_select :educational_level_id, @educational_levels, :id, :level %>
 	<br>
-	<% link_to l(:add_educational_level, new_educational_level_path %>
+	<%= link_to l(:add_educational_level), new_educational_level_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

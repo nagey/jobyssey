@@ -1,6 +1,9 @@
 class CurrenciesController < ApplicationController
   # GET /currencies
   # GET /currencies.xml
+  
+   layout 'index'
+  
   def index
     @currencies = Currency.find(:all)
 

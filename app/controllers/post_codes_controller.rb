@@ -1,6 +1,9 @@
 class PostCodesController < ApplicationController
   # GET /post_codes
   # GET /post_codes.xml
+  
+   layout 'index'
+  
   def index
     @post_codes = PostCode.find(:all)
 
@@ -25,7 +28,8 @@ class PostCodesController < ApplicationController
   # GET /post_codes/new.xml
   def new
     @post_code = PostCode.new
-
+    @towns = Town.find :all 
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @post_code }
@@ -35,6 +39,8 @@ class PostCodesController < ApplicationController
   # GET /post_codes/1/edit
   def edit
     @post_code = PostCode.find(params[:id])
+    @towns = Town.find :all 
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /post_codes

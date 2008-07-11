@@ -1,6 +1,9 @@
 class JobApplicationsController < ApplicationController
   # GET /job_applications
   # GET /job_applications.xml
+  
+   layout 'index'
+  
   def index
     @job_applications = JobApplication.find(:all)
 
@@ -25,6 +28,8 @@ class JobApplicationsController < ApplicationController
   # GET /job_applications/new.xml
   def new
     @job_application = JobApplication.new
+    @users = User.find :all
+    @job_postings = JobPosting.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +40,8 @@ class JobApplicationsController < ApplicationController
   # GET /job_applications/1/edit
   def edit
     @job_application = JobApplication.find(params[:id])
+    @users = User.find :all
+    @job_postings = JobPosting.find :all
   end
 
   # POST /job_applications

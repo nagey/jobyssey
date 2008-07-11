@@ -1,6 +1,9 @@
 class PersonalQualitiesController < ApplicationController
   # GET /personal_qualities
   # GET /personal_qualities.xml
+  
+   layout 'index'
+  
   def index
     @personal_qualities = PersonalQuality.find(:all)
 
@@ -25,6 +28,8 @@ class PersonalQualitiesController < ApplicationController
   # GET /personal_qualities/new.xml
   def new
     @personal_quality = PersonalQuality.new
+    @users = User.find :all
+    @metrics = Metric.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +40,8 @@ class PersonalQualitiesController < ApplicationController
   # GET /personal_qualities/1/edit
   def edit
     @personal_quality = PersonalQuality.find(params[:id])
+    @users = User.find :all
+    @metrics = Metric.find :all
   end
 
   # POST /personal_qualities
