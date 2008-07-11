@@ -1,0 +1,8 @@
+<%= @trait.name %>
+<% form_for :personal_quality, :url => {:action => :update} do |form| %>
+	<%= @trait.lower_bound %> 
+	<%=form.text_field :value, :size => 2 %> 
+	<%=form.hidden_field :metric_id %>
+	<%= @trait.upper_bound %>
+	<%= submit_tag l(:traits, :define_trait)%>
+<% end %>

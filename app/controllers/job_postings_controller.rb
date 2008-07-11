@@ -82,4 +82,8 @@ class JobPostingsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def find
+  end
+  
 end

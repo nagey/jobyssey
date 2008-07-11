@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080623213118) do
+ActiveRecord::Schema.define(:version => 20080711073151) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "employer_id"
@@ -179,6 +179,17 @@ ActiveRecord::Schema.define(:version => 20080623213118) do
     t.datetime "updated_at"
   end
 
+  create_table "feedback_items", :force => true do |t|
+    t.integer  "job_application_id"
+    t.integer  "user_id"
+    t.boolean  "on_time"
+    t.boolean  "serious"
+    t.boolean  "honest"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "geo_positions", :force => true do |t|
     t.integer  "longitude",  :limit => 6, :precision => 6, :scale => 0
     t.integer  "latitude",   :limit => 6, :precision => 6, :scale => 0
@@ -285,6 +296,8 @@ ActiveRecord::Schema.define(:version => 20080623213118) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "display_name"
+    t.string   "trait_type",   :default => "job_posting"
   end
 
   create_table "personal_qualities", :force => true do |t|
@@ -318,6 +331,11 @@ ActiveRecord::Schema.define(:version => 20080623213118) do
     t.datetime "updated_at"
   end
 
+  create_table "professionals", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "required_degrees", :force => true do |t|
     t.integer  "job_posting_id"
     t.integer  "educational_level_id"
@@ -347,11 +365,31 @@ ActiveRecord::Schema.define(:version => 20080623213118) do
     t.datetime "updated_at"
   end
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+
+  create_table "skills", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "towns", :force => true do |t|
     t.string   "name"
     t.integer  "administrative_division_id"
     t.integer  "country_id"
     t.integer  "geo_position_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "traits", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -395,6 +433,9 @@ ActiveRecord::Schema.define(:version => 20080623213118) do
     t.string   "search_position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "cv",              :limit => 5242880
+    t.string   "cv_name"
+    t.string   "cv_content_type"
   end
 
   create_table "work_history_items", :force => true do |t|

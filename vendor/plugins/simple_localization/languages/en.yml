@@ -120,10 +120,26 @@ app:
     add_educational_level: Add new educational level
     add_differentiator_question: Add new differentiator question
     add_job_posting: Add new job posting
-    
     additional_copyright_information: Additional Copyright Information
     photo_credit: Photo taken by topgold and used under Creative Commons License; click <a href="http://commons.wikimedia.org/wiki/Image:Mount_Everest_%28topgold%29.jpg">here</a> for details.</a>
     copyright_footer: © 2008 Jobyssey, Ltd. All Rights Reserved
     contact_us: Questions?
     about_us: About Us
     our_blog: Our Blog
+    upload_only_word_or_pdf: Please upload a word or pdf file
+    professional:
+        get_started: Get Started Now
+        upload_cv: Upload your CV now
+        name: Full Name
+        email: Email Address
+        email_confirmation: Confirm your Email Address
+        password: Choose a good password
+        password_confirmation: Confirm your password
+        code_name: pick a code name
+    skills:
+        add_skill: add a skill
+        couldnt_add_skill: error adding skill
+        skill_taken: You have that skill already
+        done_skills: That's all my skills thanks
+        
+    

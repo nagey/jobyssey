@@ -1,0 +1,28 @@
+<h1>Editing trait</h1>
+
+<% form_for(@trait) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :lower_bound %><br />
+    <%= f.text_field :lower_bound %>
+  </p>
+  <p>
+    <%= f.label :upper_bound %><br />
+    <%= f.text_field :upper_bound %>
+  </p>
+  <p>
+    <%= f.label :trait_type %><br />
+    <%= f.collection_select :trait_type, Trait.trait_types, :to_s, :to_s %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @trait %> |
+<%= link_to 'Back', traits_path %>

@@ -1,0 +1,16 @@
+<p>
+  <b>Name:</b>
+  <%=h @skill.display_name %>
+</p>
+<p>
+  <b>Lower Bound:</b>
+  <%= h @skill.lower_bound %><br />
+</p>
+<p>
+  <b>Upper Bound:</b>
+  <%= h @skill.upper_bound %><br />
+</p>
+
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>
