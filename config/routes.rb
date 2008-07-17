@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :cvs
+
+  map.resources :attachments
+
   map.resources :feedback_items
 
   map.resources :educational_levels

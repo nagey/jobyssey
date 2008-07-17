@@ -1,0 +1,34 @@
+<h1>Listing attachments</h1>
+
+<table>
+  <tr>
+    <th>Entity</th>
+    <th>Entity type</th>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Description</th>
+    <th>Attachment</th>
+    <th>File name</th>
+    <th>Content type</th>
+  </tr>
+
+<% for attachment in @attachments %>
+  <tr>
+    <td><%=h attachment.entity_id %></td>
+    <td><%=h attachment.entity_type %></td>
+    <td><%=h attachment.name %></td>
+    <td><%=h attachment.url %></td>
+    <td><%=h attachment.description %></td>
+    <td><%=h attachment.attachment %></td>
+    <td><%=h attachment.file_name %></td>
+    <td><%=h attachment.content_type %></td>
+    <td><%= link_to 'Show', attachment %></td>
+    <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
+    <td><%= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New attachment', new_attachment_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  entity_id: 1
+  entity_type: MyString
+  name: MyString
+  url: MyString
+  description: MyText
+  attachment: 
+  file_name: MyString
+  content_type: MyString
+
+two:
+  entity_id: 1
+  entity_type: MyString
+  name: MyString
+  url: MyString
+  description: MyText
+  attachment: 
+  file_name: MyString
+  content_type: MyString
