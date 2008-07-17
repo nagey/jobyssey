@@ -104,7 +104,7 @@ helpers:
 #       name: Localized name
 #       description: Localized description
 models:
-    
+
     account: 
         name:  Account
         attributes: 
@@ -114,17 +114,17 @@ models:
             description: Employer ID
 
     address: 
-       name:  Address
-       attributes: 
-           name: address1
-           description: First address line  
-           name: address2
-           description: Second address line
-           name: town_id
-           description: Town
-           name: geoposition_id
-           description:  Geoposition
-           
+        name:  Address
+        attributes: 
+            name: address1
+            description: First address line  
+            name: address2
+            description: Second address line
+            name: town_id
+            description: Town
+            name: geoposition_id
+            description:  Geoposition
+     
     administrative_division: 
         name: Administrative Division
         attributes: 
@@ -134,7 +134,7 @@ models:
             description: Country
             name: geo_position
             description: Geoposition
-            
+
     benefit:
         name: Benefit
         attributes: 
@@ -162,7 +162,7 @@ models:
             description: Use administrative division?    
             name: use_post_code
             description: Use post code?
-            
+
     currency:
         name: Currency
         attributes: 
@@ -172,21 +172,21 @@ models:
             description: Symbol
             name: currency_code
             description: Currency code
-            
-   degree:
-       name: Degree
-       attributes:
-           name: user_id
-           description: User ID
-           name: educational_institution_id
-           description: Educational Institution ID
-           name: educational_qualification_id
-           description: Educational qualification ID
-           name: education_concentration_id
-           description: Education concentration ID
-           name: educational_level_id
-           description: Educational Level ID
-            
+
+    degree:
+        name: Degree
+        attributes:
+            name: user_id
+            description: User ID
+            name: educational_institution_id
+            description: Educational Institution ID
+            name: educational_qualification_id
+            description: Educational qualification ID
+            name: education_concentration_id
+            description: Education concentration ID
+            name: educational_level_id
+            description: Educational Level ID
+
     differentiator_questions:
         name: Differentiator questions
         attributes: 
@@ -208,13 +208,13 @@ models:
             description: Job posting ID
             name: name
             description: Name
-            
+
     education_concentration:
         name: Education concentration
         attributes: 
             name: name
             description: Name
-    
+
     educational_qualification:
         name: Educational qualification
         attributes: 
@@ -222,7 +222,7 @@ models:
             description: Name
             name: educational_level_id
             description: Educational level ID
-     
+
     educational_institution:
         name: Educational institution
         attributes: 
@@ -235,12 +235,11 @@ models:
             name: url
             Description: Url
 
-   educational_level:
-       name: Educational level
-       attributes: 
-           name: level
-           description: Level
-           
+    educational_level:
+        name: Educational level
+        attributes: 
+            name: level
+            description: Level
 
     employer:
         name: Employer
@@ -259,13 +258,13 @@ models:
             description: Search position
             name: geo_position_id
             description: Geoposition ID
-            
+
     employment_type:
         name: Employment type
         attributes: 
             name: name
             description: Name
-            
+
     feedback_item:
         name: Feedback item
         attributes: 
@@ -281,7 +280,7 @@ models:
             description: Honest?
             name: description
             description: Description
-             
+
     geo_position:
         name: Geo Position
         attributes: 
@@ -289,7 +288,7 @@ models:
             description: Longitude
             name: latitude
             description: Latitude
-              
+
     industry:
         name: Industry
         attributes: 
@@ -297,7 +296,7 @@ models:
             description: Name
             name: location
             description: Location
-        
+
     job_application:
         name: Job application
         attributes: 
@@ -305,7 +304,7 @@ models:
             description: User ID
             name: job_posting_id
             description: Job posting ID
-            
+
     job_application_attachment:
         name: Job application attachement
         attributes: 
@@ -319,7 +318,7 @@ models:
             description: Url
             name: description
             description: Description
-            
+
     job_application_state:
         name: Job application state
         attributes: 
@@ -331,7 +330,7 @@ models:
             descriptiong: Workflow ID
             name: job_application_status_type_id
             description: Job application status type ID
-            
+
     job_application_status:
         name: Job application status
         attributes: 
@@ -345,7 +344,7 @@ models:
             description: Active?
             name: user_id
             description: User ID
-            
+
     job_application_status_type:
         name: Job application status type
         attributes: 
@@ -353,7 +352,7 @@ models:
             description: Name
             name: cost
             description: Cost
-            
+
     job_title:
         name: Job title
         attributes: 
@@ -378,20 +377,20 @@ models:
             name: education_required
             descriptiong: Education required?
             name: employment_type_id
-            descriptiong: Employment type ID
+            description: Employment type ID
             name: working_time_id
             description: Working time ID
-                
+
     login:
         name: Login
         attributes: 
             name: user_id
             description: User ID
             name: geo_position_ID
-            descriptiong: Geo position ID
+            description: Geo position ID
             name: ip_address
             description: IP address
-            
+
     metric:
         name: Metric
         attributes: 
@@ -403,16 +402,16 @@ models:
             description: Upper bound
             name: type
             description: Type
-        
+
     personal_quality:
         name: Personal Quality
         attributes: 
             name: user_id
             description: User ID
             name: metric_id
-            descriptiong: Metric ID
+            description: Metric ID
             name: value
-            descriptiong: Value
+            description: Value
 
     phone_number:
         name: Phone number
@@ -425,13 +424,13 @@ models:
             description: Country ID
             name: user_id
             description: User ID
-            
+
     phone_number_type:
         name: Phone number type
         attributes: 
             name: name
             description: Name
-            
+
     post_code:
         name: Post code
         attributes: 
@@ -441,7 +440,7 @@ models:
             description: Town ID
             name: geo_position_id
             description: Geo position ID
-            
+
     required_degree:
         name: Required degree
         attributes: 
@@ -451,15 +450,14 @@ models:
             description: Education concentration ID
             name: educational_level_ID
             description: Educational level ID
-            
+
     role:
         name: Role
         attributes: 
             name: name
             description: Name
             name: employer_id
-            description: Employer ID
-            
+
     town:
         name: Town
         attributes: 
