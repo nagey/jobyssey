@@ -13,7 +13,7 @@
   <tr>
     <td><%=h educational_institution.name %></td>
     <td><%=h educational_institution.url %></td>
-    <td><%=h educational_institution.town.name %></td>
+    <td><%=h educational_institution.town.name unless educational_institution.town.nil? %></td>
     <td><%=h educational_institution.country.name %></td>
     <td><%=h educational_institution.geo_position.name %></td>
     <td><%= link_to 'Show', educational_institution %></td>

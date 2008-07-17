@@ -45,7 +45,7 @@ class RolesController < ApplicationController
   # POST /roles.xml
   def create
     @role = Role.new(params[:role])
-
+    @employers = Employer.find :all
     respond_to do |format|
       if @role.save
         flash[:notice] = 'Role was successfully created.'

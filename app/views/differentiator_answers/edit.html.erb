@@ -23,7 +23,7 @@
   </p>
   <p>
 	 <%= f.label :job_posting %>
-  	<%= f.collection_select :job_posting_id, @job_postings, :id, :name %>
+  	<%= f.collection_select :job_posting_id, @job_postings, :id, :id %>
 	<br>
 	<% link_to l(:add_job_posting), new_job_posting_path %>
   </p>

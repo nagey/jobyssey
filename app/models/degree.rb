@@ -9,5 +9,5 @@ class Degree < ActiveRecord::Base
   validates_presence_of :educational_institution
   validates_presence_of :education_concentration 
   validates_presence_of :educational_qualification
-  validates_presence_of: :educational_level
+  validates_presence_of :educational_level
 end

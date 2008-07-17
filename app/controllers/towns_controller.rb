@@ -49,7 +49,9 @@ class TownsController < ApplicationController
   # POST /towns.xml
   def create
     @town = Town.new(params[:town])
-
+    @countries = Country.find :all
+    @administrative_divisions = AdministrativeDivision.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       if @town.save
         flash[:notice] = 'Town was successfully created.'

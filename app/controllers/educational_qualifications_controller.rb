@@ -45,7 +45,7 @@ class EducationalQualificationsController < ApplicationController
   # POST /educational_qualifications.xml
   def create
     @educational_qualification = EducationalQualification.new(params[:educational_qualification])
-
+    @educational_levels = EducationalLevel.find :all
     respond_to do |format|
       if @educational_qualification.save
         flash[:notice] = 'EducationalQualification was successfully created.'

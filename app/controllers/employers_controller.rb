@@ -30,8 +30,8 @@ class EmployersController < ApplicationController
   # GET /employers/new.xml
   def new
     @employer = Employer.new
-    @industries = Industry.find(:all)
-    @geo_positions = GeoPosition.find(:all)
+    @industries = Industry.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @employer }
@@ -41,15 +41,16 @@ class EmployersController < ApplicationController
   # GET /employers/1/edit
   def edit
     @employer = Employer.find(params[:id])
-    @industries = Industry.find(:all)
-    @geo_positions = GeoPosition.find(:all)
+    @industries = Industry.find :all
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /employers
   # POST /employers.xml
   def create
     @employer = Employer.new(params[:employer])
-
+    @industries = Industry.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       if @employer.save
         flash[:notice] = 'Employer was successfully created.'

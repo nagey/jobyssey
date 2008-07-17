@@ -28,8 +28,8 @@ class AdministrativeDivisionsController < ApplicationController
   # GET /administrative_divisions/new.xml
   def new
     @administrative_division = AdministrativeDivision.new
-      @countries = Country.find :all
-      @geo_positions = GeoPosition.find :all
+    @countries = Country.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @administrative_division }
@@ -39,15 +39,16 @@ class AdministrativeDivisionsController < ApplicationController
   # GET /administrative_divisions/1/edit
   def edit
     @administrative_division = AdministrativeDivision.find(params[:id])
-     @countries = Country.find :all
-      @geo_positions = GeoPosition.find :all
+    @countries = Country.find :all
+    @geo_positions = GeoPosition.find :all
   end
 
   # POST /administrative_divisions
   # POST /administrative_divisions.xml
   def create
     @administrative_division = AdministrativeDivision.new(params[:administrative_division])
-
+    @countries = Country.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       if @administrative_division.save
         flash[:notice] = 'AdministrativeDivision was successfully created.'

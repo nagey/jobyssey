@@ -52,7 +52,10 @@ class DifferentiatorAnswersController < ApplicationController
   # POST /differentiator_answers.xml
   def create
     @differentiator_answer = DifferentiatorAnswer.new(params[:differentiator_answer])
-
+    @differentiator_questions = DifferentiatorQuestion.find :all
+    @employers = Employer.find :all
+    @users = User.find :all
+    @job_postings = JobPosting.find :all
     respond_to do |format|
       if @differentiator_answer.save
         flash[:notice] = 'DifferentiatorAnswer was successfully created.'

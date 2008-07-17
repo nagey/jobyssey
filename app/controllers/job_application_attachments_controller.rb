@@ -46,7 +46,7 @@ class JobApplicationAttachmentsController < ApplicationController
   # POST /job_application_attachments.xml
   def create
     @job_application_attachment = JobApplicationAttachment.new(params[:job_application_attachment])
-
+    @job_applications = JobApplication.find :all
     respond_to do |format|
       if @job_application_attachment.save
         flash[:notice] = 'JobApplicationAttachment was successfully created.'

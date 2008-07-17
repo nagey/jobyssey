@@ -48,7 +48,8 @@ class UserBenefitPreferencesController < ApplicationController
   # POST /user_benefit_preferences.xml
   def create
     @user_benefit_preferences = UserBenefitPreferences.new(params[:user_benefit_preferences])
-
+    @users = User.find :all
+    @benefits = Benefit.find :all
     respond_to do |format|
       if @user_benefit_preferences.save
         flash[:notice] = 'UserBenefitPreferences was successfully created.'

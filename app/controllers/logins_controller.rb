@@ -48,7 +48,8 @@ class LoginsController < ApplicationController
   # POST /logins.xml
   def create
     @login = Login.new(params[:login])
-
+    @users = User.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       if @login.save
         flash[:notice] = 'Login was successfully created.'

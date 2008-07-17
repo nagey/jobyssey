@@ -48,7 +48,9 @@ class TransactionsController < ApplicationController
   # POST /transactions.xml
   def create
     @transaction = Transaction.new(params[:transaction])
-
+    @accounts = Account.find :all
+    @job_applications = JobApplication.find :all
+    
     respond_to do |format|
       if @transaction.save
         flash[:notice] = 'Transaction was successfully created.'

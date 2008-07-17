@@ -45,7 +45,7 @@ class JobApplicationStatesController < ApplicationController
   # POST /job_application_states.xml
   def create
     @job_application_state = JobApplicationState.new(params[:job_application_state])
-
+    @job_application_status_types = JobApplicationStatusType.find :all
     respond_to do |format|
       if @job_application_state.save
         flash[:notice] = 'JobApplicationState was successfully created.'

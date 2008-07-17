@@ -43,15 +43,18 @@ class PhoneNumbersController < ApplicationController
   def edit
     @phone_number = PhoneNumber.find(params[:id])
     @phone_number_types = PhoneNumberType.find :all
-     @users = User.find :all
-     @countries = Country.find :all
+    @users = User.find :all
+    @countries = Country.find :all
   end
 
   # POST /phone_numbers
   # POST /phone_numbers.xml
   def create
     @phone_number = PhoneNumber.new(params[:phone_number])
-
+    @phone_number_types = PhoneNumberType.find :all
+    @users = User.find :all
+    @countries = Country.find :all
+    
     respond_to do |format|
       if @phone_number.save
         flash[:notice] = 'PhoneNumber was successfully created.'

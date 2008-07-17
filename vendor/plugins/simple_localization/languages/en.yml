@@ -104,7 +104,474 @@ helpers:
 #       name: Localized name
 #       description: Localized description
 models:
+    
+    account: 
+        name:  Account
+        attributes: 
+            name: balance
+            description: balance 
+            name: employer_id
+            description: Employer ID
 
+    address: 
+       name:  Address
+       attributes: 
+           name: address1
+           description: First address line  
+           name: address2
+           description: Second address line
+           name: town_id
+           description: Town
+           name: geoposition_id
+           description:  Geoposition
+           
+    administrative_division: 
+        name: Administrative Division
+        attributes: 
+            name: name
+            description: Name
+            name: country_id
+            description: Country
+            name: geo_position
+            description: Geoposition
+            
+    benefit:
+        name: Benefit
+        attributes: 
+            name: name
+            description: Name
+ 
+    country:
+        name: Country
+        attributes: 
+            name: name
+            description: Name
+            name: administrative_division_name
+            description: Administrative division
+            name: post_code_name
+            description: Post code
+            name: phone_number_format
+            description: Phone number format
+            name: post_code_format
+            description: Post code format
+            name: dialing_code
+            description: Dialing code
+            name: geo_position_id
+            description: Geoposition
+            name: use_administrative_division
+            description: Use administrative division?    
+            name: use_post_code
+            description: Use post code?
+            
+    currency:
+        name: Currency
+        attributes: 
+            name: name
+            description: Name
+            name: symbol
+            description: Symbol
+            name: currency_code
+            description: Currency code
+            
+   degree:
+       name: Degree
+       attributes:
+           name: user_id
+           description: User ID
+           name: educational_institution_id
+           description: Educational Institution ID
+           name: educational_qualification_id
+           description: Educational qualification ID
+           name: education_concentration_id
+           description: Education concentration ID
+           name: educational_level_id
+           description: Educational Level ID
+            
+    differentiator_questions:
+        name: Differentiator questions
+        attributes: 
+            name: type
+            description: Type
+            name: name
+            description: Name
+
+    differentiator_answers:
+        name: Differentiator answers
+        attributes:
+            name: differentiator_question_id
+            description: Differentiator question ID
+            name: employer_id
+            description: Employer ID
+            name: user_id
+            description: User ID
+            name: job_positing_id
+            description: Job posting ID
+            name: name
+            description: Name
+            
+    education_concentration:
+        name: Education concentration
+        attributes: 
+            name: name
+            description: Name
+    
+    educational_qualification:
+        name: Educational qualification
+        attributes: 
+            name: name
+            description: Name
+            name: educational_level_id
+            description: Educational level ID
+     
+    educational_institution:
+        name: Educational institution
+        attributes: 
+            name: name
+            description: name
+            name: town_id
+            description: Town ID
+            name: country_id
+            description: Country ID
+            name: url
+            Description: Url
+
+   educational_level:
+       name: Educational level
+       attributes: 
+           name: level
+           description: Level
+           
+
+    employer:
+        name: Employer
+        attributes: 
+            name: name
+            description: Name
+            name: tagline
+            description: Tagline
+            name: size
+            description: Size
+            name: description
+            description: Description
+            name: industry_id
+            description: Industry ID
+            name: search_postion
+            description: Search position
+            name: geo_position_id
+            description: Geoposition ID
+            
+    employment_type:
+        name: Employment type
+        attributes: 
+            name: name
+            description: Name
+            
+    feedback_item:
+        name: Feedback item
+        attributes: 
+            name: job_application_id
+            description: Job application ID
+            name: user_id
+            description: User ID
+            name: on_time
+            description: On time?
+            name: serious
+            description: Serious?
+            name: honest
+            description: Honest?
+            name: description
+            description: Description
+             
+    geo_position:
+        name: Geo Position
+        attributes: 
+            name: longitude
+            description: Longitude
+            name: latitude
+            description: Latitude
+              
+    industry:
+        name: Industry
+        attributes: 
+            name: name
+            description: Name
+            name: location
+            description: Location
+        
+    job_application:
+        name: Job application
+        attributes: 
+            name: user_id
+            description: User ID
+            name: job_posting_id
+            description: Job posting ID
+            
+    job_application_attachment:
+        name: Job application attachement
+        attributes: 
+            name: job_application_id
+            description: Job application ID
+            name: type
+            description: Type
+            name: name
+            description: Type
+            name: url
+            description: Url
+            name: description
+            description: Description
+            
+    job_application_state:
+        name: Job application state
+        attributes: 
+            name: name
+            description: Name
+            name: order
+            description: Order
+            name: workflow_id
+            descriptiong: Workflow ID
+            name: job_application_status_type_id
+            description: Job application status type ID
+            
+    job_application_status:
+        name: Job application status
+        attributes: 
+            name: job_application_id
+            description: Job application ID
+            name: job_application_state_id
+            description: Job application state ID
+            name: note
+            description: Note
+            name: active
+            description: Active?
+            name: user_id
+            description: User ID
+            
+    job_application_status_type:
+        name: Job application status type
+        attributes: 
+            name: name
+            description: Name
+            name: cost
+            description: Cost
+            
+    job_title:
+        name: Job title
+        attributes: 
+            name: name
+            description: Name
+            
+    job_posting:
+        name: Job posting
+        attributes: 
+            name: title
+            description: Title
+            name: employer_id
+            description: Employer ID
+            name: description
+            description: Description
+            name: search_postion
+            description: Search position
+            name: maximum_salary
+            description: Maximum salary
+            name: minimum_salary
+            description: Minimum salary
+            name: education_required
+            descriptiong: Education required?
+            name: employment_type_id
+            descriptiong: Employment type ID
+            name: working_time_id
+            description: Working time ID
+                
+    login:
+        name: Login
+        attributes: 
+            name: user_id
+            description: User ID
+            name: geo_position_ID
+            descriptiong: Geo position ID
+            name: ip_address
+            description: IP address
+            
+    metric:
+        name: Metric
+        attributes: 
+            name: name
+            description: Name
+            name: lower_bound
+            description: Lower bound
+            name: upper_bound
+            description: Upper bound
+            name: type
+            description: Type
+        
+    personal_quality:
+        name: Personal Quality
+        attributes: 
+            name: user_id
+            description: User ID
+            name: metric_id
+            descriptiong: Metric ID
+            name: value
+            descriptiong: Value
+
+    phone_number:
+        name: Phone number
+        attributes: 
+            name: number
+            description: Number
+            name: phone_number_type_id
+            description: Phone number type ID
+            name: country_id
+            description: Country ID
+            name: user_id
+            description: User ID
+            
+    phone_number_type:
+        name: Phone number type
+        attributes: 
+            name: name
+            description: Name
+            
+    post_code:
+        name: Post code
+        attributes: 
+            name: name
+            description: name
+            name: town_id
+            description: Town ID
+            name: geo_position_id
+            description: Geo position ID
+            
+    required_degree:
+        name: Required degree
+        attributes: 
+            name: job-posting_id
+            description: Job posting ID
+            name: education_concentration_id
+            description: Education concentration ID
+            name: educational_level_ID
+            description: Educational level ID
+            
+    role:
+        name: Role
+        attributes: 
+            name: name
+            description: Name
+            name: employer_id
+            description: Employer ID
+            
+    town:
+        name: Town
+        attributes: 
+            name: name
+            description: Name
+            name: administrative_division_id
+            description: Administrative division ID
+            name: country_id
+            description: Country ID
+            name: geo_position_id
+            description: Geo position ID
+            
+    transaction:
+        name: Transaction
+        attributes: 
+            name: account_id
+            description: Account ID
+            name: transaction_type
+            descriptiong: Transaction type
+            name: amount
+            description: Amount
+            name: reference
+            description: Reference
+            name: job_application_id
+            description: Job application ID
+                
+    transition:
+        name: Transition
+        attributes: 
+            name: name
+            description: Name
+            name: current_state_id
+            description: Current state ID
+            name: next_state_id
+            description: Next state ID
+            name: workflow_id
+            description: Workflow ID
+            
+    user:
+        name: User
+        attributes: 
+            name: first_name
+            description: First name
+            name: middle_names
+            description: Middle name(s)
+            name: last_name
+            description: Last name
+            name: email
+            description: Email
+            name: password
+            description: Password
+            name: code_name
+            description: Code name
+            name: type
+            description: Type
+            name: employer_id
+            description: Employer ID
+            name: search_position
+            description: Search position   
+            
+    user_benefit_preferences:
+        name: User benefit preferences
+        attributes: 
+            name: user_id
+            description: User ID
+            name: benefit_id
+            description: Benefit ID
+            name: benefit_preference
+            description: Benefit preference
+            
+    workflow:
+        name: Workflow
+        attributes: 
+            name: name
+            description: Name
+
+    working_time:
+        name: Working time
+        attributes: 
+            name: name
+            description: Name
+
+    work_history_item:
+        name: Work history item
+        attributes: 
+            name: user_id
+            description: User ID
+            name: start_date
+            description: Start date
+            name: end_date
+            description: End date
+            name: salary
+            description: Salary
+            name: description
+            description: Description
+            name: job_title_ID
+            description: Job title ID
+            name: geo_position_id
+            description: Geo position ID
+            name: administrative_division_ID
+            description: Administrative division ID
+            name: city_id
+            description: City ID
+            name: country_id
+            desciption: Country ID
+            name: employer_id
+            description: Employer ID
+            name: employment_type_id
+            description: Employment type ID
+            name: working_time_id
+            description: Working time ID
+            
 # You can use the app section freely to localize you application with the
 # localized_application feature. The entries defined here are accesable by the
 # global method "l". See the RDoc for details.
@@ -150,21 +617,4 @@ app:
     contact_us: Questions?
     about_us: About Us
     our_blog: Our Blog
-    upload_only_word_or_pdf: Please upload a word or pdf file
-    professional:
-        get_started: Get Started Now
-        upload_cv: Upload your CV now
-        name: Full Name
-        email: Email Address
-        email_confirmation: Confirm your Email Address
-        password: Choose a good password
-        password_confirmation: Confirm your password
-        code_name: pick a code name
-    skills:
-        add_skill: add a skill
-        couldnt_add_skill: error adding skill
-        skill_taken: You have that skill already
-        done_skills: That's all my skills thanks
-        
-    
     work_history_items: Work History Items

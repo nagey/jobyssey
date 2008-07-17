@@ -62,7 +62,15 @@ class WorkHistoryItemsController < ApplicationController
   # POST /work_history_items.xml
   def create
     @work_history_item = WorkHistoryItem.new(params[:work_history_item])
-
+    @users = User.find :all
+    @job_titles = JobTitle.find :all
+    @geo_positions = GeoPosition.find :all
+    @administrative_divisions = AdministrativeDivision.find :all
+    @towns = Town.find :all
+    @countries = Country.find :all
+    @employers = Employer.find :all
+    @employment_types = EmploymentType.find :all
+    @working_times = WorkingTime.find :all
     respond_to do |format|
       if @work_history_item.save
         flash[:notice] = 'WorkHistoryItem was successfully created.'

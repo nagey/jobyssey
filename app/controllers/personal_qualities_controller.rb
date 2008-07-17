@@ -48,7 +48,9 @@ class PersonalQualitiesController < ApplicationController
   # POST /personal_qualities.xml
   def create
     @personal_quality = PersonalQuality.new(params[:personal_quality])
-
+    @users = User.find :all
+    @metrics = Metric.find :all
+      
     respond_to do |format|
       if @personal_quality.save
         flash[:notice] = 'PersonalQuality was successfully created.'

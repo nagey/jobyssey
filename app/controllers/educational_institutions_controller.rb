@@ -50,7 +50,9 @@ class EducationalInstitutionsController < ApplicationController
   def create
     debugger
     @educational_institution = EducationalInstitution.new(params[:educational_institution])
-
+    @towns = Town.find :all
+    @countries = Country.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       if @educational_institution.save
         flash[:notice] = 'EducationalInstitution was successfully created.'

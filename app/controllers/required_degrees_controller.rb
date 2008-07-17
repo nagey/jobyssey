@@ -49,7 +49,9 @@ class RequiredDegreesController < ApplicationController
   # POST /required_degrees.xml
   def create
     @required_degree = RequiredDegree.new(params[:required_degree])
-
+    @job_postings = JobPosting.find :all
+    @education_concentrations = EducationConcentration.find :all
+    @educational_levels = EducationalLevel.find :all
     respond_to do |format|
       if @required_degree.save
         flash[:notice] = 'RequiredDegree was successfully created.'

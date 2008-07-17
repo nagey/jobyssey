@@ -48,6 +48,8 @@ class AddressesController < ApplicationController
   def create
     debugger
     @address = Address.new(params[:address])
+    @towns = Town.find :all
+    @geo_positions = GeoPosition.find :all
     respond_to do |format|
       if @address.save
         flash[:notice] = 'Address was successfully created.'

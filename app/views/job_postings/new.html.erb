@@ -23,11 +23,12 @@
   </p>
   <p>
     <%= f.label :maximum_salary %><br />
-    <%= f.text_field :maximum_salary %>
+    <%= f.text_field :maximum_salary.gsub(",",'').to_f %>
+    
   </p>
   <p>
     <%= f.label :minimum_salary %><br />
-    <%= f.text_field :minimum_salary %>
+    <%= f.text_field :minimum_salary.gsub(",",'').to_f %>
   </p>
   <p>
     <%= f.label :education_required %><br />

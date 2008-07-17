@@ -50,7 +50,10 @@ class JobApplicationStatusesController < ApplicationController
   # POST /job_application_statuses.xml
   def create
     @job_application_status = JobApplicationStatus.new(params[:job_application_status])
-
+    @job_applications = JobApplication.find :all
+    @job_application_states = JobApplicationState.find :all
+    @users = User.find :all
+    
     respond_to do |format|
       if @job_application_status.save
         flash[:notice] = 'JobApplicationStatus was successfully created.'

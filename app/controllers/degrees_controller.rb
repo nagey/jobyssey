@@ -54,7 +54,11 @@ class DegreesController < ApplicationController
   # POST /degrees.xml
   def create
     @degree = Degree.new(params[:degree])
-
+    @users = User.find :all
+    @educational_institutions = EducationalInstitution.find :all
+    @educational_qualifications = EducationalQualification.find :all
+    @education_concentrations = EducationConcentration.find :all
+    @educational_levels = EducationalLevel.find :all
     respond_to do |format|
       if @degree.save
         flash[:notice] = 'Degree was successfully created.'

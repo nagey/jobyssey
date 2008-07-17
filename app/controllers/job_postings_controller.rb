@@ -49,7 +49,9 @@ class JobPostingsController < ApplicationController
   # POST /job_postings.xml
   def create
     @job_posting = JobPosting.new(params[:job_posting])
-
+    @employers = Employer.find :all
+    @working_times = WorkingTime.find :all
+    @employment_types = EmploymentType.find :all
     respond_to do |format|
       if @job_posting.save
         flash[:notice] = 'JobPosting was successfully created.'
@@ -90,8 +92,4 @@ class JobPostingsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  def find
-  end
-  
 end

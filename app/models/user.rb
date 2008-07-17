@@ -44,9 +44,5 @@ class User < ActiveRecord::Base
   def traits
     metrics.collect {|x| x unless x.class != Trait}.delete_if { |x| x.nil? }
   end
-
-  def name
-    first_name + " " + middle_names.chars.first + " " + last_name
-  end  
   
 end

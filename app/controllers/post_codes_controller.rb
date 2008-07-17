@@ -47,7 +47,9 @@ class PostCodesController < ApplicationController
   # POST /post_codes.xml
   def create
     @post_code = PostCode.new(params[:post_code])
-
+    @towns = Town.find :all 
+    @geo_positions = GeoPosition.find :all
+    
     respond_to do |format|
       if @post_code.save
         flash[:notice] = 'PostCode was successfully created.'
