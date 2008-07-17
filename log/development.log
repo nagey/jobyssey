@@ -1,1 +1,29 @@
-# Logfile created on Thu Jul 17 08:02:49 +0100 2008
+# Logfile created on Thu Jul 17 08:02:49 +0100 2008extended_error_messagesfoo
+interface_shortcutfoo
+localized_active_record_helpersfoo
+localized_applicationfoo
+localized_application_extensionsfoo
+localized_arrayfoo
+localized_column_human_namefoo
+localized_date_and_timefoo
+localized_date_helpersfoo
+localized_error_messagesfoo
+localized_form_options_helpersfoo
+localized_model_attributesfoo
+localized_modelsfoo
+localized_models_by_lang_filefoo
+localized_number_helpersfoo
+reload_lang_filefoo
+Initialized Simple Localization plugin:
+  languages: en, nl, fr, de, es, it, ru, sv
+  language file directories: /Users/snagey/Sites/jobyssey/vendor/plugins/simple_localization/lib/../languages
+  features: extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_application, localized_application_extensions, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models, localized_models_by_lang_file, localized_number_helpers, reload_lang_file
+  disabled features: localized_templates, class_based_field_error_proc
+
+
+Processing JobysseyController#index (for 127.0.0.1 at 2008-07-17 20:05:21) [GET]
+  Session ID: 3a29180fc6417f179b716d00caa3a3da
+  Parameters: {"action"=>"index", "controller"=>"jobyssey"}
+Rendering template within layouts/index
+Rendering jobyssey/index
+Completed in 0.25394 (3 reqs/sec) | Rendering: 0.01043 (4%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
