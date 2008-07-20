@@ -1,0 +1,184 @@
+kant:jobyssey snagey$ git commit * -m 'committing changes'
+error: pathspec 'lib' did not match any file(s) known to git.
+error: pathspec 'tmp' did not match any file(s) known to git.
+error: pathspec '-m' did not match any file(s) known to git.
+error: pathspec 'committing changes' did not match any file(s) known to git.
+Did you forget to 'git add'?
+kant:jobyssey snagey$ git add *
+kant:jobyssey snagey$ git commit -m 'committing changes'
+# On branch master
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#
+#	deleted:    app/views/skills/autocomplete_name.html.erb
+#	deleted:    app/views/skills/define.html.erb
+#	deleted:    app/views/skills/finalize.html.erb
+#	deleted:    app/views/traits/define.html.erb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+kant:jobyssey snagey$ git push
+error: remote 'refs/heads/master' is not a strict subset of local ref 'refs/heads/master'. maybe you are not up-to-date and need to pull first?
+error: failed to push to 'git@github.com:jobyssey/jobyssey.git'
+kant:jobyssey snagey$ git pull
+remote: Counting objects: 221, done.
+Compressing objects: 100% (4remote: 6/46), done.
+Indexing 138 objects...
+remote: Total 138 (delta 85), reused 126 (delta 84)
+ 100% (138/138) done
+Resolving 85 deltas...
+ 100% (85/85) done
+45 objects were added to complete this thin pack.
+* refs/remotes/origin/master: fast forward to branch 'master' of git@github.com:jobyssey/jobyssey
+  old..new: c0965a5..aa92c72
+Updating c0965a5..aa92c72
+app/views/skills/autocomplete_name.html.erb: needs update
+app/views/skills/define.html.erb: needs update
+app/views/skills/finalize.html.erb: needs update
+app/views/traits/define.html.erb: needs update
+Fast forward
+ app/.DS_Store                                      |  Bin 12292 -> 6148 bytes
+ app/controllers/addresses_controller.rb            |    2 +
+ .../administrative_divisions_controller.rb         |   11 +-
+ app/controllers/application.rb                     |    2 +-
+ app/controllers/degrees_controller.rb              |    6 +-
+ .../differentiator_answers_controller.rb           |    5 +-
+ .../educational_institutions_controller.rb         |    4 +-
+ .../educational_qualifications_controller.rb       |    2 +-
+ app/controllers/employers_controller.rb            |   11 +-
+ .../job_application_attachments_controller.rb      |    2 +-
+ .../job_application_states_controller.rb           |    2 +-
+ .../job_application_statuses_controller.rb         |    5 +-
+ app/controllers/job_applications_controller.rb     |    4 +-
+ app/controllers/job_postings_controller.rb         |    8 +-
+ app/controllers/jobyssey_controller.rb             |    4 -
+ app/controllers/logins_controller.rb               |    3 +-
+ app/controllers/personal_qualities_controller.rb   |    4 +-
+ app/controllers/phone_numbers_controller.rb        |    9 +-
+ app/controllers/post_codes_controller.rb           |    4 +-
+ app/controllers/professionals_controller.rb        |    6 +-
+ app/controllers/required_degrees_controller.rb     |    4 +-
+ app/controllers/roles_controller.rb                |    2 +-
+ app/controllers/towns_controller.rb                |    4 +-
+ app/controllers/transactions_controller.rb         |    4 +-
+ .../user_benefit_preferences_controller.rb         |    3 +-
+ app/controllers/work_history_items_controller.rb   |   10 +-
+ app/helpers/skills_helper.rb                       |    2 -
+ app/helpers/traits_helper.rb                       |    2 -
+ app/models/degree.rb                               |    2 +-
+ app/models/educational_institution.rb              |    3 +
+ app/models/educational_qualification.rb            |    2 +
+ app/models/employer.rb                             |    4 +
+ app/models/employment_type.rb                      |    2 +
+ app/models/industry.rb                             |    3 +
+ app/models/job_posting.rb                          |    5 +
+ app/models/job_title.rb                            |    2 +
+ app/models/metric.rb                               |    7 +-
+ app/models/personal_quality.rb                     |    1 -
+ app/models/post_code.rb                            |    2 +
+ app/models/role.rb                                 |    2 +
+ app/models/skill.rb                                |    4 +
+ app/models/state.rb                                |    2 +
+ app/models/trait.rb                                |   13 -
+ app/views/.DS_Store                                |  Bin 6148 -> 6148 bytes
+ app/views/differentiator_answers/edit.html.erb     |    2 +-
+ app/views/differentiator_answers/new.html.erb      |    6 +-
+ app/views/educational_institutions/index.html.erb  |    2 +-
+ app/views/job_application_attachments/new.html.erb |    2 +-
+ app/views/job_postings/new.html.erb                |    5 +-
+ app/views/jobyssey/index.html.erb                  |    4 +-
+ app/views/layouts/index.rhtml                      |    5 -
+ app/views/phone_numbers/_phone_number.rhtml        |    2 +-
+ app/views/phone_numbers/index.html.erb             |    2 +-
+ app/views/professionals/index.html.erb             |    1 -
+ app/views/professionals/signup.html.erb            |   33 -
+ app/views/required_degrees/index.html.erb          |    2 +-
+ app/views/skills/autocomplete_name.html.erb        |    5 -
+ app/views/skills/define.html.erb                   |   21 -
+ app/views/skills/finalize.html.erb                 |    4 -
+ app/views/skills/index.html.erb                    |   20 -
+ app/views/traits/define.html.erb                   |    8 -
+ app/views/traits/edit.html.erb                     |   28 -
+ app/views/traits/index.html.erb                    |  Bin 415 -> 0 bytes
+ app/views/traits/new.html.erb                      |   27 -
+ app/views/traits/show.html.erb                     |   20 -
+ config/environment.rb                              |    4 +-
+ config/routes.rb                                   |    4 -
+ db/development.sqlite3                             |  Bin 429056 -> 0 bytes
+ db/migrate/20080615010049_create_users.rb          |   12 +
+ db/migrate/20080615011334_create_countries.rb      |   13 +
+ db/migrate/20080615012421_create_states.rb         |   13 +
+ db/migrate/20080615013521_create_phone_numbers.rb  |   13 +
+ db/migrate/20080615013527_create_addresses.rb      |   12 +
+ db/migrate/20080615013530_create_towns.rb          |   13 +
+ ...e_skills.rb => 20080615014003_create_skills.rb} |    0 
+ db/migrate/20080615161921_create_employers.rb      |   12 +
+ db/migrate/20080615161935_create_benefits.rb       |   12 +
+ .../20080615162054_create_work_history_items.rb    |   12 +
+ db/migrate/20080619214331_create_post_codes.rb     |   13 +
+ ...20080621162213_create_job_application_states.rb |   16 +
+ ...080621163038_create_job_application_statuses.rb |   15 +
+ db/migrate/20080707080845_add_resume_blob.rb       |    8 -
+ db/migrate/20080707081530_create_professionals.rb  |   12 -
+ db/migrate/20080707084505_add_resume_metadata.rb   |    9 -
+ db/migrate/20080707090158_create_sessions.rb       |   16 -
+ db/migrate/20080710135117_create_traits.rb         |   12 -
+ ...080710145809_add_search_name_to_skill_metric.rb |    8 -
+ .../20080711073151_add_trait_type_to_metric.rb     |    8 -
+ db/schema.rb                                       |  486 -
+ log/development.log                                |33193 +-------------------
+ public/current.css                                 |  387 +
+ public/stylesheets/current.css                     |    6 +
+ test/fixtures/{professionals.yml => states.yml}    |    0 
+ test/fixtures/traits.yml                           |    7 -
+ test/functional/skills_controller_test.rb          |    8 -
+ test/functional/traits_controller_test.rb          |    8 -
+ test/unit/professional_test.rb                     |    8 -
+ test/unit/{trait_test.rb => state_test.rb}         |    2 +-
+ .../plugins/simple_localization/languages/en.yml   |  484 +-
+ 99 files changed, 1148 insertions(+), 34056 deletions(-)
+ delete mode 100644 app/helpers/skills_helper.rb
+ delete mode 100644 app/helpers/traits_helper.rb
+ create mode 100644 app/models/state.rb
+ delete mode 100644 app/models/trait.rb
+ delete mode 100644 app/views/professionals/signup.html.erb
+ delete mode 100644 app/views/skills/autocomplete_name.html.erb
+ delete mode 100644 app/views/skills/define.html.erb
+ delete mode 100644 app/views/skills/finalize.html.erb
+ delete mode 100644 app/views/skills/index.html.erb
+ delete mode 100644 app/views/traits/define.html.erb
+ delete mode 100644 app/views/traits/edit.html.erb
+ delete mode 100644 app/views/traits/index.html.erb
+ delete mode 100644 app/views/traits/new.html.erb
+ delete mode 100644 app/views/traits/show.html.erb
+ create mode 100644 db/migrate/20080615010049_create_users.rb
+ create mode 100644 db/migrate/20080615011334_create_countries.rb
+ create mode 100644 db/migrate/20080615012421_create_states.rb
+ create mode 100644 db/migrate/20080615013521_create_phone_numbers.rb
+ create mode 100644 db/migrate/20080615013527_create_addresses.rb
+ create mode 100644 db/migrate/20080615013530_create_towns.rb
+ rename db/migrate/{20080710111856_create_skills.rb => 20080615014003_create_skills.rb} (100%)
+ create mode 100644 db/migrate/20080615161921_create_employers.rb
+ create mode 100644 db/migrate/20080615161935_create_benefits.rb
+ create mode 100644 db/migrate/20080615162054_create_work_history_items.rb
+ create mode 100644 db/migrate/20080619214331_create_post_codes.rb
+ create mode 100644 db/migrate/20080621162213_create_job_application_states.rb
+ create mode 100644 db/migrate/20080621163038_create_job_application_statuses.rb
+ delete mode 100644 db/migrate/20080707080845_add_resume_blob.rb
+ delete mode 100644 db/migrate/20080707081530_create_professionals.rb
+ delete mode 100644 db/migrate/20080707084505_add_resume_metadata.rb
+ delete mode 100644 db/migrate/20080707090158_create_sessions.rb
+ delete mode 100644 db/migrate/20080710135117_create_traits.rb
+ delete mode 100644 db/migrate/20080710145809_add_search_name_to_skill_metric.rb
+ delete mode 100644 db/migrate/20080711073151_add_trait_type_to_metric.rb
+ create mode 100644 db/schema.db
+ create mode 100644 public/current.css
+ rename test/fixtures/{professionals.yml => states.yml} (100%)
+ delete mode 100644 test/fixtures/traits.yml
+ delete mode 100644 test/functional/skills_controller_test.rb
+ delete mode 100644 test/functional/traits_controller_test.rb
+ delete mode 100644 test/unit/professional_test.rb
+ rename test/unit/{trait_test.rb => state_test.rb} (71%)
+kant:jobyssey snagey$ git status
+# On branch master
+nothing to commit (working directory clean)
+kant:jobyssey snagey$ ./script/server
