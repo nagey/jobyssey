@@ -1,6 +1,3 @@
-<<<<<<< HEAD:app/models/skill.rb
-class Skill < ActiveRecord::Base
-=======
 class Skill < Metric
   
   has_many :synonyms, :class_name => 'Skill', :foreign_key => 'synonym_id'
@@ -44,5 +41,4 @@ class Skill < Metric
     self.save
   end
   
->>>>>>> c0965a58b5dee903c5648133067d90e370de9c0c:app/models/skill.rb
 end

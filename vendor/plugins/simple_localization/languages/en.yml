@@ -615,4 +615,21 @@ app:
     contact_us: Questions?
     about_us: About Us
     our_blog: Our Blog
+    upload_only_word_or_pdf: Please upload a word or pdf file
+    professional:
+        get_started: Get Started Now
+        upload_cv: Upload your CV now
+        name: Full Name
+        email: Email Address
+        email_confirmation: Confirm your Email Address
+        password: Choose a good password
+        password_confirmation: Confirm your password
+        code_name: pick a code name
+    skills:
+        add_skill: add a skill
+        couldnt_add_skill: error adding skill
+        skill_taken: You have that skill already
+        done_skills: That's all my skills thanks
+        
+    
     work_history_items: Work History Items

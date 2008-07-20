@@ -337,12 +337,6 @@ form label.fixedwidth
 	text-decoration: underline;
 }
 
-#errorExplanation
-{
-	color: red;
-	border: 6px red solid;
-	padding: 10px 10px 10px 10px;
-}
 
 form fieldset label {
 	width:150px;
