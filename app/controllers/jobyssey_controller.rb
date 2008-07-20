@@ -11,4 +11,8 @@ class JobysseyController < ApplicationController
   def copyright
   end
 
+  def index
+    @professional = Professional.new
+  end
+
 end
