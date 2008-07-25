@@ -3,9 +3,11 @@
 	<title><%= title :site_name => "Jobyssey – IT Jobs in Ireland" %></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
 	<%= stylesheet_link_tag "current" %>
+	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form' %>
 </head>
 
 <body>	
+
 	<div id="container">
 <div id="header">
 	<a class="headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
@@ -32,7 +34,7 @@
 <div id="notice"><%= flash[:notice] %></div> 
 <% end -%> 
 
-
+<div id="behindcontent">
 <div id="content">
 <%=@content_for_layout%>
 </div>
@@ -44,13 +46,14 @@
 			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
 			<li><a href="/jobyssey/contact"><%=l(:contact_us)%></a></li>
 		</ul>
-	</div>
+	
 
 	<div id="copyright">
 		<p class="snug"><%=l(:copyright_footer)%></p>
 		<p class="snug"><%= link_to l(:additional_copyright_information), {:action => :copyright, :controller => :jobyssey} %>
 	</div>
-
+</div>
+</div>
 </div>	
 </div>
 </body>

@@ -38,10 +38,11 @@ class SkillsetController < ApplicationController
   end
   
   def update_value
-    pq = PersonalQuality.find params[:pq][:id]
-    pq.update_attributes params[:pq]
-    flash[:notice] = "Updated %s" % pq.metric.name if pq.save
-    redirect_to :action => :define
+    pq = PersonalQuality.find params[params[:object_name].to_sym][:id]
+    pq.update_attributes params[params[:object_name].to_sym]
+    flash[:notice] = "Updated %s" % pq.metric.name if pq.save    
+    #redirect_to :action => :define
+    render :text => flash[:notice]
   end
   
   def finalize

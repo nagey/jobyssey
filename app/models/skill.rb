@@ -3,6 +3,8 @@ class Skill < Metric
   has_many :synonyms, :class_name => 'Skill', :foreign_key => 'synonym_id'
   belongs_to :synonym, :class_name => 'Skill'
   
+  validates_uniqueness_of 'name'
+  
   def name=(name)
     self.display_name = name unless self.name == name
     self.method_missing 'name=', name.downcase
