@@ -1,51 +1,7 @@
-
-.clear
-{
-	clear: left;
-}
-
-
-body {
-	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
-	background-color: #FFFFFF;
-	background-image: url(/graybackground.jpg);
-	background-position: top center; 	 
-	text-align: center;
-	color: #fbfbfb;
-	height: 100%;
-}
-
-div#errorExplanation
-{
-	color: red;
-	padding: 10px 10px 10px 10px;
-}
-
-div#container
-{
-margin: 0 auto; 
-	width: 850px; 
-	text-align: left;
-	background: #ffffff;
-	padding-top: 0px;
-	border-top: 0px;
-}
-
-div#behindcontent
-{
-	height: 100%;
-	width: 850px;
-	position: absolute;
-	background: #ffffff;
-}
-
-table{
-	color: #141414;
-}
+/* Header */
 
 
 #header {
-
 	background: #FF7800;
 	background-image: url(/everest.jpg);
 	background-repeat: no-repeat;
@@ -53,117 +9,69 @@ table{
 	color: #FFFFFF;
 	height: 125px;
 }
-
 #header a{
 	color:#FFF;
 	text-decoration:none;
 }
-
-#header h1
-{
+#header h1{
 	font-size:40px;
 	text-indent: 16px;
-	margin-top: 0 auto;
 	line-height: 1.7em;
-	}
-	
+	color: #FFFFFF;
+	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
+	margin: 10px 25px 10px 20px;
+}
 #header	h3 {
 		font-size: 16px;
 		margin: -25px 15px 0px 155px;
-
 		}
-
-#bigJ span
-{
+#bigJ span{
 	font-size: 36px;
 	color: black;
 }
 
-h1 {
-	font-size: 20px;
-	margin: 10px 25px 10px 20px;
-	padding-top: 10px;
-	text-indent: -20px;
-	}
 
-h2
-{
-	font-size: 16px;
-}
+/* Navbars */
 
-h3 {
-	font-size: 14px;
-
-}
-
-h4{
-	font-size: 14px;
-	font-weight: bold;
-}
-
-p
-{
-	margin-bottom: 24px;
-}
-
-.snug
-{
-	margin-bottom: 0px;
-}
-
-#snug
-{
-	margin-bottom: 0px;
-}
-
-#small
-{
-	font-size: 10px;
-}
 
 #navbar {
 	background-color:#242463;
 	position:relative;
 	text-align:right;
 }
-
 #navbar a{
 	color:#FFF;
 	text-decoration:none;
 }
-
 #navbar ul {
 	margin: 0;
 	list-style-type: none;
 }
-
 #navbar li {
 	display:inline;
 	margin-right:10px;
 	font-weight: bold;
 }
 
+
 #loggedinnavbar {
 	background-color:#8888B8;
 	position:relative;
 	text-align:left;
 }
-
 #loggedinnavbar a{
 	color:#FFF;
 	text-decoration:none;
 }
-
 #loggedinnavbar ul {
 	margin: 0;
 	list-style-type: none;
 }
-
 #loggedinnavbar li {
 	display:inline;
 	margin-right:10px;
-
 }
+
 
 #loginbar {
 	background-color:#8888B8;
@@ -171,130 +79,41 @@ p
 	text-align:left;
 	height: 24px;
 }
-
 #loginbar a{
 	color:#FFF;
 	text-decoration:none;
 }
-
 #loginbar ul {
 	margin: 0;
 	list-style-type: none;
 }
-
 #loginbar li {
 	display:inline;
 	margin-right:10px;
 	font-weight: bold;
 }
-#loginbar label
-{
+#loginbar label{
 	color: #fff;
 	font-weight: bold;
 }
+
 
 #adminbar {
 	background-color:#c1c1d5;
 	position:relative;
 	text-align:left;
 }
-
 #adminbar a{
 	color:#FFF;
 	text-decoration:none;
 }
-
 #adminbar ul {
 	margin: 0;
 	list-style-type: none;
 }
-
 #adminbar li {
 	display:inline;
 	margin-right:10px;
-
-}
-
-em
-{	
-	font-weight: bold;
-	font-style: normal;
-}
-
-#content {
-	font-size:14px;
-	color: #141414;
-	padding: 0px 20px 20px 20px;
-}
-
-#content img
-{
-	margin-left: 100px;
-}
-
-#frontcontent {
-	font-size:14px;
-	color: #1C2F5A;
-
-	padding: 10px 10px 10px 20px;
-		display: inline;
-}
-
-#frontcontent img
-{
-	margin-left: 45px;
-}
-
-
-#left
-{
-	width: 530px;
-	margin-top: 10px; 
-	padding-top: 0px;
-	padding-left: 20px;
-	border-right-style: inset;
-	border-color: #888888;
-	float: left;
-}
-
-#right
-{
-	width: 220px;
-	height: 280px;
-	padding-top: 10px;
-	padding-bottom: 5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin: 0px 0px 0px 550px;
-	min-height: 0;	
-}
-
-#right h1
-{
-	line-height: 10px;
-}
-
-#right h2
-{
-	line-height: 8px;
-}
-
-#content a
-{
-	color: #242463;
-}
-
-ul 
-{
-	margin: 0;
-	list-style-type: none;
-}
-
-li.skills_list_skill_item {clear:both;}
-
-#faq ul
-{
-	list-style-type: square;
 }
 
 
@@ -303,18 +122,15 @@ li.skills_list_skill_item {clear:both;}
 	position:relative;
 	text-align:  right;
 	width: 850px;
-}
-
+	}
 #bottomnavbar a{
 	color:#FFF;
 	text-decoration:none;
 }
-
 #bottomnavbar ul {
 	margin: 0;
 	list-style-type: none;
 }
-
 #bottomnavbar li {
 	display:inline;
 	margin-right:10px;
@@ -322,107 +138,171 @@ li.skills_list_skill_item {clear:both;}
 	font-size: 16px;
 }
 
-#copyright
-{
+
+#copyright{
 	font-size: 10px;
 	color: ##1C2F5A; 
 	text-align: right;
 	background-color:#FFFFFF;
 	font-weight:bold;
-	}
+}
 	
-#copyright a
-{
-	color:#000;
+#copyright a{
+	color:#242463;
 	text-decoration: underline;
 }
 
 
-fieldset label {
-	width:200px;
-	float: left;
+/* Divs */
+
+.clear{
+	clear: left;
+}
+body {
+	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
+	background-color: #FFFFFF;
+	background-image: url(/graybackground.jpg);
+	background-position: top center; 	 
+	text-align: center;
+	color: #242463;
+	height: 100%;
+}
+div#errorExplanation{
+	color: red;
+	padding: 10px 10px 10px 10px;
+}
+div#container{
+margin: 0 auto; 
+	width: 850px; 
 	text-align: left;
-	padding-right:1em;
+	background: #ffffff;
+	padding-top: 0px;
+	border-top: 0px;
+	color: #242463;
+}
+div#behindcontent{
+	height: 100%;
+	width: 850px;
+	position: absolute;
+	background: #ffffff;
+}
+#content {
+	font-size:14px;
+	color: #242463;
+	background-color: #ffffff;
+	padding: 0px 20px 20px 20px;
+}
+#content a{
+		color: #242463;
+	}
+#left{
+	width: 530px;
+	margin-top: 10px; 
+	padding-top: 0px;
+	padding-left: 20px;
+	border-right-style: inset;
+	border-color: #888888;
+	float: left;
+}
+#right{
+	width: 220px;
+	height: 280px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0px 0px 0px 560px;
+	min-height: 0;	
 }
 
 
- fieldset
+
+#content a
 {
-	padding:  5px 10px 20px 10px;
-	margin: 30px 30px 30px 30px;
+	color: #242463;
 }
 
-legend
-{
+/* Font Styling */
+
+h1 {
 	font-weight: bold;
 	font-size: 24px;
 	color: #FF7800;
 	font-family: "Times New Roman";
+	text-indent: -20px;
+	}
+h2{
+	font-size: 16px;
 }
-
-.bigorange
-{
+h3 {
+	font-size: 14px;
+}
+h4{
+	font-size: 14px;
+	font-weight: bold;
+}
+.bigorange{
 	width: 250px;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 18px;
 	color: #FF7800;
-	font-family: "Times New Roman";	
 	float: left;
 	text-align: left;
 	padding-top: 40px;
 }
 
-form input#skill_name
-{
+
+/* Lists */
+
+
+ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+li.skills_list_skill_item {clear:both;}
+
+
+/* Forms */
+
+
+fieldset label {
+	width:300px;
+	float: left;
+	text-align: left;
+	padding-right:1em;
+}
+fieldset{
+	padding:  5px 10px 20px 10px;
+	margin: 30px 30px 30px 30px;
+}
+legend{
+	font-weight: bold;
+	font-size: 18px;
+	color: #FF7800;
+}
+form input#skill_name{
 	margin-top: 40px;
 	margin-left: 0px;
 }
-
-label.fixedwidth
-{
+label.fixedwidth{
 	display: block; 
 	width:  200px;
 	float:  left;
 	font-weight: bold;
 	text-align: left;
 }
-
-label.skillname
-{
+label.skillname{
 	display: inline-block; 
-	width: 100px; 
+	width: 200px; 
 	font-size: 16px; 
 	color: #242463;
 	font-weight: bold;
 }
 
 
-div#container-slider{
-float:right;
-}
-
-div#employerprofiledetails
-{
-	width: 400px; 
-}
-
-#employerprofiledetails h3
-{
-	font-size: 16px;
-}
-
-
-div#employerphotos
-{
-	width: 250px;
-	float: right;
-}
-
-#employerphotos h3
-{
-	font-size: 16px;
-}
 /* Tables */
+
 
 table {
  font-size: 95%;
@@ -481,9 +361,14 @@ tbody td a:hover, tbody th a:hover {
  text-decoration:none;
 }
 
+
+/* Slider */
+
+
 .slider_container { position: relative; margin-top: 50px; height: 40px; display: inline;} 
 .small_label { background: url(/images/slider/minus.gif) no-repeat; height: 19px; width: 19px; overflow: hidden; float: left; display: inline;} 
-.slider_bar { background: url(/images/slider/bar.gif) no-repeat; height: 19px; width: 440px;  float: left; margin: 0px 5px; position: relative;} 
+.slider_bar { background: url(/images/slider/bar.gif) no-repeat; height: 19px; width: 400px;  float: left; margin: 0px 5px; position: relative;} 
 .large_label { background: url(/images/slider/plus.gif) no-repeat; height: 19px; width: 19px; overflow: hidden; float: left;} 
 .slider_handle { background: url(/images/slider/selector.png) no-repeat; height: 19px; width: 20px; overflow: hidden; position: absolute; top: 1px;} 
 .slider_callout { background: url(/images/slider/callout.gif) no-repeat; height: 45px; width: 38px; overflow: hidden; position: absolute; top: -50px; margin-left:-10px;  padding: 8px 0px 0px 0px; font-family: "Myriad Pro"; color: #284a6e; font-weight: bold; text-align: center;}
+div#container-slider{ float:right; }

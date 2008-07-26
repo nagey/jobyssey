@@ -50,4 +50,10 @@ class SkillsetController < ApplicationController
     @p.set_search_position
     redirect_to :controller => :personality, :action => :define if @p.save
   end
+  
+  def destroy
+     pq = PersonalQuality.find params[params[:object_name].to_sym][:id]
+     pq.destroy params[params[:object_name].to_sym][:id]
+  end
+  
 end
