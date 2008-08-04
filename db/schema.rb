@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080711111639) do
+ActiveRecord::Schema.define(:version => 20080727111007) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "employer_id"
@@ -210,6 +210,9 @@ ActiveRecord::Schema.define(:version => 20080711111639) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+# Could not dump table "invites" because of following StandardError
+#   Unknown type 'primary_key' for column 'id'
 
   create_table "job_application_attachments", :force => true do |t|
     t.integer  "job_application_id"

@@ -1,5 +1,8 @@
 /* Header */
 
+a img {border:0; }
+
+#plaxo_link {padding-top:10px;}
 
 #header {
 	background: #FF7800;

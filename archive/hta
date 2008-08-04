@@ -1,0 +1,5 @@
+RewriteEngine on
+Options +FollowSymLinks -Indexes
+
+RewriteCond %{HTTP_HOST} !^www\.jobyssey\.com [NC]
+RewriteRule ^(.*)$ http://www.jobyssey.com/$1 [R=301]

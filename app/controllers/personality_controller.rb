@@ -11,7 +11,7 @@ class PersonalityController < ApplicationController
       @personal_quality.metric = @trait
       break unless @trait.nil?
     end
-    redirect_to :controller => :job_postings, :action => :find if @trait.nil?
+    redirect_to :controller => :invites, :action => :import_addresses if @trait.nil?
   end
   
   def update
