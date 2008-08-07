@@ -1,0 +1,54 @@
+<?php
+$r = false;
+if ($_REQUEST['submit'] == 3) {
+	mail("richard@jobyssey.com","Inquiry from Jobyssey.com", $_REQUEST['email']." has requested more info");
+	mail("christina@jobyssey.com","Inquiry from Jobyssey.com", $_REQUEST['email']." has requested more info");
+	$r = true;
+}
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Jobyssey – Search IT Jobs in Ireland</title>
+	<meta name="keywords" content="it jobs, irish it jobs, it jobs in ireland, it jobs in dublin, dublin job board, it job board, software job board, software engineer ireland, engineering job board, developer jobs in ireland" />
+	<meta name="description" content="Search IT Jobs at Jobyssey. Jobyssey is best job search: recruitment experts, job search tools, career advice." />
+	<link rel="stylesheet" href="index.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+</head>
+<body id="index" onload="">
+	<div id="site-banner">
+	<h1><span class="job">Job</span>yssey</h1>
+	<div id="subtitle">
+		<h2>Start Your Journey</h2>
+		<p>About Us</p>
+	</div>
+	</div>
+	<div id="content-wrapper">
+		<p>Jobyssey is a whole new way to find your perfect job.  The journey begins April 15, 2008.</p>
+	</div>
+	<div id="pretty-picture">
+	<form method="post">
+		<fieldset>
+			I'm interested. Keep me up to date with your plans.
+			<ul>
+				<? if (!$r) { ?>
+				<li><label for="name">My Name:</label><input type="text" name="name" id="name" maxlength="64" /></li>
+				<li><label for="email">My Email:</label><input type="text" name="email" id="email" maxlength="64" /></li>
+				<li><button>That's me!</button></li>
+				<input type="hidden" name="submit" value="3" />
+				<? } else { ?>
+					<li>Thanks! We'll keep you up to date.</li>
+				<? } ?>
+			</ul>				
+		</fieldset>
+	</form>
+	</div>
+	<div id="some-text">
+	<p>Jobyssey is the new way to find your next job or employee in Ireland. Using key information and an innovative search algorithm, Jobyssey matches the perfect individual to the perfect IT opportunity. On Jobyssey you will not find any agencies, imaginary candidates or non-existent IT jobs - just outstanding individuals and employers.</p>
+
+	<p> If you are looking for an IT job in Ireland, Jobyssey puts your confidential profile in front of Ireland's top tier employers. You decide who contacts you. Jobyssey uses your work history to match you to the best next step in your career. Whether you're a software developer, localisation specialist, team lead, project manager or QA engineer, Jobyssey has the IT jobs in Ireland you want to know about.</p>
+
+	<p>When you want to hire new IT staff in the Irish market, Jobyssey builds a complete profile of your ideal employee and searches our IT candidate database for the best match. Whether it's technical skills like Java or C#, industry experience, or personality fit, Jobyssey finds the person that matches all the requirements. Powered by cutting edge technology and a unique search function, Jobyssey is the recruitment solution you need. No time wasters and no agencies, just the best IT candidates in the Irish market.</p>
+	</div>
+</body>
+</html>

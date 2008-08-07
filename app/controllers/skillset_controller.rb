@@ -19,7 +19,7 @@ class SkillsetController < ApplicationController
   end
 
   def add
-    skills = Skill.find_all_by_display_name(params[:skill][:name])
+    skills = Skill.find_all_by_name(params[:skill][:name].downcase)
     if skills.length == 1
       @skill = skills.first
     elsif skills.length == 0

@@ -1,0 +1,87 @@
+body {
+	font-family: "Lucida Grande", Lucida, Verdana, Arial, sans-serif;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+h1 {
+	color: #1557ec;
+	padding-left:10px;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-shadow: #505050 1px 2px 3px;
+	margin:0;
+	
+}
+
+h1 span {
+	color: #ff0091;
+}
+
+div#subtitle {
+	background-color: #777;
+	color:#fff;
+}
+
+div#site-banner {
+	clear: both;
+	font-variant: small-caps;
+}
+
+#site-banner h2 {
+	margin-top:3px;
+	padding-left:10px;
+	padding-bottom:10px;
+	font-size:14px;
+	float:left;
+}
+
+#site-banner p {
+	text-align:right;
+	font-size: 12px;
+	padding-bottom:4px;
+	padding-right:10px;
+	padding-top:6px;
+}
+
+
+
+p {
+	padding-left:10px;
+}
+
+div#content-wrapper {
+	margin: 0 auto;
+}
+
+div#content-wrapper p {
+	text-align:center;
+}
+
+div#pretty-picture {
+	background-image: url(background.png);
+	width:1024px;
+	height:550px;
+	margin: 0 auto;
+}
+
+fieldset {
+	background-image: url(thirty-eight.png);
+	width: 250px;
+	padding-top:10px;
+	position: relative;
+	left: 60px;
+	top: 50px;
+}
+fieldset legend {
+	position:relative;
+	top: 6px;
+}
+ul {
+	list-style-type: none;
+}
+
+button {
+	margin-top: 8px;
+}
