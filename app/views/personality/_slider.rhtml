@@ -1,0 +1,12 @@
+<%= render :partial => 'sliderjava', :locals => {:name => name, :value => value} %>
+<div id="container-slider"> 
+	<div class="slider_container" id="slider_container_<%=name%>"> 
+		<div class="slider_bar" id="slider_bar_<%=name%>"> 
+			<div class="slider_callout" id="slider_callout_<%=name%>">callout</div> 
+			<div id="slider_handle_<%=name%>" class="slider_handle"></div> 
+		</div> 
+		<!--<div id="remove_skill_<%=name%>"> <%= submit_tag l(:remove_skill )%> </div>-->
+		<div id="showvalue"></div>
+	</div> 
+</div>
+<br>

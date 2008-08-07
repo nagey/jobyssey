@@ -86,4 +86,9 @@ class TraitsController < ApplicationController
     end
   end
   
+  def value
+     @trait = Trait.find(params[:id])
+     @trait.value = pg.value
+    end
+  
 end

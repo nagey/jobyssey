@@ -1,0 +1,35 @@
+<script language="Javascript">
+				$(function() { 
+            $('#slider_callout_<%=name%>').hide(); 
+            var calloutVisible = false; 
+            $('#slider_bar_<%=name%>').slider({ 
+                handle: '.slider_handle', 
+                minValue: 0, 
+                maxValue: 25, 
+                start: function(e, ui) {
+                    $('#slider_callout_<%=name%>').fadeIn('fast', function() { calloutVisible = true;}); 
+                }, 
+                stop: function(e, ui) { 
+                    if (calloutVisible == false) { 
+                        $('#slider_callout_<%=name%>').fadeIn('fast', function() { calloutVisible = true;}); 
+                        $('#slider_callout_<%=name%>').css('left', ui.handle.css('left')).text(Math.round(ui.value)); 
+                    } 
+                    $('#slider_callout_<%=name%>').fadeOut('fast', function() { calloutVisible = false; }); 
+					
+					$('#<%=name%>_value').val(Math.round(ui.value))
+					$('#<%=name%>_form').ajaxSubmit();
+					
+	
+
+					
+                }, 
+                slide: function(e, ui) { 
+                    $('#slider_callout_<%=name%>').css('left', ui.handle.css('left')).text(Math.round(ui.value)); 
+                } 
+            });
+ 			$('#slider_bar_<%=name%>').slider("moveTo", <%=value%>);
+        });
+</script>
+
+
+

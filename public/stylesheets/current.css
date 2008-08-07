@@ -14,7 +14,7 @@
 	text-decoration:none;
 }
 #header h1{
-	font-size:40px;
+	font-size:28px;
 	text-indent: 16px;
 	line-height: 1.7em;
 	color: #FFFFFF;
@@ -25,9 +25,8 @@
 		font-size: 16px;
 		margin: -25px 15px 0px 155px;
 		}
-#bigJ span{
+#bigJ {
 	font-size: 36px;
-	color: black;
 }
 
 

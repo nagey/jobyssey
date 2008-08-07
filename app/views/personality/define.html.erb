@@ -1,8 +1,24 @@
+<fieldset>
+<legend>Your Personality: </legend>
+
+<p>For each of the qualities listed below, adjust the slider to reflect your personality and work preferences.</p>
+<br>
+<ul id="personality-list" class="personalities-list">
+
 <%= @trait.name %>
 <% form_for :personal_quality, :url => {:action => :update} do |form| %>
 	<%= @trait.lower_bound %> 
-	<%=form.text_field :value, :size => 2 %> 
+	<%=form.hidden_field :value, {:size => 2} %>
 	<%=form.hidden_field :metric_id %>
 	<%= @trait.upper_bound %>
+		<%= render :partial => 'slider', :locals => {:name => @trait.name, :value => @trait.value} %>
 	<%= submit_tag l(:traits, :define_trait)%>
 <% end %>
+
+
+
+</ul>
+
+<%= link_to l(:skills, :done_skills), :action => :finalize %>
+
+</fields

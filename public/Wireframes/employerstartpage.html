@@ -1,0 +1,113 @@
+<html>
+<head>
+	<title>Jobyssey – IT Jobs in Ireland</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+	<link href="current.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/javascripts/jquery.js?1216636709" type="text/javascript"></script>
+
+</head>
+
+<body>	
+
+	<div id="container">
+<div id="header">
+	<a class="headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
+	<h3>BETA</h3>
+</div>
+<div id="navbar">
+	<ul>
+
+		<li><a id="logAction" href="{$result->makeUrl('logout','login','user')}" title="logout">Logout</a></li>
+		
+	</ul>
+</div>
+
+<div id="loginbar" style="visibility:hidden;display:none">
+	<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
+		<input type="hidden" name="action" value="login" />
+		<label></label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
+
+		<label></label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
+		<input type="submit" name="submittedlogin" value=""  />
+		<a class="small" href="{$result->makeUrl('','password','jobs')}"></a>
+	</form>
+</div>
+
+
+
+<div id="behindcontent">
+<div id="content">
+<div id="newsfeed">
+
+<h1>Newsfeed</h1>
+		<p>Newsfeed of anything from the activity tracker meeting the following criteria:</p>
+		<ul>
+			<li>User applies for job (should show percent match for job as well?)</li>
+			<li>User accepts an interview invite</li>
+			<li>User asks to change date of interview</li>
+			<li>User declines interview</li>
+			<li>User cancels already scheduled interview</li>
+		</ul>
+
+		New Candidates for You
+		<p>Links to profiles of any new candidates since last login that are a 60% (70%?) match or better for any jobs.</p>
+
+	
+    </div>		
+
+			<div id="startpage">
+
+				<div class="employerhotlinks">
+					Add a New Job </div>
+					
+					<div class="employerhotlinks">
+					Get more Invitations
+					</div>
+					<div class="employerhotlinks">
+					Some other thing
+					</div>
+					
+					<fieldset>
+						<Legend>Statistics</Legend>
+						<ul>
+							<li>Total applications to date:</li>
+							<li>Open applications:</li>
+							<li>Interviews scheduled:</li>
+							<br>
+							<li>Invitation to interview rate:(%) </li>
+							<li>Average interview rating:</li>							
+						</ul>
+					</fieldset>
+					
+					
+					<fieldset>
+						<Legend>Jobyssey News</Legend>
+						<p>News about new features, etc.</p>
+					</fieldset>
+          	
+					</div>
+
+
+</div>
+
+
+<div id="footer">
+	<div id="bottomnavbar">
+		<ul>
+			<li><a href="/wordpress/">Our Blog</a></li>
+
+			<li><a href="/jobyssey/about">About Us</a></li>
+			<li><a href="/jobyssey/contact">Questions?</a></li>
+		</ul>
+	
+
+	<div id="copyright">
+		<p class="snug">© 2008 Jobyssey, Ltd. All Rights Reserved. <a href="/jobyssey/copyright">Additional Copyright Information</a>
+	</div>
+</div>
+
+</div>
+</div>	
+</div>
+</body>
+</html>
