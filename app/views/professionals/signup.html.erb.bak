@@ -30,8 +30,8 @@
 		<label for="professional[code_name]"><%=l(:professional, :code_name)%></label>
 		<%= form.text_field 'code_name' %>
 	</li>			
-</ul>
-	<%= submit_tag l(:professional, :create_account)%>
 
+	<%= submit_tag l(:professional, :create_account)%>
+</ul>
 </fieldset>
 <% end %>

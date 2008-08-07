@@ -36,4 +36,4 @@
 
 <%= link_to l(:skills, :done_skills), :action => :finalize %>
 
-</fieldset>
+</fields

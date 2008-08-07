@@ -342,7 +342,7 @@ li.skills_list_skill_item {clear:both;}
 
 
 fieldset label {
-	width:260px;
+	width:300px;
 	float: left;
 	text-align: left;
 	padding-right:1em;

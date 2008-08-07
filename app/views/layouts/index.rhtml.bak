@@ -47,7 +47,7 @@
 			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
 			<li><a href="/jobyssey/contact"><%=l(:contact_us)%></a></li>
 		</ul>
-</div>	
+	
 
 	<div id="copyright">
 		<p class="snug"><%=l(:copyright_footer)%> <%= link_to l(:additional_copyright_information), {:action => :copyright, :controller => :jobyssey} %>
