@@ -1,43 +1,51 @@
 /* Header */
 
-a img {border:0; }
-
-#plaxo_link {padding-top:10px;}
 
 #header {
-	background: #FF7800;
-	background-image: url(/everest.jpg);
+	background: #FFffff;
+	background-image: url(header.jpg);
 	background-repeat: no-repeat;
 	background-position: top right; 
 	color: #FFFFFF;
-	height: 125px;
+	height: 100px;
 }
 #header a{
 	color:#FFF;
 	text-decoration:none;
 }
 #header h1{
-	font-size:28px;
-	text-indent: 16px;
-	line-height: 1.7em;
+	font-size:40px;
+	text-indent: 6px;
+	line-height: 1.9em;
 	color: #FFFFFF;
 	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
-	margin: 10px 25px 10px 20px;
+	margin: 0px 25px 10px 10px;
+	font-weight: normal;
+	padding-top: -50px;
+	padding-bottom: 10px;
+	letter-spacing: -2px;
 }
 #header	h3 {
-		font-size: 16px;
-		margin: -25px 15px 0px 155px;
-		}
-#bigJ {
-	font-size: 36px;
+	font-size: 16px;
+	margin: -25px 15px 0px 155px;
+	}
+#header p {
+	text-indent: 430px;
+	margin: 0 auto;
+	padding: 10px 0px 0px 0px;
+	
 }
+#bigj {
+	font-size: 50px;
+}
+
 
 
 /* Navbars */
 
 
 #navbar {
-	background-color:#242463;
+	background-color:#FF7800;
 	position:relative;
 	text-align:right;
 }
@@ -120,10 +128,11 @@ a img {border:0; }
 
 
 #bottomnavbar {
-	background-color:#242463;
+	background-color:#FF7800;
 	position:relative;
 	text-align:  right;
 	width: 850px;
+	height: 1.1em;
 	}
 #bottomnavbar a{
 	color:#FFF;
@@ -163,7 +172,7 @@ a img {border:0; }
 body {
 	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
 	background-color: #FFFFFF;
-	background-image: url(/graybackground.jpg);
+	background-image: url(graybackground.jpg);
 	background-position: top center; 	 
 	text-align: center;
 	color: #242463;
@@ -202,8 +211,6 @@ div#behindcontent{
 	margin-top: 10px; 
 	padding-top: 0px;
 	padding-left: 20px;
-	border-right-style: inset;
-	border-color: #888888;
 	float: left;
 }
 #right{
@@ -215,14 +222,79 @@ div#behindcontent{
 	padding-right: 20px;
 	margin: 0px 0px 0px 560px;
 	min-height: 0;	
+	border-left-style: inset;
+	border-color: #888888;
 }
 
+#newsfeed{
+	width: 530px;
+	margin-top: -15px; 
+	margin-left: -20px;
+	padding-top: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+}
+#newsfeed H1{
+		font-weight: bold;
+		font-size: 20px;
+		color: #444444;
+		font-family: "Lucida Sans";
+		text-indent: 0px;
+}
+#newsfeed p{
+	font-size: 12px;
+	color: #444444;
+
+}
+#startpage{
+	width: 220px;
+	height: 300px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 0px;
+	margin: 0px 0px 0px 550px;
+	min-height: 0;
+	font-size: 10px;
+	border-left-style: solid;
+	border-color: #eeeeee;	
+}
+#startpage H1{
+		font-weight: bold;
+		font-size: 20px;
+		color: #444444;
+		font-family: "Lucida Sans";
+		text-indent: -10px;
+}
+#startpage fieldset{
+		padding:  0px 5px 0px 5px;
+		margin:  0px 0px 0px 0px;
+
+}
+#startpage legend{
+	font-weight: bold;
+	font-size: 14px;
+	color: #444444;
+	font-family: "Lucida Sans";
 
 
+}
+#startpage li{
+	text-indent: -40px;
+}
 #content a
 {
 	color: #242463;
 }
+.employerhotlinks{
+	color: #ffffff;
+	background: #888888; 
+	font-size: 14px;
+	font-weight: bold; 
+	margin: 2px 2px 2px 2px;
+}
+
 
 /* Font Styling */
 
@@ -230,8 +302,7 @@ h1 {
 	font-weight: bold;
 	font-size: 24px;
 	color: #FF7800;
-	font-family: "Times New Roman";
-	text-indent: -20px;
+
 	}
 h2{
 	font-size: 16px;
@@ -250,7 +321,7 @@ h4{
 	color: #FF7800;
 	float: left;
 	text-align: left;
-	padding-top: 40px;
+
 }
 
 

@@ -26,4 +26,7 @@ class ProfessionalsController < ApplicationController
     end
   end
   
+  def home
+    @home
+  end
 end

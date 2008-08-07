@@ -26,7 +26,7 @@ class InvitesController < ApplicationController
     rescue
       false
     end
-    redirect_to :controller => :profesionals, :action => :home
+    redirect_to :controller => :professionals, :action => :home
   end
 
   def join
