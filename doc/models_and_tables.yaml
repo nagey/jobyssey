@@ -239,6 +239,8 @@ user:
     type:string
     employer_id:integer
     search_position:string
+    working_time_id:int
+    employment_type_id:int
 
 user_benefit_preferences:
     user_id:integer

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :personal_questions
+
   map.resources :cvs
 
   map.resources :attachments

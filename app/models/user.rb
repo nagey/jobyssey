@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   belongs_to :employer
   has_many :work_history_items
   has_many :feedback_items
+  belongs_to :working_time
+  belongs_to :employment_type
   
   validates_confirmation_of :email
 

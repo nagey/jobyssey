@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :type %><br />
-    <%= f.text_field :type %>
+	<%= select_tag "differentiator_question[type]", options_for_select(@differentiator_question.types) %>
   </p>
   <p>
     <%= f.label :name %><br />
