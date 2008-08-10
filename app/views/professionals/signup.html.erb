@@ -30,6 +30,14 @@
 		<label for="professional[code_name]"><%=l(:professional, :code_name)%></label>
 		<%= form.text_field 'code_name' %>
 	</li>			
+	<li>
+		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
+		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
+	</li>			
+	<li>
+		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
+		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
+	</li>			
 </ul>
 	<%= submit_tag l(:professional, :create_account)%>
 

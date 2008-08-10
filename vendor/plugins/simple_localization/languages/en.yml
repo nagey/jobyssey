@@ -626,6 +626,8 @@ app:
         password: Choose a good password
         password_confirmation: Confirm your password
         code_name: pick a code name
+        working_time: Working Time
+        employment_type: Employment Type
     skills:
         add_skill: add a skill
         couldnt_add_skill: error adding skill

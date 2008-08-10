@@ -9,6 +9,8 @@ class ProfessionalsController < ApplicationController
   def signup
     @cv = Cv.new params[:cv]
     @professional = Professional.new
+    @employment_types = EmploymentType.find :all
+    @working_times = WorkingTime.find :all
     session[:cv] = @cv
     render :action => :index unless @cv.valid?
   end

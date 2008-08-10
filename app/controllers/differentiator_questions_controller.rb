@@ -44,7 +44,7 @@ class DifferentiatorQuestionsController < ApplicationController
   # POST /differentiator_questions.xml
   def create
     @differentiator_question = DifferentiatorQuestion.new(params[:differentiator_question])
-
+    @differentiator_question.type = params[:differentiator_question][:type]
     respond_to do |format|
       if @differentiator_question.save
         flash[:notice] = 'DifferentiatorQuestion was successfully created.'
@@ -64,6 +64,7 @@ class DifferentiatorQuestionsController < ApplicationController
 
     respond_to do |format|
       if @differentiator_question.update_attributes(params[:differentiator_question])
+        @differentiator_question.type = params[:differentiator_question][:type]
         flash[:notice] = 'DifferentiatorQuestion was successfully updated.'
         format.html { redirect_to(@differentiator_question) }
         format.xml  { head :ok }
