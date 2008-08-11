@@ -1,0 +1,31 @@
+<h1>Drop us a line</h1>
+<p>Problems, questions, thoughts, suggestions...we're all ears.</p>
+<% form_for(@contact) do |f| %>
+  <%= f.error_messages %>
+<table>
+    <tr>
+        <td><label for="email_name">Name:</label></td>
+        <td><%= text_field "email", "name", :size => 30 %></td>
+    </tr>
+    <tr>
+        <td><label for="email_address">Email Address:</label></td>
+        <td><%= text_field "email", "address", :size => 30 %></td>
+    </tr>
+    <tr>
+        <td><label for="email_subject">Subject:</label></td>
+        <td><%= text_field "email", "subject", :size => 30 %></td>
+    </tr>
+    <tr>
+        <td><label for="email_body">Body:</label></td>
+        <td><%= text_area "email", "body", :rows => 8, :cols => 30 %></td>
+    </tr>
+</table>
+
+
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', contacts_path %>

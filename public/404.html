@@ -1,30 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>The page you were looking for doesn't exist (404)</title>
-	<style type="text/css">
-		body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-		div.dialog {
-			width: 25em;
-			padding: 0 4em;
-			margin: 4em auto 0 auto;
-			border: 1px solid #ccc;
-			border-right-color: #999;
-			border-bottom-color: #999;
-		}
-		h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-	</style>
+	<title><%= title :site_name => "Jobyssey – IT Jobs in Ireland" %></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+	<%= stylesheet_link_tag "current" %>
+	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form' %>
 </head>
 
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
+<body>	
+
+	<div id="container">
+		<div id="header">
+		<p>Your journey starts today</p>
+			<a class= "headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
+
+		</div>
+<div id="navbar">
+	<ul>
+		<li><a href="/it-professionals">Professionals</a></li>
+		<li><a href="/it-employers">Employers</a></li>
+	</ul>
+</div>
+
+<div id="loginbar" style="visibility:hidden;display:none">
+	<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
+		<input type="hidden" name="action" value="login" />
+		<label><%=l(:email)%></label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
+		<label><%=l(:password)%></label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
+		<input type="submit" name="submittedlogin" value="<%=l(:login)%>"  />
+		<a class="small" href="{$result->makeUrl('','password','jobs')}"><%=l(:forgot_password)%></a>
+	</form>
+</div>
+
+<% if flash[:notice] -%> 
+<div id="notice"><%= flash[:notice] %></div> 
+<% end -%> 
+
+<div id="behindcontent">
+<div id="content">
+ <h1>The page you were looking for doesn't exist.</h1>
     <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
+</div>
+
+<div id="footer">
+	<div id="bottomnavbar">
+		<ul>
+			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
+			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
+			<li><a href="/jobyssey/contact"><%=l(:contact_us)%></a></li>
+		</ul>
+</div>	
+
+	<div id="copyright">
+		<p class="snug"><%=l(:copyright_footer)%> <%= link_to l(:additional_copyright_information), {:action => :copyright, :controller => :jobyssey} %>
+	</div>
+</div>
+</div>
+</div>	
+</div>
 </body>
 </html>
+	

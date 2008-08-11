@@ -2,7 +2,7 @@
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
-# ENV['RAILS_ENV'] ||= 'production'
+ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.1.0' unless defined? RAILS_GEM_VERSION
@@ -64,5 +64,18 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.server_settings = {
+      :address        => 'smtp.website.co.uk',
+      :port           => 25,
+      :authentication => :login,    # Don't change this one.
+      :user_name      => "smtp_username",
+      :password       => "smtp_password" 
+  }
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.default_charset = "utf-8" 
+  
 end
 

@@ -21,4 +21,21 @@ class ApplicationController < ActionController::Base
       Localization.use params[:lang]
   end
   
+  def rescue_404
+      rescue_action_in_public CustomNotFoundError.new
+    end
+
+    def rescue_action_in_public(exception)
+      case exception
+        when CustomNotFoundError, ::ActionController::UnknownAction, ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction then
+          render :file => "/public/404.html"
+        else
+          @message = exception
+          render :file => "/public/500.html"
+      end
+    end
+
+    def local_request?
+      return false
+    end
 end
