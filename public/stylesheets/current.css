@@ -244,9 +244,17 @@ div#behindcontent{
 		text-indent: 0px;
 }
 #newsfeed p{
-	font-size: 12px;
+	font-size: 14px;
 	color: #444444;
 
+}
+#newsfeed li{
+	font-size: 14px; 
+	color: #444444;
+	list-style-type: square;
+	margin-left: 50px;
+	line-height: 1.5em;
+	
 }
 #startpage{
 	width: 220px;
