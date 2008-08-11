@@ -65,17 +65,17 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
   
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.server_settings = {
-      :address        => 'smtp.website.co.uk',
-      :port           => 25,
-      :authentication => :login,    # Don't change this one.
-      :user_name      => "smtp_username",
-      :password       => "smtp_password" 
-  }
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.default_charset = "utf-8" 
+#  ActionMailer::Base.delivery_method = :smtp
+#  ActionMailer::Base.server_settings = {
+#      :address        => 'smtp.website.co.uk',
+#      :port           => 25,
+#      :authentication => :login,    # Don't change this one.
+#      :user_name      => "smtp_username",
+#      :password       => "smtp_password" 
+#  }
+#  ActionMailer::Base.perform_deliveries = true
+#  ActionMailer::Base.raise_delivery_errors = true
+#  ActionMailer::Base.default_charset = "utf-8" 
   
 end
 
