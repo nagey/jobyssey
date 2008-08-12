@@ -4,5 +4,6 @@
 <% form_for @invite, :url => { :action => :create_invites} do |f| %>
 	<li><label for="invites_recipient_list">Recipients:</label><%= f.text_field "recipient_list" %>
 	<a id="plaxo_link" href="#" onclick="showPlaxoABChooser('invite_recipient_list', '/invites/address_popup'); return false"><img src="http://www.plaxo.com/images/abc/buttons/add_button.gif" alt="Add from my address book" /></a></li>
+	</ul>
 	<%= submit_tag%>
 <% end %>

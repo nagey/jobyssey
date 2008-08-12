@@ -204,6 +204,7 @@ div#behindcontent{
 #content a{
 		color: #242463;
 	}
+
 #left{
 	width: 530px;
 	margin-top: -10px; 
@@ -292,10 +293,7 @@ div#behindcontent{
 #startpage li{
 	text-indent: -40px;
 }
-#content a
-{
-	color: #242463;
-}
+
 .employerhotlinks{
 	color: #ffffff;
 	background: #888888; 
