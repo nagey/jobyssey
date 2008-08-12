@@ -365,9 +365,7 @@ legend{
 	color: #FF7800;
 }
 form input#skill_name{
-	margin-top: 40px;
-	margin-left: -255px;
-	margin-bottom: 15px;
+	margin: 0 auto;
 }
 label.fixedwidth{
 	display: block; 
