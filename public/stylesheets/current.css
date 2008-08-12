@@ -366,7 +366,8 @@ legend{
 }
 form input#skill_name{
 	margin-top: 40px;
-	margin-left: 0px;
+	margin-left: -265px;
+	margin-bottom: 15px;
 }
 label.fixedwidth{
 	display: block; 
@@ -375,6 +376,7 @@ label.fixedwidth{
 	font-weight: bold;
 	text-align: left;
 }
+
 label.skillname{
 	display: inline-block; 
 	width: 200px; 
