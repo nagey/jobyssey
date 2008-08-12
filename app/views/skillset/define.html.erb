@@ -23,16 +23,18 @@
 	
 		<% end %>
 	<% end %>
-
-
+</ul>
+<br>
+<fieldset>
+<legend>Need to Add a Skill?</legend>
+<ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
-	<label class="bigorange">Need to Add a Skill?</label>
 	<li><%= form.text_field :name, :update => :autocomplete_skill %></li>
 	<br>
 	<%= submit_tag l(:skills, :add_skill )%> 
 <% end %>
-
 </ul>
+</fieldset>
 
 <%= link_to l(:skills, :done_skills), :action => :finalize %>
 
