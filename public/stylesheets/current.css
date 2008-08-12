@@ -448,10 +448,10 @@ tbody td a:hover, tbody th a:hover {
 /* Slider */
 
 
-.slider_container { position: relative; margin-top: 50px; height: 40px; display: inline;} 
+.slider_container { position: relative; margin-top: 0px; height: 40px; display: inline;} 
 .small_label { background: url(/images/slider/minus.gif) no-repeat; height: 19px; width: 19px; overflow: hidden; float: left; display: inline;} 
-.slider_bar { background: url(/images/slider/bar.gif) no-repeat; height: 19px; width: 400px;  float: left; margin: 0px 5px; position: relative;} 
+.slider_bar { background: url(/images/slider/bar.gif) no-repeat; height: 19px; width: 400px;  float: left; margin: 0px 5px 0px 0px; position: relative;} 
 .large_label { background: url(/images/slider/plus.gif) no-repeat; height: 19px; width: 19px; overflow: hidden; float: left;} 
 .slider_handle { background: url(/images/slider/selector.png) no-repeat; height: 19px; width: 20px; overflow: hidden; position: absolute; top: 1px;} 
 .slider_callout { background: url(/images/slider/callout.gif) no-repeat; height: 45px; width: 38px; overflow: hidden; position: absolute; top: -50px; margin-left:-10px;  padding: 8px 0px 0px 0px; font-family: "Myriad Pro"; color: #284a6e; font-weight: bold; text-align: center;}
-div#container-slider{ float:right; }
+div#container-slider{ float:right; margin: 0 auto; padding: 0 auto; }
