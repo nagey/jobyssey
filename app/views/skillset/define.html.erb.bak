@@ -27,6 +27,7 @@
 
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
 	<label class="bigorange">Need to Add a Skill?</label>
+	<br>
 	<li><%= form.text_field :name, :update => :autocomplete_skill %></li>
 	
 	<%= submit_tag l(:skills, :add_skill )%> 
