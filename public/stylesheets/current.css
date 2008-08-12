@@ -148,14 +148,14 @@
 
 #copyright{
 	font-size: 10px;
-	color: ##1C2F5A; 
+	color: #444444; 
 	text-align: right;
 	background-color:#FFFFFF;
 	font-weight:bold;
 }
 	
 #copyright a{
-	color:#242463;
+	color:#444444;
 	text-decoration: underline;
 }
 
