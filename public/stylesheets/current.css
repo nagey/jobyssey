@@ -343,7 +343,9 @@ ul {
 
 li.skills_list_skill_item {clear:both;}
 
-
+li img{
+	margin: 0 auto;
+}
 /* Forms */
 
 
