@@ -11,13 +11,13 @@
 		<% @pq = pq %>
 		<% @pq.value = 50 if @pq.value.nil? %>
 		
-		<% form_for @pq.metric.name.to_sym, @pq, :url => {:action => :update_value}, :html => { :id => @pq.metric.id+'_form'} do |form| %>
+		<% form_for @pq.metric.name.to_sym, @pq, :url => {:action => :update_value}, :html => { :id => @pq.metric.id.to_s+'_form'} do |form| %>
 			<%=form.hidden_field :value, {:size => 2} %>
 			<%=form.hidden_field :id %>
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
 			<li class="skills_list_skill_item">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
-				<%= render :partial => 'slider', :locals => {:name => @pq.metric.name, :value => @pq.value} %>
+				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
 			</li>
 			<% end %>
 	
