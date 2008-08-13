@@ -11,7 +11,7 @@
 	<%=form.hidden_field :value, {:size => 2} %>
 	<%=form.hidden_field :metric_id %>
 	<%= @trait.upper_bound %>
-		<%= render :partial => 'slider', :locals => {:name => @trait.name, :value => @trait.value} %>
+		<%= render :partial => 'slider', :locals => {:name => @pq.name, :value => @pq.value} %>
 	<%= submit_tag l(:traits, :define_trait)%>
 <% end %>
 
