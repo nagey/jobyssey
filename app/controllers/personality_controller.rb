@@ -11,6 +11,7 @@ class PersonalityController < ApplicationController
       @personal_quality.metric = @trait
       break unless @trait.nil?
     end
+    @personal_quality.value = 50 if @personal_quality.value.nil?
     redirect_to :controller => :invites, :action => :import_addresses if @trait.nil?
   end
   
