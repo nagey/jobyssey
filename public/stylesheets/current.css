@@ -333,6 +333,12 @@ div.progresswording{
 .personalitypage p{
 	text-align: left;
 }	
+.personalitypage ol{
+	text-align: left;
+	font-weight: bold;
+	font-size: 14px;
+	padding-bottom: 20px;
+}	
 #lowertrait{
 	width: 200px;
 	text-align: center;
@@ -378,6 +384,10 @@ h4{
 	font-size: 28px;
 	color: #FF7800;
 	letter-spacing: -2px;
+}	
+.personalityinstructions{
+	font-weight: bold;
+	font-size: 15px;
 }	
 
 /* Lists */
