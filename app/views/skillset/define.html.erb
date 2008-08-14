@@ -26,18 +26,18 @@
 	<% end %>
 </ul>
 <br>
+<div class="addskillfieldset">
 <fieldset>
 <legend>Need to Add a Skill?</legend>
-<p>Keep it specific and technical- "Good with People" isn't a skill!</p>
+<p>Keep it specific and technical- "Good with People" isn't a technical skill! Donkey Kong champ doesn't count either...</p>
 <ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
-	<li><%= form.text_field :name, :update => :autocomplete_skill %></li>
-	<br>
-	<%= submit_tag l(:skills, :add_skill )%> 
+	<li><%= form.text_field :name, :update => :autocomplete_skill %>
+	<%= submit_tag l(:skills, :add_skill )%></li> 
 <% end %>
 </ul>
 </fieldset>
-
+</div>
 <%= link_to l(:skills, :done_skills), :action => :finalize %>
 
 </fieldset>
