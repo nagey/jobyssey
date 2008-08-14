@@ -186,6 +186,7 @@ div#container{
 	text-align: left;
 	background: #ffffff;
 	padding-top: 0px;
+
 	border-top: 0px;
 	color: #444444;
 	height: 100%;
@@ -307,7 +308,7 @@ div#behindcontent{
 	margin-left: 50px;
 }
 .progressbar{
-	margin: 0 auto;
+	margin: 0px -15px 0px -15px;
 	padding: 5px 5px 5px 5px;
 	background-color: #FF7800;
 	color: #ffffff;
@@ -350,6 +351,9 @@ div.progresswording{
 	text-align: center;
 	float: right;
 	margin-right: 100px;
+}	
+.addskillfieldset{
+	margin: 0px 70px 0px 70px;
 }	
 
 /* Font Styling */
@@ -414,7 +418,7 @@ fieldset label {
 	padding-right:1em;
 }
 fieldset{
-	padding:  0px 0px 20px 0px;
+	padding:  0px 15px 20px 15px;
 	margin: 30px 5px 30px 5px;
 }
 legend{
@@ -512,5 +516,5 @@ tbody td a:hover, tbody th a:hover {
 .large_label { background: url(/images/slider/plus.gif) no-repeat; height: 19px; width: 19px; overflow: hidden; float: left;} 
 .slider_handle { background: url(/images/slider/selector.png) no-repeat; height: 19px; width: 20px; overflow: hidden; position: absolute; top: 1px;} 
 .slider_callout { background: url(/images/slider/callout.gif) no-repeat; height: 45px; width: 38px; overflow: hidden; position: absolute; top: -50px; margin-left:-10px;  padding: 8px 0px 0px 0px; font-family: "Myriad Pro"; color: #284a6e; font-weight: bold; text-align: center;}
-div#container-slider{ float:right; margin: 0 auto; padding: 0 auto; }
-div#container-slider-personality{ margin: 20px 0px 10px 200px; padding: 0px 0px 10px 0px; }
+div#container-slider{ float:right; margin: 0px 50px 0px 0px; padding: 0 auto; }
+div#container-slider-personality{ margin: 20px 0px 10px 180px; padding: 0px 0px 10px 0px; }
