@@ -1,23 +1,28 @@
 <fieldset>
-<legend>Your Personality: </legend>
+<div class="progressbar">Your Personality<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div>
+<div class="progresswording">3 of 4</div></div>
+</div>
 
+<div class="personalitypage">
 <p>For each of the qualities listed below, adjust the slider to reflect your personality and work preferences.</p>
-<br>
-<ul id="personality-list" class="personalities-list">
-<%= @trait.name %>
-<% form_for :personal_quality, :url => {:action => :update} do |form| %>
 
-	<%= @trait.lower_bound %> 
+<ul id="personality-list" class="personalities-list">
+	<span class="personalitybigorange"><%= @trait.name %></span>
+<br>
+	<% form_for :personal_quality, :url => {:action => :update} do |form| %>
+		<%= render :partial => 'slider', :locals => {:name => @personal_quality.metric.id, :value => @personal_quality.value} %>
+	<div id="lowertrait"><%= @trait.lower_bound %></div>
 	<%=form.hidden_field :value, {:size => 2} %>
 	<%=form.hidden_field :metric_id %>
-	<%= @trait.upper_bound %>
-		<%= render :partial => 'slider', :locals => {:name => @personal_quality.metric.id, :value => @personal_quality.value} %>
+	<div id="uppertrait"><%= @trait.upper_bound %></div>
+<br>
+<br>
+<br>
 	<%= submit_tag l(:traits, :define_trait)%>
 <% end %>
 
 
 </ul>
-
-<%= link_to l(:skills, :done_skills), :action => :finalize %>
+</div>
 
 </fieldset>
