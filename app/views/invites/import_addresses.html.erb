@@ -1,12 +1,13 @@
 <fieldset>
 <div class="progressbar">Spread the Word<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div>
 <div class="progresswording">4 of 4</div></div></div>
-<p>Know someone else who's looking for an IT job?  Let them know about Jobyssey: </p>
+<p>Want to let friends (or your HR department) know about Jobyssey?  Invite them to take a look: </p>
 <ul>
 <% form_for @invite, :url => { :action => :create_invites} do |f| %>
 	<li><label for="invites_recipient_list">Recipients:</label><%= f.text_field "recipient_list" %>
 	<a id="plaxo_link" href="#" onclick="showPlaxoABChooser('invite_recipient_list', '/invites/address_popup'); return false"><img src="http://www.plaxo.com/images/abc/buttons/add_button.gif" alt="Add from my address book" /></a></li>
 	</ul>
+	<p>And now, on to the show!</p>
 	<%= submit_tag 'All Done!'%>
 <% end %>
 
