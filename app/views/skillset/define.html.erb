@@ -1,8 +1,9 @@
 
 <fieldset>
-<legend>Your Skills: </legend>
-
-<p>Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.</p>
+<div class="progressbar">Your Skills<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
+<div class="progresswording">2 of 4</div></div>
+</div>
+<p>Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We'll use these ratings to search for jobs that suit you best, and to help employers better understand your strengths. </p>
 <br>
 <ul id="skill-list" class="skills-list">
 	
@@ -27,6 +28,7 @@
 <br>
 <fieldset>
 <legend>Need to Add a Skill?</legend>
+<p>Keep it specific and technical- "Good with People" isn't a skill!</p>
 <ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
 	<li><%= form.text_field :name, :update => :autocomplete_skill %></li>
