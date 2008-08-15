@@ -3,7 +3,7 @@
 <div class="progresswording">3 of 4</div></div>
 </div>
 
-<div class="personalitypage">
+<div class="personalitypagetop">
 <p>Tell us a bit about your work personality so we can show you jobs from companies that suit you.  For each quality, adjust the slider to reflect your work personality or work culture preference.</p>
 <span class="personalityinstructions">The further you drag the slider, the more strongly you feel about it</span>
 <br>
@@ -13,11 +13,14 @@
 	<span class="personalitybigorange"><%= @trait.name %></span>
 <br>
 	<% form_for :personal_quality, :url => {:action => :update} do |form| %>
+	</div>
 		<%= render :partial => 'slider', :locals => {:name => @personal_quality.metric.id, :value => @personal_quality.value} %>
+<div class="personalitypagebottom">
 	<div id="lowertrait"><%= @trait.lower_bound %></div>
 	<%=form.hidden_field :value, {:size => 2} %>
 	<%=form.hidden_field :metric_id %>
 	<div id="uppertrait"><%= @trait.upper_bound %></div>
+</div>	
 <br>
 <br>
 <br>
@@ -26,6 +29,6 @@
 
 
 </ul>
-</div>
+
 
 </fieldset>
