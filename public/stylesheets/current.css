@@ -186,7 +186,6 @@ div#container{
 	text-align: left;
 	background: #ffffff;
 	padding-top: 0px;
-
 	border-top: 0px;
 	color: #444444;
 	height: 100%;
@@ -202,6 +201,7 @@ div#behindcontent{
 	color: #444444;
 	background-color: #ffffff;
 	padding: 0px 20px 20px 20px;
+	margin-top: 10px;
 }
 #content a{
 		color: #242463;
@@ -327,18 +327,18 @@ div.littleorangesquare {margin: 2px 4px 2px 4px; display:block; float:left; heig
 div.progresswording{
 	margin: 0px 10px 0px 10px; display:block; float:left;
 }
-.personalitypage{
+.personalitypagetop{
 	margin: 0px 0px 0px 5px;
 	text-align: center;
 }
+.personalitypagebottom{
+	margin: 0 auto;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	text-align: center;
+}	
 .personalitypage p{
 	text-align: left;
-}	
-.personalitypage ol{
-	text-align: left;
-	font-weight: bold;
-	font-size: 14px;
-	padding-bottom: 20px;
 }	
 #lowertrait{
 	width: 200px;
@@ -383,7 +383,7 @@ h4{
 	text-align: left;
 }
 .personalitybigorange{
-	width: 250px;
+	width: 400px;
 	font-weight: bold;
 	font-size: 28px;
 	color: #FF7800;
@@ -454,7 +454,6 @@ table {
  font-family: 'Lucida Grande', Helvetica, verdana, sans-serif;
  background-color:#fff;
  border-collapse: collapse;
- width: 100%;
  line-height: 1.2em;
 }
 caption {
@@ -492,6 +491,7 @@ tbody td {
  color:#222222;
  padding:5px;
  text-align:left;
+ border-bottom: 2px solid #c0c0c0;
 }
 tbody th {
  text-align:left;
@@ -517,4 +517,4 @@ tbody td a:hover, tbody th a:hover {
 .slider_handle { background: url(/images/slider/selector.png) no-repeat; height: 19px; width: 20px; overflow: hidden; position: absolute; top: 1px;} 
 .slider_callout { background: url(/images/slider/callout.gif) no-repeat; height: 45px; width: 38px; overflow: hidden; position: absolute; top: -50px; margin-left:-10px;  padding: 8px 0px 0px 0px; font-family: "Myriad Pro"; color: #284a6e; font-weight: bold; text-align: center;}
 div#container-slider{ float:right; margin: 0px 50px 0px 0px; padding: 0 auto; }
-div#container-slider-personality{ margin: 20px 0px 10px 180px; padding: 0px 0px 10px 0px; }
+div#container-slider-personality{ margin: 20px 0px 0px 180px; padding: 0 auto; }
