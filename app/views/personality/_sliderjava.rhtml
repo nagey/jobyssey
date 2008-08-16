@@ -18,19 +18,15 @@
 					
 					$('#<%=name%>_value').val(Math.round(ui.value))
 					
-					$('#<%=name%>_form').ajaxSubmit();
+					if (document.foo) {
+						document.getElementById('form_<%=name%>').submit();
+					}
+					document.foo = true;
 					
                 }, 
                 slide: function(e, ui) { 
                     $('#slider_callout_<%=name%>').css('left', ui.handle.css('left')).text(Math.round(ui.value)); 
-                },
-				release: function(e, ui){
-				    $('.slider').onRelease( function () {
-				    document.personal_quality.submit();
-				            }
-				          )
-				        }
-				
+                }
             });
  			$('#slider_bar_<%=name%>').slider("moveTo", <%=value%>);
 

@@ -11,6 +11,7 @@ class SkillsetController < ApplicationController
   def define
     @skill = Skill.new
     @professional = Professional.find session[:user_id]
+    @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }
   end
   
   def autocomplete_name
@@ -52,8 +53,9 @@ class SkillsetController < ApplicationController
   end
   
   def destroy
-     pq = PersonalQuality.find params[params[:object_name].to_sym][:id]
-     pq.destroy params[params[:object_name].to_sym][:id]
+     pq = Skill.find params[:id]
+     pq.destroy
+     render :text => 'foo'
   end
   
 end

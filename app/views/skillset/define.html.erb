@@ -3,22 +3,21 @@
 <div class="progressbar">Your Skills<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
 <div class="progresswording">2 of 4</div></div>
 </div>
-<p>Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We'll use these ratings to search for jobs that suit you best, and to help employers better understand your strengths. </p>
+<p>Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We will use these ratings to search for jobs that suit you best, and to help employers better understand your strengths. </p>
 <br>
 <ul id="skill-list" class="skills-list">
 	
 	<% @professional.personal_qualities.each do |pq| %>
 		<% if pq.metric.class == Skill %>
-		<% @pq = pq %>
-		<% @pq.value = 50 if @pq.value.nil? %>
-		
+		<% @pq = pq %>		
 		<% form_for @pq.metric.name.to_sym, @pq, :url => {:action => :update_value}, :html => { :id => @pq.metric.id.to_s+'_form'} do |form| %>
 			<%=form.hidden_field :value, {:size => 2} %>
 			<%=form.hidden_field :id %>
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
-			<li class="skills_list_skill_item">
+			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
 				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
+				<a id="remove_<%=@pq.metric.id.to_s%>">Remove</a>
 			</li>
 			<% end %>
 	

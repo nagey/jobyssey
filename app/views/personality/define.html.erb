@@ -12,7 +12,7 @@
 <ul id="personality-list" class="personalities-list">
 	<span class="personalitybigorange"><%= @trait.name %></span>
 <br>
-	<% form_for :personal_quality, :url => {:action => :update} do |form| %>
+	<% form_for :personal_quality, :url => {:action => :update}, :html => { :id => 'form_'+@personal_quality.metric.id.to_s} do |form| %>
 		<%= render :partial => 'slider', :locals => {:name => @personal_quality.metric.id, :value => @personal_quality.value} %>
 	<div id="lowertrait"><%= @trait.lower_bound %></div>
 	<%=form.hidden_field :value, {:size => 2} %>

@@ -1,5 +1,6 @@
 <script language="Javascript">
 				$(function() { 
+			$('#remove_<%=name%>').click(function (e) { $.get('/skillset/destroy/<%=name%>'); $('li#skill_<%=name%>').hide()});
             $('#slider_callout_<%=name%>').hide(); 
             var calloutVisible = false; 
             $('#slider_bar_<%=name%>').slider({ 
