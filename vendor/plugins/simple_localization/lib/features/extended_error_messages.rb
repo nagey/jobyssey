@@ -42,7 +42,7 @@ module ArkanisDevelopment::SimpleLocalization #:nodoc:
           
           alias_method :add_without_substitution, :add
           
-          def add(attribute, msg = @@default_error_messages[:invalid])
+          def add(attribute, msg = ActiveRecord::Errors.default_error_messages[:invalid])
             msg.send :extend, ArkanisDevelopment::SimpleLocalization::ExtendedErrorMessages::MessageExtension
             msg.substitute! @base, attribute
             add_without_substitution(attribute, msg)

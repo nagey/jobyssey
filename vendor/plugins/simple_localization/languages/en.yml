@@ -617,6 +617,7 @@ app:
     about_us: About Us
     our_blog: Our Blog
     upload_only_word_or_pdf: Please upload a word or pdf file
+    tsandcs: You must agree to our Terms and Conditions to proceed. 
     professional:
         get_started: Get Started Now
         upload_cv: Upload your CV now
@@ -628,11 +629,14 @@ app:
         code_name: pick a code name
         working_time: Working Time
         employment_type: Employment Type
+        create_account: Create my account
     skills:
         add_skill: add a skill
         couldnt_add_skill: error adding skill
         skill_taken: You have that skill already
         done_skills: That's all my skills, thanks
         need_to_add_skill: Need to Add a Skill?
+    traits:
+        define_trait: That's fine right there, thanks.
     
     work_history_items: Work History Items
