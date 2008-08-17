@@ -16,8 +16,9 @@
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
 			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
+					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>">Remove</a></div>
 				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
-				<a id="remove_<%=@pq.metric.id.to_s%>">Remove</a>
+			
 			</li>
 			<% end %>
 	

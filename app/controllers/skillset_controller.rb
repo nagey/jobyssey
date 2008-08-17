@@ -53,7 +53,7 @@ class SkillsetController < ApplicationController
   end
   
   def destroy
-     pq = Skill.find params[:id]
+     pq = PersonalQuality.find_by_metric_id params[:id]
      pq.destroy
      render :text => 'foo'
   end
