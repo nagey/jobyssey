@@ -1,3 +1,5 @@
 *sqlite3
 schema.rb
 .DS_Store
+*.log
+*~
