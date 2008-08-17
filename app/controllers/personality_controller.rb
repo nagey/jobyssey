@@ -28,5 +28,5 @@ class PersonalityController < ApplicationController
     session[:counter] += 1
     redirect_to :action => :define if @professional.save
   end
- 
+
 end

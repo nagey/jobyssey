@@ -23,6 +23,7 @@ class InvitesController < ApplicationController
         temp.email_sent = true unless email.date.nil?
         temp.save
       end
+
     rescue
       false
     end

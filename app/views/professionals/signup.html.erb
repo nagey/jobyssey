@@ -31,10 +31,8 @@
 		<label for="professional[password_confirmation]"><%=l(:professional, :password_confirmation)%></label>
 		<%= form.password_field 'password_confirmation'%>
 	</li>
-	<li>
-		<label for="professional[code_name]"><%=l(:professional, :code_name)%></label>
-		<%= form.text_field 'code_name' %>
-	</li>			
+	<li>Code Name: <%= @code_name %></li>
+		
 </ul>
 <fieldset>
 <legend>What I'm looking for... </legend>
@@ -48,6 +46,7 @@
 		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
 	</li>			
 </ul>
+<input type="checkbox" id="tsandcs" name="tsandcs" value="1" />I agree to <a href="/jobyssey/tsandcs">Jobyssey's Terms and Conditions.</a>
 </fieldset>
 	<%= submit_tag l(:professional, :create_account)%>
 
