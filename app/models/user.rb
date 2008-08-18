@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you don't remember your password."
   validates_length_of :password, :within => 1..20, :too_long => "pick a shorter password", :too_short => "pick a longer password"
 
+
+
+
 #attr_accessor :password_confirmation
 validates_confirmation_of :password
 

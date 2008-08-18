@@ -4,7 +4,13 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
 	<%= stylesheet_link_tag "current" %>
 	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form' %>
-
+	<script language="Javascript">
+	$(document).ready(function(){
+	$(".question").click(function(){
+		$(".answer").toggle("slow");
+	});
+	});
+	</script>
 </head>
 
 <body>	
