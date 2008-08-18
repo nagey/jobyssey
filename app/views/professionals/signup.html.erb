@@ -31,9 +31,12 @@
 		<label for="professional[password_confirmation]"><%=l(:professional, :password_confirmation)%></label>
 		<%= form.password_field 'password_confirmation'%>
 	</li>
-	<li>Code Name: <%= @code_name %></li>
-		
-</ul>
+	</ul>
+<div id = "codename">
+Code Name: <%= @code_name %></li>
+	<p>Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality.  Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy. </p>  
+</div>
+
 <fieldset>
 <legend>What I'm looking for... </legend>
 <ul>
