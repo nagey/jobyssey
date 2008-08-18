@@ -333,7 +333,7 @@ div.progresswording{
 }
 .personalitypagebottom{
 	margin: 0px 0px 0px -10px;
-	padding-top: 1.5em;
+	padding-top: 1em;
 	padding-bottom: 1.5em;
 	text-align: center;
 }	
@@ -387,6 +387,13 @@ h4{
 	width: 400px;
 	font-weight: bold;
 	font-size: 28px;
+	color: #FF7800;
+	letter-spacing: -2px;
+}	
+.personalitybigorangecounter{
+	width: 400px;
+	font-weight: bold;
+	font-size: 20px;
 	color: #FF7800;
 	letter-spacing: -2px;
 }	
