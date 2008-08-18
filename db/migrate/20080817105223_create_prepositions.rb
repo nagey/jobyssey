@@ -3,7 +3,7 @@ class CreatePrepositions < ActiveRecord::Migration
     create_table :prepositions do |t|
       t.string :preposition
     end
-    prepositions = ['about','above','across','after','against','along','among','around','at','before','behind','below','beneath','beside','between','beyond','by','despite','down','during','except','for','from','in','inside','into','like','near','of','off','on','onto','out','outside','over','past','since','through','throughout','till','to','toward','under','underneath','until','up','upon','with','within','without']
+    prepositions = ['above','across','after','along','among','around','at','before','behind','below','beneath','beside','between','beyond','near','over','toward','under','underneath','with']
     prepositions.each {|p| w = Preposition.new; w.preposition = p; w.save}
   end
 
