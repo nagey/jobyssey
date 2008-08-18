@@ -341,16 +341,16 @@ div.progresswording{
 	text-align: left;
 }	
 #lowertrait{
-	width: 200px;
+	width: 150px;
 	float: left;
 	margin-left: 0px;
 	margin-top: -10px;
-	padding-right: 3px;
+	padding-right: 40px;
 }	
 #uppertrait{
-	width: 200px;
+	width: 150px;
 	float: right;
-	margin-right: -20px;
+	margin-right: 0px;
 	margin-top: -30px;
 }	
 .addskillfieldset{

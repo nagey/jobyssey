@@ -10,7 +10,8 @@
 <br>
 <br>
 <ul id="personality-list" class="personalities-list">
-	<span class="personalitybigorange"><%= @trait.name + '- ' + session[:counter].to_s + ' of ' + @total.to_s %></span>
+	<span class="personalitybigorange"><%= @trait.name %></span><br>
+	<span class="personalitybigorange"><%= session[:counter].to_s + ' of ' + @total.to_s %></span>
 </div>
 	<% form_for :personal_quality, :url => {:action => :update}, :html => { :id => 'form_'+@personal_quality.metric.id.to_s} do |form| %>
 <div class="personalitypagebottom">
