@@ -1,7 +1,7 @@
 class SkillsetController < ApplicationController
 
   layout 'index'
-
+  layout 'signup', :only => "define"
   def start
     @professional = Professional.find session[:user_id]
     @professional.metrics << @professional.cv.skills
@@ -9,6 +9,8 @@ class SkillsetController < ApplicationController
   end
 
   def define
+   
+    
     @skill = Skill.new
     @professional = Professional.find session[:user_id]
     @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }

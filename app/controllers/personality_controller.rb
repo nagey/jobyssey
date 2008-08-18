@@ -1,10 +1,11 @@
 class PersonalityController < ApplicationController
 
   layout 'index'
-
+  layout 'signup', :only => "define"
 
 
   def define
+   
     @professional = Professional.find session[:user_id]
     @trait = nil
     @personal_quality = PersonalQuality.new
