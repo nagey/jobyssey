@@ -2,6 +2,8 @@ class ProfessionalsController < ApplicationController
  
   layout 'index'
   layout 'signup', :only => "signup"
+
+
   
   def index
     @cv = Cv.new
