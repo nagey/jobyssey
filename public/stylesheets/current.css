@@ -477,10 +477,10 @@ label.skillname{
 	font-weight: bold;
 }
 label.snuglabel{
-	width: 70px;
+	width: 100%;
 	float:  left;
 	margin: 0 auto;
-	padding 0 auto;
+	padding-bottom: 10px;
 	text-align: left;
 }
 
