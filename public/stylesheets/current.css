@@ -358,7 +358,24 @@ div.progresswording{
 .addskillfieldset{
 	margin: 0px 70px 0px 70px;
 }	
-
+#codename{
+	font-weight: bold;
+}
+.question{
+	width: 18px;
+	height: 18px;
+	margin: 2px 2px 2px 2px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #FF7800;
+	display: inline-block;
+	text-align: center;
+}
+.answer{
+	font-weight: normal;
+	color: #BBBBBB;
+}
 /* Font Styling */
 
 h1 {
