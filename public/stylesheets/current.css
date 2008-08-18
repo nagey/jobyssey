@@ -357,7 +357,7 @@ div.progresswording{
 }	
 .addskillfieldset{
 	margin: 0px 70px 0px 70px;
-}	
+}
 
 /* Font Styling */
 
@@ -455,6 +455,13 @@ label.skillname{
 	font-size: 16px; 
 	color: #242463;
 	font-weight: bold;
+}
+label.snuglabel{
+	width: 70px;
+	float:  left;
+	margin: 0 auto;
+	padding 0 auto;
+	text-align: left;
 }
 
 
