@@ -1,10 +1,7 @@
 class ProfessionalsController < ApplicationController
  
-  layout 'index'
-  layout 'signup', :only => "signup"
+  layout 'index', :except => :signup 
 
-
-  
   def index
     @cv = Cv.new
   end
@@ -22,6 +19,7 @@ class ProfessionalsController < ApplicationController
     v = Verb.find :all
     n = Noun.find :all
     @code_name = v[rand(v.length)].verb + ' ' + p[rand(p.length)].preposition + ' ' + n[rand(n.length)].noun
+    render :action => "signup", :layout => "signup"
   end
  
   def create

@@ -1,7 +1,7 @@
 class SkillsetController < ApplicationController
 
   layout 'index'
-  layout 'signup', :only => "define"
+  layout 'signup', :only => [ :define, :create ]
   def start
     @professional = Professional.find session[:user_id]
     @professional.metrics << @professional.cv.skills

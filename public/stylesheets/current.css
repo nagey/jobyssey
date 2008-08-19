@@ -84,7 +84,7 @@
 
 
 #loginbar {
-	background-color:#8888B8;
+	background-color:#B0BEE5;
 	position:relative;
 	text-align:left;
 	height: 24px;
@@ -425,6 +425,9 @@ h4{
 }	
 .removeskill a:hover {
 	text-decoration: underline;
+}
+.small{
+	font-size: 10px;
 }
 /* Lists */
 

@@ -1,5 +1,5 @@
 
-<% form_for(:professional, :url => {:action => :create}) do |form| %>
+<% form_for(:professional, :url => {:controller => "it-professionals", :action => :create}) do |form| %>
 <div class="error-messages" id="error-messages-for-professional-signup">
 	<%=form.error_messages%>
 </div>
