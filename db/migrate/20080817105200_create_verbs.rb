@@ -3,7 +3,7 @@ class CreateVerbs < ActiveRecord::Migration
     create_table :verbs do |t|
       t.string :verb
     end
-    verbs = ['Builds','Buzzes','Catches','Cleans','Climbs','Composes','Crawls','Creates','Creeps','Cries','Dances','Digs','Dives','Draws','Drinks','Eats','Explores','Finds','Flies','Floats','Gallops','Glides','Glows','Goes','Grows','Hears','Hops','Jumps','Knits','Laughs','Listens','Looks','Paints','Plays','Reads','Relaxes','Rides','Runs','Screams','Screeches','Shakes','Shines','Shops','Shouts','Sings','Sits','Skips','Sleeps','Smiles','Squawks','Stalks','Stomps','Swims','Talks','Throws','Tiptoes','Travels','Views','Walks','Watches','Works','Yells']
+    verbs = ['Walks', 'Dances', 'Sings', 'Hops', 'Runs', 'Skips', 'Moves', 'Swims', 'Yells', 'Talks', 'Whispers', 'Travels', 'Composes', 'Crawls', 'Dives', 'Draws', 'Explores', 'Flies', 'Floats', 'Gallops', 'Glides', 'Goes', 'Jumps', 'Laughs', 'Listens', 'Paints', 'Reads',  'Rides', 'Shakes', 'Shouts', 'Sits', 'Sleeps', 'Smiles', 'Watches', 'Works', 'Soars']
     verbs.each {|v| w = Verb.new; w.verb = v; w.save }
   end
 
