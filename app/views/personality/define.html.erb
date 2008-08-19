@@ -17,10 +17,10 @@
 	<% form_for :personal_quality, :url => {:action => :update}, :html => { :id => 'form_'+@personal_quality.metric.id.to_s} do |form| %>
 <div class="personalitypagebottom">
 	<div id="lowertrait"><%= @trait.lower_bound %></div>
+	<div id="uppertrait"><%= @trait.upper_bound %></div>
 		<%= render :partial => 'slider', :locals => {:name => @personal_quality.metric.id, :value => @personal_quality.value} %>
 	<%=form.hidden_field :value, {:size => 2} %>
 	<%=form.hidden_field :metric_id %>
-	<div id="uppertrait"><%= @trait.upper_bound %></div>
 <br>
 <br>
 <br>

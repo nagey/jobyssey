@@ -343,7 +343,7 @@ div.progresswording{
 	text-align: left;
 }	
 #lowertrait{
-	width: 150px;
+	width: 160px;
 	float: left;
 	margin-left: 5px;
 	margin-top: -10px;
@@ -353,8 +353,8 @@ div.progresswording{
 #uppertrait{
 	width: 150px;
 	float: right;
-	margin-right: 5px;
-	margin-top: -30px;
+	margin-top: -10px;
+	margin-right: 0px;
 	font-size: 12px;
 }	
 .addskillfieldset{
@@ -379,7 +379,7 @@ div.progresswording{
 }
 .answer{
 	font-weight: normal;
-	color: #BBBBBB;
+	color: #999999;
 }
 /* Font Styling */
 
@@ -561,5 +561,5 @@ tbody td a:hover, tbody th a:hover {
 .slider_handle { background: url(/images/slider/selector.png) no-repeat; height: 19px; width: 20px; overflow: hidden; position: absolute; top: 1px;} 
 .slider_callout { background: url(/images/slider/callout.gif) no-repeat; height: 45px; width: 38px; overflow: hidden; position: absolute; top: -50px; margin-left:-10px;  padding: 8px 0px 0px 0px; font-family: "Myriad Pro"; color: #284a6e; font-weight: bold; text-align: center;}
 div#container-slider{ float:right; margin: 0px 50px 0px 0px; padding: 0 auto; }
-div#container-slider-personality{ margin: 0 auto; padding: 0 auto; }
+div#container-slider-personality{ margin: 0px 20px 0px 0px; padding: 0 auto; display: inline-block; }
 .removeskill {float: right; margin: 0px 0px 0px -40px; padding: 0 auto;}
