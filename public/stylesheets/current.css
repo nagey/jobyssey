@@ -153,6 +153,8 @@
 	text-align: right;
 	background-color:#FFFFFF;
 	font-weight:bold;
+	margin-top: 0 auto;
+	padding: 0 auto;
 }
 	
 #copyright a{
