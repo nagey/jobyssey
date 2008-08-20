@@ -320,14 +320,14 @@ div#behindcontent{
 .progresscounter{
 	margin: -25px 0px 10px 0px;
 	padding: 0 auto;
-    float: right;
+  float: right;
 	color: #ffffff;
 	font-size: 20px;
 }
-div.littlewhitesquare {margin: 2px 4px 2px 4px; display:block; float:left; height:20px; width:20px; background-color:#fff; border: 2px; border-color: #FF7800;}
-div.littleorangesquare {margin: 2px 4px 2px 4px; display:block; float:left; height:16px; width:16px; border-style: solid; border-width: 2px; border-color: #ffffff;}
+div.littlewhitesquare {margin: 2px 4px 2px 4px; display: block; float:left; height:16px; width:16px; border-style: solid; border-width: 2px; border-color: #ffffff; font-size: 0px; background-color:#fff;}
+div.littleorangesquare {margin: 2px 4px 2px 4px; display: block; float:left; height:16px; width:16px; border-style: solid; border-width: 2px; border-color: #ffffff; font-size: 0px; }
 div.progresswording{
-	margin: 0px 10px 0px 10px; display:block; float:left;
+	margin: 0px 10px 0px 10px; display: block; float:left;
 }
 .personalitypagetop{
 	margin: 0px 0px 10px 5px;
