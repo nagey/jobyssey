@@ -12,6 +12,7 @@
     <th>Employer</th>
     <th>Search position</th>
     <th>Work History Items</th>
+    <th>More Info</th>
   </tr>
 
 <% for user in @users %>
@@ -26,6 +27,7 @@
     <td><%=h user.employer.name unless user.employer.nil? %></td>
     <td><%=h user.search_position %></td>
     <td><%=h user.work_history_items.length%></td>
+     <td><%=h user.more_info %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

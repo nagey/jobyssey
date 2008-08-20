@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :type
       t.integer :employer_id
       t.string :search_position
+      t.text :more_info
 
       t.timestamps
     end
