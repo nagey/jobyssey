@@ -630,6 +630,7 @@ app:
         working_time: Working Time
         employment_type: Employment Type
         create_account: Create my account
+        more_info: Add any other details here you feel employers need to know about your work requirements or interests. You'll have another chance later to tell them more about yourself, so this is mainly for deal-breakers like location or hours.
     skills:
         add_skill: add a skill
         couldnt_add_skill: error adding skill

@@ -36,7 +36,7 @@
 	<br>
 <div id = "codename">
 
-<label>Code Name:</label> <%= @code_name %>
+<label><b>Code Name:</label> <%= @code_name %></b>
 
 <span class="question">?</span>
 
@@ -51,11 +51,13 @@
 <li>
 		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
 		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
-	</li>			
+	</li>	
+	<br>
 	<li>
 		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
 		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
-	</li>		
+	</li>
+	<br>		
 	<li>
 		<label for="professional[more_info]"><%=l(:professional, :more_info)%></label>
 		<%= form.text_area :more_info %>
