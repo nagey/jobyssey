@@ -62,8 +62,6 @@
 	font-weight: bold;
 	color: #ffffff;
 }
-
-
 #loggedinnavbar {
 	background-color:#8888B8;
 	position:relative;
@@ -153,15 +151,14 @@
 	text-align: right;
 	background-color:#FFFFFF;
 	font-weight:bold;
-	margin-top: 0 auto;
-	padding: 0 auto;
+	margin-top: -10px;
+	padding-top: 10px;
 }
 	
 #copyright a{
 	color:#444444;
 	text-decoration: underline;
 }
-
 
 /* Divs */
 
@@ -181,7 +178,6 @@ div#errorExplanation{
 	color: red;
 	padding: 10px 10px 10px 10px;
 }
-
 div#container{
 	margin: 0 auto; 
 	width: 850px; 
@@ -207,8 +203,7 @@ div#behindcontent{
 }
 #content a{
 		color: #242463;
-	}
-
+}
 #left{
 	width: 530px;
 	margin-top: -10px; 
@@ -235,9 +230,7 @@ div#behindcontent{
 	list-style-type: square;
 	margin-left: 50px;
 	line-height: 1.5em;
-	
 }
-
 #newsfeed{
 	width: 530px;
 	margin-top: 10px; 
@@ -265,7 +258,6 @@ div#behindcontent{
 	list-style-type: square;
 	margin-left: 50px;
 	line-height: 1.5em;
-	
 }
 #startpage{
 	width: 220px;
@@ -360,9 +352,28 @@ div.progresswording{
 .addskillfieldset{
 	margin: 0px 70px 0px 70px;
 }
-
-=======
+#roundbuttoncontainer{
+	width: 200px;
+	float: right;
+	color: #fff;
+	margin-right: 62px;
 }	
+#roundbuttoncontainer a{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.b1, .b2, .b3, .b4{font-size:1px; overflow:hidden; display:block; }
+.b1 {height:1px; background:#FF7800; margin:0 5px; }
+.b2 {height:1px; background:#FF7800; margin:0 3px; }
+.b3 {height:1px; background:#FF7800; margin:0 2px; }
+.b4 {height:2px; background:#FF7800; margin:0 1px; }
+.contentb {background: #FF7800; }
+.contentb div {margin-left: 5px; text-align: center; }
+=======
+
 #codename{
 	font-weight: bold;
 }
@@ -445,6 +456,10 @@ li.skills_list_skill_item {clear:both;}
 li img{
 	margin: 0 auto;
 }
+option{
+	width: 80px;
+}
+	
 /* Forms */
 
 
@@ -488,6 +503,10 @@ label.snuglabel{
 	padding-bottom: 10px;
 	text-align: left;
 }
+textarea{
+	width: 100%;
+	height: 150px;
+}	
 
 
 /* Tables */

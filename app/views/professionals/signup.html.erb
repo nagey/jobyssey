@@ -47,22 +47,21 @@
 
 <fieldset>
 <legend>What I'm looking for... </legend>
+<br>
 <ul>
-<li>
+	<li>
 		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
 		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
-	</li>	
-	<br>
+	</li>
 	<li>
 		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
 		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
 	</li>
-	<br>		
-	<li>
-		<label for="professional[more_info]"><%=l(:professional, :more_info)%></label>
-		<%= form.text_area :more_info %>
-	</li>	
 </ul>
+<br>
+	<p><%=l(:professional, :more_info)%></p>
+		<%= form.text_area :more_info %>
+
 <input type="checkbox" id="tsandcs" name="tsandcs" value="1" />I agree to <a href="/jobyssey/tsandcs">Jobyssey's Terms and Conditions.</a>
 </fieldset>
 	<%= submit_tag l(:professional, :create_account)%>
