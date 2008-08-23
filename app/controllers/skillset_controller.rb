@@ -5,7 +5,7 @@ class SkillsetController < ApplicationController
   def start
     @professional = Professional.find session[:user_id]
     @professional.metrics << @professional.cv.skills
-    redirect_to :action => :define if @professional.save
+    redirect_to :action => :define if @professional.save!
   end
 
   def define

@@ -18,6 +18,7 @@ class ProfessionalsController < ApplicationController
     v = Verb.find :all
     n = Noun.find :all
     @code_name = v[rand(v.length)].verb + ' ' + p[rand(p.length)].preposition + ' ' + n[rand(n.length)].noun
+    session[:code_name] = @code_name
   end
  
   def create
@@ -25,7 +26,7 @@ class ProfessionalsController < ApplicationController
     @working_times = WorkingTime
     @professional.cv = session[:cv]
     @professional.update_attributes params[:professional]
-
+    @professional.code_name = session[:code_name]
     
     if params[:tsandcs].to_i != 1
       @professional.errors.add l(:tsandcs)
@@ -39,7 +40,10 @@ class ProfessionalsController < ApplicationController
       session[:professional] = nil
       redirect_to :controller => :skillset, :action => :start
     else
-      redirect_to :back
+      @employment_types = EmploymentType.find :all
+      @working_times = WorkingTime.find :all
+      render :action => :signup
+      return
     end
   end
   

@@ -25,10 +25,10 @@ class User < ActiveRecord::Base
   validates_presence_of :password_confirmation, :if => :password_changed?
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you don't remember your password."
-  validates_length_of :password, :within => 1..20, :too_long => "pick a shorter password", :too_short => "pick a longer password"
+  validates_length_of :password, :within => 1..2000, :too_long => "pick a shorter password", :too_short => "pick a longer password"
 
-#attr_accessor :password_confirmation
-validates_confirmation_of :password
+
+attr_accessor :password_confirmation
 
 #validate :password_non_blank
 
@@ -52,42 +52,49 @@ validates_confirmation_of :password
   end
  
 
+  def set_password (pwd)
+    return if pwd.blank?
+    create_new_salt
+    self.method_missing 'password=', User.encrypted_password(pwd, self.salt)
+  end
+
+  def self.authenticate(name, password)
+    user = self.find_by_name(name)
+    if user
+      expected_password = encrypted_password(password, user.salt)
+      if user.password != expected_password
+        user = nil
+      end
+    end
+    user
+  end
   
-#def password
-#  @password
-#end
-
-#def password=(pwd)
-#  @password = pwd
-#  retrun if pwd.blank?
-#  create_new_salt
-#  self.password = User.encrypted_password(self.password, self.salt)
-#end
-
-def self.authenticate(name, password)
-  user = self.find_by_name(name)
-  if user
-    expected_password = encrypted_password(password, user.salt)
-    if user.password != expected_password
-      user = nil
+  def save
+    return @already_done_saved_this unless @already_done_saved_this.nil?
+    if self.valid?
+      if ((password_confirmation == password) or !password_changed?)
+        set_password (self.password) 
+        save_without_validation
+        @already_done_saved_this = true
+        return true
+      else
+        errors.add "Password must match confirmation"
+        return false
+      end
+    else
+      return false
     end
   end
-  user
-end
   
 private
 
-def password_non_blank
-  errors.add_to_base("Missing Password") if password.blank?
-end  
+  def self.encrypted_password(password, salt)
+      string_to_hash = password + salt
+      Digest::SHA1.hexdigest(string_to_hash)
+  end
 
-def self.encrypted_password(password, salt)
-    string_to_hash = password + "Albequerque" + salt
-    Digest::SHA1.hexdigest(string_to_hash)
-end
-
-def create_new_salt
-    self.salt = self.object_id.to_s + rand.to_s
-end
+  def create_new_salt
+      self.salt = self.object_id.to_s + rand.to_s
+  end
   
 end
