@@ -1,0 +1,29 @@
+
+<% form_for(:portfolio, :action => :add_a_link) do |form| %>
+<div class="error-messages" id="error-messages-for-professional-signup">
+	<%=form.error_messages%>
+</div>
+
+<fieldset>
+<h1>Portfolio</h1>
+
+<br>
+<ul>
+<li>
+<label>Name</label>
+	<%= form.text_field "name" %>
+</li>
+<li>
+<label>URL</label>
+	<%= form.text_field "url" %>
+</li>
+<li>
+<label>Description</label>
+	<%= form.text_field "description" %>
+</li>
+
+</fieldset>
+	<%= submit_tag %>
+
+</fieldset>
+<% end %>

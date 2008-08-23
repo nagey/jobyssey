@@ -1,4 +1,5 @@
-<% form_for(:professional, :url => {:action => :create}) do |form| %>
+
+<% form_for(:professional, :url => {:controller => "it-professionals", :action => :create}) do |form| %>
 <div class="error-messages" id="error-messages-for-professional-signup">
 	<%=form.error_messages%>
 </div>
@@ -31,21 +32,36 @@
 		<label for="professional[password_confirmation]"><%=l(:professional, :password_confirmation)%></label>
 		<%= form.password_field 'password_confirmation'%>
 	</li>
-	<li>Code Name: <%= @code_name %></li>
-		
-</ul>
+	</ul>
+	<br>
+<div id = "codename">
+
+<label><b>Code Name:</label> <%= @code_name %></b>
+
+<span class="question">?</span>
+
+<div class="answer" style="display:none">
+	<p>Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality.  Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy. </p>  
+	</div>
+</div>
+
 <fieldset>
 <legend>What I'm looking for... </legend>
+<br>
 <ul>
-<li>
+	<li>
 		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
 		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
-	</li>			
+	</li>
 	<li>
 		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
 		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
-	</li>			
+	</li>
 </ul>
+<br>
+	<p><%=l(:professional, :more_info)%></p>
+		<%= form.text_area :more_info %>
+
 <input type="checkbox" id="tsandcs" name="tsandcs" value="1" />I agree to <a href="/jobyssey/tsandcs">Jobyssey's Terms and Conditions.</a>
 </fieldset>
 	<%= submit_tag l(:professional, :create_account)%>

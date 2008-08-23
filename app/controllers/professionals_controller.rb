@@ -1,24 +1,26 @@
 class ProfessionalsController < ApplicationController
  
-  layout 'index'
-  
+  layout 'index', :except => :signup 
+
   def index
     @cv = Cv.new
   end
   
   def signup
+
     @cv = Cv.new params[:cv] if session[:cv].nil?
     @cv = session[:cv] if @cv.nil?
     @professional = Professional.new
     @employment_types = EmploymentType.find :all
     @working_times = WorkingTime.find :all
     session[:cv] = @cv
-    render :action => :index unless @cv.valid?
+    render :action => :index unless @cv.valid? 
     p = Preposition.find :all
     v = Verb.find :all
     n = Noun.find :all
     @code_name = v[rand(v.length)].verb + ' ' + p[rand(p.length)].preposition + ' ' + n[rand(n.length)].noun
     session[:code_name] = @code_name
+    render :action => "signup", :layout => "signup"
   end
  
   def create

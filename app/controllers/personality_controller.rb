@@ -1,10 +1,15 @@
 class PersonalityController < ApplicationController
 
   layout 'index'
+  layout 'signup', :only => [ :start, :define ]
 
-
+  def start
+    session[:counter] = 1
+    redirect_to :action => :define, :layout => 'signup'
+  end
 
   def define
+   
     @professional = Professional.find session[:user_id]
     @trait = nil
     @personal_quality = PersonalQuality.new

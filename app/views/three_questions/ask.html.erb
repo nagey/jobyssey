@@ -1,0 +1,18 @@
+<% form_for(:answer, :url => {:action => :answer}) do |form| %>
+  <div class="error-messages" id="error-messages-for-professional-signup">
+  	<%=form.error_messages%>
+  </div>
+  
+  <fieldset>
+    <legend>Please answer our questions three, and a magic prize shall await thee</legend>
+    <ul>
+      <li>
+        <label for="answer_name"><%=@answer.differentiator_question.name%></label>
+        <%=form.text_field :name %>
+      </li>
+      <li><%=form.submit "Hit Me"%></li>
+    </ul>
+  </fieldset>
+  <%=form.hidden_field :differentiator_question_id %>
+  <%=form.hidden_field :user_id %>
+<% end %>

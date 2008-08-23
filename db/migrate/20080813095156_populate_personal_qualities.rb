@@ -15,7 +15,7 @@ class PopulatePersonalQualities < ActiveRecord::Migration
     { 'name' => "Client interaction", 'lower_bound' => "Likes to work very closely with clients (internal or external)", 'upper_bound' =>"Likes to have someone else handle most of the client communication"}, 
     { 'name' => "Assertiveness", 'lower_bound' => "Has an assertive personality at work", 'upper_bound' =>"More laid back and easy going at the office"},
 
-    {'name'=>"Structure", 'lower_bound' => "Prefers a clear chain of command and well-defined relationships with my colleagues", 'upper_bound' =>"Prefers a looser, more informal structure at the office"}, 
+    {'name'=>"Structure", 'lower_bound' => "Prefers a clear chain of command", 'upper_bound' =>"Prefers a looser, more informal structure at the office"}, 
 
     { 'name' => "Dynamics", 'lower_bound' => "Thrives in an ever evolving environment", 'upper_bound' =>"Prefers a more stable and familiar workplace"},
     { 'name' => "Company size", 'lower_bound' => "Likes small companies", 'upper_bound' =>"Likes big companies"}, 
