@@ -15,4 +15,22 @@ class JobysseyController < ApplicationController
     @professional = Professional.new
   end
 
+  def logout
+    session[:user] = nil
+    redirect_to :action => :index
+  end
+
+  def login
+    if request.post?
+      user = User.authenticate(params[:email], params[:password])
+      if user
+        session[:user] = user
+        uri = session[:previous_uri]
+        session[:previous_uri] = nil
+        redirect_to(uri || { :controller => 'professionals', :action => 'home' })
+      else
+        flash.now[:notice] = "Invalid user/password combination (please localize me)"
+      end
+    end
+  end
 end

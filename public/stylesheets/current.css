@@ -1,5 +1,7 @@
 /* Header */
 
+#loginbar ul {display:inline;}
+#loginbar li {display:inline;}
 
 #header {
 	background: #FFffff;

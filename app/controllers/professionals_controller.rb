@@ -2,6 +2,8 @@ class ProfessionalsController < ApplicationController
  
   layout 'index', :except => :signup 
 
+  before_filter :authenticate, :only => :home
+
   def index
     @cv = Cv.new
   end

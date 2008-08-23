@@ -20,22 +20,58 @@ class ApplicationController < ActionController::Base
       params[:lang] ||= 'en'
       Localization.use params[:lang]
   end
-  
-  def rescue_404
-      rescue_action_in_public CustomNotFoundError.new
-    end
 
-    def rescue_action_in_public(exception)
-      case exception
-        when CustomNotFoundError, ::ActionController::UnknownAction, ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction then
-          render :file => "/public/404.html"
-        else
-          @message = exception
-          render :file => "/public/500.html"
+  def authenticated?
+    return false if session[:user].nil?
+    session[:user]
+  end
+
+  def authenticate(options = {})
+    role = nil
+    employer_id = nil
+    if session[:user].nil?
+      session[:previous_uri] = request.request_uri
+      flash[:notice] = "Please login, and localize me"
+      redirect_to :controller => "jobyssey", :action => "login" if session[:user].nil?
+    end
+    options.each_pair do |key,value|
+      case key
+      when :employer_id
+        employer_id = value
+      when :employer_name
+        employer = Employer.find(value)
+        employer_id = employer.id unless employer.nil?
+      when :role
+        role = value
       end
     end
-
-    def local_request?
-      return false
+    unless role.nil?
+      employer_id = 0 if employer_id.nil?
+      raise "Not Authorized" unless session[:user].roles.member? Role.find_by_employer_id_and_name(employer,role)
     end
+    true
+  end
+
+
+  def authorize_admin
+    authenticate :role => "Admin", :employer_id => 0
+  end
+
+  def rescue_404
+      rescue_action_in_public CustomNotFoundError.new
+  end
+
+  def rescue_action_in_public(exception)
+    case exception
+      when CustomNotFoundError, ::ActionController::UnknownAction, ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction then
+        render :file => "/public/404.html"
+      else
+        @message = exception
+        render :file => "/public/500.html"
+    end
+  end
+
+  def local_request?
+    return false
+  end
 end

@@ -10,4 +10,17 @@ module ApplicationHelper
   #  end
   #end
 
+  def authenticated?
+    return false if session[:user].nil?
+    session[:user]
+  end
+
+  def professional?
+    true
+  end
+  
+  def employer?
+    false
+  end
+
 end

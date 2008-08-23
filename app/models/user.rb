@@ -60,7 +60,7 @@ attr_accessor :password_confirmation
   end
 
   def self.authenticate(name, password)
-    user = self.find_by_name(name)
+    user = self.find_by_email(name)
     if user
       expected_password = encrypted_password(password, user.salt)
       if user.password != expected_password

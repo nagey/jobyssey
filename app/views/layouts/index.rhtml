@@ -26,34 +26,32 @@
 		</div>
 <div id="navbar">
 	<ul>
-		<li class="login">Login</li>
-		<li class="logout" style="display:none">Logout</li>
-		
-		<li class="professional" style="display:none">Jobs</li>
-		<li class="professional" style="display:none">Profile</li>
-		<li class="professional" style="display:none">Portfolio</li>
-		<li class="professional" style="display:none">Activity</li>
-		<li class="professional" style="display:none">Tips</li>
-		
-		<li class="employer" style="display:none">Activity</li>
-		<li class="employer" style="display:none">New Role</li>
-		<li class="employer" style="display:none">Manage jobs</li>
-		<li class="employer" style="display:none">Profile</li>
-		<li class="employer" style="display:none">Account</li>
-		<li class="employer" style="display:none">Tips</li>
-		<li class="employer" style="display:none"> CREDITS (display total here)</li>
-		
+		<% if authenticated? %>
+			<li class="info">Welcome back, <%=authenticated?.first_name%></li>
+			<% if professional? %>
+				<li class="professional">Jobs</li>
+				<li class="professional">Profile</li>
+				<li class="professional">Portfolio</li>
+				<li class="professional">Activity</li>
+				<li class="professional">Tips</li>
+			<% elsif employer? %>
+				<li class="employer">Activity</li>
+				<li class="employer">New Role</li>
+				<li class="employer">Manage jobs</li>
+				<li class="employer">Profile</li>
+				<li class="employer">Account</li>
+				<li class="employer">Tips</li>
+				<li class="employer"> CREDITS (display total here)</li>
+			<% end %>
+			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
+		<% else %>
+			<li class="login">Login</li>
+		<% end %>
 	</ul>
 </div>
 
 <div id = "loginbar" style="display:none">
-	<form name="frmLogin">
-	<input type="hidden" name="action" value="login" />
-	<label>Email:  </label><input type="text" name="user[username]"  size="19" maxlength="36"  />
-	<label>Password:  </label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
-	<input type="submit" name="submittedlogin" value="Login"  />
-	<a class="small" href="">Forgot your password?</a>
-	</form>
+	<%=render :partial => "jobyssey/login"%>
 </div>
 
 <% if flash[:notice] -%> 

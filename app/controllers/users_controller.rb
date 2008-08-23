@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   # GET /users.xml
   
    layout 'index'
+
+   before_filter :authorize_admin
   
   def index
     @users = User.find(:all)
