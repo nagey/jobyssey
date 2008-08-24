@@ -5,10 +5,12 @@
   
   <fieldset>
     <legend>Please answer our questions three, and a magic prize shall await thee</legend>
+    <br>
     <ul>
       <li>
         <label for="answer_name"><%=@answer.differentiator_question.name%></label>
-        <%=form.text_field :name %>
+        <br><br>
+        <%=form.text_area :name %>
       </li>
       <li><%=form.submit "Hit Me"%></li>
     </ul>
