@@ -52,6 +52,23 @@ class ApplicationController < ActionController::Base
     true
   end
 
+  def authenticate_professional
+    self.authenticate_by_user_type('Professional')
+  end
+
+  def authenticate_employer
+    self.authenticate_by_user_type('Employer')
+  end
+  
+  def authenticate_user
+    self.authenticate_by_user_type("User")
+  end
+  
+  def authenticate_by_user_type(classname)
+    if self.authenticate
+      raise "Not Authorized" unless session[:user].class.to_s == classname.to_s
+    end
+  end
 
   def authorize_admin
     authenticate :role => "Admin", :employer_id => 0
