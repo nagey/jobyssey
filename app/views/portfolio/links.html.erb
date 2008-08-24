@@ -4,6 +4,8 @@
 	<%=form.error_messages%>
 </div>
 
+  <%= render :partial => 'view_link', :collection => @user.attachments %>
+
 <fieldset>
 <h1>Portfolio</h1>
 

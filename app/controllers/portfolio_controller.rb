@@ -4,6 +4,7 @@ class PortfolioController < ApplicationController
   
   def links
     @attachment = Attachment.new
+    @user = session[:user] 
   end
   
   def add_a_link
@@ -19,4 +20,8 @@ class PortfolioController < ApplicationController
     end
   end  
 
+  def view_links
+    @user = session[:user] 
+  end  
+  
 end
