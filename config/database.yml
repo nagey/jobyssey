@@ -16,7 +16,10 @@ test:
   encoding: utf8
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  database: db464_rjobyssey
+  host: internal-db.s464.gridserver.com
+  username: db464_jobyssey
+  password: sw9p2wRu
   timeout: 5000
   encoding: utf8
