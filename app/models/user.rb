@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password_confirmation, :if => :password_changed?
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you don't remember your password."
-  validates_length_of :password, :within => 1..20, :too_long => "pick a shorter password", :too_short => "pick a longer password", :if => :password_changed?
+  validates_length_of :password, :minimum => 6, :too_short => "pick a longer password", :if => :password_changed?
   validates_format_of :name, :with => /(\S+)\s/, :on => :update
 
 
