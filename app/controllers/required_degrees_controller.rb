@@ -1,6 +1,7 @@
 class RequiredDegreesController < ApplicationController
   # GET /required_degrees
   # GET /required_degrees.xml
+  before_filter :authorize_admin
   
    layout 'index'
   

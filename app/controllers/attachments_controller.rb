@@ -1,4 +1,6 @@
 class AttachmentsController < ApplicationController
+  before_filter :authorize_admin
+
   # GET /attachments
   # GET /attachments.xml
   def index

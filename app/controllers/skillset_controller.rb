@@ -2,8 +2,11 @@ class SkillsetController < ApplicationController
 
   layout 'index'
   layout 'signup', :only => [ :define, :create ]
+  before_filter :authenticate
+
+
   def start
-    @professional = Professional.find session[:user_id]
+    @professional = session[:user]
     @professional.metrics << @professional.cv.skills
     redirect_to :action => :define if @professional.save!
   end
@@ -12,7 +15,7 @@ class SkillsetController < ApplicationController
    
     
     @skill = Skill.new
-    @professional = Professional.find session[:user_id]
+    @professional = session[:user]
     @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }
   end
   
@@ -28,7 +31,7 @@ class SkillsetController < ApplicationController
     elsif skills.length == 0
       @skill = Skill.new params[:skill]
     end
-    @user = User.find session[:user_id]
+    @user = session[:user]
     begin
       @user.metrics << @skill
       unless @user.save
@@ -49,7 +52,7 @@ class SkillsetController < ApplicationController
   end
   
   def finalize
-    @p = Professional.find session[:user_id]
+    @p = session[:user]
     @p.set_search_position
     redirect_to :controller => :personality, :layout => 'signup', :action => :start if @p.save
   end

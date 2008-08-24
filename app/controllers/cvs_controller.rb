@@ -1,4 +1,8 @@
 class CvsController < ApplicationController
+
+  before_filter :authorize_admin
+
+
   # GET /cvs
   # GET /cvs.xml
   def index

@@ -1,6 +1,7 @@
 class SkillsController < ApplicationController
 
   layout 'index'
+  before_filter :authorize_admin
 
 
   # GET /skills

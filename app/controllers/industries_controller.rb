@@ -3,6 +3,7 @@ class IndustriesController < ApplicationController
   # GET /industries.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @industries = Industry.find(:all)

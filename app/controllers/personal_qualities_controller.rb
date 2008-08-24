@@ -3,6 +3,7 @@ class PersonalQualitiesController < ApplicationController
   # GET /personal_qualities.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @personal_qualities = PersonalQuality.find(:all)

@@ -3,6 +3,7 @@ class WorkingTimesController < ApplicationController
   # GET /working_times.xml
   
      layout 'index'
+     before_filter :authorize_admin
   
   def index
     @working_times = WorkingTime.find(:all)

@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   # GET /admin/accounts
   # GET /admin/accounts.xml
+  before_filter :authorize_admin
   
    layout 'index'
   

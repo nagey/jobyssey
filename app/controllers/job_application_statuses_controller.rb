@@ -3,6 +3,7 @@ class JobApplicationStatusesController < ApplicationController
   # GET /job_application_statuses.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @job_application_statuses = JobApplicationStatus.find(:all)

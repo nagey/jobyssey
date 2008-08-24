@@ -3,6 +3,7 @@ class JobApplicationAttachmentsController < ApplicationController
   # GET /job_application_attachments.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @job_application_attachments = JobApplicationAttachment.find(:all)

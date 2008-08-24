@@ -2,6 +2,7 @@ class InvitesController < ApplicationController
 
   layout 'index', :except => :address_popup
   layout 'plaxo', :only => :import_addresses
+  before_filter :authenticate
 
   def address_popup
     
@@ -12,7 +13,7 @@ class InvitesController < ApplicationController
   end
   
   def create_invites
-    user = User.find session[:user_id]
+    user = session[:user]
     begin
       params[:invite][:recipient_list].split(',').each do |item|
         temp = Invite.new

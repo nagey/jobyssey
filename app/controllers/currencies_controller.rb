@@ -3,6 +3,7 @@ class CurrenciesController < ApplicationController
   # GET /currencies.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @currencies = Currency.find(:all)

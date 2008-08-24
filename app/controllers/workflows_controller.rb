@@ -3,6 +3,7 @@ class WorkflowsController < ApplicationController
   # GET /workflows.xml
   
      layout 'index'
+     before_filter :authorize_admin
   
   def index
     @workflows = Workflow.find(:all)

@@ -3,6 +3,7 @@ class LoginsController < ApplicationController
   # GET /logins.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @logins = Login.find(:all)

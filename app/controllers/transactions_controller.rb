@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
   # GET /transactions.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @transactions = Transaction.find(:all)
