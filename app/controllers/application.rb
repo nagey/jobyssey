@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
     end
     unless role.nil?
       employer_id = 0 if employer_id.nil?
-      raise "Not Authorized" unless session[:user].roles.member? Role.find_by_employer_id_and_name(employer,role)
+      raise "Not Authorized" unless session[:user].roles.member? Role.find_by_employer_id_and_name(employer_id,role)
     end
     true
   end
