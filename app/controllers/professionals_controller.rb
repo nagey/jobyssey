@@ -41,6 +41,7 @@ class ProfessionalsController < ApplicationController
     end
     if @professional.save
       session[:user_id] = @professional.id
+      session[:user] = @professional
       session[:professional] = nil
       redirect_to :controller => :skillset, :action => :start
     else

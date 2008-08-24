@@ -3,6 +3,7 @@ class TransitionsController < ApplicationController
   # GET /transitions.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @transitions = Transition.find(:all)

@@ -1,6 +1,7 @@
 class TraitsController < ApplicationController
 
   layout 'index'
+  before_filter :authorize_admin
 
   # GET /traits
   # GET /traits.xml

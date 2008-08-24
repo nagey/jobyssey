@@ -1,4 +1,5 @@
 class ThreeQuestionsController < ApplicationController
+  before_filter :authenticate
   
   def start
     q = PersonalQuestion.find(:all)

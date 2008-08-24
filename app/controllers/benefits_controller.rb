@@ -3,6 +3,7 @@ class BenefitsController < ApplicationController
   # GET /benefits.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @benefits = Benefit.find(:all)

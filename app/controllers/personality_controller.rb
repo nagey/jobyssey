@@ -1,5 +1,8 @@
 class PersonalityController < ApplicationController
 
+  before_filter :authorize_admin
+
+
   layout 'index'
   layout 'signup', :only => [ :start, :define ]
 
@@ -10,7 +13,7 @@ class PersonalityController < ApplicationController
 
   def define
    
-    @professional = Professional.find session[:user_id]
+    @professional = session[:user]
     @trait = nil
     @personal_quality = PersonalQuality.new
     traits = Trait.find(:all)
@@ -26,7 +29,7 @@ class PersonalityController < ApplicationController
   end
   
   def update
-    @professional = Professional.find session[:user_id]
+    @professional = session[:user]
     @personal_quality = PersonalQuality.new params[:personal_quality]
     @professional.personal_qualities << @personal_quality
     session[:counter] = 0 if session[:counter].nil?

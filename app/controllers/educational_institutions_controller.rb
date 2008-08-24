@@ -3,6 +3,7 @@ class EducationalInstitutionsController < ApplicationController
   # GET /educational_institutions.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @educational_institutions = EducationalInstitution.find(:all)

@@ -2,6 +2,8 @@ class PersonalQuestionsController < ApplicationController
 
   layout 'index'
 
+  before_filter :authorize_admin
+
   # GET /personal_questions
   # GET /personal_questions.xml
   def index

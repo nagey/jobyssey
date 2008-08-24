@@ -3,6 +3,7 @@ class MetricsController < ApplicationController
   # GET /metrics.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @metrics = Metric.find(:all)

@@ -1,4 +1,8 @@
 class FeedbackItemsController < ApplicationController
+
+  before_filter :authorize_admin
+
+
   # GET /feedback_items
   # GET /feedback_items.xml
   def index

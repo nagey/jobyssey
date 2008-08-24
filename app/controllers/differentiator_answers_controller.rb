@@ -3,6 +3,7 @@ class DifferentiatorAnswersController < ApplicationController
   # GET /differentiator_answers.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @differentiator_answers = DifferentiatorAnswer.find(:all)

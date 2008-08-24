@@ -1,6 +1,7 @@
 class AdministrativeDivisionsController < ApplicationController
   # GET /administrative_divisions
   # GET /administrative_divisions.xml
+  before_filter :authorize_admin
   
    layout 'index'
   

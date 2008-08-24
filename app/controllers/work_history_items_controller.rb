@@ -3,6 +3,7 @@ class WorkHistoryItemsController < ApplicationController
   # GET /work_history_items.xml
   
      layout 'index'
+     before_filter :authorize_admin
   
   def index
     @work_history_items = WorkHistoryItem.find(:all)

@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
   # GET /roles
   # GET /roles.xml
+  before_filter :authorize_admin
   
    layout 'index'
   

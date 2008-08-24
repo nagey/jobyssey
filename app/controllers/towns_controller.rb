@@ -3,6 +3,7 @@ class TownsController < ApplicationController
   # GET /towns.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @towns = Town.find(:all)

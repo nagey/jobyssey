@@ -24,6 +24,7 @@ class JobysseyController < ApplicationController
     if request.post?
       user = User.authenticate(params[:email], params[:password])
       if user
+        Login.record_login user, request.remote_ip
         session[:user] = user
         uri = session[:previous_uri]
         session[:previous_uri] = nil

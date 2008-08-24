@@ -1,4 +1,8 @@
 class PhoneNumberTypesController < ApplicationController
+
+  before_filter :authorize_admin
+
+
   # GET /phone_number_types
   # GET /phone_number_types.xml
   

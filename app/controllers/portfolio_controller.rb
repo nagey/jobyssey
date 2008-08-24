@@ -1,4 +1,7 @@
 class PortfolioController < ApplicationController
+
+  before_filter :authorize_admin
+
   
   def links
     @links

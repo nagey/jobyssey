@@ -3,6 +3,7 @@ class DegreesController < ApplicationController
   # GET /degrees.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @degrees = Degree.find(:all)

@@ -3,6 +3,7 @@ class GeoPositionsController < ApplicationController
   # GET /geo_positions.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @geo_positions = GeoPosition.find(:all)

@@ -3,6 +3,7 @@ class UserBenefitPreferencesController < ApplicationController
   # GET /user_benefit_preferences.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @user_benefit_preferences = UserBenefitPreferences.find(:all)

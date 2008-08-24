@@ -1,4 +1,8 @@
 class PostCodesController < ApplicationController
+
+  before_filter :authorize_admin
+
+
   # GET /post_codes
   # GET /post_codes.xml
   

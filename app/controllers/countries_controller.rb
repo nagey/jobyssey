@@ -3,6 +3,7 @@ class CountriesController < ApplicationController
   # GET /countries.xml
   
    layout 'index'
+   before_filter :authorize_admin
   
   def index
     @countries = Country.find(:all)
