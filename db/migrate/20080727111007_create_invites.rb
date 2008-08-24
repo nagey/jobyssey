@@ -1,6 +1,6 @@
 class CreateInvites < ActiveRecord::Migration
   def self.up
-    create_table :invites do |t|
+    create_table :invites, :id => false do |t|
       t.string :id
       t.integer :user_id
       t.string :email
