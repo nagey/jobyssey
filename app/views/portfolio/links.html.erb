@@ -1,14 +1,22 @@
-
+<h1>Portfolio</h1>
+<p>Link to past projects you've worked on or online portfolions to let prospective employers get to know you better. </p>
 <% form_for(:attachment , :url => {:action => :add_a_link}) do |form| %>
 <div class="error-messages" id="error-messages-for-professional-signup">
 	<%=form.error_messages%>
 </div>
 
+
+<table>
+<Caption>My Projects</caption>
+  <tr>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Description</th>
+  </tr>
   <%= render :partial => 'view_link', :collection => @user.attachments %>
-
+</table>
 <fieldset>
-<h1>Portfolio</h1>
-
+<legend>Add a Project</legend>
 <br>
 <ul>
 <li>

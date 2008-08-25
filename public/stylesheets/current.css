@@ -522,13 +522,12 @@ table {
  line-height: 1.2em;
 }
 caption {
- font-size: 30px;
+ font-size: 20px;
  font-weight: bold;
- color: #002084;
+ color: #444444;
  text-align: left;
  padding: 10px 0px;
  margin-bottom: 2px;
- text-transform: capitalize;
 }
 thead th {
  border-right: 2px solid #fff;
@@ -570,6 +569,13 @@ tbody td a, tbody th a {
 tbody td a:hover, tbody th a:hover {
  text-decoration:none;
 }
+td.portfolio{
+	width: 200px;
+}
+td.portfoliodescription{
+	width: 400px;
+}
+	
 
 
 /* Slider */
