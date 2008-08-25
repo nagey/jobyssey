@@ -7,7 +7,7 @@
 	background: #FFffff;
 	background-image: url(header.jpg);
 	background-repeat: no-repeat;
-	background-position: top right; 
+	background-position: top right;
 	color: #FFFFFF;
 	height: 100px;
 }
@@ -59,7 +59,8 @@
 	list-style-type: none;
 }
 #navbar li {
-	display: inline;
+	list-style-type: none;
+	display: inline-block;
 	margin-right:10px;
 	font-weight: bold;
 	color: #ffffff;
@@ -94,7 +95,7 @@
 	text-decoration:none;
 }
 #loginbar ul {
-	margin: 0;
+	margin: 0 auto;
 	list-style-type: none;
 }
 #loginbar li {
