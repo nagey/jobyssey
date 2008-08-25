@@ -25,9 +25,10 @@
 
 		</div>
 <div id="navbar">
-	<ul>
+
 		<% if authenticated? %>
-			<li class="info">Welcome back, <%=authenticated?.first_name%></li>
+			<div class="info">Welcome, <%=authenticated?.first_name%></div>
+	<ul>		
 			<% if professional? %>
 				<li class="professional">Jobs</li>
 				<li class="professional">Profile</li>

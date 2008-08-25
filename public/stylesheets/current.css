@@ -59,7 +59,7 @@
 	list-style-type: none;
 }
 #navbar li {
-	display:inline;
+	display: inline;
 	margin-right:10px;
 	font-weight: bold;
 	color: #ffffff;
@@ -394,6 +394,31 @@ div.progresswording{
 	font-weight: normal;
 	color: #999999;
 }
+.info{
+	float: left;
+	color: #fff;
+	background-color: #FF7800;
+	font-weight: bold;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-top: 3px;
+	height: 18px;
+}	
+.info a{
+	color:#FFF;
+	text-decoration:none;
+}
+.info ul {
+	margin: 0;
+	list-style-type: none;
+}
+.info li {
+	display:inline;
+	margin-right:10px;
+	font-weight: bold;
+	color: #ffffff;
+}
+	
 /* Font Styling */
 
 h1 {
@@ -505,6 +530,17 @@ label.snuglabel{
 	padding-bottom: 10px;
 	text-align: left;
 }
+label.tsandcs{
+	display: inline;
+	width: 100%;
+	padding-bottom: 25px;
+	font-weight: bold;
+}
+label.answer_name{
+	width: 100%;
+	padding-bottom: 10px;
+	font-weight: bold;
+}	
 textarea{
 	width: 100%;
 	height: 150px;
