@@ -54,11 +54,12 @@
 }
 #navbar ul {
 	margin: 0;
-	list-style-type: none;
+	list-style-type: none;#
+	display: inline;
 }
 #navbar li {
 	list-style-type: none;
-	display: inline-block;
+	display: inline;
 	margin-right:10px;
 	font-weight: bold;
 	color: #ffffff;
