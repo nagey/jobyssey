@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you don't remember your password."
   validates_length_of :password, :minimum => 6, :too_short => "pick a longer password", :if => :password_changed?
-  validates_format_of :name, :with => /(\S+)\s/, :on => :update
+  validates_format_of :name, :with => /(\S+)\s/, :on => :update, :message => "Use your whole name, Prince."
 
 
 attr_accessor :password_confirmation
@@ -41,7 +41,7 @@ attr_accessor :password_confirmation
   end
 
   def name
-    self.first_name + ' ' + self.middle_names + ' ' + self.last_name unless self.first_name.nil?
+    self.first_name.to_s + ' ' + self.middle_names.to_s + ' ' + self.last_name.to_s unless self.first_name.nil? 
   end
 
   def skills

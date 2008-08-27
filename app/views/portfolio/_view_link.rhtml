@@ -3,5 +3,7 @@
   <td class="portfolio"><%=h view_link.name %></td>
   <td class="portfolio"><%=h view_link.url %></td>
   <td class="portfoliodescription"><%=h view_link.description %></td>
+  <td><%= link_to 'Edit', :action => 'edit', :id => view_link.id %></td>
+  <td><%= link_to 'Destroy', @attachment, :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
 

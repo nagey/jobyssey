@@ -23,5 +23,31 @@ class PortfolioController < ApplicationController
   def view_links
     @user = session[:user] 
   end  
-  
+ 
+  def attachment
+    @attachment
+  end
+ 
+  def edit
+    @attachment = Attachment.find(params[:id])
+  end
+
+  def update
+    @attachment = Attachment.find params[:id]
+    @attachment.update_attributes params[:attachment]
+    if true
+      flash[:notice] = 'Thanks! Your portfolio has been updated.'
+      redirect_to :action => :links
+    else
+      flash[:notice] = 'Unable to update- please try again.'
+      redirect_to :action => :links
+    end
+  end
+
+  def destroy
+    @attachment = Attachment.find session[:user].id
+    @attachment.destroy
+    redirect_to :action => :links
+  end
+
 end

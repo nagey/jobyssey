@@ -27,7 +27,7 @@
 <div id="navbar">
 
 		<% if authenticated? %>
-			<div class="info">Welcome, <%=authenticated?.first_name%></div>
+			<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
 	<ul>		
 			<% if professional? %>
 				<li class="professional">Jobs</li>
