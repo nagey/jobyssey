@@ -1,7 +1,5 @@
 /* Header */
 
-#loginbar ul {display:inline;}
-#loginbar li {display:inline;}
 
 #header {
 	background: #FFffff;
@@ -56,11 +54,12 @@
 }
 #navbar ul {
 	margin: 0;
-	list-style-type: none;
+	list-style-type: none;#
+	display: inline;
 }
 #navbar li {
 	list-style-type: none;
-	display: inline-block;
+	display: inline;
 	margin-right:10px;
 	font-weight: bold;
 	color: #ffffff;
@@ -82,8 +81,6 @@
 	display:inline;
 	margin-right:10px;
 }
-
-
 #loginbar {
 	background-color:#B0BEE5;
 	position:relative;
@@ -94,21 +91,24 @@
 	color:#FFF;
 	text-decoration:none;
 }
-#loginbar ul {
-	margin: 0 auto;
+#loginbar ul{
 	list-style-type: none;
-}
-#loginbar li {
 	display:inline;
+}
+#loginbar li{
 	margin-right:10px;
 	font-weight: bold;
+	display:inline;
 }
 #loginbar label{
 	color: #fff;
 	font-weight: bold;
 }
-
-
+#loginbar form{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}	
+	
 #adminbar {
 	background-color:#c1c1d5;
 	position:relative;
