@@ -1,15 +1,15 @@
-<h1>Listing attachments</h1>
+<h1><%=l(:list_attachment)%></h1>
 
 <table>
   <tr>
-    <th>Entity</th>
-    <th>Entity type</th>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Description</th>
-    <th>Attachment</th>
-    <th>File name</th>
-    <th>Content type</th>
+    <th><%=l(:attachment_entity)%></th>
+    <th><%=l(:attachment_entity_type)%></th>
+    <th><%=l(:attachment_name)%></th>
+    <th><%=l(:attachment_url)%></th>
+    <th><%=l(:attachment_description)%></th>
+    <th><%=l(:attachment_attachment)%></th>
+    <th><%=l(:attachment_filename)%></th>
+    <th><%=l(:attachment_content_type)%></th>
   </tr>
 
 <% for attachment in @attachments %>

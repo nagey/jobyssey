@@ -1,14 +1,14 @@
-<h1>Listing accounts</h1>
+<h1><%=l(:list_account)%></h1>
 
 <table>
   <tr>
-    <th>Employer</th>
-    <th>Balance</th>
+    <th><%=l(:employer_header)%></th>
+    <th><%=l(:employer_balance)%></th>
   </tr>
 
 <% for account in @accounts %>
-  <tr>
     <td><%=h account.employer.name %></td>
+  <tr>
     <td><%=h account.balance %></td>
     <td><%= link_to 'Show', account %></td>
     <td><%= link_to 'Edit', edit_account_path(account) %></td>

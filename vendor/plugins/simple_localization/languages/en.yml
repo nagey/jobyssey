@@ -476,7 +476,7 @@ models:
             name: account_id
             description: Account ID
             name: transaction_type
-            descriptiong: Transaction type
+            description: Transaction type
             name: amount
             description: Amount
             name: reference
@@ -639,5 +639,63 @@ app:
         need_to_add_skill: Need to Add a Skill?
     traits:
         define_trait: That's fine right there, thanks.
-    
     work_history_items: Work History Items
+    accounts:
+    		edit_account: Editing Account
+    		list_account: Listing accounts
+    		employer_header: Employer
+    		employer_balance: Balance
+    		new_account: New account
+    		show_employer: Employer
+    		show_balance: Balance
+    addresses:
+    		edit_address: Editing address
+    		list_address: Listing addresses
+    		address_one: Address1
+    		address_two: Address2
+    		town: Town
+    		geo_location: Geo location
+    		new_address: New address
+    administrative_divisions:
+    		edit_division: Editing administrative division
+    		list_division: Listing administrative divisions
+    		name_division: Name
+    		country_division: Country
+    		geo_position: Geo position
+    		new_division: New administrative division
+    attachments:
+    		edit_attachment: Editing attachment
+    		list_attachment: Listing attachments
+    		attachment_entity: Entity
+    		attachment_entity_type: Entity type
+    		attachment_name: Name
+    		attachment_url: URL
+    		attachment_description: Description
+    		attachment_attachment: Attachment
+    		attachment_filename: File name
+    		attachment_content_type: Content type
+    		new_attachment: New attachment
+    benefits:
+    		edit_benefit: Editing benefit
+    		list_benefit: Listing benefits
+    		name_benefit: Name
+    		new_benefit: New benefit
+    contacts:
+    		edit_contact: Editing contact
+    employers:
+    		employer_name: Name
+    		employer_tagline: Tagline
+    		employer_size: Size
+    		employer_description: Description
+    		employer_industry: Industry
+    		employer_searchposition: Search position
+    		employer_geoposition: Geo position
+    		employer_edit: Editing employer
+    		employer_list: Listing employers
+    		employer_new: New employer
+    		
+    				
+    				
+    		
+    		
+    		
