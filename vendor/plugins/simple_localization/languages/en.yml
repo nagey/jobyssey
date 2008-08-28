@@ -649,6 +649,11 @@ app:
     		remove: Remove
     		add_skill_legend: Need to Add a Skill?
     		add_skill_instruction: Keep it specific and technical- "Good with People" isn't a technical skill! Donkey Kong champ doesn't count either...
+    personality:
+    		your_personality: Your Personality
+    		tell_us_text: Tell us a bit about your work personality so we can show you jobs from companies that suit you.  For each quality, adjust the slider to reflect your work personality or work culture preference.
+    		personality_instruction_one: The further you drag the slider, the more strongly you feel about it.
+    		personality_instruction_two: Release the slider to move on to the next trait...
     		
     skills:
         add_skill: add a skill
