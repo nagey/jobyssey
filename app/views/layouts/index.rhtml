@@ -40,7 +40,7 @@
 			<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
 	<ul>		
 			<% if professional? %>
-				<li class="professional">Jobs</li>
+				<li class="professional"><%= link_to "Jobs", :controller => 'jobyssey', :action => "job_search_tips" %></li>
 				<li class="professional">Profile</li>
 				<li class="professional">Portfolio</li>
 				<li class="professional">Activity</li>

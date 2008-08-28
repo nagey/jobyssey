@@ -2,15 +2,20 @@ class ThreeQuestionsController < ApplicationController
   before_filter :authenticate
   
   def start
-    q = PersonalQuestion.find(:all)
-    questions = []
-    count = 0
-    while (questions.length < 3)
-      a = q[rand(q.length)]
-      questions << a unless questions.member? a
-    end 
-    session[:questions] = questions
-    redirect_to :action => :ask
+     @answers = DifferentiatorAnswer.find_by_user_id(params[:user_id])
+    if @answers == nil
+      q = PersonalQuestion.find(:all)
+      questions = []
+      count = 0
+      while (questions.length < 3)
+        a = q[rand(q.length)]
+        questions << a unless questions.member? a
+      end 
+      session[:questions] = questions
+      redirect_to :action => :ask
+    else
+      redirect_to :controller => :professionals, :action => :edit
+    end
   end
   
   def ask
@@ -33,4 +38,19 @@ class ThreeQuestionsController < ApplicationController
      end
    end
     
+    def edit
+     @answers = DifferentiatorAnswers.find_by_user_id(params[:user_id])
+    end
+    
+    #def update
+    #  @answers = DifferentiatorAnswers.find(params[:user_id])
+    #  @answers.update_attributes params[:attachment]
+    #  if true
+    #    flash[:notice] = 'Thanks! Your portfolio has been updated.'
+    #    redirect_to :action => :links
+    #  else
+    #    flash[:notice] = 'Unable to update- please try again.'
+    #    redirect_to :action => :links
+    #  end
+    #end
 end
