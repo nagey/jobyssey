@@ -1,9 +1,9 @@
 
 <fieldset>
-<div class="progressbar">Your Skills<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
-<div class="progresswording">2 of 4</div></div>
+<div class="progressbar"><%=l(:your_skills)%><div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
+<div class="progresswording"><%=l(:professional, :progress_wording_two)%></div></div>
 </div>
-<p>Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We will use these ratings to search for jobs that suit you best, and to help employers better understand your strengths. </p>
+<p><%=l(:slider_instructions)%>. </p>
 <br>
 <ul id="skill-list" class="skills-list">
 	
@@ -16,7 +16,7 @@
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
 			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
-					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>">Remove</a></div>
+					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>"><%=l(:remove)%></a></div>
 				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
 			
 			</li>
@@ -28,8 +28,8 @@
 <br>
 <div class="addskillfieldset">
 <fieldset>
-<legend>Need to Add a Skill?</legend>
-<p>Keep it specific and technical- "Good with People" isn't a technical skill! Donkey Kong champ doesn't count either...</p>
+<legend><%=l(:add_skill_legend)%></legend>
+<p><%=l(:add_skill_instruction)%></p>
 <ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
 	<li><%= form.text_field :name, :update => :autocomplete_skill %>
