@@ -5,11 +5,11 @@
 </div>
 
 <fieldset>
-<div class="progressbar">Your Details<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
-<div class="progresswording">1 of 4</div></div>
+<div class="progressbar"><%=l(:professional, :your_details)%><div class="progresscounter"><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
+<div class="progresswording"><%=l(:professional, :progress_wording_one)%></div></div>
 </div>
-<p>Thanks! We'll use your CV to identify your skills, and to let prospective employers find out about your work history. We'll also need some basic information so we can save your details, and we'll need to find out about your work personality and office culture preferences.</p>
-<p>Your name and contact information are stored confidentially until you agree to interview for a job.</p>
+<p><%=l(:professional, :cvupload_thanks)%>.</p>
+<p><%=l(:professional, :confidentiality_text)%>.</p>
 <br>
 <ul>
 	<li>
@@ -36,17 +36,17 @@
 	<br>
 <div id = "codename">
 
-<label><b>Code Name:</label> <%= @code_name %></b>
+<label><b><%=l(:professional, :code_name)%>:</label> <%= @code_name %></b>
 
 <span class="question">?</span>
 
 <div class="answer" style="display:none">
-	<p>Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality.  Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy. </p>  
+	<p><%=l(:professional, :code_name_explanation)%>. </p>  
 	</div>
 </div>
 
 <fieldset>
-<legend>What I'm looking for... </legend>
+<legend><%=l(:professional, :looking_for_legend)%>... </legend>
 <br>
 <ul>
 	<li>
@@ -63,7 +63,7 @@
 		<%= form.text_area :more_info %>
 
 </fieldset>
-<label class="tsandcs"><input type="checkbox" id="tsandcs" name="tsandcs" value="1" />I agree to <a href="/jobyssey/tsandcs">Jobyssey's Terms and Conditions.</a></label>
+<label class="tsandcs"><input type="checkbox" id="tsandcs" name="tsandcs" value="1" /><%=l(:professional, :agree_terms)%> <a href="/jobyssey/tsandcs"><%=l(:professional, :terms_link)%>.</a></label>
 
 	<%= submit_tag l(:professional, :create_account)%>
 

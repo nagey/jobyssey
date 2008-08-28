@@ -631,6 +631,19 @@ app:
         employment_type: Employment Type
         create_account: Create my account
         more_info: Add any other details here you feel employers need to know about your work requirements or interests. You'll have another chance later to tell them more about yourself, so this is mainly for deal-breakers like location or hours...
+        progress_wording_one: 1 of 4
+        progress_wording_two: 2 of 4
+        progress_wording_three: 3 of 4
+        progress_wording_four: 4 of 4
+        your_details: Your Details
+        cvupload_thanks: Thanks! We'll use your CV to identify your skills, and to let prospective employers find out about your work history. We'll also need some basic information so we can save your details, and we'll need to find out about your work personality and office culture preferences
+        confidentiality_text: Your name and contact information are stored confidentially until you agree to interview for a job
+        code_name: Code Name
+        code_name_explanation: Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality.  Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy
+        looking_for_legend: What I'm looking for
+        agree_terms: I agree to
+        terms_link: Jobyssey's Terms and Conditions
+        
     skills:
         add_skill: add a skill
         couldnt_add_skill: error adding skill
