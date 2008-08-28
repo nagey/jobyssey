@@ -178,8 +178,22 @@ body {
 	height: 100%;
 }
 div#errorExplanation{
-	color: red;
-	padding: 10px 10px 10px 10px;
+	color: #374979;
+	padding: 0px 20px 20px 20px;
+	border-color: #374979;
+	border-style: solid;
+	border-width: 6px;
+	
+}
+#errorExplanation h2{
+	color: #374979;
+	font-size: 22px;
+	font-weight: bold;
+}
+#errorExplanation li{
+	list-style-type: square;
+	text-indent: 10px;
+	margin-left: 20px;
 }
 div#container{
 	margin: 0 auto; 
