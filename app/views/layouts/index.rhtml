@@ -21,8 +21,18 @@
 	<div id="container">
 		<div id="header">
 		<p>Your journey starts today</p>
+		
+		<% if authenticated? %>
+			<% if professional?%>
+				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
+			<% else %>
+				<a class= "headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
+			<% end %>
+		<% else %>
 			<a class= "headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
+			<% end %>
 
+		
 		</div>
 <div id="navbar">
 
