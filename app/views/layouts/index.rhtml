@@ -42,7 +42,7 @@
 			<% if professional? %>
 				<li class="professional"><%= link_to "Jobs", :controller => 'jobyssey', :action => "jobs" %></li>
 				<li class="professional">Profile</li>
-				<li class="professional">Portfolio</li>
+				<li class="professional"><%= link_to "Portfolio", :controller => 'portfolio', :action => "links" %></li>
 				<li class="professional">Activity</li>
 			<li class="professional"><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
 			<% elsif employer? %>
