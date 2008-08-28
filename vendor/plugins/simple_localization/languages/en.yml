@@ -643,7 +643,13 @@ app:
         looking_for_legend: What I'm looking for
         agree_terms: I agree to
         terms_link: Jobyssey's Terms and Conditions
-        
+    skillset:
+    		your_skills: Your Skills
+    		slider_instructions: Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We will use these ratings to search for jobs that suit you best, and to help employers better understand your strengths
+    		remove: Remove
+    		add_skill_legend: Need to Add a Skill?
+    		add_skill_instruction: Keep it specific and technical- "Good with People" isn't a technical skill! Donkey Kong champ doesn't count either...
+    		
     skills:
         add_skill: add a skill
         couldnt_add_skill: error adding skill
