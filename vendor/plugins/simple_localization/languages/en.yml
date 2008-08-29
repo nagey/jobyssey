@@ -740,6 +740,10 @@ app:
     		employer_edit: Editing employer
     		employer_list: Listing employers
     		employer_new: New employer
+    three_questions:
+    		please_answer: Please answer our questions three, and a magic prize shall await thee
+    		answer_instructions: Answer the following questions to give potential employers and insight in to how you work and an idea of your future aspirations. Remember to include details as this will improve your chances of securing an interview, but also stick to the question asked...
+    				
     		
     				
     				
