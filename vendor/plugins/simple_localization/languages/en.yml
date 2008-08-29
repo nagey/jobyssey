@@ -723,6 +723,12 @@ app:
     		new_benefit: New benefit
     contacts:
     		edit_contact: Editing contact
+    		drop_us_a_line: Drop us a line
+    		problems: Problems, questions, thoughts, suggestions...we're all ears.
+    		name_contact: Name
+    		email_contact: Email Address
+    		subject_contact: Subject
+    		message_contact: Message
     employers:
     		employer_name: Name
     		employer_tagline: Tagline
