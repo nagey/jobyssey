@@ -182,8 +182,7 @@ div#errorExplanation{
 	padding: 0px 20px 20px 20px;
 	border-color: #374979;
 	border-style: solid;
-	border-width: 6px;
-	
+	border-width: 6px;	
 }
 #errorExplanation h2{
 	color: #374979;
@@ -194,6 +193,16 @@ div#errorExplanation{
 	list-style-type: square;
 	text-indent: 10px;
 	margin-left: 20px;
+}
+div#notice{
+	color: #374979;
+	padding: 10px 20px 10px 20px;
+	margin: 20px 20px 20px 20px;
+	border-color: #374979;
+	border-style: solid;
+	border-width: 2px;	
+	font-size: 16px;
+	text-align: center;
 }
 div#container{
 	margin: 0 auto; 
