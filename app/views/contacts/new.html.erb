@@ -1,22 +1,22 @@
-<h1>Drop us a line</h1>
-<p>Problems, questions, thoughts, suggestions...we're all ears.</p>
+<h1><%=l(:drop_us_a_line)%></h1>
+<p><%=l(:problems)%></p>
 <% form_for(@contact) do |f| %>
   <%= f.error_messages %>
 <table>
     <tr>
-        <td><label for="email_name">Name:</label></td>
+        <td><label for="email_name"><%=l(:name_contact)%>:</label></td>
         <td><%= text_field "email", "name", :size => 30 %></td>
     </tr>
     <tr>
-        <td><label for="email_address">Email Address:</label></td>
+        <td><label for="email_address"><%=l(:email_contact)%>:</label></td>
         <td><%= text_field "email", "address", :size => 30 %></td>
     </tr>
     <tr>
-        <td><label for="email_subject">Subject:</label></td>
+        <td><label for="email_subject"><%=l(:subject_contact)%>:</label></td>
         <td><%= text_field "email", "subject", :size => 30 %></td>
     </tr>
     <tr>
-        <td><label for="email_body">Message:</label></td>
+        <td><label for="email_body"><%=l(:message_contact)%>:</label></td>
         <td><%= text_area "email", "body", :rows => 10, :cols => 60 %></td>
     </tr>
 </table>

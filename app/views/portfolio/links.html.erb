@@ -1,5 +1,5 @@
-<h1>Portfolio</h1>
-<p>Link to past projects you've worked on or online portfolions to let prospective employers get to know you better. </p>
+<h1><%=l(:portfolio)%></h1>
+<p><%=l(:portfolio_instructions)%> </p>
 <% form_for(:attachment , :url => {:action => :add_a_link}) do |form| %>
 <div class="error-messages" id="error-messages-for-professional-signup">
 	<%=form.error_messages%>
@@ -7,28 +7,28 @@
 
 
 <table>
-<Caption>My Projects</caption>
+<Caption><%=l(:portfolio_caption)%></caption>
   <tr>
-    <th>Name</th>
-    <th>URL</th>
-    <th>Description</th>
+    <th><%=l(:portfolio_name)%></th>
+    <th><%=l(:portfolio_url)%></th>
+    <th><%=l(:portfolio_description)%></th>
   </tr>
   <%= render :partial => 'view_link', :collection => @user.attachments %>
 </table>
 <fieldset>
-<legend>Add a Project</legend>
+<legend><%=l(:portfolio_add)%></legend>
 <br>
 <ul>
 <li>
-<label>Name</label>
+<label><%=l(:portfolio_name)%></label>
 	<%= form.text_field "name" %>
 </li>
 <li>
-<label>URL</label>
+<label><%=l(:portfolio_url)%></label>
 	<%= form.text_field "url" %>
 </li>
 <li>
-<label>Description</label>
+<label><%=l(:portfolio_description)%></label>
 	<%= form.text_field "description" %>
 </li>
 
