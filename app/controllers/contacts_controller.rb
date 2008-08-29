@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   # GET /contacts.xml
   
      layout 'index'
-     before_filter :authorize_admin
+
   
   def index
     @contacts = Contact.find(:all)
