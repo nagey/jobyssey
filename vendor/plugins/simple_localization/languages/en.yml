@@ -643,6 +643,23 @@ app:
         looking_for_legend: What I'm looking for
         agree_terms: I agree to
         terms_link: Jobyssey's Terms and Conditions
+        welcome: Welcome to Jobyssey!
+        thanks_text: Thanks for taking the time to build your profile.  Please check back within a few days to see if we've added any positions that suit your requirements.
+        meantime_text: In the meantime, you can add to your details to get more interview invites from employers
+        answer: Answer
+        three_questions: 3 Questions
+        know_you: to let employers get to know you better.
+        work_samples: Add work samples to your
+        portfolio: portfolio
+        interview_request: to get more interview requests.
+        pass_it_on: Pass it on
+        let_your_friends: let your friends and colleagues know about Jobyssey.
+        start_welcome: Welcome!
+        coming_soon: Coming Soon
+        migration_complete: While we complete the user migration process to the new version of Jobyssey, we'll also be moving over employer accounts and adding several new employers.  Please come back in 3-4 days to see if there are any new roles that suit you.
+        input: We welcome your input- please
+        drop_us_a_line: drop us a line
+        suggestions: if you have any suggestions, or catch any bugs.
     skillset:
     		your_skills: Your Skills
     		slider_instructions: Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We will use these ratings to search for jobs that suit you best, and to help employers better understand your strengths
