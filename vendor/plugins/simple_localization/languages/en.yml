@@ -758,6 +758,8 @@ app:
     		invites_send: Send them an invite
     layouts:
     		start_journey: Your journey starts today
+    		your_journey: Your journey starts today
+    		layout_contacts: Contacts 
     			
     		
     				
