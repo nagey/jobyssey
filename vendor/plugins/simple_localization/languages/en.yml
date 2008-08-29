@@ -743,7 +743,15 @@ app:
     three_questions:
     		please_answer: Please answer our questions three, and a magic prize shall await thee
     		answer_instructions: Answer the following questions to give potential employers and insight in to how you work and an idea of your future aspirations. Remember to include details as this will improve your chances of securing an interview, but also stick to the question asked...
-    				
+    portfolio:
+    		portfolio: Portfolio
+    		portfolio_instructions: Link to past projects you've worked on or online portfolions to let prospective employers get to know you better.
+    		portfolio_caption: My Projects
+    		portfolio_name: Name
+    		portfolio_description: Description
+    		portfolio_url: URL
+    		portfolio_add: Add a Project
+    			
     		
     				
     				
