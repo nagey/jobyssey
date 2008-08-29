@@ -8,7 +8,7 @@
 <% form_for @invite, :url => { :action => :create_invites} do |f| %>
 	<li><%=l(:invites_send)%>:
 	<%= f.text_field "recipient_list" %>
-	<%= submit_tag%></li>
+	<%= submit_tag "All done!", :class =>"submit" %></li>
 </ul>	
 <% end %>
 </fieldset>
