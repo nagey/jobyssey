@@ -756,6 +756,8 @@ app:
     		spread_the_word: Spread the Word
     		invites_instructions: We hope you've found Jobyssey unique and interesting so far.  Know anyone else that might find it useful?
     		invites_send: Send them an invite
+    layouts:
+    		start_journey: Your journey starts today
     			
     		
     				
