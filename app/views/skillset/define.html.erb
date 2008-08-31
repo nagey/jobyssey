@@ -32,7 +32,8 @@
 <p><%=l(:add_skill_instruction)%></p>
 <ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
-	<li><%= form.text_field :name, :update => :autocomplete_skill %>
+  
+	<li><%= text_field_with_auto_complete_jquery :skill, :name %>
 	<%= submit_tag l(:skills, :add_skill )%></li> 
 <% end %>
 </ul>

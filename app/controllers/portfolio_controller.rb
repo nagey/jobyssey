@@ -45,8 +45,9 @@ class PortfolioController < ApplicationController
   end
 
   def destroy
-    @attachment = Attachment.find session[:user].id
+    @attachment = Attachment.find params[:id]
     @attachment.destroy
+    flash[:notice] = 'all gone!'
     redirect_to :action => :links
   end
 

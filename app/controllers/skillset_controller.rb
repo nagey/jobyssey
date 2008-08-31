@@ -3,7 +3,7 @@ class SkillsetController < ApplicationController
   layout 'index'
   layout 'signup', :only => [ :define, :create ]
   before_filter :authenticate
-
+  auto_complete_for :skill, :name
 
   def start
     @professional = session[:user]

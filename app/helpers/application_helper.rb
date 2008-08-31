@@ -22,5 +22,17 @@ module ApplicationHelper
   def employer?
     false
   end
+  
+  def text_field_with_auto_complete_jquery(obj, meth)
+    obj = obj.to_s
+    meth = meth.to_s
+    name = "#{obj}[#{meth}]"
+    id = "#{obj}_#{meth}"
+    return '<input type="text" name="'+name+'" id="'+id+'" /><script type="text/javascript">
+    //<![CDATA[
+    $("input#'+id+'").autocomplete("auto_complete_for_'+id+'");
+    //]]>
+    </script>'
+  end
 
 end

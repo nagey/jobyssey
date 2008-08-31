@@ -2,7 +2,13 @@ class ThreeQuestionsController < ApplicationController
   before_filter :authenticate
   
   def start
-     @answers = DifferentiatorAnswer.find_by_user_id(params[:user_id])
+    u = User.find session[:user]
+    if u.differentiator_answers.length == 3
+      flash[:notice] = "You've already answered your three questions"
+      redirect_to :controller => :professionals, :action => :home
+      return
+    end
+    @answers = DifferentiatorAnswer.find_by_user_id(session[:user])
     if @answers == nil
       q = PersonalQuestion.find(:all)
       questions = []
@@ -24,7 +30,7 @@ class ThreeQuestionsController < ApplicationController
       @answer.differentiator_question = session[:questions].pop
       @answer.user = session[:user]
     else
-      flash[:message] = "Thanks for answering our 3 questions. Richard should add me to localization"
+      flash[:notice] = "Thanks for answering our 3 questions. Richard should add me to localization"
       redirect_to :controller => :professionals, :action => :home
     end
    end
