@@ -13,7 +13,7 @@ class PortfolioController < ApplicationController
     if @attachment.save
       @professional.attachments << @attachment
       @professional.save
-      flash[:message] = "Link saved. please localize me."
+      flash[:message] = l(:link_saved)
       redirect_to :action => :links
     else
       render :action => :links

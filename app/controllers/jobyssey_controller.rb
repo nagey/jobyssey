@@ -30,7 +30,7 @@ class JobysseyController < ApplicationController
         session[:previous_uri] = nil
         redirect_to(uri || { :controller => 'professionals', :action => 'home' })
       else
-        flash.now[:notice] = "Invalid user/password combination (please localize me)"
+        flash.now[:notice] = l(:invalid_combination)
       end
     end
   end
