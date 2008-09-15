@@ -23,17 +23,19 @@
 	<p>Form for info for job posting table:</p>
 	<ul>
 		<li>title:string</li>
-        <li>employer_id:integer</li>
         <li>description:text (	NOTE: Description should retain formatting, including line breaks and bulleting)</li>
-        <li>search_position:string</li>
         <li>maximum_salary:decimal</li>
         <li>minimum_salary:decimal</li>
-        <li>education_required:boolean</li>
+        <li>education_required:boolean (NOTE- if yes employers will also need to set a required education level.  This can be left to a future iteration if it's problematic).</li>
         <li>employment_type_id:integer</li>
         <li>working_time_id:integer</li>
 	</ul>
+	<p>The following pieces of info for the job posting table should not require input: </p>
+ 		<li>employer_id:integer (get this from the user session)</li>
+		<li>search_position:string (this will need to be calculated based on the skills and personality traits)</li>
+	</ul>
 	
-	<p>Box to upload jobspec to scan for skills (see similar action on user reg process with cvs)Note- this is optional.  Employers can proceed to the next step without, they will just have to enter skills manually.</p>
+	<p>Box to upload jobspec to scan for skills (see similar action on user reg process with cvs)Note- uploading a job spec is optional.  Employers can proceed to the next step without, they will just have to enter skills manually.</p>
 	<p>Button to submit form and move forward to <a href="addjobskills.html">Add Job Skills<a></p>
 	
 
