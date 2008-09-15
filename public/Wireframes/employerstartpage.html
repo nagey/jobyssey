@@ -14,23 +14,11 @@
 	<a class="headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
 	<h3>BETA</h3>
 </div>
+
 <div id="navbar">
-	<ul>
-
-		<li><a id="logAction" href="{$result->makeUrl('logout','login','user')}" title="logout">Logout</a></li>
-		
-	</ul>
-</div>
-
-<div id="loginbar" style="visibility:hidden;display:none">
-	<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
-		<input type="hidden" name="action" value="login" />
-		<label></label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
-
-		<label></label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
-		<input type="submit" name="submittedlogin" value=""  />
-		<a class="small" href="{$result->makeUrl('','password','jobs')}"></a>
-	</form>
+<ul>
+	<li>Jobs</li>
+	
 </div>
 
 
@@ -58,7 +46,7 @@
 			<div id="startpage">
 
 				<div class="employerhotlinks">
-					Add a New Job </div>
+					<a href="addanewjob.html">Add a New Job</a> </div>
 					
 					<div class="employerhotlinks">
 					Get more Invitations
