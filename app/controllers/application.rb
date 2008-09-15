@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     employer_id = nil
     if session[:user].nil?
       session[:previous_uri] = request.request_uri
-      flash[:notice] = "Please login, and localize me"
+      flash[:notice] = l(:please_login)
       redirect_to :controller => "jobyssey", :action => "login" if session[:user].nil?
     end
     options.each_pair do |key,value|
