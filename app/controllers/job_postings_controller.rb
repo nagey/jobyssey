@@ -3,7 +3,7 @@ class JobPostingsController < ApplicationController
   # GET /job_postings.xml
   
    layout 'index'
-   before_filter :authorize_admin
+   #before_filter :authorize_admin
   
   def index
     @job_postings = JobPosting.find(:all)
@@ -48,6 +48,7 @@ class JobPostingsController < ApplicationController
 
   # POST /job_postings
   # POST /job_postings.xml
+  
   def create
     @job_posting = JobPosting.new(params[:job_posting])
     @employers = Employer.find :all

@@ -3,12 +3,15 @@
 
 
 <p><%=l(:invites_instructions)%></p>  
-<a id="plaxo_link" href="#" onclick="showPlaxoABChooser('invite_recipient_list', '/invites/address_popup'); return false"><img src="http://www.plaxo.com/images/abc/buttons/add_button.gif" alt="Add from my address book" /></a>
+
 <ul>
 <% form_for @invite, :url => { :action => :create_invites} do |f| %>
 	<li><%=l(:invites_send)%>:
-	<%= f.text_area "recipient_list" %>
-	<%= submit_tag "All done!", :class =>"submit" %></li>
+	<%= f.text_area "recipient_list" %></li>
+	<li>
+	<a id="plaxo_link" href="#" onclick="showPlaxoABChooser('invite_recipient_list', '/invites/address_popup'); return false"><img src="http://www.plaxo.com/images/abc/buttons/add_button.gif" alt="Add from my address book" /></a></li>
+	<br>
+	<li><%= submit_tag "All done!", :class =>"submit" %></li>
 </ul>	
 <% end %>
 </fieldset>

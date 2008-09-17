@@ -3,7 +3,7 @@ class EmployersController < ApplicationController
   # GET /employers.xml
   
    layout 'index'
-   before_filter :authorize_admin
+   #before_filter :authorize_admin
   
   def index
     @employers = Employer.find(:all)
