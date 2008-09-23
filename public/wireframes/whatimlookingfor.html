@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>Jobyssey – IT Jobs in Ireland</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+	<link href="current.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/javascripts/jquery.js?1216636709" type="text/javascript"></script>
+
+</head>
+
+<body>	
+
+	<div id="container">
+<div id="header">
+	<a class="headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
+	<h3>BETA</h3>
+</div>
+<div id="navbar">
+	<ul>
+
+		<li><a href="/it-professionals">Professionals</a></li>
+		<li><a href="/it-employers">Employers</a></li>
+	</ul>
+</div>
+
+<div id="loginbar" style="visibility:hidden;display:none">
+	<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
+		<input type="hidden" name="action" value="login" />
+		<label></label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
+
+		<label></label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
+		<input type="submit" name="submittedlogin" value=""  />
+		<a class="small" href="{$result->makeUrl('','password','jobs')}"></a>
+	</form>
+</div>
+
+ 
+
+<div id="behindcontent">
+<div id="content">
+
+	<fieldset>
+		<legend>What I'm Looking For</legend>
+
+	<p>The What I'm Looking for sections lets the user add information to their profile that isn't part of their work history or skills but that potential employers should know about.  Should be able to input all this information on the new user registration page, user should be able to edit it in "Profile", and employer should be able to see it when they click on users record (always after work history and education).</p>
+<ul>
+
+	<li>Desired job title: (text box w/ autocomplete from job titles?)</li>
+	<li>Current Salary: (text box)</li>
+	<li>Desired Salary: (text box)</li>
+	<li>Required Benefits: (text box w/ autocomplete from benefits table)</li>
+</ul>
+<br>
+	<ul>
+	<li>Location: (check boxes)</li>
+	<li>Anywhere in my county</li>
+	<li>On the DART</li>
+	<li>On the LUAS</li>
+	<li>In Dublin City Centre</li>
+	<li>North side Dublin</li>
+	<li>South Side Dublin</li>
+	<li>Other: (text box)</li>
+</ul>
+<br>
+<ul>
+	<li>Status: (check boxes- can only pick one)</li>
+	<li>Actively looking for a new job</li>
+	<li>Happy where I am, but I would move for the right job</li>
+	<li>Definitely not looking for a new job at the moment</li>
+	</ul>
+	<br>
+<uL>
+	<li>Work Type: (check boxes)</li>
+	<li>Full Time</li>
+	<li>Part time (optionally, text box for hours)</li>
+	<li>Permanent</li>
+	<li>Contract (optionally, text box for length)</li>
+	<li>Temporary- immediately available</li>
+</ul>
+<br>
+<ul>
+	<li>Notice Period/Availability Date</li>
+	<li>Two weeks notice or less</li>
+	<li>Three or four weeks' notice</li>
+	<li>More than a month of notice</li>
+	<li>Available on a fixed date:</li>
+	</ul>
+	
+	<p>Is there anything else potential employers should know about you to better understand what kind of position you would consider?  Be sure to mention anything that is a must have or deal-breaker for you. (text box)</p>
+
+
+</fieldset>
+
+
+</div>
+
+<div id="footer">
+	<div id="bottomnavbar">
+		<ul>
+			<li><a href="/wordpress/">Our Blog</a></li>
+
+			<li><a href="/jobyssey/about">About Us</a></li>
+			<li><a href="/jobyssey/contact">Questions?</a></li>
+		</ul>
+	
+
+	<div id="copyright">
+		<p class="snug">© 2008 Jobyssey, Ltd. All Rights Reserved. <a href="/jobyssey/copyright">Additional Copyright Information</a>
+	</div>
+</div>
+
+</div>
+</div>	
+</div>
+</body>
+</html>
