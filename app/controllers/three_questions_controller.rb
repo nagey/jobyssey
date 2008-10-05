@@ -30,7 +30,7 @@ class ThreeQuestionsController < ApplicationController
       @answer.differentiator_question = session[:questions].pop
       @answer.user = session[:user]
     else
-      flash[:notice] = "Thanks for answering our 3 questions. Richard should add me to localization"
+      flash[:notice] = "Thanks for answering our 3 questions."
       redirect_to :controller => :professionals, :action => :home
     end
    end

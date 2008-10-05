@@ -1,0 +1,23 @@
+<h1>View Answers</h1>
+
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Code Sample Question ID</th>
+    <th>Time to Answer</th>
+    <th>Code Sample</th>
+   
+  </tr>
+
+
+<% for code_sample in @code_samples %>
+  <tr>
+    <td><%=h code_sample.user_id %></td>
+    <td><%=h code_sample.code_sample_question_id %></td>
+    <td><%=h code_sample.time_to_answer %></td>
+    <td><%=h code_sample.code_sample %></td>
+    
+  </tr>
+<% end %>
+</table>
+

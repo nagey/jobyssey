@@ -6,7 +6,7 @@ class CreateJobPostingRequirements < ActiveRecord::Migration
       t.integer :value
       
        t.timestamps
-      end
+    end
   end
 
   def self.down

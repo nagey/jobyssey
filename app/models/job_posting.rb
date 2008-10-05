@@ -5,6 +5,8 @@ class JobPosting < ActiveRecord::Base
   belongs_to :working_time
   belongs_to :employment_type
   has_many :job_applications
+  has_many :metrics, :through => :job_posting_requirements
+  has_many :job_posting_requirements  
   belongs_to :employer
   has_and_belongs_to_many :roles
   has_many :educational_levels, :through => :required_degrees

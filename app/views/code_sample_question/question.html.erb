@@ -1,0 +1,19 @@
+<% form_for(:code_sample, :url => {:action => :answer}) do |form| %>
+  <div class="error-messages" id="error-messages-for-code_sample">
+  	<%=form.error_messages%>
+  </div>
+  
+  <fieldset>
+    <legend><%=l(:your_mission)%></legend>
+ <p><%=l(:code_sample_instructions)%></p>
+    <ul>
+      <li>
+        <label class="code_sample_question"><%= session[:current_question].code_sample_question %></label>
+        <%=form.text_area :code_sample %>
+      </li>
+      <li><%=form.submit "I'm all done"%></li>
+    </ul>
+  </fieldset>
+  <%=form.hidden_field :code_sample_question_id %>
+  <%=form.hidden_field :user_id %>
+<% end %>
