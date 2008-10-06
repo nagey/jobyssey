@@ -4,13 +4,15 @@
   </div>
   
   <fieldset>
-    <legend><%=l(:your_mission)%></legend>
- <p><%=l(:code_sample_instructions)%></p>
+    <legend>Your Question</legend>
+ <p>Very brief directions go here. </p>
     <ul>
       <li>
+      <%= @start_time %>
         <label class="code_sample_question"><%= session[:current_question].code_sample_question %></label>
         <%=form.text_area :code_sample %>
       </li>
+      <li><label>Language used:</label><%= form.text_field "language_used" %></li>
       <li><%=form.submit "I'm all done"%></li>
     </ul>
   </fieldset>
