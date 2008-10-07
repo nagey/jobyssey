@@ -1,0 +1,185 @@
+<html>
+<head>
+	<title><%= title :site_name => "Jobyssey – IT Jobs in Ireland" %></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+	<%= stylesheet_link_tag "current" %>
+	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form', 'jquery.autocomplete' %>
+	<script language="Javascript">
+	$(document).ready(function(){
+	   $(".login").click(function(){
+			$("#loginbar").toggle("slow"); 
+	});
+	});
+		$(".question").click(function(){
+			$(".answer").toggle();
+		});
+
+
+	    var timercount = 0;
+	    var timestart  = null;
+
+	    function showtimer() {
+	        if(timercount) {
+	            clearTimeout(timercount);
+	            clockID = 0;
+	        }
+	        if(!timestart){
+	            timestart = new Date();
+	        }
+	        var timeend = new Date();
+	        var timedifference = timeend.getTime() - timestart.getTime();
+	        timeend.setTime(timedifference);
+
+	        var minutes_passed = timeend.getMinutes();
+	        if(minutes_passed <10){
+	            minutes_passed = "0" + minutes_passed;
+	        }
+	        var seconds_passed = timeend.getSeconds();
+	        if(seconds_passed <10){
+	            seconds_passed = "0" + seconds_passed;
+	        }
+	        document.timeform.timetextarea.value = minutes_passed + ":" + seconds_passed;
+	        timercount = setTimeout("showtimer()", 1000);
+	    }
+
+	    function sw_start(){
+	        if(!timercount){
+	        timestart   = new Date();
+	        document.timeform.timetextarea.value = "00:00";
+	        document.timeform.laptime.value = "";
+	        timercount  = setTimeout("showtimer()", 1000);
+	        }
+	        else{
+	        var timeend = new Date();
+	            var timedifference = timeend.getTime() - timestart.getTime();
+	            timeend.setTime(timedifference);
+	            var minutes_passed = timeend.getMinutes();
+	            if(minutes_passed <10){
+	                minutes_passed = "0" + minutes_passed;
+	            }
+	            var seconds_passed = timeend.getSeconds();
+	            if(seconds_passed <10){
+	                seconds_passed = "0" + seconds_passed;
+	            }
+	            var milliseconds_passed = timeend.getMilliseconds();
+	            if(milliseconds_passed <10){
+	                milliseconds_passed = "00" + milliseconds_passed;
+	            }
+	            else if(milliseconds_passed <100){
+	                milliseconds_passed = "0" + milliseconds_passed;
+	            }
+	            document.timeform.laptime.value = minutes_passed + ":" + seconds_passed + "." + milliseconds_passed;
+	        }
+	    }
+
+	    function Stop() {
+	        if(timercount) {
+	            clearTimeout(timercount);
+	            timercount  = 0;
+	            var timeend = new Date();
+	            var timedifference = timeend.getTime() - timestart.getTime();
+	            timeend.setTime(timedifference);
+	            var minutes_passed = timeend.getMinutes();
+	            if(minutes_passed <10){
+	                minutes_passed = "0" + minutes_passed;
+	            }
+	            var seconds_passed = timeend.getSeconds();
+	            if(seconds_passed <10){
+	                seconds_passed = "0" + seconds_passed;
+	            }
+	            var milliseconds_passed = timeend.getMilliseconds();
+	            if(milliseconds_passed <10){
+	                milliseconds_passed = "00" + milliseconds_passed;
+	            }
+	            else if(milliseconds_passed <100){
+	                milliseconds_passed = "0" + milliseconds_passed;
+	            }
+	            document.timeform.timetextarea.value = minutes_passed + ":" + seconds_passed + "." + milliseconds_passed;
+	        }
+	    }
+	    function Reset() {
+
+	        timestart = null;
+	        document.timeform.timetextarea.value = "00:00";
+	        document.timeform.laptime.value = "";
+	    }
+
+	    </script>
+</head>
+
+ <body onload="Reset()" onunload="Stop()">	
+
+	<div id="container">
+		<div id="header">
+		<p><%=l(:your_journey)%></p>
+		
+		<% if authenticated? %>
+			<% if professional?%>
+				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
+			<% else %>
+				<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
+			<% end %>
+		<% else %>
+			<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
+			<% end %>
+
+		
+		</div>
+<div id="navbar">
+
+		<% if authenticated? %>
+			<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
+	<ul>		
+			<% if professional? %>
+				<li class="professional"><%= link_to "Jobs", :controller => 'jobyssey', :action => "jobs" %></li>
+				<!--<li class="professional">Profile</li>-->
+				<li class="professional"><%= link_to "Portfolio", :controller => 'portfolio', :action => "links" %></li>
+				<li class="professional"><%= link_to "Activity", :controller => 'jobyssey', :action => "activity" %></li>
+			<li class="professional"><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
+			<% elsif employer? %>
+				<li class="employer">Activity</li>
+				<li class="employer">New Role</li>
+				<li class="employer">Manage jobs</li>
+				<li class="employer">Profile</li>
+				<li class="employer">Account</li>
+				<li class="employer">Tips</li>
+				<li class="employer"> CREDITS (display total here)</li>
+			<% end %>
+			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
+		<% else %>
+			<li class="login">Login</li>
+		<% end %>
+	</ul>
+</div>
+
+<div id = "loginbar" style="display:none">
+	<%=render :partial => "jobyssey/login"%>
+</div>
+
+<% if flash[:notice] -%> 
+<div id="notice"><%= flash[:notice] %></div> 
+<% end -%> 
+
+<div id="behindcontent">
+<div id="content">
+<%=@content_for_layout%>
+</div>
+
+<div id="footer">
+	<div id="bottomnavbar">
+		<ul>
+			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
+			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
+			<li><a href="/contacts/new"><%=l(:contact_us)%></a></li>
+		</ul>
+	</div>
+
+	<div id="copyright">
+		<p class="snug"><%=l(:copyright_footer)%> 
+	</div>
+</div>
+</div>
+</div>	
+</div>
+</body>
+</html>

@@ -1,3 +1,5 @@
+
+
 <% form_for(:code_sample, :url => {:action => :answer}) do |form| %>
   <div class="error-messages" id="error-messages-for-code_sample">
   	<%=form.error_messages%>
@@ -5,12 +7,14 @@
   
   <fieldset>
     <legend>Your Question</legend>
- <p>Very brief directions go here. </p>
+ <p>Here's your problem.  Take as long as is necessary to devise the best solution, and write it below.  When you've finished, note the language you used below and hit submit. </p>
     <ul>
       <li>
-      <%= @start_time %>
+
+<%= render :partial => 'timer' %>
+
         <label class="code_sample_question"><%= session[:current_question].code_sample_question %></label>
-        <%=form.text_area :code_sample %>
+        <%=form.text_area(:code_sample, :rows => 30) %>
       </li>
       <li><label>Language used:</label><%= form.text_field "language_used" %></li>
       <li><%=form.submit "I'm all done"%></li>

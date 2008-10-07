@@ -75,7 +75,11 @@ class ApplicationController < ActionController::Base
   end
 
   def rescue_404
-      rescue_action_in_public CustomNotFoundError.new
+      rescue_action_in_public #CustomNotFoundError.new
+  end
+
+  def rescue_500
+      rescue_action_in_public #CustomNotFoundError.new
   end
 
   def rescue_action_in_public(exception)

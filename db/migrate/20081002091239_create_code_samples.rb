@@ -5,7 +5,7 @@ class CreateCodeSamples < ActiveRecord::Migration
       t.integer :code_sample_question_id 
       t.float :time_to_answer 
       t.text :code_sample
-      
+      t.text :language_used
       t.timestamps
     end
   end
