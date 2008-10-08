@@ -1,9 +1,11 @@
 
 <tr>
   <td class="portfolio"><%=h view_link.name %></td>
-  <td class="portfolio"><%= link_to "#{view_link.url}", 'http://'+ view_link.url, :popup => true unless view_link.nil? %></td>
+  <td class="portfolio"><%= link_to "#{view_link.url}", 'http://'+ view_link.url unless view_link.url.nil? %></td>
   <td class="portfoliodescription"><%=h view_link.description %></td>
   <td><%= link_to 'Edit', :action => 'edit', :id => view_link.id %></td>
-  <td><%= link_to 'Destroy', {:action => :destroy, :controller => 'portfolio', :id => view_link},:confirm => 'Are you sure?' %></td>
+  <td><%= link_to 'Destroy', :action => 'destroy', :id => view_link.id,:confirm => 'Are you sure?' %></td>
+
+ 
 </tr>
 
