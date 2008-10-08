@@ -11,17 +11,23 @@ class CodeSampleQuestionController < ApplicationController
     @start_time = Time.now
     session[:start_time] = @start_time
     unused_question = false
-    until unused_question
+    count = 0
+    until (unused_question or count >= @code_sample_questions.length)
         @current_question = @code_sample_questions[rand(@code_sample_questions.length)]
         #cs = CodeSample.find_by_user_id @user
         cs = CodeSample.find_by_code_sample_question_id_and_user_id @current_question.id, @user.id
         unused_question = true if cs.nil?
+        count += 1
     end
-    session[:current_question] = @current_question
-    @code_sample = CodeSample.new
-    @code_sample.code_sample_question = @current_question
-    @code_sample.user = @user
-    render :action => "question", :layout => "timer"
+    if count < @code_sample_questions.length
+      session[:current_question] = @current_question
+      @code_sample = CodeSample.new
+      @code_sample.code_sample_question = @current_question
+      @code_sample.user = @user
+      render :action => "question", :layout => "timer"
+    else
+      redirect_to :action => :view_samples 
+    end
   end
 
   def answer

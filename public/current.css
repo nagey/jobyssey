@@ -419,6 +419,14 @@ div.progresswording{
 	font-weight: normal;
 	color: #999999;
 }
+.button{
+	font-weight: bold;
+	text-align: center;
+	border-style: none;
+}
+img{
+	border-style: none;
+}
 .info{
 	float: left;
 	color: #fff;
@@ -450,7 +458,6 @@ h1 {
 	font-weight: bold;
 	font-size: 24px;
 	color: #FF7800;
-
 	}
 h2{
 	font-size: 16px;
@@ -511,7 +518,7 @@ li img{
 option{
 	width: 80px;
 }
-	
+
 /* Forms */
 
 

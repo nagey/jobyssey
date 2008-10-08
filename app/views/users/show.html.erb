@@ -35,7 +35,7 @@
 
 <p>
   <b>Employer:</b>
-  <%=h @user.employer.name %>
+  <%=h @user.employer.name unless @user.employer.nil? %>
 </p>
 
 <p>
@@ -77,4 +77,4 @@
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', user_path %>
+<%= link_to 'Back', :controller => "users" %>

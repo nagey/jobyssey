@@ -28,9 +28,10 @@
     <td><%=h user.search_position %></td>
     <td><%=h user.work_history_items.length%></td>
      <td><%=h user.more_info %></td>
-    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Show', :controller => "users", :action => "show", :id => user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', :controller => "users", :action => "destroy", :id => user, :confirm => 'Are you sure?' %></td>
+    <td><%= link_to 'Other Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
