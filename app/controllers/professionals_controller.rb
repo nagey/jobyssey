@@ -6,17 +6,28 @@ class ProfessionalsController < ApplicationController
 
   def index
     @cv = Cv.new
+    
   end
   
   def signup
-
-    @cv = Cv.new params[:cv] 
-    @cv = session[:cv] if @cv.nil?
+    
+    #@cv = Cv.new params[:cv] 
+    #@cv = session[:cv] if @cv.nil?
     @professional = Professional.new
     @employment_types = EmploymentType.find :all
     @working_times = WorkingTime.find :all
+    
+    if @cv.nil?
+      flash[:notice] = 'Please attach your CV to continue.'
+      #render :action => "index", :controller => "jobyssey", :layout => "index"
+      redirect_to "index.html"
+      return
+    else
+      @cv = Cv.new params[:cv] 
+    end
+    
     session[:cv] = @cv
-    render :action => :index unless @cv.valid? 
+    render :action => :index #unless @cv.valid? 
     code_name = false
     p = Preposition.find :all
     v = Verb.find :all
@@ -28,6 +39,7 @@ class ProfessionalsController < ApplicationController
     end
     session[:code_name] = @code_name
     render :action => "signup", :layout => "signup"
+
   end
  
   def create
