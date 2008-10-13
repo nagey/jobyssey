@@ -13,7 +13,6 @@ class SkillsetController < ApplicationController
 
   def define
    
-    
     @skill = Skill.new
     @professional = session[:user]
     @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }

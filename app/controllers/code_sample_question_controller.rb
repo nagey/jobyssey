@@ -4,7 +4,7 @@ class CodeSampleQuestionController < ApplicationController
 
   def question
     @code_sample_level = 1 #session[:code_sample_level]
-    @user = User.find 1
+    @user = session[:user]
     session[:user] = @session
     @code_sample_questions = CodeSampleQuestion.find_all_by_code_sample_level 1
     @code_samples = CodeSample.find_by_user_id
@@ -33,7 +33,7 @@ class CodeSampleQuestionController < ApplicationController
   def answer
     @code_sample = CodeSample.new params[:code_sample]
     @end_time = Time.now
-    
+     
     
     @code_sample.time_to_answer =  (@end_time - session[:start_time])/60
     
@@ -47,7 +47,7 @@ class CodeSampleQuestionController < ApplicationController
   end
 
   def view_samples
-    @user_id = 1
+    @user_id = session[:user]
     @code_sample_questions = CodeSampleQuestion.find :all
     @code_samples = CodeSample.find :all
   end
