@@ -8,12 +8,11 @@
   <fieldset>
     <legend>Your Question</legend>
  <p>Here's your problem.  Take as long as is necessary to devise the best solution, and write it below.  When you've finished, note the language you used below and hit submit. </p>
+ <p><b>Note: Please remember that we record the time you take to answer.  No need to rush, but you should work on your solution without intrruption and submit it as soon as you're done. </b></p>
     <ul>
       <li>
 
-<%= render :partial => 'timer' %>
-
-        <label class="code_sample_question"><%= session[:current_question].code_sample_question %></label>
+        <p><%= session[:current_question].code_sample_question %></p>
         <%=form.text_area(:code_sample, :rows => 30) %>
       </li>
       <li><label>Language used:</label><%= form.text_field "language_used" %></li>

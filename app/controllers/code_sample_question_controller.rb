@@ -24,7 +24,7 @@ class CodeSampleQuestionController < ApplicationController
       @code_sample = CodeSample.new
       @code_sample.code_sample_question = @current_question
       @code_sample.user = @user
-      render :action => "question", :layout => "timer"
+      render :action => "question"
     else
       redirect_to :action => :view_samples 
     end
@@ -34,7 +34,8 @@ class CodeSampleQuestionController < ApplicationController
     @code_sample = CodeSample.new params[:code_sample]
     @end_time = Time.now
     
-    @code_sample.time_to_answer =  @end_time - session[:start_time]
+    
+    @code_sample.time_to_answer =  (@end_time - session[:start_time])/60
     
     if @code_sample.save
       redirect_to :action => :index
