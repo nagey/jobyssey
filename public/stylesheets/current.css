@@ -15,7 +15,7 @@
 }
 #header h1{
 	font-size:40px;
-	text-indent: 6px;
+	text-indent: 6px; 
 	line-height: 1.9em;
 	color: #FFFFFF;
 	font-family: "Lucida Sans", Lucida, Verdana, Arial, sans-serif;
@@ -400,7 +400,9 @@ div.progresswording{
 .contentb {background: #FF7800; }
 .contentb div {margin-left: 5px; text-align: center; }
 =======
-
+div.code_sample{
+	width: 300px;
+}
 #codename{
 	font-weight: bold;
 }
@@ -525,6 +527,7 @@ fieldset{
 	padding:  0px 15px 20px 15px;
 	margin: 30px 5px 30px 5px;
 }
+
 legend{
 	font-weight: bold;
 	font-size: 18px;
