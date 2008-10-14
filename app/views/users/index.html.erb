@@ -31,7 +31,7 @@
     <td><%= link_to 'Show', :controller => "users", :action => "show", :id => user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', :controller => "users", :action => "destroy", :id => user, :confirm => 'Are you sure?' %></td>
-    <td><%= link_to 'Other Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Other Destroy', :controller => :users, :action => :destroy, :id => user %></td>
   </tr>
 <% end %>
 </table>

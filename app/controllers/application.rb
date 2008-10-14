@@ -73,24 +73,28 @@ class ApplicationController < ActionController::Base
   def authorize_admin
     authenticate :role => "Admin", :employer_id => 0
   end
+  
+  #Use alias method to see public errors on local machine
+  #alias_method :rescue_action_locally, :rescue_action_in_public
+  
+  #I don't think we need any of this below
+  #def rescue_404
+  #    rescue_action_in_public #CustomNotFoundError.new
+  #end
 
-  def rescue_404
-      rescue_action_in_public #CustomNotFoundError.new
-  end
+  #def rescue_500
+  #    rescue_action_in_public #CustomNotFoundError.new
+  #end
 
-  def rescue_500
-      rescue_action_in_public #CustomNotFoundError.new
-  end
-
-  def rescue_action_in_public(exception)
-    case exception
-      when CustomNotFoundError, ::ActionController::UnknownAction, ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction then
-        render :file => "/public/404.html"
-      else
-        @message = exception
-        render :file => "/public/500.html"
-    end
-  end
+  #def rescue_action_in_public(exception)
+  #  case exception
+  #    when CustomNotFoundError, ::ActionController::UnknownAction, ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction then
+  #      render :file => "/public/404.html"
+  #    else
+  #      @message = exception
+  #      render :file => "/public/500.html"
+  #  end
+  #end
 
   def local_request?
     return false
