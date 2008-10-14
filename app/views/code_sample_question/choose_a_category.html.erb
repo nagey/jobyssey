@@ -1,10 +1,17 @@
-<h1>Code Sample Categories</h1>
-<p>List goes here.  Each category should have a 1 sentence description and a sample question. (radio buttons beside categories)</p>
+<h1>Code Sample Directions</h1>
+<!--Should eventually be a form here with radio buttons once we have multiple categories-->
 
 <h2>Before You Start</h2>
 <ol>
 <li>Once you click to move forward, the timer starts, and we'll permanently tag your problem as one you've already done.</li>
 <li>Solutions are timed, so while you don't have to flail away at the keyboard like a lunatic you shouldn't take a Guitar Hero break either.</li>
 
-<%= submit_tag "Click here to start the timer and see your problem" %>
-<p><a href="question">(For now, just click here)</a></p>
+<div id="roundbuttoncontainer">
+<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+ <div class="contentb">
+        <div><%= link_to "I'm ready to start!", :action => :question %></div>
+    </div>
+<b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+</div>
+<br>
+<br>

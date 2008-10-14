@@ -2,6 +2,9 @@ class CodeSampleQuestionController < ApplicationController
   def index
   end
 
+  def explanation
+  end
+  
   def question
     @code_sample_level = 1 #session[:code_sample_level]
     @user = session[:user]
