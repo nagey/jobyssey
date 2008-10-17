@@ -47,7 +47,30 @@ class ThreeQuestionsController < ApplicationController
     def edit
      @answers = DifferentiatorAnswers.find_by_user_id(params[:user_id])
     end
-    
+
+    def company_questions
+      @employer_id = session[:user].employer_id
+      @employer = Employer.find_by_id @employer_id
+      q = CompanyQuestion.find(:all)
+      
+      questions = []
+      count = 0
+      while (questions.length < 3)
+        a = q[rand(q.length)]
+        questions << a unless questions.member? a
+        session[:questions] = questions
+        @answer = DifferentiatorAnswer.new
+        @answer.differentiator_question = session[:questions].pop
+        @answer.employer = @employer_id
+        redirect_to :action => :thanks
+      else
+        redirect_to :controller => :company_profiles, :action => :edit
+      end
+    end
+
+def thanks
+end
+
     #def update
     #  @answers = DifferentiatorAnswers.find(params[:user_id])
     #  @answers.update_attributes params[:attachment]

@@ -10,6 +10,7 @@ class Employer < ActiveRecord::Base
   has_many :work_history_items
   
   validates_presence_of :name
+  
   validates_length_of :description, :minimum => 50, :message => "needs to be at least 50 characters long...enquiring minds want to know!"
   
 end

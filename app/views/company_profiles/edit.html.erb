@@ -1,0 +1,20 @@
+<h1>Edit your Profile</h1>
+<% form_for(:employer, :url => {:action => :save}) do |form| %>
+<%=h @employer.name %>
+
+<%=form.hidden_field :id %>
+  <p>
+    <label for="employer_tagline">Tagline</label><br />
+    <%= form.text_field :tagline %>
+  </p>
+
+  <p>
+    <label for="employer_description">Description</label><br />
+    <%= form.text_area :description %>
+  </p>
+  
+    <%= form.submit "Edit my profile" %>
+  </p>
+
+  
+<% end %>

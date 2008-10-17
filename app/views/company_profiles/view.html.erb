@@ -1,0 +1,16 @@
+<h1><%=h @employer.name %></h1>
+<b><%=h @employer.tagline unless @employer.tagline.nil? %></b>
+<br>
+<Fieldset>
+<legend>Fast Facts</legend>
+<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
+<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br>
+<b>Location: </b> Something about location should go here too. 
+</fieldset>
+<fieldset>
+<legend>About <%=h @employer.name %></legend>
+
+<%=h @employer.description %>
+<h3>3 Questions </h3>
+3 answers go here
+</fieldset>

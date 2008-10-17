@@ -8,7 +8,8 @@ class CodeSampleQuestionController < ApplicationController
   def question
     @code_sample_level = 1 #session[:code_sample_level]
     @user = session[:user]
-    session[:user] = @session
+    #Think this next line is causing users to get logged out
+    #session[:user] = @session 
     @code_sample_questions = CodeSampleQuestion.find_all_by_code_sample_level 1
     @code_samples = CodeSample.find_by_user_id
     @start_time = Time.now

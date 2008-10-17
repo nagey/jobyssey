@@ -1,0 +1,2 @@
+class CompanyQuestion < DifferentiatorQuestion
+end

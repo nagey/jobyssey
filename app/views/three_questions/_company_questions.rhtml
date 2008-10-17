@@ -1,0 +1,19 @@
+<% form_for(:company_questions, :url => {:action => :company_questions}) do |form| %>
+  <div class="error-messages" id="error-messages-for-company_questions">
+  	<%=form.error_messages%>
+  </div>
+  
+  <fieldset>
+    <legend>3 Questions about Your Company</legend>
+ <p>Directions go here!</p>
+    <ul>
+      <li>
+        <label class="answer_name"><%=@answer.differentiator_question.name%></label>
+        <%=form.text_area :name %>
+      </li>
+      <li><%=form.submit "Next!"%></li>
+    </ul>
+  </fieldset>
+  <%=form.hidden_field :differentiator_question_id %>
+
+<% end %>
