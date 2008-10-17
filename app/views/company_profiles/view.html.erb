@@ -10,7 +10,11 @@
 <fieldset>
 <legend>About <%=h @employer.name %></legend>
 
-<pre><%=h @employer.description %></pre>
-<h3>3 Questions </h3>
-3 answers go here
+<pre width=90><%=h @employer.description %></pre>
+
+<h2>3 Questions </h2>
+<% for answer in @answers %>
+  <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
+  <% end %>
 </fieldset>
+

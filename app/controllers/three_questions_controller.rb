@@ -3,40 +3,94 @@ class ThreeQuestionsController < ApplicationController
   
   def start
     u = User.find session[:user]
+    
+    #I'm adding this bit to set to the employer ID for corporate users
+    if u.employer_id != nil
+      employer_id = session[:user].employer_id
+      e = Employer.find_by_id employer_id
+    end
+    
     if u.differentiator_answers.length == 3
       flash[:notice] = "You've already answered your three questions"
       redirect_to :controller => :professionals, :action => :home
       return
     end
-    @answers = DifferentiatorAnswer.find_by_user_id(session[:user])
-    if @answers == nil
-      q = PersonalQuestion.find(:all)
-      questions = []
-      count = 0
-      while (questions.length < 3)
-        a = q[rand(q.length)]
-        questions << a unless questions.member? a
-      end 
-      session[:questions] = questions
-      redirect_to :action => :ask
-    else
-      redirect_to :controller => :professionals, :action => :edit
+    
+    #To check if employers have already answered the questions (need to add edit option for them)
+    if e.differentiator_answers.length == 3
+      flash[:notice] = "You've already answered your three questions"
+      redirect_to :controller => :company_profiles, :action => :edit
+      return
     end
+    
+    #Added the outer if so that only users get this
+    if u.employer_id.nil?
+      @answers = DifferentiatorAnswer.find_by_user_id(session[:user])
+        if @answers == nil
+          q = PersonalQuestion.find(:all)
+          questions = []
+          count = 0
+          while (questions.length < 3)
+            a = q[rand(q.length)]
+            questions << a unless questions.member? a
+          end 
+          session[:questions] = questions
+          redirect_to :action => :ask
+        else
+          redirect_to :controller => :professionals, :action => :edit
+        end
+      #This bit is for employers  
+      else 
+        @answers = DifferentiatorAnswer.find_by_employer_id(session[:user].employer_id)
+          if @answers == nil
+            q = CompanyQuestion.find(:all)
+            questions = []
+            count = 0
+            while (questions.length < 3)
+              a = q[rand(q.length)]
+              questions << a unless questions.member? a
+            end 
+            session[:questions] = questions
+            redirect_to :action => :ask
+          else
+            redirect_to :controller => :company_profiles, :action => :edit
+          end
+        end
+        
   end
   
   def ask
     if session[:questions].length > 0
       @answer = DifferentiatorAnswer.new
       @answer.differentiator_question = session[:questions].pop
-      @answer.user = session[:user]
+      #Added this to save w/ employer_id where appropriate
+        if session[:user].employer_id.nil?
+          @answer.user = session[:user]
+        else
+          @employer_id = session[:user].employer_id
+          @employer = Employer.find_by_id @employer_id
+          @answer.employer = @employer
+        end
     else
       flash[:notice] = "Thanks for answering our 3 questions."
-      redirect_to :controller => :professionals, :action => :home
+      if session[:user].employer_id.nil?
+        redirect_to :controller => :professionals, :action => :home
+      else
+        redirect_to :controller => :company_profiles, :action => :edit
+      end
     end
    end
 
    def answer
      @answer = DifferentiatorAnswer.new params[:answer]
+     if session[:user].employer_id.nil?
+       @answer.user = session[:user]
+     else
+       @employer_id = session[:user].employer_id
+       @employer = Employer.find_by_id @employer_id
+       @answer.employer = @employer
+     end
+     
      if @answer.save
        redirect_to :action => :ask
      else
@@ -52,7 +106,7 @@ class ThreeQuestionsController < ApplicationController
       @employer_id = session[:user].employer_id
       @employer = Employer.find_by_id @employer_id
       q = CompanyQuestion.find(:all)
-      
+  
       questions = []
       count = 0
       while (questions.length < 3)
@@ -61,10 +115,10 @@ class ThreeQuestionsController < ApplicationController
         session[:questions] = questions
         @answer = DifferentiatorAnswer.new
         @answer.differentiator_question = session[:questions].pop
-        @answer.employer = @employer_id
-        redirect_to :action => :thanks
-      else
-        redirect_to :controller => :company_profiles, :action => :edit
+        @answer.employer_id = @employer_id
+       # redirect_to :action => :thanks
+      #else
+      #  redirect_to :controller => :company_profiles, :action => :edit
       end
     end
 

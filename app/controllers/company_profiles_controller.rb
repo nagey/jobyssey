@@ -27,6 +27,7 @@ class CompanyProfilesController < ApplicationController
     @employer_id = session[:user].employer_id
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
+    @answers = DifferentiatorAnswer.find(:all) #_by_employer_id @employer_id
   end
   
   
