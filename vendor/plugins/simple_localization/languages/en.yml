@@ -768,7 +768,9 @@ app:
     		invalid_combination: invalid user/password combination
     		link_saved: Link saved
     		answer_question: Please answer the question 
-
+    code_sample_question:
+            your_mission: Your Mission...
+            code_sample_instructions: Directions go here. 
 
     				
     				

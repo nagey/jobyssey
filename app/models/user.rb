@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :job_applications
   has_many :job_application_statuses
   has_many :geo_positions, :through => :logins
+  has_many :logins
   has_many :metrics, :through => :personal_qualities
   has_many :personal_qualities
   has_many :phone_numbers

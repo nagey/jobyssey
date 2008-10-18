@@ -11,6 +11,27 @@ class ApplicationController < ActionController::Base
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery  :secret => '33d8bb90383499753b4f0351d0cb773a'
   
+  require 'rubygems'
+  require 'google_geocode'
+  
+  
+  def init_map(address,name='',control_options={},interface_options={},marker_options={})
+    geocoder = GoogleGeocode.new "ABQIAAAAZAVm-mpajx99YuizrWDWYxQIkn2H0N7M-ZYoFDdHwoMzZRvYqBQqO6uJ6gczxIlZaSPYdkieKT3JDg"
+    loc = geocoder.locate address.to_gmap
+    control_options = {:large_map => true, :hierarchical_map_type => true, :scale => true} if control_options.empty?
+    interface_options = {:scroll_wheel_zoom => true, :info_window => true} if interface_options.empty?
+    marker_options = { :title => name, :info_bubble => loc.address } if marker_options.empty?
+    
+    map = GMap.new("map_div_#{address.id}")
+    map.control_init(control_options)
+    map.interface_init(interface_options)
+    map.center_zoom_init([loc.latitude, loc.longitude],14)
+    map.overlay_init(GMarker.new([loc.latitude, loc.longitude],marker_options))
+    map
+  end
+  
+  
+  
   # See ActionController::Base for details 
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 

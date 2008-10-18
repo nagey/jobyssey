@@ -6,4 +6,8 @@ class Address < ActiveRecord::Base
   
   validates_presence_of :town
   validates_length_of :address1, :minimum => 5
+  
+  def to_gmap
+    "#{address1}, #{address2}, #{town.name}, #{town.administrative_division.name}, #{town.country.name}"
+  end
 end
