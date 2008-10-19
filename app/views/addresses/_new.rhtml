@@ -1,0 +1,27 @@
+<h1><%=l(:new_address)%></h1>
+
+  
+<p>
+    <%= form.label :address1 %><br />
+    <%= form.text_field :address1 %>
+  </p>
+  <p>
+    <%= form.label :address2 %><br />
+    <%= form.text_field :address2 %>
+  </p>
+  <p>
+    <%=form.label :town_id %><br />
+	<%= form.collection_select :town_id, @towns, :id, :name %>
+	<br>
+	<%= link_to l(:add_town), new_town_path %>
+  </p>
+  <p>
+	 <%=form.label :geo_position_id %><br />
+   	<%= form.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
+	<br>
+	<%= link_to l(:add_geo_position), new_geo_position_path %>
+
+  </p>
+
+  <p>
+  </p>

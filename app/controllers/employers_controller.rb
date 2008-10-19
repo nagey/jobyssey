@@ -3,7 +3,7 @@ class EmployersController < ApplicationController
   # GET /employers.xml
   
    layout 'index'
-   before_filter :authorize_admin
+   #before_filter :authorize_admin
   
   def index
     @employers = Employer.find(:all)
@@ -33,6 +33,9 @@ class EmployersController < ApplicationController
     @employer = Employer.new
     @industries = Industry.find :all
     @geo_positions = GeoPosition.find :all
+    @address = Address.new
+    @towns = Town.find :all
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @employer }
@@ -50,6 +53,8 @@ class EmployersController < ApplicationController
   # POST /employers.xml
   def create
     @employer = Employer.new(params[:employer])
+    @address = Address.new(params[:address1, :address2, :town_id, :geo_position_id])
+    employer.addresses << address
     @industries = Industry.find :all
     @geo_positions = GeoPosition.find :all
     respond_to do |format|

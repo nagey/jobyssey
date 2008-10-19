@@ -16,7 +16,7 @@
 		});
 	</script>
 	<%= GMap.header %>
-	<%= @map.to_html %>
+	<%= @map.to_html unless @map.nil? %>
 </head>
 
 <body>	

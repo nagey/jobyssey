@@ -3,7 +3,7 @@ class AddressesController < ApplicationController
   # GET /addresses.xml
   
   layout 'index'
-  before_filter :authorize_admin
+  #before_filter :authorize_admin
   
   def index
     @addresses = Address.find(:all)

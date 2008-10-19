@@ -1,29 +1,38 @@
 class ImagesController < ApplicationController
   
-  def index
+  def upload_image
     @image = Image.new
     
   end
   
-  def upload
+  #def upload_image
+  #  @image = Image.new params[:image] 
+  #  @image = session[:image] if @image.nil?
+  #  @employer = session[:user].employer
+  #end
+  
+  def save_image
     @image = Image.new params[:image] 
-    @image = session[:image] if @image.nil?
     @employer = session[:user].employer
-    t.integer :entity_id
-    t.string :entity_type
-    t.string :name
-    t.string :url
-    t.text :description
-    t.binary :attachment
-    t.string :file_name
-    t.string :content_type
-    t.string :type
+    debugger
     if @image.save
-      render :action => "signup", :layout => "signup" 
+      @employer.images << @image
+      @employer.save
+      redirect_to :controller => "company_profiles", :action => "view"
+      flash[:notice] = "Image saved- thanks!"
+      return
     else
-      render :action => :index, :layout => "signup" unless @cv.valid? 
+      redirect_to :controller => "company_profiles", :action => "view"
+      flash[:notice] = "Image NOT saved!"
+      return
     end
-
   end
   
+  def show
+    @image = Image.find params[:id]
+    send_data (@image.attachment, :type => @image.content_type,
+                         :filename => @image.file_name,
+                         :disposition => 'inline')
+  end
+    
 end
