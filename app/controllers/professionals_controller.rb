@@ -5,8 +5,7 @@ class ProfessionalsController < ApplicationController
   before_filter :authenticate, :only => :home
 
   def index
-    @cv = Cv.new
-    
+    @cv = Cv.new  
   end
   
   def signup
@@ -66,7 +65,9 @@ class ProfessionalsController < ApplicationController
     @home
   end
 
-
+  def view
+    @professional= Professional.find_by_id 6
+  end
 
 end
 

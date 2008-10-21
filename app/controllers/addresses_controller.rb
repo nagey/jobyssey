@@ -6,6 +6,7 @@ class AddressesController < ApplicationController
   #before_filter :authorize_admin
   
   def index
+    @index
     @addresses = Address.find(:all)
 
     respond_to do |format|
@@ -31,6 +32,11 @@ class AddressesController < ApplicationController
     @address = Address.new
     @towns = Town.find :all
     @geo_positions = GeoPosition.find :all
+    @employers = Employer.find :all
+    
+
+    
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @address }
@@ -46,19 +52,29 @@ class AddressesController < ApplicationController
 
   # POST /addresses
   # POST /addresses.xml
+ 
   def create
-    debugger
-    @address = Address.new(params[:address])
+    @address = Address.new
+    @address.update_attributes params[:address]
     @towns = Town.find :all
     @geo_positions = GeoPosition.find :all
+    @employer = Employer.find_by_id 1 #params[:employer_id]
+    
+    @employer.addresses << @address
+    
     respond_to do |format|
       if @address.save
         flash[:notice] = 'Address was successfully created.'
-        format.html { redirect_to(@address) }
-        format.xml  { render :xml => @address, :status => :created, :location => @address }
+        #format.html { redirect_to(@address) }
+        #format.xml  { render :xml => @address, :status => :created, :location => @address }
+        redirect_to :action => "index"
+        return
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @address.errors, :status => :unprocessable_entity }
+        #format.html { render :action => "new" }
+        #format.xml  { render :xml => @address.errors, :status => :unprocessable_entity }
+        flash[:notice] = "Didn't work, try again!"
+        redirect_to :action => "new"
+        return
       end
     end
   end
@@ -91,4 +107,6 @@ class AddressesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
 end

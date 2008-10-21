@@ -1,0 +1,14 @@
+<h1><%= @professional.first_name %></h1>
+<div id="left">
+<ul>
+<li>CV download</li>
+<li>render :partial => "skillset/view_skill", :collection => @professional.skills </li>
+<li>render :partial => "personality/details", :collection => @professional.personal_qualities</li>
+</ul>
+</div>
+<div id="right">
+<ul>
+<li> unless  @professional.three_question.nil? link_to :controller => "three_questions", :action => "view", :id => @professional_id</li>
+<li> unless  @professional.code_sample.nil? link_to :controller => "code_sample_question", :action => "view_samples", :id => @professional_id</li> 
+</ul>
+</div>

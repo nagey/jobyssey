@@ -10,4 +10,15 @@ class Address < ActiveRecord::Base
   def to_gmap
     "#{address1}, #{address2}, #{town.name}, #{town.administrative_division.name}, #{town.country.name}"
   end
+  
+  def address
+  end
+  
+  def employer_id
+    @employers = Employer.find :all
+  end
+  
+  def employer_id=(foo)
+    #@employer = Employer.find_by_id(params[:employer_id])
+  end
 end

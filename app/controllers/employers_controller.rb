@@ -19,7 +19,6 @@ class EmployersController < ApplicationController
   # GET /employers/1.xml
   def show
     @employer = Employer.find(params[:id])
- 
     
     respond_to do |format|
       format.html # show.html.erb
@@ -96,5 +95,9 @@ class EmployersController < ApplicationController
       format.html { redirect_to(employers_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def home
+    @home
   end
 end

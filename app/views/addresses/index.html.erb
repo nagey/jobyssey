@@ -14,13 +14,13 @@
     <td><%=h address.address2 %></td>
     <td><%=h address.town.name unless address.town.nil? %>
     <td><%=h address.geo_position.name unless address.geo_position.nil? %></td>
-    <td><%= link_to 'Show', address %></td>
-    <td><%= link_to 'Edit', edit_address_path(address) %></td>
-    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', :action => "show", :id => address %></td>
+    <td><%= link_to 'Edit', :action => "edit", :id => address %></td>
+    <td><%= link_to 'Destroy', :action => "destroy", :id => address, :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New address', new_address_path %>
+<%= link_to 'New address', :action => "new" %>
