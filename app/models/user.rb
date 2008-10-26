@@ -45,6 +45,14 @@ attr_accessor :password_confirmation
     self.first_name.to_s + ' ' + self.middle_names.to_s + ' ' + self.last_name.to_s unless self.first_name.nil? 
   end
 
+  def my_skills
+    personal_qualities.collect { |x| x unless x.metric.class != Skill }.compact
+  end
+  
+  def my_traits
+    personal_qualities.collect { |x| x unless x.metric.class != Trait }.compact    
+  end
+
   def skills
     metrics.collect {|x| x unless x.class != Skill}.delete_if { |x| x.nil? }
   end

@@ -2,60 +2,58 @@ class ThreeQuestionsController < ApplicationController
   before_filter :authenticate
   
   def start
-    u = User.find session[:user]
+    u = session[:user]
     
-    #I'm adding this bit to set to the employer ID for corporate users
-    if u.employer_id != nil
-      employer_id = session[:user].employer_id
-      e = Employer.find_by_id employer_id
-    end
-    
-    if u.differentiator_answers.length == 3
+    if u.differentiator_answers.length >= 3
       flash[:notice] = "You've already answered your three questions"
       redirect_to :controller => :professionals, :action => :home
       return
     end
     
-    #To check if employers have already answered the questions (need to add edit option for them)
-    if e.differentiator_answers.length == 3
-      flash[:notice] = "You've already answered your three questions"
-      redirect_to :controller => :company_profiles, :action => :edit
-      return
+    
+    #I'm adding this bit to set to the employer ID for corporate users
+    unless u.employer.nil?
+      employer_id = session[:user].employer_id
+      e = Employer.find_by_id employer_id
+      #To check if employers have already answered the questions (need to add edit option for them)
+      if e.differentiator_answers.length == 3
+        flash[:notice] = "You've already answered your three questions"
+        redirect_to :controller => :company_profiles, :action => :edit
+        return
+      end
+      @answers = DifferentiatorAnswer.find_by_employer_id(session[:user].employer_id)
+      if @answers == nil
+        q = CompanyQuestion.find(:all)
+        questions = []
+        count = 0
+        while (questions.length < 3)
+          a = q[rand(q.length)]
+          questions << a unless questions.member? a
+        end 
+        session[:questions] = questions
+        redirect_to :action => :ask
+      else
+        redirect_to :controller => :company_profiles, :action => :edit
+      end
     end
     
     #Added the outer if so that only users get this
-    if u.employer_id.nil?
+    if u.employer.nil?
       @answers = DifferentiatorAnswer.find_by_user_id(session[:user])
-        if @answers == nil
-          q = PersonalQuestion.find(:all)
-          questions = []
-          count = 0
-          while (questions.length < 3)
-            a = q[rand(q.length)]
-            questions << a unless questions.member? a
-          end 
-          session[:questions] = questions
-          redirect_to :action => :ask
-        else
-          redirect_to :controller => :professionals, :action => :edit
-        end
-      #This bit is for employers  
-      else 
-        @answers = DifferentiatorAnswer.find_by_employer_id(session[:user].employer_id)
-          if @answers == nil
-            q = CompanyQuestion.find(:all)
-            questions = []
-            count = 0
-            while (questions.length < 3)
-              a = q[rand(q.length)]
-              questions << a unless questions.member? a
-            end 
-            session[:questions] = questions
-            redirect_to :action => :ask
-          else
-            redirect_to :controller => :company_profiles, :action => :edit
-          end
-        end
+      if @answers == nil
+        q = PersonalQuestion.find(:all)
+        questions = []
+        count = 0
+        while (questions.length < 3)
+          a = q[rand(q.length)]
+          questions << a unless questions.member? a
+        end 
+        session[:questions] = questions
+        redirect_to :action => :ask
+      else
+        redirect_to :controller => :professionals, :action => :edit
+      end
+    end
         
   end
   

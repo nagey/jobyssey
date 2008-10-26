@@ -45,13 +45,13 @@ class PersonalityController < ApplicationController
       if value < 25 
         valuename = "Strongly" + personal_quality.metric.lower_bound
         return
-      elseif value < 45
+      elsif value < 45
         valuename = "Somewhat" + personal_quality.metric.lower_bound
         return
-      elseif value < 55
+      elsif value < 55
         valuename = "No strong preference"
         return
-      elseif value < 75
+      elsif value < 75
         valuename = "Somewhat" + personal_quality.metric.upper_bound
         return
       else  
@@ -61,6 +61,4 @@ class PersonalityController < ApplicationController
     end
   end
       
-  end
-
 end
