@@ -258,6 +258,14 @@ div#behindcontent{
 	margin-left: 50px;
 	line-height: 1.5em;
 }
+#fastfactsleft{
+	width: 400px;
+}
+#fastfactsright{
+
+	width: 250px;
+	float: right;	
+}
 #newsfeed{
 	width: 530px;
 	margin-top: 10px; 
@@ -400,6 +408,7 @@ div.progresswording{
 .contentb {background: #FF7800; }
 .contentb div {margin-left: 5px; text-align: center; }
 =======
+
 
 #codename{
 	font-weight: bold;

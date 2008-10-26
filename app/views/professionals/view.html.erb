@@ -1,4 +1,4 @@
-<h1><%= @professional.first_name %></h1>
+<h1><%= @professional.first_name %>- Needs to be code name!</h1>
 <div id="left">
 
 <p>Download CV</p>
@@ -6,11 +6,18 @@
 <h2>Skills</h2>
 <table>
 <tr><td>Skill Name</td><td>Percentage</td></tr>
-<% render :partial => "skillset/view_skill", :collection => @professional.skills %>
+<% for skill in @skills %>
+<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
+<% end %>
 </table>
 
 <h2>Personal Qualities</h2>
-<p>render :partial => "personality/details", :collection => @professional.personal_qualities</p>
+<table>
+<tr><td>Trait Name</td><td>Preference</td></tr>
+<% for personal_quality in @personal_qualities %>
+<%= render :partial => "personality/details", :locals => {:personal_quality => personal_quality} %>
+<% end %>
+</table>
 
 </div>
 <div id="right">

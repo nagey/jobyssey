@@ -38,4 +38,29 @@ class PersonalityController < ApplicationController
     redirect_to :action => :define if @professional.save
   end
 
+  def details
+    @professional_id = Professional.find_by_id 1 #session[:professional]
+    @personal_qualities = PersonalQuality.find_by_user_id @professional_id
+    for each in @personal_qualities
+      if value < 25 
+        valuename = "Strongly" + personal_quality.metric.lower_bound
+        return
+      elseif value < 45
+        valuename = "Somewhat" + personal_quality.metric.lower_bound
+        return
+      elseif value < 55
+        valuename = "No strong preference"
+        return
+      elseif value < 75
+        valuename = "Somewhat" + personal_quality.metric.upper_bound
+        return
+      else  
+        valuename = "Strongly" + personal_quality.metric.upper_bound
+        return      
+      end
+    end
+  end
+      
+  end
+
 end

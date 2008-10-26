@@ -1,6 +1,6 @@
 class AssociateTownsWithIreland < ActiveRecord::Migration
   def self.up
-    country = Country.new (:name => "Ireland", :dialing_code => "353") #:use_adminsitrative_divisions => true, :use_post_codes => false )
+    country = Country.new  (:name => "Ireland", :dialing_code => "353", :use_adminsitrative_division => true, :use_post_code => false)
     country.save
     
     AdministrativeDivision.find(:all).each do |e|

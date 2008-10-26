@@ -1,0 +1,15 @@
+<h1>New skill for "<%=@job.title%>"</h1>
+
+	<% form_for(@new_skill, :url => { :action => "submit_new_skill", :id => @job.id} ) do |f| %>
+	  <%= f.error_messages %>
+		
+	  <%= f.hidden_field :job_posting_id %>
+
+	  <p>
+	    <%= f.label :skill %><br />
+	    <%= f.collection_select :metric_id, @skills_not_in_job, :id, :name %>
+	  </p>
+	  <p>
+	    <%= f.submit "Submit" %>
+	  </p>
+	<% end %>

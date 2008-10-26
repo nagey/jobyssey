@@ -66,7 +66,8 @@ class ProfessionalsController < ApplicationController
   end
 
   def view
-    @professional= Professional.find_by_id 6
+    @professional= session[:user]
+    @skills = Skill.find_all_by_user_id 6 #(session[:user_id])
   end
 
 end

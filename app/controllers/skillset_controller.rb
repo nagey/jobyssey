@@ -64,6 +64,6 @@ class SkillsetController < ApplicationController
   
   def view_skill
     @professional = Professional.find_by_id 1 #session[:professional]
-    @Skills = Skills.find :all
+        @skills = Skill.find(session[:user_id])
   end
 end

@@ -5,9 +5,6 @@ class CreateCountries < ActiveRecord::Migration
       t.integer :dialing_code
       t.timestamps
       
-      c = "Ireland"
-      
-      
     end
   end
 

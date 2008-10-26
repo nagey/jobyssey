@@ -12,5 +12,11 @@ class Professional < User
   
   def code_sample
   end
+  
+  def code_name
+  end
+  
+  def skill
+  end
       
 end
