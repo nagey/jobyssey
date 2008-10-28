@@ -1,18 +1,21 @@
 class JobController < ApplicationController
   def index
-    @jobs = JobPosting.find_all_by_employer_id 1
+    #@jobs = JobPosting.find_all_by_employer_id 1
+    @job_specs = JobSpecs.new  
   end
 
   def create
     @job_posting = JobPosting.new params[:job_posting]
     session[:job_posting] = @job_posting
+    @job_posting.job_specs = session[:job_specs]
     
     if @job_posting.save!
+      session[:job_posting] = @job_posting
       redirect_to :controller => "skillset", :action => "start_job_posting_skills"
       return
     else
       redirect_to :action => "new"
-      flash[:notice] = "Didn't work- try again!"
+      flash[:notice] = "Didn't work- please email your Jobyssey contact for further assistance."
       return
     end
   end
@@ -96,12 +99,15 @@ class JobController < ApplicationController
   end
 
   def new
+    @job_specs = JobSpecs.new params[:job_specs]
+    #@job_specs = session[:job_specs] if @job_specs.nil?
+    session[:job_specs] = @job_specs
+    
     @job_posting = JobPosting.new
     @employers = Employer.find :all
     @working_times = WorkingTime.find :all
     @employment_types = EmploymentType.find :all
     session[:employer_id] = session[:user].employer_id
-    #debugger
   end
 
   def view

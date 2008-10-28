@@ -11,6 +11,8 @@ class JobPosting < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :educational_levels, :through => :required_degrees
   has_many :education_concentrations, :through => :required_degrees
+  has_many :attachments, :as => :entity
+  has_one :job_specs, :as => :entity
 
   
   validates_presence_of :title
