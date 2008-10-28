@@ -6,6 +6,7 @@ class JobController < ApplicationController
 
   def create
     @job_posting = JobPosting.new params[:job_posting]
+    @job_posting.employer_id = session[:user].employer.id
     session[:job_posting] = @job_posting
     @job_posting.job_specs = session[:job_specs]
     
