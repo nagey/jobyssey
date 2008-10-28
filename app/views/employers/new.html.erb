@@ -1,6 +1,6 @@
 <h1><%=l(:employer_new)%></h1>
 
-<% form_for(@employer, @address) do |f| %>
+<% form_for(@employer) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -36,10 +36,8 @@
 	<br>
 	<%= link_to l(:add_geo_position), new_geo_position_path %>
 	</p>
-	  <%= render :partial => 'addresses/new.rhtml' %>
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', employers_path %>

@@ -43,25 +43,4 @@
   <%=h @job_posting.working_time_id %>
 </p>
 
-<% # show differentiator answers %>
-<h2><%=l(:differentiator_answers)%></h2>
-<table>
-<%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
-<%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @job_posting.differentiator_answers %>
-</table>
-<% # end differentiator answers %>
 
-<h2><%=l(:required_degrees)%></h2>
-<table>
-<%= render :partial => 'required_degrees/required_degree_header' %>
-<%= render :partial => 'required_degrees/required_degree', :collection => @job_posting.required_degrees %>
-</table>
-
-<h2><%=l(:job_applications)%></h2>
-<table>
-<%= render :partial => 'job_applications/job_application_header' %>
-<%= render :partial => 'job_applications/job_application', :collection => @job_posting.job_applications %>
-</table>
-
-<%= link_to 'Edit', edit_job_posting_path(@job_posting) %> |
-<%= link_to 'Back', job_postings_path %>

@@ -1,7 +1,7 @@
 class SkillsetController < ApplicationController
 
-  layout 'index'
-  layout 'signup', :only => [ :define, :create ]
+  #layout 'index'
+  #layout 'signup', :only => [ :define, :create ]
   before_filter :authenticate
   auto_complete_for :skill, :name
 
@@ -65,5 +65,58 @@ class SkillsetController < ApplicationController
   def view_skill
     @professional = Professional.find_by_id 1 #session[:professional]
         @skills = Skill.find(session[:user_id])
+  end
+
+#JOB POSTING SECTION BEGINS HERE
+
+ def start_job_posting_skills
+    @job_posting = session[:job_posting]
+    #@job_posting.metrics << @job_posting.job_spec.skills
+    redirect_to :action => :define_job_posting_skills
+  end
+
+  def define_job_posting_skills
+   
+    @skill = Skill.new
+    @job_posting = session[:job_posting]
+    @job_posting.job_posting_requirements.each { |p| p.value = 0 if p.value.nil? }
+  end
+
+  def add_job_posting_skills
+    skills = Skill.find_all_by_name(params[:skill][:name].downcase)
+    if skills.length == 1
+      @skill = skills.first
+    elsif skills.length == 0
+      @skill = Skill.new params[:skill]
+    end
+    @job_posting = session[:job_posting]
+    begin
+      @job_posting.metrics << @skill
+      unless @job_posting.save
+        flash[:notice] = l(:skills, :couldnt_add_skill)
+      end
+    rescue 
+      flash[:notice] = l(:skills, :skill_taken)
+    end
+    redirect_to :action => :define_job_posting_skills
+  end
+  
+  def update_value_job_posting_skills
+    pq = JobPostingRequirement.find params[params[:object_name].to_sym][:id]
+    pq.update_attributes params[params[:object_name].to_sym]
+    flash[:notice] = "Updated %s" % pq.metric.name if pq.save    
+    #redirect_to :action => :define_job_posting_skills
+    render :text => flash[:notice]
+  end
+  
+  def finalize_job_posting_skills
+    @jp = session[:job_posting]
+    @jp.set_search_position
+    redirect_to :controller => :personality, :action => :start_job_personality if @jp.save
+  end
+  
+  def view_skill_job_posting_skills
+    @job_posting = JobPosting.find_by_id 1 #session[:professional]
+    @skills = Skill.find(session[:job_posting])
   end
 end

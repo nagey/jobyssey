@@ -11,9 +11,20 @@ class JobPosting < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :educational_levels, :through => :required_degrees
   has_many :education_concentrations, :through => :required_degrees
+
   
   validates_presence_of :title
-  validates_length_of :description, :minimum => 100, :message => "Tell us more, tell us more...about this job (100 character minimum)" 
   validates_numericality_of :minimum_salary
   validates_numericality_of :maximum_salary
+  
+  def set_search_position
+  end
+  
+  def traits
+    metrics.collect {|x| x unless x.class != Trait}.delete_if { |x| x.nil? }
+  end
+  
+  def metric
+  end
+  
 end

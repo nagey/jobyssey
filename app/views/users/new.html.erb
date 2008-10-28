@@ -43,7 +43,7 @@
     <%= f.label :employer %><br />
     <%= f.collection_select :employer_id, @employers, :id, :name %>
 	<br>
-	<%= link_to l(:add_employer), new_employer_path %>
+	<%= link_to l(:add_employer), :controller => "employers", :action => "new" %>
   </p>
   <p>
     <%= f.label :search_position %><br />

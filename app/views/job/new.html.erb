@@ -1,2 +1,41 @@
-<h1>Job#new</h1>
-<p>Find me in app/views/job/new.html.erb</p>
+<h1>Create a New Job Posting</h1>
+
+<% form_for(:job_posting, :url => {:action => :create}) do |form| %>
+
+
+  <p>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </p>
+  <p>
+  <%=form.hidden_field :employer_id %>
+  </p>
+  <p>
+    <%= form.label :description %><br />
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :maximum_salary %><br />
+    <%= form.text_field :maximum_salary %>
+  </p>
+  <p>
+    <%= form.label :minimum_salary %><br />
+    <%= form.text_field :minimum_salary %>
+  </p>
+  <p>
+    <%= form.label :education_required %><br />
+    <%= form.check_box :education_required %>
+  </p>
+  <p>
+    <%= form.label :employment_type %><br />
+    <%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
+  </p>
+  <p>
+   <%= form.label :working_time %><br />
+    <%= form.collection_select :working_time_id, @working_times, :id, :name %>
+  </p>
+  <p>
+    <%= form.submit "Create" %>
+  </p>
+<% end %>
+

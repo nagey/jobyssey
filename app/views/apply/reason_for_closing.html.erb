@@ -1,0 +1,11 @@
+<% form_for(:note, :url => {:action => :close_application}) do |form| %>
+
+    <fieldset>
+      <legend>Why are you closing this application?</legend>
+   <p>Keep in mind that this note is viewable by the other party as well, so keep it friendly. </p>
+   <ul>
+    <li><%=form.text_area(:note) %></li>
+    <li><%=form.submit "Close this application" %></li>
+      </ul>
+    </fieldset>
+  <% end %>

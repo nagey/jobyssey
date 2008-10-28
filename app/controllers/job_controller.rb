@@ -4,6 +4,17 @@ class JobController < ApplicationController
   end
 
   def create
+    @job_posting = JobPosting.new params[:job_posting]
+    session[:job_posting] = @job_posting
+    
+    if @job_posting.save!
+      redirect_to :controller => "skillset", :action => "start_job_posting_skills"
+      return
+    else
+      redirect_to :action => "new"
+      flash[:notice] = "Didn't work- try again!"
+      return
+    end
   end
   
   def update
@@ -32,7 +43,6 @@ class JobController < ApplicationController
         #break
       end
     end
-    
   end
     
   def submit_new_skill
@@ -53,11 +63,11 @@ class JobController < ApplicationController
   end
   
   def show
-    @job = JobPosting.find(:all)
+    @job = JobPosting.find_by_id 1
   end
 
   def skills
-    @job = JobPosting.find params[:id]
+    @job = JobPosting.find_by_id params[:id]
     @job_skills = JobPostingRequirement.find_all_by_job_posting_id @job.id  
     
     
@@ -86,6 +96,20 @@ class JobController < ApplicationController
   end
 
   def new
+    @job_posting = JobPosting.new
+    @employers = Employer.find :all
+    @working_times = WorkingTime.find :all
+    @employment_types = EmploymentType.find :all
+    session[:employer_id] = session[:user].employer_id
+    #debugger
   end
+
+  def view
+    @job_posting = session[:job_posting] 
+    @employers = Employer.find :all
+    @working_times = WorkingTime.find :all
+    @employment_types = EmploymentType.find :all
+  end
+      
 
 end

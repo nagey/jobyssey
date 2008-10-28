@@ -1,16 +1,14 @@
 
 <fieldset>
-<div class="progressbar"><%=l(:your_skills)%><div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div>
-<div class="progresswording"><%=l(:professional, :progress_wording_two)%></div></div>
-</div>
-<p><%=l(:slider_instructions)%>. </p>
+
+<p>Add instructions here. </p>
 <br>
 <ul id="skill-list" class="skills-list">
 	
-	<% @professional.personal_qualities.each do |pq| %>
+	<% @job_posting.job_posting_requirements.each do |pq| %>
 		<% if pq.metric.class == Skill %>
 		<% @pq = pq %>		
-		<% form_for @pq.metric.name.to_sym, @pq, :url => {:action => :update_value}, :html => { :id => @pq.metric.id.to_s+'_form'} do |form| %>
+		<% form_for @pq.metric.name.to_sym, @pq, :url => {:action => :update_value_job_posting_skills}, :html => { :id => @pq.metric.id.to_s+'_form'} do |form| %>
 			<%=form.hidden_field :value, { :id => @pq.metric.id.to_s+"_value" } %>
 			<%=form.hidden_field :id %>
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
@@ -29,9 +27,9 @@
 <div class="addskillfieldset">
 <fieldset>
 <legend><%=l(:add_skill_legend)%></legend>
-<p><%=l(:add_skill_instruction)%></p>
+<p>Add skill instructions here. </p>
 <ul>
-<% form_for(:skill, :url => {:action => :add}) do |form| %>
+<% form_for(:skill, :url => {:action => :add_job_posting_skills}) do |form| %>
   
 	<li><%= text_field_with_auto_complete_jquery :skill, :name %>
 	<%= submit_tag l(:skills, :add_skill )%></li> 
@@ -42,7 +40,7 @@
 <div id="roundbuttoncontainer">
 <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
  <div class="contentb">
-        <div><%= link_to l(:skills, :done_skills), :action => :finalize %></div>
+        <div><%= link_to "Add Completed text here", :action => :finalize_job_posting_skills %></div>
     </div>
 <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
 </div>

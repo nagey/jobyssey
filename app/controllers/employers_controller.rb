@@ -32,8 +32,8 @@ class EmployersController < ApplicationController
     @employer = Employer.new
     @industries = Industry.find :all
     @geo_positions = GeoPosition.find :all
-    @address = Address.new
-    @towns = Town.find :all
+    #@address = Address.new
+    #@towns = Town.find :all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -52,12 +52,12 @@ class EmployersController < ApplicationController
   # POST /employers.xml
   def create
     @employer = Employer.new(params[:employer])
-    @address = Address.new(params[:address1, :address2, :town_id, :geo_position_id])
-    employer.addresses << address
+    #@address = Address.new(params[:address1, :address2, :town_id, :geo_position_id])
+    #employer.addresses << address
     @industries = Industry.find :all
     @geo_positions = GeoPosition.find :all
     respond_to do |format|
-      if @employer.save
+      if @employer.save!
         flash[:notice] = 'Employer was successfully created.'
         format.html { redirect_to(@employer) }
         format.xml  { render :xml => @employer, :status => :created, :location => @employer }

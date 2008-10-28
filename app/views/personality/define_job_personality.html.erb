@@ -1,0 +1,32 @@
+<fieldset>
+
+<div class="personalitypagetop">
+<p><%=l(:tell_us_text)%></p>
+<span class="personalityinstructions">Blah</span><br>
+<span class="personalityinstructions">Blah</span>
+<br>
+<br>
+<br>
+<ul id="personality-list" class="personalities-list">
+	<span class="personalitybigorange"><%= @trait.name %></span><br>
+	<span class="personalitybigorangecounter"><%= session[:counter].to_s + ' of ' + @total.to_s %></span>
+</div>
+	<% form_for :job_posting_requirement, :url => {:action => :update_job_personality}, :html => { :id => 'form_'+@job_posting_requirement.metric.id.to_s} do |form| %>
+<div class="personalitypagebottom">
+	<div id="lowertrait"><%= @trait.lower_bound %></div>
+	<div id="uppertrait"><%= @trait.upper_bound %></div>
+		<%= render :partial => 'slider', :locals => {:name => @job_posting_requirement.metric.id, :value => @job_posting_requirement.value} %>
+	<%=form.hidden_field :value, {:size => 2} %>
+	<%=form.hidden_field :metric_id %>
+<br>
+<br>
+<br>
+		<%= submit_tag l(:traits, :define_trait)%>
+</div>
+<% end %>
+
+
+</ul>
+
+
+</fieldset>
