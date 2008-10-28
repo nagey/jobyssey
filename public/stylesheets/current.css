@@ -445,7 +445,14 @@ div.quote{
 	font-weight: bold;
 	color: #ffffff;
 }
+#jobviewtop{
+	padding-top:20px;
+	font-size:20px;
+}
+#jobviewbottom{
 	
+}	
+
 /* Font Styling */
 
 h1 {
@@ -532,6 +539,7 @@ legend{
 	font-weight: bold;
 	font-size: 18px;
 	color: #FF7800;
+	padding-right:1em;
 }
 form input#skill_name{
 	margin: 0 auto;
