@@ -1,18 +1,15 @@
-<p>
-  <b>Title:</b>
-  <%=h @job_posting.title %>
-</p>
+<div id=jobviewtop>
 
-<p>
-  <b>Employer:</b>
-  <%=h @job_posting.employer_id %>
-</p>
+ <b><%=h @job_posting.title %></b> with <b><%=h @job_posting.employer_id %></b>
 
-<p>
-  <b>Description:</b>
+</div>
+
+<fieldset>
+  <legend>Description</legend>
   <%=h @job_posting.description %>
-</p>
+</fieldset>
 
+<div id=jobviewbottom>
 <p>
   <b>Search position:</b>
   <%=h @job_posting.search_position %>
@@ -42,5 +39,5 @@
   <b>Working time:</b>
   <%=h @job_posting.working_time.name %>
 </p>
-
+</div>
 
