@@ -1,66 +1,46 @@
 <p>
   <b>Title:</b>
-  <%=h @job.title %>
+  <%=h @job_posting.title %>
 </p>
 
 <p>
   <b>Employer:</b>
-  <%=h @job.employer_id %>
+  <%=h @job_posting.employer_id %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%=h @job.description %>
+  <%=h @job_posting.description %>
 </p>
 
 <p>
   <b>Search position:</b>
-  <%=h @job.search_position %>
+  <%=h @job_posting.search_position %>
 </p>
 
 <p>
   <b>Maximum salary:</b>
-  <%=h @job.maximum_salary %>
+  <%=h @job_posting.maximum_salary %>
 </p>
 
 <p>
   <b>Minimum salary:</b>
-  <%=h @job.minimum_salary %>
+  <%=h @job_posting.minimum_salary %>
 </p>
 
 <p>
   <b>Education required:</b>
-  <%=h @job.education_required %>
+  <%=h @job_posting.education_required %>
 </p>
 
 <p>
   <b>Employment type:</b>
-  <%=h @job.employment_type_id %>
+  <%=h @job_posting.employment_type_id %>
 </p>
 
 <p>
   <b>Working time:</b>
-  <%=h @job.working_time_id %>
+  <%=h @job_posting.working_time_id %>
 </p>
-
-<% # show differentiator answers %>
-<h2><%=l(:differentiator_answers)%></h2>
-<table>
-<%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
-<%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @job.differentiator_answers %>
-</table>
-<% # end differentiator answers %>
-
-<h2><%=l(:required_degrees)%></h2>
-<table>
-<%= render :partial => 'required_degrees/required_degree_header' %>
-<%= render :partial => 'required_degrees/required_degree', :collection => @job.required_degrees %>
-</table>
-
-<h2><%=l(:job_applications)%></h2>
-<table>
-<%= render :partial => 'job_applications/job_application_header' %>
-<%= render :partial => 'job_applications/job_application', :collection => @job.job_applications %>
-</table>
 
 
