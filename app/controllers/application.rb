@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   
   def init_map(address,name='',control_options={},interface_options={},marker_options={})
     geocoder = GoogleGeocode.new "ABQIAAAAZAVm-mpajx99YuizrWDWYxQIkn2H0N7M-ZYoFDdHwoMzZRvYqBQqO6uJ6gczxIlZaSPYdkieKT3JDg"
-    loc = geocoder.locate address.to_gmap
+    loc = geocoder.locate address.to_gmap 
     control_options = {:large_map => true, :hierarchical_map_type => true, :scale => true} if control_options.empty?
     interface_options = {:scroll_wheel_zoom => true, :info_window => true} if interface_options.empty?
     marker_options = { :title => name, :info_bubble => loc.address } if marker_options.empty?

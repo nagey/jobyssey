@@ -32,30 +32,10 @@
   <b><%=l(:employer_geoposition)%>:</b>
   <%=h @employer.geo_position_id %>
 </p>
-
-<% # show differentiator answers %>
-<h2><%=l(:differentiator_answers)%></h2>
-<table>
-<%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
-<%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @employer.differentiator_answers %>
-</table>
-<% # end differentiator answers %>
-
-<% # show roles %>
-<h2><%=l(:roles)%></h2>
-<table>
-<%= render :partial => 'roles/role_header' %>
-<%= render :partial => 'roles/role', :collection => @employer.roles %>
-</table>
-<% # end roles%>
-
-<% # show work history- why do employers have work histories? %>
-<h2><%=l(:work_history_items)%></h2>
-<table>
-<%= render :partial => 'work_history_items/work_history_header' %>
-<%= render :partial => 'work_history_items/work_history_item', :collection => @employer.work_history_items %>
-</table>
-<% # end work history %>
+<p>
+  <b>Employer ID%:</b>
+  <%=h @employer.id %>
+</p>
 
 <%= link_to 'Edit', edit_employer_path(@employer) %> |
 <%= link_to 'Back', employers_path %>

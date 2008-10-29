@@ -93,7 +93,6 @@ class PersonalityController < ApplicationController
         session[:counter] = 0 if session[:counter].nil?
         session[:counter] += 1
         redirect_to :action => :define_job_personality #if @job_posting.save
-        debugger
       end
 
       #def details

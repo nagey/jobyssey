@@ -1,43 +1,60 @@
+<div id=jobviewcontainer>
 <div id=jobviewtop>
 
- <b><%=h @job_posting.title %></b> with <b><%=h @job_posting.employer.name unless @job_posting.employer.nil? %></b>
+ <b><%=h @job_posting.title %></b> with <div id=employername><%= link_to @job_posting.employer.name, :controller => "company_profiles", :action => "view" %></a></div>
 
 </div>
 
 <fieldset>
   <legend>Description</legend>
   <%=h @job_posting.description %>
-</fieldset>
 
-<div id=jobviewbottom>
-<p>
-  <b>Search position:</b>
-  <%=h @job_posting.search_position %>
-</p>
-
-<p>
+<fieldset>
+	<legend>Benefits</legend>
+  <p> 
   <b>Maximum salary:</b>
   <%=h @job_posting.maximum_salary %>
-</p>
-
-<p>
+  </p>
+  <p>
   <b>Minimum salary:</b>
   <%=h @job_posting.minimum_salary %>
-</p>
-
-<p>
+  </p>
+  <p>
   <b>Education required:</b>
   <%=h @job_posting.education_required %>
-</p>
-
-<p>
+  </p>
+  <p>
   <b>Employment type:</b>
   <%=h @job_posting.employment_type.name %>
-</p>
-
-<p>
+  </p>
+  <p>
   <b>Working time:</b>
   <%=h @job_posting.working_time.name %>
+<<<<<<< HEAD:app/views/job/view.html.erb
 </p>
+=======
+  </p>
+</fieldset>
+
+</fieldset>
+
+<fieldset>
+	<legend>Skills Required</legend>
+<fieldset>
+	<legend>Personality traits</legend>
+</fieldset>	
+</fieldset>	
+
+<div id="roundbuttoncontainer">
+<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+ <div class="contentb">
+        <div><%= link_to "Apply for this job", :controller => "apply", :action => "apply" %></div>
+    </div>
+<b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+>>>>>>> be54147e4b5773acdea6d2ac365677aba6f24456:app/views/job/view.html.erb
 </div>
+<<<<<<< HEAD:app/views/job/view.html.erb
 <%= link_to "Apply for this job:", :controller => "apply", :action => "apply" %>
+=======
+</div>
+>>>>>>> be54147e4b5773acdea6d2ac365677aba6f24456:app/views/job/view.html.erb

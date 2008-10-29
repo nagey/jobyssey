@@ -2,6 +2,7 @@
 <div id="left">
 
 <p>Download CV</p>
+<b><%= link_to "Invite " + @professional.first_name + " to apply", :controller => "apply", :action => "invite" %>
 
 <h2>Skills</h2>
 <table>

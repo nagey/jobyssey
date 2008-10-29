@@ -1,0 +1,11 @@
+<h1>Current Activity</h1>
+<% for job in @jobs %>
+  <h2><%= job.title %></h2>
+  <table>
+  <% for job_application in @job_applications%>
+    <% if job_application.job_posting_id = job.id %>
+      <tr><td><%= job_application.user_id %></td></tr>
+    <% end %>
+<% end %>
+        </table>
+<% end %>

@@ -385,6 +385,7 @@ div.progresswording{
 	color: #fff;
 	margin-right: 62px;
 }	
+
 #roundbuttoncontainer a{
 	text-decoration: none;
 	font-size: 20px;
@@ -445,13 +446,27 @@ div.quote{
 	font-weight: bold;
 	color: #ffffff;
 }
+#jobviewcontainer{
+	margin: 0 auto;
+	padding-bottom: 30px;
+}	
+
 #jobviewtop{
 	padding-top:20px;
 	font-size:20px;
 }
-#jobviewbottom{
-	
+#employername{
+	color: #FF7800;
+	font-weight: bold;
+	display: inline;
 }	
+#employername a{
+	color: #FF7800;
+	font-weight: bold;
+	text-decoration: none;
+}	
+	
+
 
 /* Font Styling */
 

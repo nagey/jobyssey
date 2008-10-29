@@ -1,0 +1,31 @@
+<h1><%=h @employer.name %></h1>
+<b><%=h @employer.tagline unless @employer.tagline.nil? %></b>
+<br>
+<Fieldset>
+<legend>Fast Facts</legend>
+
+<div id="fastfactsleft">
+<h2>Location</h2>
+<%= @map.div(:width => 400, :height => 300) %>
+</div>
+
+<div id="fastfactsright">
+<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
+<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br> 
+</div>
+
+</fieldset>
+
+
+<fieldset>
+<legend>About <%=h @employer.name %></legend>
+
+<pre width=90><%=h @employer.description %></pre>
+
+<h2>3 Questions </h2>
+<% for answer in @answers %>
+  <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
+  <% end %>
+</fieldset>
+
+<%= render :partial => 'images/image.rhtml', :collection => @employer.images %>
