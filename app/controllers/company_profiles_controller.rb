@@ -26,7 +26,11 @@ class CompanyProfilesController < ApplicationController
   end
   
   def view
-    @employer_id = session[:user].employer_id
+    if session[:user].employer_id != nil
+      @employer_id = session[:user].employer_id 
+    else 
+      @employer_id = session[:employer]
+    end
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
     @answers = DifferentiatorAnswer.find(:all) #_by_employer_id @employer_id

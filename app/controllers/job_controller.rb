@@ -113,6 +113,7 @@ class JobController < ApplicationController
 
   def view
     @job_posting = session[:job_posting] 
+    session[:employer] = session[:job_posting].employer_id
     @employers = Employer.find :all
     @working_times = WorkingTime.find :all
     @employment_types = EmploymentType.find :all
