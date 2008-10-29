@@ -1,6 +1,6 @@
 <div id=jobviewtop>
 
- <b><%=h @job_posting.title %></b> with <b><%=h @job_posting.employer_id %></b>
+ <b><%=h @job_posting.title %></b> with <b><%=h @job_posting.employer.name unless @job_posting.employer.nil? %></b>
 
 </div>
 
@@ -40,4 +40,4 @@
   <%=h @job_posting.working_time.name %>
 </p>
 </div>
-
+<%= link_to "Apply for this job:", :controller => "apply", :action => "apply" %>

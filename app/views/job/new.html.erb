@@ -1,7 +1,6 @@
 <h1>Create a New Job Posting</h1>
 
 <% form_for(:job_posting, :url => {:action => :create}) do |form| %>
-<p> <%= session[:job_specs] %></p>
 
   <p>
     <%= form.label :title %><br />

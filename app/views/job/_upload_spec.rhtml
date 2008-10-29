@@ -4,11 +4,11 @@
 <% form_for(:job_specs, :url => {:controller => :job, :action => :new}, :html => {:multipart => true}) do |form| %>
 
 <fieldset>
-	<legend>Upload a Spec</legend>
+	<legend>Upload a Job Spec to Select Key Skills</legend>
 <div id="error-messages-for-cv-upload" class="error-messages">
 	<%= form.error_messages %>
 </div>
-	<p>Instructions here to explain we're just scanning for skills. </p>
+	<p>Note: You'll be given a chance to type a new job description on the next page- we'll just be using the document you upload to develop a list of necessary skills.</p>
 <ul>
 		<li><%= form.file_field("attachment")%>
 
