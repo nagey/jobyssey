@@ -51,11 +51,11 @@ class ApplyController < ApplicationController
   
   def view_employer_activity
     @jobs = JobPosting.find :all #find by employer_id
-    debugger
   end
 
   def view_professional_activity
     @job_applications = JobApplication.find_by_user_id 4
+    debugger
   end
 
 end
