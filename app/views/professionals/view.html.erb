@@ -1,29 +1,33 @@
 <h1><%= @professional.code_name %></h1>
-<div id="left">
 
- <tr><td><%= link_to "Download CV", :controller => :professionals, :action => :view_cv, :id => @professional.code_id %></td></tr><br>
-<b><%= link_to "Invite " + @professional.first_name + " to apply", :controller => "apply", :action => "invite" %>
+<div id="invitelink"><b><%= link_to "Invite " + @professional.code_name + " to apply", :controller => "apply", :action => "invite" %></div>
+<fieldset>
 
-<h2>Skills</h2>
-<table>
-	<tr><td>Skill Name</td><td>Percentage</td></tr>
-	<% for skill in @professional.my_skills %>
-		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
-	<% end %>
-</table>
+<div id="userlinksright">
+ <tr><td><%= link_to "Download CV", :controller => :professionals, :action => :view_cv, :id => @professional.code_id %> for a full work history</td></tr><br><br>
+Review the answers <%= @professional.code_name %> gave to the <%=  link_to "Three Questions", :controller => "three_questions", :action => "view_professional_answers" %> asked<br><br>
+Review the <%=  link_to "Code Sample", :controller => "code_sample_question", :action => "view_professional_samples" %> <%= @professional.code_name %> has added<br>
+</div>
 
+
+
+<div id="personalqualitiesleft">
 <h2>Personal Qualities</h2>
 <table>
-	<tr><td>Trait Name</td><td>Preference</td></tr>
 	<% for personal_quality in @professional.my_traits %>
 		<%= render :partial => "personality/details", :locals => {:personal_quality => personal_quality} %>
 	<% end %>
 </table>
+</div>
 
+<div id="skillsright">
+
+<h2>Skills</h2>
+<table>
+	<% for skill in @professional.my_skills %>
+		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
+	<% end %>
+</table>
 </div>
-<div id="right">
-	<ul>
-		<li><%=  link_to "Three Questions", :controller => "three_questions", :action => "view_professional_answers" %></li>
-		<li><%=  link_to "Code Sample", :controller => "code_sample_question", :action => "view_professional_samples" %></li> 
-	</ul>
-</div>
+
+</fieldset>
