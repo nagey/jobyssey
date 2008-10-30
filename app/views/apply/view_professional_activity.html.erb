@@ -1,10 +1,6 @@
 <h1>Your Activity</h1>
 <table>
-<% if Enumerable === @job_applications %>
   <% for job_application in @job_applications %>
-    <tr><td><%= job_application.job_posting_id %></td></tr>
+    <tr><td><%= job_application.job_posting.title %></td></tr>
   <% end %>
-  <% else %>
-    <tr><td><%= @job_applications.job_posting_id %></td></tr>
-<% end %>
 </table>

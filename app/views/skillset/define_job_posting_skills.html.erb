@@ -2,7 +2,8 @@
 <fieldset>
 
 <p><b>Thanks for uploading the job description!</b></p>
-<p>The following skills have been taken from the spec, please drag the sliders to indicate the importance of the skill. The further right you drag it, the more important it is. Should there be a skill that is not required then please leave the value of the slider at 0. </p>
+<p>The following skills have been taken from the spec you uploaded.  Please move the sliders to indicate the level of proficiency required. If the skill isn't relevant, leave the slider set to zero.</p>
+<p>Need a skill not listed?  Use the box below to add it.</p>
 <br>
 <ul id="skill-list" class="skills-list">
 	
@@ -28,7 +29,7 @@
 <div class="addskillfieldset">
 <fieldset>
 <legend><%=l(:add_skill_legend)%></legend>
-<p>Add skill instructions here. </p>
+<p>Type any other specific, technical skills required below.  Soft skills ("Good with people", "Works well in a pressurized environment") should be entered on the next page.</p>
 <ul>
 <% form_for(:skill, :url => {:action => :add_job_posting_skills}) do |form| %>
   
@@ -41,7 +42,7 @@
 <div id="roundbuttoncontainer">
 <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
  <div class="contentb">
-        <div><%= link_to "Add Completed text here", :action => :finalize_job_posting_skills %></div>
+        <div><%= link_to "That's all the skills we need", :action => :finalize_job_posting_skills %></div>
     </div>
 <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
 </div>

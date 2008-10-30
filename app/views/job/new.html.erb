@@ -1,5 +1,5 @@
 <h1>Create a New Job Posting</h1>
-
+<p>This is the information that matching professionals will see when they view your job.  They'll also have a chance to review your company profile, so there's no need to repeat that information here. </p>
 <% form_for(:job_posting, :url => {:action => :create}) do |form| %>
 
   <p>
@@ -13,6 +13,7 @@
     <%= form.label :description %><br />
     <%= form.text_area :description %>
   </p>
+  <p>Please enter salaries without commas.</p>
   <p>
     <%= form.label :maximum_salary %><br />
     <%= form.text_field :maximum_salary %>
