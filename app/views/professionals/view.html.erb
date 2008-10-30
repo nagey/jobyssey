@@ -4,10 +4,20 @@
 <fieldset>
 
 <div id="userlinksright">
+
  <tr><td><%= link_to "Download CV", :controller => :professionals, :action => :view_cv, :id => @professional.code_id %> for a full work history</td></tr><br><br>
+ 
+<% unless @three_questions.nil? %> 
 Review the answers <%= @professional.code_name %> gave to the <%=  link_to "Three Questions", :controller => "three_questions", :action => "view_professional_answers" %> asked<br><br>
+<% end %>
+
+<% unless @code_samples.nil? %> 
 Review the <%=  link_to "Code Sample", :controller => "code_sample_question", :action => "view_professional_samples" %> <%= @professional.code_name %> has added<br>
+<% end %>
+
+<% unless @portfolio.nil? %> 
 <%=  link_to "Portfolio", :controller => "portfolio", :action => "view_professional_portfolio" %></li> 
+<% end %>
 </div>
 
 
