@@ -1,0 +1,4 @@
+<h1>Three questions</h1>
+<% for answer in @answers %>
+<% render :partial => 'view_question_and_answer', :locals => {:answer => answer} %>
+<% end %>
