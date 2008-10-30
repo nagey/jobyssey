@@ -68,7 +68,12 @@ class ProfessionalsController < ApplicationController
   def view
     @professional= User.find_by_id 4 #code_name(Professional.code_name_from_id(session[:user]))#params[:id]))
     @skills = @professional.skills
+    @cv = Cv.find_by_user_id @professional
+  end
+
+  def view_cv
+    @professional= Professional.find_by_code_name(Professional.code_name_from_id(params[:id]))
+    send_data @professional.cv.attachment, :filename => @professional.cv.file_name, :type => @professional.cv.content_type, :disposition => 'attachment'
   end
 
 end
-

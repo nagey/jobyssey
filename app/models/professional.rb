@@ -9,7 +9,11 @@ class Professional < User
   
   def self.code_name_from_id(id)
     names = id.split('-')
-    names[0].capitalize+' '+names[1]+' '+names[2].capitalize
+    middle_names = id.split('-')
+    middle_names.pop
+    middle_names.shift
+    middle = middle_names.inject { |middle, name| middle += ' '+name }
+    names[0].capitalize+' '+middle+' '+names[names.length-1].capitalize
   end
   
   def set_search_position

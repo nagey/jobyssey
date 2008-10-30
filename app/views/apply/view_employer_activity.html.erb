@@ -2,9 +2,9 @@
 <% for job in @jobs %>
   <h2><%= job.title %></h2>
   <table>
-  <% for job_application in @job_applications%>
+  <% for job_application in job.job_applications%>
     <% if job_application.job_posting_id = job.id %>
-      <tr><td><%= job_application.user_id %></td></tr>
+      <tr><td><%= link_to job_application.user.code_name, :controller => :professionals, :action => :view_cv, :id => job_application.user.code_id unless job_application.user.nil? %></td></tr>
     <% end %>
 <% end %>
         </table>
