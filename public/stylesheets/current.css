@@ -523,6 +523,11 @@ h4{
 .small{
 	font-size: 10px;
 }
+#detailsheader{
+	font-size: 20px;
+	font-weight: bold;
+	color: #FF7800;
+}	
 /* Lists */
 
 

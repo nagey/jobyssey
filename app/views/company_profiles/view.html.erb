@@ -5,12 +5,13 @@
 <legend>Fast Facts</legend>
 
 <div id="fastfactsright">
-<fieldset>
-<legend>Details</legend>
-<br>
-<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br><br>
-<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br><br>
-</fieldset>
+
+<span id="detailsheader">Details: </span>
+<br><br>
+<b>Tagline: </b><%=h @employer.tagline unless @employer.tagline.nil? %><br>
+<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
+<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %>
+
 </div>
 
 <div id="fastfactsleft">
