@@ -4,14 +4,18 @@
 <Fieldset>
 <legend>Fast Facts</legend>
 
-<div id="fastfactsleft">
-<h2>Location</h2>
-<%= @map.div(:width => 400, :height => 300) %>
+<div id="fastfactsright">
+<fieldset>
+<legend>Details</legend>
+<br>
+<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br><br>
+<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br><br>
+</fieldset>
 </div>
 
-<div id="fastfactsright">
-<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
-<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br> 
+<div id="fastfactsleft">
+<h2>Location:</h2>
+<%= @map.div(:width => 400, :height => 300) %>
 </div>
 
 </fieldset>
@@ -22,10 +26,12 @@
 
 <pre width=90><%=h @employer.description %></pre>
 
-<h2>3 Questions </h2>
+<fieldset>
+<legend>3 Questions </legend>
 <% for answer in @answers %>
   <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
   <% end %>
+</fieldset>
 </fieldset>
 
 <%= render :partial => 'images/image.rhtml', :collection => @employer.images %>
