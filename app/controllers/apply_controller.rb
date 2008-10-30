@@ -54,7 +54,8 @@ class ApplyController < ApplicationController
   end
 
   def view_professional_activity
-    @job_applications = JobApplication.find_by_user_id 4
+    @job_applications = JobApplication.find_all_by_user_id 4
+    debugger
   end
 
 end

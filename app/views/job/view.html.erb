@@ -7,7 +7,7 @@
 
 <fieldset>
   <legend>Description</legend>
-  <%=h @job_posting.description %>
+  <pre width = 90><%=h @job_posting.description %></pre>
 
 <fieldset>
 	<legend>Benefits</legend>
@@ -37,12 +37,21 @@
 
 </fieldset>
 
-<fieldset>
-	<legend>Skills Required</legend>
-<fieldset>
-	<legend>Personality traits</legend>
-</fieldset>	
-</fieldset>	
+<h2>Skills</h2>
+<table>
+	<tr><td>Skill Name</td><td>Percentage</td></tr>
+	<% for skill in @job_posting.my_skills %>
+		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
+	<% end %>
+</table>
+
+<h2>Personal Qualities</h2>
+<table>
+	<tr><td>Trait Name</td><td>Preference</td></tr>
+	<% for personal_quality in @job_posting.my_traits %>
+		<%= render :partial => "personality/details", :locals => {:personal_quality => personal_quality} %>
+	<% end %>
+</table>
 
 <div id="roundbuttoncontainer">
 <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
