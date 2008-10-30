@@ -29,4 +29,11 @@ class JobPosting < ActiveRecord::Base
   def metric
   end
   
+  def my_skills
+    job_posting_requirements.collect { |x| x unless x.metric.class != Skill }.compact
+  end
+  
+  def my_traits
+    job_posting_requirements.collect { |x| x unless x.metric.class != Trait }.compact    
+  end
 end
