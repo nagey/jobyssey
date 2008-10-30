@@ -470,8 +470,27 @@ div.quote{
 	float: right;
 	margin-top: 20px
 }	
-	
 
+#skillsright{
+	display: inline-block;
+	margin-left: 50px;
+}
+#personalqualitiesleft{
+	float:left;
+}		
+#userlinksright{
+	float:right;
+	display: inline-block;
+	width: 300px;
+	margin-top: 30px;
+	padding-left: 20px;
+	border-left-style: solid;
+	border-color: #cccccc;	
+}
+#invitelink{
+	float:right;
+	margin-top: -40;
+}
 
 /* Font Styling */
 
