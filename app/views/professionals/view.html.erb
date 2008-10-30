@@ -1,7 +1,7 @@
 <h1><%= @professional.code_name %></h1>
 <div id="left">
 
-<p>Download CV</p>
+ <tr><td><%= link_to "Download CV", :controller => :professionals, :action => :view_cv, :id => @professional.code_id %></td></tr><br>
 <b><%= link_to "Invite " + @professional.first_name + " to apply", :controller => "apply", :action => "invite" %>
 
 <h2>Skills</h2>

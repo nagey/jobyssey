@@ -66,9 +66,8 @@ class ProfessionalsController < ApplicationController
   end
 
   def view
-    @professional= User.find_by_id 4 #code_name(Professional.code_name_from_id(session[:user]))#params[:id]))
+    @professional= User.find_by_id 5 #code_name(Professional.code_name_from_id(session[:user]))#params[:id]))
     @skills = @professional.skills
-    @cv = Cv.find_by_user_id @professional
   end
 
   def view_cv
