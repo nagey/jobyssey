@@ -450,11 +450,11 @@ div.quote{
 	margin: 0 auto;
 	padding-bottom: 30px;
 }	
-
 #jobviewtop{
 	padding-top:20px;
 	font-size:20px;
 }
+
 #employername{
 	color: #FF7800;
 	font-weight: bold;
@@ -472,9 +472,14 @@ div.quote{
 }	
 
 #skillsright{
+	float: left;
 	display: inline-block;
-	margin-left: 50px;
 }
+#benefits{
+	float:right;
+	display:inline-block;
+	margin-right: 100px;
+}	
 #personalqualitiesleft{
 	float:left;
 }		

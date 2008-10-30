@@ -1,27 +1,31 @@
 <div id=jobviewcontainer>
-<div id=jobviewtop>
 
- <b><%=h @job_posting.title %></b> with <span id=employername><%= link_to @job_posting.employer.name, :controller => "company_profiles", :action => "view" %></a></span>
-
+<div id="jobviewtop">
+<b><%=h @job_posting.title %></b> with <span id=employername><%= link_to @job_posting.employer.name, :controller => "company_profiles", :action => "view" %></a></span>
 </div>
-
 <fieldset>
-  <legend>Description</legend>
-  <pre width = 90><%=h @job_posting.description %></pre>
-
-<fieldset>
-	<legend>Benefits</legend>
-  <p> 
-  <b>Maximum salary:</b>
-  <%=h @job_posting.maximum_salary %>
-  </p>
-  <p>
-  <b>Minimum salary:</b>
-  <%=h @job_posting.minimum_salary %>
+<legend>Fast Facts and Skills Required</legend>
+  
+  <div id="skillsright">
+<h2>Skills Required</h2>
+<table>
+	<% for skill in @job_posting.my_skills %>
+		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
+	<% end %>
+</table>
+</div>
+<div id="benefits">
+<p> 
+	<b>Maximum salary:</b>
+ 	<%=h @job_posting.maximum_salary.to_i %>
+ 	</p>
+ 	<p>
+ 	<b>Minimum salary:</b>
+ 	<%=h @job_posting.minimum_salary.to_i %>
   </p>
   <p>
   <b>Education required:</b>
-  <%=h @job_posting.education_required %>
+  <%=h @job_posting.education_required %> (see description)
   </p>
   <p>
   <b>Employment type:</b>
@@ -33,12 +37,20 @@
 </p>
 
   </p>
-</fieldset>
+</div>  
 
 </fieldset>
 
 <fieldset>
-<legend>Skills and Personality Traits</legend>
+  <legend>Description</legend>
+  <pre width = 90><%=h @job_posting.description %></pre>
+
+
+
+</fieldset>
+
+<fieldset>
+<legend>Personality Traits and 3 Questions</legend>
 <div id="personalqualitiesleft">
 <h2>Personal Qualities</h2>
 <table>
@@ -48,14 +60,7 @@
 </table>
 </div>
 
-<div id="skillsright">
-<h2>Skills</h2>
-<table>
-	<% for skill in @job_posting.my_skills %>
-		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
-	<% end %>
-</table>
-</div>
+
 </fieldset>
 
 <div id="roundbuttoncontainer">
