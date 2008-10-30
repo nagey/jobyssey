@@ -51,4 +51,8 @@ class PortfolioController < ApplicationController
     redirect_to :action => :links
   end
 
+  def view_professional_portfolio
+    @professional = session[:professional]
+    @attachments = Attachment.find @professional
+  end
 end

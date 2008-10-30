@@ -1,0 +1,11 @@
+<h1><%= session[:professional].code_name %>' Portfolio</h1>
+
+<table>
+  <tr>
+    <th><%=l(:portfolio_name)%></th>
+    <th><%=l(:portfolio_url)%></th>
+    <th><%=l(:portfolio_description)%></th>
+  </tr>
+  <%= render :partial => 'view_link', :collection => @professional.attachments %>
+</table>
+
