@@ -1,0 +1,8 @@
+<h1>View Answers</h1>
+<p>Content goes here!</p>
+
+<% for code_sample in @code_samples %>
+  <%= render :partial => 'sample_question_and_answer', :locals => {:code_sample => code_sample} %>
+
+<% end %>
+

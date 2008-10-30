@@ -56,6 +56,12 @@ class CodeSampleQuestionController < ApplicationController
     @code_samples = CodeSample.find :all
   end
 
+  def view_professional_samples
+    @professional = session[:professional]
+    @code_sample_questions = CodeSampleQuestion.find :all
+    @code_samples = CodeSample.find_by_user_id @professional.id
+  end
+
   def view
   end
 

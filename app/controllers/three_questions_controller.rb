@@ -125,7 +125,7 @@ end
 
 def view_professional_answers
   @professional = session[:professional]
-  @answers = DifferentiatorAnswer.find_by_user_id session[:professional]
+  @answers = DifferentiatorAnswer.find_all_by_user_id session[:professional]
 end
 
     #def update
