@@ -1,5 +1,7 @@
 class ThreeQuestionsController < ApplicationController
   before_filter :authenticate
+
+  
   
   def start
     u = session[:user]
@@ -9,8 +11,6 @@ class ThreeQuestionsController < ApplicationController
       redirect_to :controller => :professionals, :action => :home
       return
     end
-    
-    
     #I'm adding this bit to set to the employer ID for corporate users
     unless u.employer.nil?
       employer_id = session[:user].employer_id
@@ -121,6 +121,11 @@ class ThreeQuestionsController < ApplicationController
     end
 
 def thanks
+end
+
+def view_professional_answers
+  @professional = session[:professional]
+  @answers = DifferentiatorAnswer.find_by_user_id session[:professional]
 end
 
     #def update

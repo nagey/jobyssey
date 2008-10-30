@@ -23,7 +23,7 @@
 </div>
 <div id="right">
 	<ul>
-		<li><% # link_to :controller => "three_questions", :action => "view", :id => @professional.id unless  @professional.three_questions.nil?%></li>
-		<li><% # link_to :controller => "code_sample_question", :action => "view_samples", :id => @professional.id unless  @professional.code_sample.nil? %></li> 
+		<li><%=  link_to "Three Questions", :controller => "three_questions", :action => "view_professional_answers" %></li>
+		<li><%=  link_to "Code Sample", :controller => "code_sample_question", :action => "view_samples" %></li> 
 	</ul>
 </div>
