@@ -3,8 +3,13 @@
 
 		<h1>Welcome to Jobyssey!</h1>
 		
-    <p>Need to change login bar!!</p>
-    <p>Add a link to portfolio, maybe one to three questions, add a new job.  </p>
+    <p><%=l(:professional, :thanks_text_employer)%></p>
+    <p><%=l(:professional, :continually_attracting)%></p> 
+    <ul>
+    <li><%=l(:professional, :answer)%> <a href="/three_questions/start"><%=l(:professional, :three_questions)%></a> <%=l(:professional, :know_you_employer)%></li>
+    <li><%=l(:professional, :samples_employer)%> <a href="/portfolio/links"><%=l(:professional, :portfolio_employer)%></a> <%=l(:professional, :attract_professionals)%></li>
+    <li><%=l(:professional, :add_job)%></a>- <%=l(:professional, :start_finding)%>!</li>
+    </ul>
     
     </div>		
 
@@ -12,11 +17,12 @@
 
 			<div id="startpage">
 
-				<H1>Welcome!</h1>
+				<H1><%=l(:professional, :start_welcome)%></h1>
 					
 					<fieldset>
-						<Legend> Coming Soon!</legend>
-            <p>Add some coming features here, as well as contact info for us. </p>
+						<Legend><%=l(:professional, :coming_soon)%></legend>
+            <p><%=l(:professional, :new_features)%>! </p>
+            <p><%=l(:professional, :input)%> <a href="/contacts/new"><%=l(:professional, :drop_us_a_line)%></a> <%=l(:professional, :suggestions)%>  </p>
 					</fieldset>
 					
 			

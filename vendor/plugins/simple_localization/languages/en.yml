@@ -648,21 +648,30 @@ app:
         terms_link: Jobyssey's Terms and Conditions
         welcome: Welcome to the Beta version of Jobyssey!
         thanks_text: Thanks for taking the time to build your profile.  Please bear in mind this is a beta version of the Jobyssey project for you to explore - employers have not yet been added but will be in the next few weeks.
+        thanks_text_employer: Thanks for joining! This is your Newsfeed page. Check this space for announcements of any new features we have added to enhance your Jobyssey experience. 
         meantime_text: In the meantime, you can add to your details and build a complete profile so you are up and running for when we add employers on the site.
+        continually_attracting: We are continually attracting high calibre professionals to the site so make sure all your live jobs are up to date, and your public profile is completed and looking good.
         answer: Answer
         three_questions: 3 Questions
         know_you: to let employers get to know you better.
+        know_you_employer: to let professionals get to know your company better.
         work_samples: Add work samples to your
+        samples_employer: Add images to your
         portfolio: portfolio
+        portfolio_employer: profile
         interview_request: to get more interview requests.
+        attract_professionals: to attract more professionals
         pass_it_on: Pass it on
+        add_job: Add a job
         let_your_friends: let your friends and colleagues know about Jobyssey.
+        start_finding: start finding your best match professional now
         start_welcome: Welcome!
         coming_soon: Coming Soon
         migration_complete: While we complete the user migration process to the new version of Jobyssey, we will be adding new features to enhance your user profile. In a few weeks time we will start adding employers and live jobs on to the site. Should you discover any bugs with Jobyssey in the meantime please let us know.
         input: We welcome your input- please
         drop_us_a_line: drop us a line
         suggestions: if you have any suggestions, or catch any bugs.
+    		new_features: Over the next few weeks we will be adding some cool features in order to aid your search for the right professional. One really exciting development is our upcoming testing feature, whereby professionals can complete an online verified skills test in their given area of expertise. As an employer you will be able to view the test and results of every professional that matches your job description. Stay tuned    
     skillset:
     		your_skills: Your Skills
     		slider_instructions: Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We will use these ratings to search for jobs that suit you best, and to help employers better understand your strengths
