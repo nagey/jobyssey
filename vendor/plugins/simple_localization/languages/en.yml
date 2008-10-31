@@ -662,7 +662,7 @@ app:
         interview_request: to get more interview requests.
         attract_professionals: to attract more professionals
         pass_it_on: Pass it on
-        add_job:	Add a job
+        add_job: Add a job
         let_your_friends: let your friends and colleagues know about Jobyssey.
         start_finding: start finding your best match professional now
         start_welcome: Welcome!
@@ -671,7 +671,6 @@ app:
         input: We welcome your input- please
         drop_us_a_line: drop us a line
         suggestions: if you have any suggestions, or catch any bugs.
-    employer:
     		new_features: Over the next few weeks we will be adding some cool features in order to aid your search for the right professional. One really exciting development is our upcoming testing feature, whereby professionals can complete an online verified skills test in their given area of expertise. As an employer you will be able to view the test and results of every professional that matches your job description. Stay tuned    
     skillset:
     		your_skills: Your Skills
