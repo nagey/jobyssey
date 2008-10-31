@@ -643,6 +643,7 @@ app:
         confidentiality_text: Your name and contact information are stored confidentially until you agree to interview for a job
         code_name: Code Name
         code_name_explanation: Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality.  Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy
+        confidentiality_explanation: At Jobyssey we go to great lenghts to keep your identity confidential. You are assigned a codename and you contact details are not revealed to employers unless you agree. However, in order to keep things 100% confidential, please delete your name and contact details from your CV prior to uploading. Also make sure the filename is NOT your name ie. JohnSmith.doc. Keep it generic. Thanks for your help.
         looking_for_legend: What I'm looking for
         agree_terms: I agree to
         terms_link: Jobyssey's Terms and Conditions
@@ -683,7 +684,7 @@ app:
     		tell_us_text: Tell us a bit about your work personality so we can show you jobs from companies that suit you.  For each quality, adjust the slider to reflect your work personality or work culture preference.
     		tell_us_job_text: Tell us a bit about the type of work personality that would suit this job so we can show you professionals that match. For each quality, adjust the slider to reflect the ideal work personality or work culture preference.
     		personality_instruction_one: The further you drag the slider, the more strongly you feel about it.
-    		personality_instruction_two: When you release the slider you'll move to the next trait. 
+    		personality_instruction_two: Release the slider to move on to the next trait...
     		
     skills:
         add_skill: add a skill
@@ -781,9 +782,3 @@ app:
     code_sample_question:
             your_mission: Your Mission...
             code_sample_instructions: Directions go here. 
-
-    				
-    				
-    		
-    		
-    		
