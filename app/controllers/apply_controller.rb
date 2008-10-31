@@ -4,6 +4,7 @@ class ApplyController < ApplicationController
     @job_application = JobApplication.new 
     @job_application.user_id = session[:user_id]
     @job_application.job_posting_id = 4 #session[:job_posting].id
+    @job_posting = @job_application.job_posting
     redirect_to :action => "youve_applied" if @job_application.save
     
     @job_application_status = JobApplicationStatus.new
@@ -13,6 +14,10 @@ class ApplyController < ApplicationController
     @job_application_status.user_id = @job_application.user_id 
     
     #needs to send an email to employer
+    @employer_id = @job_posting.employer_id
+    @employer_email = User.find_by_employer_id @employer_id
+    @job_title = @job_posting.title
+    Emailer.deliver_new_application(@employer_email, @job_title)
   end
   
   def youve_applied
@@ -66,7 +71,7 @@ class ApplyController < ApplicationController
       # http://localhost:3000/apply/send_welcome_email
 
       # note the deliver_ prefix, this is IMPORTANT
-      Postoffice.deliver_welcome(@user.name, @user.email)
+      #Postoffice.deliver_welcome(@user.name, @user.email)
 
       # optional, but I like to keep people informed
       #flash[:notice] = "You've successfuly registered. Please check your email for a confirmation!"
@@ -74,7 +79,6 @@ class ApplyController < ApplicationController
       # render the default action
       #render :action => 'index'  
     #end
-
 
 
 end
