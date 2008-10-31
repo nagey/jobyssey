@@ -26,8 +26,8 @@ class ApplyController < ApplicationController
   
   def invite
     @job_application = JobApplication.new 
-    @job_application.user_id = 4 #session[:professional_id] #needs to be getting put into session in professional view
-    @job_application.job_posting_id = 1 #session[:job_posting_id] #needs to be put in session in search results
+    @job_application.user_id = 5 #session[:professional_id] #needs to be getting put into session in professional view
+    @job_application.job_posting_id = 5 #session[:job_posting_id] #needs to be put in session in search results
     redirect_to :action => "youve_invited" if @job_application.save
     
     @job_application_status = JobApplicationStatus.new
@@ -37,10 +37,15 @@ class ApplyController < ApplicationController
     @job_application_status.user_id = @job_application.user_id
     
     #needs to send an email to professional
+    @professional = @job_application.user_id
+    @job_title = @job_application.job_posting.title
+    @employer = @job_application.job_posting.employer.name
+    
+    Emailer.deliver_new_invitation(@professional, @job_title, @employer)
   end
   
   def youve_invited
-    @job_application = JobApplication.find_by_user_id 4 #session[:professional]
+    @job_application = JobApplication.find_by_user_id 5 #session[:professional]
     debugger
   end
   

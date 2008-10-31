@@ -19,6 +19,16 @@ class Emailer < ActionMailer::Base
           @body["email_body"] = "You've recieved a new application for " + job_title + " at Jobyssey.  Please login and go to your activity section to view the users details."
           #@body["email_name"] = email_params[:name]
       end
+      
+      def new_invitation(professional, job_title, employer, sent_at = Time.now)
+          # You only need to customize @recipients.
+          @recipients = professional 
+          @from = "info@jobyssey.com"
+          @subject = "New invitation to apply for " + job_title + " at " + employer
+          @sent_on = sent_at
+          @body["email_body"] = "You've recieved an invitation from " + employer + " to apply for " + job_title + " at Jobyssey.  Please login and go to your activity section to view more details."
+          #@body["email_name"] = email_params[:name]
+      end
 
 #A different example
   
