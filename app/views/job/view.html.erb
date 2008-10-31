@@ -17,11 +17,11 @@
 <div id="benefits">
 <p> 
 	<b>Maximum salary:</b>
- 	<%=h @job_posting.maximum_salary.to_i %>
+ 	<%=h number_with_delimiter(@job_posting.maximum_salary.to_i) %>
  	</p>
  	<p>
  	<b>Minimum salary:</b>
- 	<%=h @job_posting.minimum_salary.to_i %>
+ 	<%=h number_with_delimiter(@job_posting.minimum_salary.to_i) %>
   </p>
   <p>
   <b>Education required:</b>

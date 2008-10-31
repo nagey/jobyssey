@@ -58,4 +58,23 @@ class ApplyController < ApplicationController
     debugger
   end
 
+  # TO SEND AN EMAIL
+  # assume @user.name and @user.email have been declared
+
+    #def send_welcome_email
+      # triggered via:
+      # http://localhost:3000/apply/send_welcome_email
+
+      # note the deliver_ prefix, this is IMPORTANT
+      Postoffice.deliver_welcome(@user.name, @user.email)
+
+      # optional, but I like to keep people informed
+      #flash[:notice] = "You've successfuly registered. Please check your email for a confirmation!"
+
+      # render the default action
+      #render :action => 'index'  
+    #end
+
+
+
 end
