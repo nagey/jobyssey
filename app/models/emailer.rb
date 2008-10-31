@@ -10,14 +10,20 @@ class Emailer < ActionMailer::Base
           @body["email_name"] = email_params[:name]
       end
       
-      def new_application(employer, job_title, sent_at = Time.now)
+      def new_application(employer, job_title, professional, sent_at = Time.now) #cv
           # You only need to customize @recipients.
           @recipients = employer 
           @from = "info@jobyssey.com"
-          @subject = "New application for" + job_title
+          @subject = "New application for " + job_title
           @sent_on = sent_at
-          @body["email_body"] = "You've recieved a new application for " + job_title + " at Jobyssey.  Please login and go to your activity section to view the users details."
-          #@body["email_name"] = email_params[:name]
+          body[:job_title] = job_title
+          content_type "text/html"
+         
+          #@attachment = cv
+          #  attachment "application/octet-stream" do |a|  
+          #      a.body = File.read(cv)  
+          #     a.filename = file.original_filename  
+          # end
       end
       
       def new_invitation(professional, job_title, employer, sent_at = Time.now)
@@ -26,23 +32,10 @@ class Emailer < ActionMailer::Base
           @from = "info@jobyssey.com"
           @subject = "New invitation to apply for " + job_title + " at " + employer
           @sent_on = sent_at
-          @body["email_body"] = "You've recieved an invitation from " + employer + " to apply for " + job_title + " at Jobyssey.  Please login and go to your activity section to view more details."
-          #@body["email_name"] = email_params[:name]
+         body[:employer] = employer
+         body[:job_title] = job_title
+          content_type "text/html"
+
       end
-
-#A different example
   
-  #def welcome(name, email)
-  #   @recipients   = "user@host.com"
-  #   @from         = params[:contact][:email]
-  #   headers         "Reply-to" => "#{email}"
-  #   @subject      = "Welcome to Add Three"
-  #   @sent_on      = Time.now
-  #   @content_type = "text/html"
-
-  #   body[:name]  = name
-  #   body[:email] = email       
-  # end
-  
-
 end

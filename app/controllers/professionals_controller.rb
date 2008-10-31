@@ -66,7 +66,7 @@ class ProfessionalsController < ApplicationController
   end
 
   def view
-    @professional= User.find_by_id 5 #code_name(Professional.code_name_from_id(session[:user]))#params[:id]))
+    @professional= User.find_by_id 5#should come from professional session form search results #code_name(Professional.code_name_from_id(session[:user]))#params[:id]))
     @skills = @professional.skills
     session[:professional] = @professional
     @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional

@@ -1,6 +1,16 @@
 <h1>Your Activity</h1>
+
+<h2>Invitations</h2>
 <table>
   <% for job_application in @job_applications %>
     <tr><td><%= job_application.job_posting.title %></td></tr>
   <% end %>
 </table>
+
+<h2>Open Applications</h2>
+<table>
+  <% for job_application in @job_applications %>
+    <tr><td><%= job_application.job_posting.title %></td></tr>
+  <% end %>
+</table>
+
