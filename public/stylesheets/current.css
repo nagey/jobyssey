@@ -133,6 +133,7 @@
 	text-align:  right;
 	height: 1.1em;
 }
+
 #bottomnavbar a {
 	color:#FFF;
 	text-decoration:none;
@@ -238,13 +239,14 @@ div#behindcontent{
 	padding-top: 25px;
 	padding-left: 10px;
 	padding-right: 10px;
+	padding-bottom: 20px;
 	float: left;
 }
 #right{
 	width: 220px;
 	height: 300px;
 	padding-top: 5px;
-	padding-bottom: 0px;
+	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-right: 0px;
 	margin: 10px 0px 0px 550px;
@@ -385,7 +387,29 @@ div.progresswording{
 	color: #fff;
 	margin-right: 62px;
 }	
+#roundbuttoncontainerapply{
+	width: 200px;
+	float: right;
+	color: #fff;
+	margin-top: 20px;
+}	
 
+#roundbuttoncontainerapply a{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+#roundbuttoncontainerapplylong{
+	color: #fff;
+}	
+
+#roundbuttoncontainerapplylong a{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
 #roundbuttoncontainer a{
 	text-decoration: none;
 	font-size: 20px;
@@ -404,9 +428,11 @@ div.progresswording{
 div.quote{
 	width: 800px;
 }
+
 #codename{
 	font-weight: bold;
 }
+
 .question{
 	width: 18px;
 	height: 18px;
