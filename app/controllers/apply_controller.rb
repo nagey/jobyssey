@@ -15,9 +15,12 @@ class ApplyController < ApplicationController
     
     #needs to send an email to employer
     @employer_id = @job_posting.employer_id
-    @employer_email = User.find_by_employer_id @employer_id
+    @employer_employee = User.find_by_employer_id @employer_id
+    @employer_email = @employer_employee.email
     @job_title = @job_posting.title
-    Emailer.deliver_new_application(@employer_email, @job_title)
+    @cv = @job_application.user.cv.attachment
+    @professional = @job_application.user
+    Emailer.deliver_new_application(@employer_email, @job_title, @professional) #@cv
   end
   
   def youve_applied
@@ -37,7 +40,7 @@ class ApplyController < ApplicationController
     @job_application_status.user_id = @job_application.user_id
     
     #needs to send an email to professional
-    @professional = @job_application.user_id
+    @professional = @job_application.user.email
     @job_title = @job_application.job_posting.title
     @employer = @job_application.job_posting.employer.name
     
@@ -64,7 +67,7 @@ class ApplyController < ApplicationController
   end
 
   def view_professional_activity
-    @job_applications = JobApplication.find_all_by_user_id 4
+    @job_applications = JobApplication.find_all_by_user_id 5
     debugger
   end
 
