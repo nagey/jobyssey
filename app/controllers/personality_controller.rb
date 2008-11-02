@@ -4,9 +4,9 @@ class PersonalityController < ApplicationController
 
 
   #layout 'index'
-  #layout 'signup', :only => [ :start, :define ]
+  layout 'signup', :only => [ :start, :define ]
 
-  def start
+  def begin
     session[:counter] = 1
     redirect_to :action => :define, :layout => 'signup'
   end

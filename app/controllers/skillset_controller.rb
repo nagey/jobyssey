@@ -1,11 +1,14 @@
 class SkillsetController < ApplicationController
 
   #layout 'index'
-  #layout 'signup', :only => [ :define, :create ]
+  layout 'signup', :only => [ :define, :create ]
   before_filter :authenticate
   auto_complete_for :skill, :name
 
-  def start
+  def foo
+  end
+
+  def begin
     @professional = session[:user]
     @professional.metrics << @professional.cv.skills
     redirect_to :action => :define if @professional.save!
@@ -53,7 +56,7 @@ class SkillsetController < ApplicationController
   def finalize
     @p = session[:user]
     @p.set_search_position
-    redirect_to :controller => :personality, :action => :start if @p.save
+    redirect_to :controller => :personality, :action => :begin if @p.save
   end
   
   def destroy

@@ -9,6 +9,7 @@ class Employer < ActiveRecord::Base
   has_many :images, :as => :entity
   has_many :default_roles, :class_name => "Role", :finder_sql => "SELECT DISTINCT roles.* from roles where employer_id is null"
   has_many :work_history_items
+  has_one :administrator, :class_name => "User"
   
   validates_presence_of :name
   

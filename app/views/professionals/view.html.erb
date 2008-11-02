@@ -1,6 +1,6 @@
 <h1><%= @professional.code_name %></h1>
 
-<div id="invitelink"><b><%= link_to "Invite " + @professional.code_name + " to apply", :controller => "apply", :action => "invite" %></div>
+<div id="invitelink"><b><%= link_to "Invite " + @professional.code_name + " to apply", :controller => "apply", :action => "invite", :id => @professional %></div>
 <fieldset>
 
 <div id="userlinksright">

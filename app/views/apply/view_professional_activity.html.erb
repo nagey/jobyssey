@@ -1,16 +1,16 @@
 <h1>Your Activity</h1>
 
-<h2>Invitations</h2>
+<h2>Open Aplications</h2>
 <table>
-  <% for job_application in @job_applications %>
-    <tr><td><%= job_application.job_posting.title %></td></tr>
+  <% for job_application in @applies %>
+    <tr><td><%= job_application.job_posting.title %></td><td><%= job_application.created_at%></tr>
   <% end %>
 </table>
 
-<h2>Open Applications</h2>
+<h2>Invitations</h2>
 <table>
-  <% for job_application in @job_applications %>
-    <tr><td><%= job_application.job_posting.title %></td></tr>
+  <% for job_application in @invites %>
+    <tr><td><%= job_application.job_posting.title unless job_application.job_posting.nil? %></td></tr>
   <% end %>
 </table>
 

@@ -52,7 +52,7 @@ class ProfessionalsController < ApplicationController
       session[:user_id] = @professional.id
       session[:user] = @professional
       session[:professional] = nil
-      redirect_to :controller => :skillset, :action => :start
+      redirect_to :controller => :skillset, :action => :begin
     else
       @employment_types = EmploymentType.find :all
       @working_times = WorkingTime.find :all
