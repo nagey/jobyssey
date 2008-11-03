@@ -655,7 +655,7 @@ app:
         answer: Answer
         three_questions: 3 Questions
         know_you: to let employers get to know you better.
-        know_you_employer: to let professionals get to know your company better.
+        know_you_employer: and complete your profile to let professionals get to know your company better.
         work_samples: Add work samples to your
         samples_employer: Add images to your
         portfolio: portfolio
@@ -672,7 +672,7 @@ app:
         input: We welcome your input- please
         drop_us_a_line: drop us a line
         suggestions: if you have any suggestions, or catch any bugs.
-    		new_features: Over the next few weeks we will be adding some cool features in order to aid your search for the right professional. One really exciting development is our upcoming testing feature, whereby professionals can complete an online verified skills test in their given area of expertise. As an employer you will be able to view the test and results of every professional that matches your job description. Stay tuned    
+    		new_features: We will be adding some cool features in order to aid your search for the right professional. One really exciting development is our upcoming testing feature, whereby professionals can complete an online verified skills test in their given area of expertise. As an employer you will be able to view the test and results of every professional that matches your job description. Stay tuned    
     skillset:
     		your_skills: Your Skills
     		slider_instructions: Adjust the slider to indicate your level of proficiency in each of the following areas- all the way to the left for newbies, to the right for Jedi-like powers.  We will use these ratings to search for jobs that suit you best, and to help employers better understand your strengths
