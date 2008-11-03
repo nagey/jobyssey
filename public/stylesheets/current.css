@@ -539,6 +539,11 @@ div.quote{
 	text-align: center;
 	margin-left: 200px;
 }	
+#moreinfo{
+	float:right;
+	margin-top:0px;
+	width: 400px;
+}	
 /* Font Styling */
 
 h1 {
