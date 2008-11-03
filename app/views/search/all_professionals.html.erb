@@ -2,6 +2,7 @@
 
 <table>
 <% for professional in @professionals %>
-<tr><td><%= link_to professional.code_name, :controller => "professionals", :action => "view", :id => professional %></td></tr>
+
+<tr><td><%= link_to professional.code_name, :controller => "professionals", :action => "view", :id => professional %></td><td><%= professional.desired_job_title %></td></tr>
 <% end %>
 </table>

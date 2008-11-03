@@ -32,6 +32,10 @@
 		<label for="professional[password_confirmation]"><%=l(:professional, :password_confirmation)%></label>
 		<%= form.password_field 'password_confirmation'%>
 	</li>
+	<li>
+		<label for="professional[desired_job_title]">Desired job title(s):</label>
+		<%= form.text_field "desired_job_title" %>
+	</li>
 	</ul>
 	<br>
 <div id = "codename">
