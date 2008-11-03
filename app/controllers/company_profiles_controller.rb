@@ -29,7 +29,7 @@ class CompanyProfilesController < ApplicationController
     if session[:user].employer_id != nil
       @employer_id = session[:user].employer_id 
     else 
-      @employer_id = 1 session[:employer]
+      @employer_id = session[:employer]
     end
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
