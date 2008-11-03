@@ -66,12 +66,13 @@ class ProfessionalsController < ApplicationController
   end
 
   def view
-    @professional= User.find_by_id 5#should come from professional session form search results #code_name(Professional.code_name_from_id(session[:user]))#params[:id]))
+    @professional = Professional.find params[:id]
     @skills = @professional.skills
     session[:professional] = @professional
     @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
     @code_samples = CodeSample.find_all_by_user_id @professional
     @portfolio = Attachment.find_all_by_entity_id @professional
+    debugger
   end
 
   def view_cv
