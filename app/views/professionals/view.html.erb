@@ -18,6 +18,9 @@ Review the <%=  link_to "Code Sample", :controller => "code_sample_question", :a
 <% unless @portfolio.nil? %> 
 <%=  link_to "Portfolio", :controller => "portfolio", :action => "view_professional_portfolio" %></li> 
 <% end %>
+
+<%= @professional.more_info %>
+
 </div>
 
 

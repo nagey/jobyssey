@@ -132,7 +132,9 @@
 	position: relative;
 	text-align:  right;
 	height: 1.1em;
+	clear:both;
 }
+
 
 #bottomnavbar a {
 	color:#FFF;
@@ -164,6 +166,7 @@
 	text-decoration: underline;
 }
 
+	
 /* Divs */
 
 .clear{
@@ -229,9 +232,12 @@ div#behindcontent{
 	padding: 0px 20px 20px 20px;
 	margin-top: 10px;
 }
+
+
 #content a{
 		color: #242463;
 }
+
 
 #left{
 	width: 530px;
@@ -242,7 +248,6 @@ div#behindcontent{
 	padding-right: 10px;
 	padding-bottom: 20px;
 	float: left;
-	height: 250px;
 }
 
 #right{
@@ -452,9 +457,7 @@ div.quote{
 	font-weight: normal;
 	color: #999999;
 }
-.confidentiality{
-	margin-left: -10px;
-}	
+
 
 .info{
 	float: left;
