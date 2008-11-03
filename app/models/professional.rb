@@ -18,5 +18,9 @@ class Professional < User
   
   def set_search_position
   end
+   
+  def best_skills()
+    skills.sort_by { |skill| skill.value] }
+  end  
       
 end
