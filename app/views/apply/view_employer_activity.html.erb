@@ -9,3 +9,20 @@
 <% end %>
         </table>
 <% end %>
+
+<h1>Your Activity</h1>
+
+<h2>Open Aplications</h2>
+<table>
+  <% for job_application in @applies %>
+    <tr><td><%= job_application.job_posting.title %></td><td><%= job_application.user.first_name + " " + job_application.user.last_name %></td></tr>
+  <% end %>
+</table>
+
+<h2>Invitations</h2>
+<table>
+  <% for job_application in @invites %>
+    <tr><td><%= job_application.job_posting.title unless job_application.job_posting.nil? %></td><td><%= job_application.user.code_name%></td></tr>
+  <% end %>
+</table>
+

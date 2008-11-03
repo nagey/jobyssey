@@ -80,8 +80,21 @@ class ApplyController < ApplicationController
   end  
   
   def view_employer_activity
-    @jobs = JobPosting.find :all #find by employer_id
-  end
+    @job_applications = JobApplication.find_all_by_employer_id session[:user].employer_id
+      @applies =[]
+      @invites = []
+
+      for job_application in @job_applications
+        next if job_application.job_application_statuses.empty?
+        if (job_application.job_application_statuses.last.job_application_state.name == "Open Application") 
+          @applies << job_application
+        end
+        next if job_application.job_application_statuses.empty?
+        if (job_application.job_application_statuses.last.job_application_state.name == "Open Invitation")
+          @invites << job_application
+        end
+      end
+    end
 
   def view_professional_activity
     @job_applications = JobApplication.find_all_by_user_id session[:user_id]
