@@ -6,7 +6,7 @@ class CompanyProfilesController < ApplicationController
   end
   
   def edit
-    @employer = session[:user].employer
+    @employer = Employer.find_by_id session[:user].employer
   end
   
     
@@ -29,13 +29,12 @@ class CompanyProfilesController < ApplicationController
     if session[:user].employer_id != nil
       @employer_id = session[:user].employer_id 
     else 
-      @employer_id = session[:employer]
+      @employer_id = 1 session[:employer]
     end
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
     @answers = DifferentiatorAnswer.find(:all) #_by_employer_id @employer_id
     @map = init_map @employer.addresses.first 
   end
-  
   
 end
