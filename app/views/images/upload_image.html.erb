@@ -8,7 +8,9 @@
 	<%= form.error_messages %>
 </div>
 <ul>
-		<li><%= form.file_field("attachment")%>
+		<li><%= form.file_field("attachment")%></li>
+		<li><label for="image[description]">Description:</label>
+		<%= form.text_field "description" %>
 
 		<%= submit_tag "Upload"%></li>
 </ul>
