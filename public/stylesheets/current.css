@@ -54,7 +54,7 @@
 }
 #navbar ul {
 	margin: 0;
-	list-style-type: none;#
+	list-style-type: none;
 	display: inline;
 }
 #navbar li {
@@ -232,6 +232,7 @@ div#behindcontent{
 #content a{
 		color: #242463;
 }
+
 #left{
 	width: 530px;
 	margin-top: -10px; 
@@ -241,7 +242,9 @@ div#behindcontent{
 	padding-right: 10px;
 	padding-bottom: 20px;
 	float: left;
+	height: 250px;
 }
+
 #right{
 	width: 220px;
 	height: 300px;
@@ -253,7 +256,7 @@ div#behindcontent{
 	min-height: 0;
 	font-size: 10px;
 	border-left-style: solid;
-	border-color: #cccccc;	
+	border-color: #cccccc;
 }
 #right li{
 	list-style-type: square;
@@ -444,10 +447,15 @@ div.quote{
 	display: inline-block;
 	text-align: center;
 }
+
 .answer{
 	font-weight: normal;
 	color: #999999;
 }
+.confidentiality{
+	margin-left: -10px;
+}	
+
 .info{
 	float: left;
 	color: #fff;

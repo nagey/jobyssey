@@ -11,9 +11,11 @@
 			$("#loginbar").toggle("slow"); 
 	});
 	});
-		$(".question").click(function(){
-			$(".answer").toggle();
-		});
+		$(document).ready(function(){
+	$(".question").click(function(){
+		$(".answer").toggle("slow");
+	});
+	});
 	</script>
 
 </head>
@@ -73,25 +75,32 @@
 
 <div id="behindcontent">
 <div id="content">
+
 <%=@content_for_layout%>
+
+<span class="confidentiality">Concerned about confidentiality<span class="question">?</span></span>
+<div class="answer" style="display:none">
+	<p><%=l(:professional, :confidentiality_explanation)%>. </p>  
+	</div>
 </div>
 
-<div id="footer">
+
 	<div id="bottomnavbar">
 		<ul>
 			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
 			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
 			<li><a href="/contacts/new"><%=l(:contact_us)%></a></li>
 		</ul>
-	</div>
 
+</div>
 	<div id="copyright">
 		<p class="snug"><%=l(:copyright_footer)%> 
 	</div>
 </div>
 </div>
-</div>	
-</div>
+
+
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
