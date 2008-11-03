@@ -533,7 +533,12 @@ div.quote{
 	float:right;
 	margin-top: -40;
 }
-
+#images{
+	display:inline-block;
+	width: 300px;
+	text-align: center;
+	margin-left: 200px;
+}	
 /* Font Styling */
 
 h1 {
