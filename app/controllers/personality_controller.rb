@@ -4,7 +4,7 @@ class PersonalityController < ApplicationController
 
 
   #layout 'index'
-  layout 'signup', :only => [ :start, :define ]
+  #layout 'signup', :only => [ :start, :define ]
 
   def begin
     session[:counter] = 1
