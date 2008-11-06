@@ -21,7 +21,11 @@ class Professional < User
    
    
   def best_skills
-    my_skills.sort_by { |pq| pq.value }.reverse.delete_if { |pq| pq.value == 0 }
+    if my_skills.nil?
+      return
+    else
+      my_skills.sort_by { |pq| pq.value }.reverse.delete_if { |pq| pq.value == 0 }
+    end
   end  
       
   
