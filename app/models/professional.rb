@@ -20,20 +20,10 @@ class Professional < User
   end
    
    
-  #def best_skills
-  #  my_skills.sort_by { |pq| pq.value }.reverse.delete_if { |pq| pq.value == 0 }
-  #end  
+  def best_skills
+    my_skills.sort_by { |pq| pq.value }.reverse.delete_if { |pq| pq.value == 0 }
+  end  
       
-  #def named_traits
-  #  my_traits.each do  |pq|
-  #    if pq.value < 30
-  #       puts pq.metric.lower_bound
-  #    elsif pq.value > 70
-  #       puts pq.metric.upper_bound
-  #    else  
-  #     return    
-  #    end
-  #  end
-  #end
+  
       
 end

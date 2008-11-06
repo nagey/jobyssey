@@ -26,11 +26,9 @@ Check out their <%=  link_to "Portfolio", :controller => "portfolio", :action =>
 
 <div id="personalqualitiesleft">
 <h2>Personal Qualities</h2>
-<table>
-	<% for personal_quality in @professional.my_traits %>
-		<%= render :partial => "personality/details", :locals => {:personal_quality => personal_quality} %>
-	<% end %>
-</table>
+<% for my_trait in @professional.my_traits %>
+  <%= my_trait.name_trait %>
+<% end %>
 </div>
 
 <div id="skillsright">

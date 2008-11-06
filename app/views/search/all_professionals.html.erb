@@ -3,8 +3,14 @@
 <table>
 <% for professional in @professionals %>
 
-<tr><td><%= link_to professional.code_name, :controller => "professionals", :action => "view", :id => professional %></td><td><%= professional.desired_job_title unless professional.desired_job_title.nil? %></td></tr>
-<tr><td></td><td><%= professional.best_skills.each {|skill| skill.value } %></td></tr>
+<tr><td><%= link_to professional.code_name, :controller => "professionals", :action => "view", :id => professional %></td><td><%= professional.desired_job_title unless professional.desired_job_title.nil? %>-<% professional.best_skills.each do |skill| %>
+<%=skill.metric.name%>, <% end %> </td></tr>
+<tr><td></td><td>
+<% professional.best_skills.each do |skill| %>
+<%=skill.metric.name%> - <%=skill.value %>%,
+<% end %>
+</ul>
+</td></tr>
 
 
 
