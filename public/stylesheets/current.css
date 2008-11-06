@@ -519,11 +519,13 @@ div.quote{
 }	
 #personalqualitiesleft{
 	float:left;
+	width: 350px;
+	padding-right: 30px;
 }		
 #userlinksright{
 	float:right;
 	display: inline-block;
-	width: 300px;
+	width: 200px;
 	margin-top: 30px;
 	padding-left: 20px;
 	border-left-style: solid;
@@ -543,7 +545,7 @@ div.quote{
 	float:right;
 	margin-top:0px;
 	width: 400px;
-}	
+}
 /* Font Styling */
 
 h1 {
