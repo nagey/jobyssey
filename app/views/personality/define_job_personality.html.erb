@@ -16,7 +16,7 @@
 	<div id="lowertrait"><%= @trait.lower_bound %></div>
 	<div id="uppertrait"><%= @trait.upper_bound %></div>
 		<%= render :partial => 'slider', :locals => {:name => @job_posting_requirement.metric.id, :value => @job_posting_requirement.value} %>
-	<%=form.hidden_field :value, {:size => 2} %>
+		<%=form.hidden_field :value, { :id => @job_posting_requirement.metric.id.to_s+"_value" } %>
 	<%=form.hidden_field :metric_id %>
 <br>
 <br>

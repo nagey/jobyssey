@@ -9,7 +9,7 @@
 <div id=jobviewcontainer>
 
 <div id="jobviewtop">
-<b><%=h @job_posting.title %></b> with <span id=employername><%= link_to @job_posting.employer.name, :controller => "company_profiles", :action => "view" %></a></span>
+<b><%=h @job_posting.title %></b> with <span id=employername><%= link_to @job_posting.employer.name, :controller => "company_profiles", :action => "view", :id => @job_posting.employer %></a></span>
 </div>
 
 <fieldset>
@@ -62,10 +62,9 @@
 <legend>Personality Traits and 3 Questions</legend>
 <div id="personalqualitiesleft">
 <h2>Personal Qualities</h2>
-<table>
-	<% for personal_quality in @job_posting.my_traits %>
-		<%= render :partial => "personality/details", :locals => {:personal_quality => personal_quality} %>
-	<% end %>
+<% for my_trait in @job_posting.my_traits %>
+  <%= my_trait.name_trait %>
+<% end %>
 </table>
 </div>
 

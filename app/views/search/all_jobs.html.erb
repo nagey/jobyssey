@@ -1,0 +1,14 @@
+<h1>All Jobs</h1>
+
+<table>
+<% for job in @jobs %>
+
+<tr><td><%= link_to job.title, :controller => "job", :action => "view", :id => job %> at <%= link_to job.employer.name, :controller => "company_profiles", :action => "view", :id => job.employer_id %></td></tr>
+
+</td></tr>
+
+
+
+
+<% end %>
+</table>
