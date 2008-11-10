@@ -28,7 +28,11 @@ class JobysseyController < ApplicationController
         session[:user] = user
         uri = session[:previous_uri]
         session[:previous_uri] = nil
-        redirect_to(uri || { :controller => 'professionals', :action => 'home' })
+        if user.type == "Professional"
+          redirect_to(uri || { :controller => 'professionals', :action => 'home' })
+        else 
+          redirect_to(uri || { :controller => 'employers', :action => 'home' })
+        end
       else
         flash.now[:notice] = l(:invalid_combination)
       end

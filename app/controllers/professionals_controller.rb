@@ -9,6 +9,12 @@ class ProfessionalsController < ApplicationController
   end
   
   def signup
+    if params[:cv] == {"attachment"=>""}
+      flash[:notice] = "You must select your CV in order to proceed.  Wondering why?  See the question mark below the upload box for details."
+      redirect_to :controller => "jobyssey", :action => "index"
+      return
+    end
+    
     @cv = Cv.new params[:cv] 
     @cv = session[:cv] if @cv.nil?
     @professional = Professional.new

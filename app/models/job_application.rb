@@ -7,4 +7,6 @@ class JobApplication < ActiveRecord::Base
   has_many :transactions
   has_many :transitions
   has_one :feedback_item
+  has_many :job_postings
+  has_one :employer, :through => :job_postings
 end

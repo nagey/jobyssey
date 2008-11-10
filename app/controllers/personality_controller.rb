@@ -81,8 +81,11 @@ class PersonalityController < ApplicationController
           break unless @trait.nil?
         end
         @job_posting_requirement.value = 50 if @job_posting_requirement.value.nil?
-        redirect_to :controller => :job, :action => :view if @trait.nil?
-        #flash[:notice] = 'Welcome to Jobyssey!' if @trait.nil?
+        if trait.nil?
+          redirect_to :controller => :job, :action => :view #if @trait.nil?
+          flash[:notice] = "Here's a preview of what your job posting will look like to prospective applicants.  Please use the navbar above to create a new job or return to the homepage." 
+          return
+        end
         session[:counter] = 1 if session[:counter].nil?
       end
 

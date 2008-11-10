@@ -36,4 +36,24 @@ class JobPosting < ActiveRecord::Base
   def my_traits
     job_posting_requirements.collect { |x| x unless x.metric.class != Trait }.compact    
   end
+  
+   def best_skills
+     if my_skills.nil?
+       return
+     else
+       my_skills.sort_by { |pq| pq.value }.reverse.delete_if { |pq| pq.value == 0 }
+     end
+   end
+   
+   def name_trait
+        if value < 30
+           return metric.lower_bound + "<br>"
+        elsif value > 70
+           return metric.upper_bound + "<br>"
+        else  
+         return    
+        end
+    end
+   
 end
+
