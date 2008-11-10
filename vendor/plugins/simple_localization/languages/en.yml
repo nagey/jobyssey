@@ -643,7 +643,8 @@ app:
         confidentiality_text: Your name and contact information are stored confidentially until you agree to interview for a job
         code_name: Code Name
         code_name_explanation: Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality.  Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy
-        confidentiality_explanation: At Jobyssey we go to great lenghts to keep your identity confidential. You are assigned a codename and you contact details are not revealed to employers unless you agree. However, in order to keep things 100% confidential, please delete your name and contact details from your CV prior to uploading. Also make sure the filename is NOT your name ie. JohnSmith.doc. Keep it generic. Thanks for your help.
+
+            
         looking_for_legend: What I'm looking for
         agree_terms: I agree to
         terms_link: Jobyssey's Terms and Conditions
