@@ -224,7 +224,7 @@ div#behindcontent{
 	position: absolute;
 	background: #ffffff;
 }
-#content {
+#liner {
 	font-size:14px;
 	color: #444444;
 	background-color: #ffffff;
@@ -503,7 +503,8 @@ div.quote{
 #fastfactsright{
 	margin-right: 60px;
 	float: right;
-	margin-top: 20px
+	margin-top: 20px;
+	width: 270px;
 }	
 
 #skillsright{
@@ -544,6 +545,12 @@ div.quote{
 	margin-top:0px;
 	width: 400px;
 }
+#fancylist ul{
+	list-style-type: square;
+	margin-left: 50px;
+	font-weight: bold;
+}
+
 /* Font Styling */
 
 h1 {

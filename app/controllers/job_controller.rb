@@ -8,8 +8,8 @@ class JobController < ApplicationController
     @job_posting = JobPosting.new params[:job_posting]
     @job_posting.employer_id = session[:user].employer.id
     session[:job_posting] = @job_posting
-    @job_posting.job_specs = session[:job_specs] #unless session[:job_specs].nil?
-    
+    @job_posting.job_specs = session[:job_specs] unless session[:job_specs].nil?
+
     if @job_posting.save!
       session[:job_posting] = @job_posting
       redirect_to :controller => "skillset", :action => "start_job_posting_skills"
@@ -102,7 +102,6 @@ class JobController < ApplicationController
   def new
     @job_specs = JobSpecs.new params[:job_specs]
     #@job_specs = session[:job_specs] if @job_specs.nil?
-    session[:job_specs] = @job_specs
     
     @job_posting = JobPosting.new
     @employers = Employer.find :all
