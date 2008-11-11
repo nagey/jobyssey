@@ -74,7 +74,7 @@ class SkillsetController < ApplicationController
 
  def start_job_posting_skills
     @job_posting = session[:job_posting]
-    @job_posting.metrics << @job_posting.job_specs.skills
+    @job_posting.metrics << @job_posting.job_specs.skills unless @job_posting.job_specs.nil?
     redirect_to :action => :define_job_posting_skills
   end
 

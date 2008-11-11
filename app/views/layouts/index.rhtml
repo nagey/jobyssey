@@ -43,20 +43,19 @@
 		<% if authenticated? %>
 			<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
 	<ul>		
-			<% if professional? %>
+			<% if session[:user].type == "Professional" %>
 				<li class="professional"><%= link_to "Jobs", :controller => 'jobyssey', :action => "jobs" %></li>
 				<!--<li class="professional">Profile</li>-->
 				<li class="professional"><%= link_to "Portfolio", :controller => 'portfolio', :action => "links" %></li>
 				<li class="professional"><%= link_to "Activity", :controller => 'jobyssey', :action => "activity" %></li>
 			<li class="professional"><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
-			<% elsif employer? %>
+			<% else %>
 				<li class="employer">Activity</li>
 				<li class="employer">New Role</li>
 				<li class="employer">Manage jobs</li>
 				<li class="employer">Profile</li>
 				<li class="employer">Account</li>
 				<li class="employer">Tips</li>
-				<li class="employer"> CREDITS (display total here)</li>
 			<% end %>
 			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
 		<% else %>
