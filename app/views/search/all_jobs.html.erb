@@ -1,14 +1,16 @@
 <h1>All Jobs</h1>
 
-<table>
-<% for job in @jobs %>
 
-<tr><td><%= link_to job.title, :controller => "job", :action => "view", :id => job %> at <%= link_to job.employer.name, :controller => "company_profiles", :action => "view", :id => job.employer_id %></td></tr>
-
-</td></tr>
-
-
-
-
+<% for employer in @employers %>
+  <h2><%= employer.name %></h2>
+  <table>
+ <% debugger %>
+    <% for job in @jobs %>
+       <% if job.employer == employer %>
+    <tr><td><%= link_to job.title, :controller => "job", :action => "view", :id => job %> at <%= link_to job.employer.name, :controller => "company_profiles", :action => "view", :id => job.employer_id %></td></tr>
+      <% else %>
+        <% return %>
+      <% end %>
+    </table>
+    <% end %>
 <% end %>
-</table>
