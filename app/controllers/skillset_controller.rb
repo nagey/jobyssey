@@ -1,19 +1,19 @@
 class SkillsetController < ApplicationController
-
+ 
   #layout 'index'
   #layout 'signup', :only => [ :define, :create ]
   before_filter :authenticate
   auto_complete_for :skill, :name
-
+ 
   def foo
   end
-
+ 
   def begin
     @professional = session[:user]
     @professional.metrics << @professional.cv.skills
     redirect_to :action => :define if @professional.save!
   end
-
+ 
   def define
    
     @skill = Skill.new
@@ -25,7 +25,7 @@ class SkillsetController < ApplicationController
     @skills = Skills.find :all
     render :layout => :false
   end
-
+ 
   def add
     skills = Skill.find_all_by_name(params[:skill][:name].downcase)
     if skills.length == 1
@@ -39,7 +39,7 @@ class SkillsetController < ApplicationController
       unless @user.save
         flash[:notice] = l(:skills, :couldnt_add_skill)
       end
-    rescue 
+    rescue
       flash[:notice] = l(:skills, :skill_taken)
     end
     redirect_to :action => :define
@@ -48,7 +48,7 @@ class SkillsetController < ApplicationController
   def update_value
     pq = PersonalQuality.find params[params[:object_name].to_sym][:id]
     pq.update_attributes params[params[:object_name].to_sym]
-    #flash[:notice] = "Updated %s" % pq.metric.name if pq.save    
+    #flash[:notice] = "Updated %s" % pq.metric.name if pq.save
     #redirect_to :action => :define
     render :text => flash[:notice]
   end
@@ -69,22 +69,22 @@ class SkillsetController < ApplicationController
     @professional = Professional.find_by_id 1 #session[:professional]
         @skills = Skill.find(session[:user_id])
   end
-
+ 
 #JOB POSTING SECTION BEGINS HERE
-
+ 
  def start_job_posting_skills
     @job_posting = session[:job_posting]
     @job_posting.metrics << @job_posting.job_specs.skills unless @job_posting.job_specs.nil?
     redirect_to :action => :define_job_posting_skills
   end
-
+ 
   def define_job_posting_skills
    
     @skill = Skill.new
     @job_posting = session[:job_posting]
     @job_posting.job_posting_requirements.each { |p| p.value = 0 if p.value.nil? }
   end
-
+ 
   def add_job_posting_skills
     skills = Skill.find_all_by_name(params[:skill][:name].downcase)
     if skills.length == 1
@@ -98,7 +98,7 @@ class SkillsetController < ApplicationController
       unless @job_posting.save
         flash[:notice] = l(:skills, :couldnt_add_skill)
       end
-    rescue 
+    rescue
       flash[:notice] = l(:skills, :skill_taken)
     end
     redirect_to :action => :define_job_posting_skills
@@ -107,7 +107,7 @@ class SkillsetController < ApplicationController
   def update_value_job_posting_skills
     pq = JobPostingRequirement.find params[params[:object_name].to_sym][:id]
     pq.update_attributes params[params[:object_name].to_sym]
-    flash[:notice] = "Updated %s" % pq.metric.name if pq.save    
+    flash[:notice] = "Updated %s" % pq.metric.name if pq.save
     #redirect_to :action => :define_job_posting_skills
     render :text => flash[:notice]
   end
