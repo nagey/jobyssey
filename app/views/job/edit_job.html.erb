@@ -1,0 +1,42 @@
+<h1>Edit Job details</h1>
+<p>Add content </p>
+<% form_for(:job, :url => {:action => :commit_edits}) do |form| %>
+
+  <p>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </p>
+  <p>
+  <%=form.hidden_field :employer_id %>
+  </p>
+  <p>
+    <%= form.label :description %><br />
+    <%= form.text_area :description %>
+  </p>
+  <p>Please enter salaries without commas.</p>
+  <p>
+    <%= form.label :maximum_salary %><br />
+    <%= form.text_field :maximum_salary %>
+  </p>
+  <p>
+    <%= form.label :minimum_salary %><br />
+    <%= form.text_field :minimum_salary %>
+  </p>
+  <p>
+    <%= form.label :education_required %><br />
+    <%= form.check_box :education_required %>
+    Is a specific degree or certificate required? (If so, please check box and explain in the job description)
+  </p>
+  <p>
+    <%= form.label :employment_type %><br />
+    <%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
+  </p>
+  <p>
+   <%= form.label :working_time %><br />
+    <%= form.collection_select :working_time_id, @working_times, :id, :name %>
+  </p>
+  <p>
+    <%= form.submit "Save" %>
+  </p>
+<% end %>
+

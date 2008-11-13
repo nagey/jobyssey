@@ -3,12 +3,12 @@
 
 		<h1>Welcome to Jobyssey!</h1>
 
-    <p><%=l(:professional, :thanks_text_employer)%></p>
-    <p><%=l(:professional, :continually_attracting)%></p> 
+    <p>Thanks for joining! This is your Newsfeed page. Check this space for announcements of any new features we have added to enhance your Jobyssey experience. </p>
+    <p>We are continually attracting high calibre professionals to the site so make sure all your live jobs are up to date, and your public profile is completed and looking good.</p> 
     <ul>
-    <li><%=l(:professional, :answer)%> <a href="/three_questions/start"><%=l(:professional, :three_questions)%></a> <%=l(:professional, :know_you_employer)%></li>
-    <li><%=l(:professional, :samples_employer)%> <a href="/images/upload_image"><%=l(:professional, :portfolio_employer)%></a> <%=l(:professional, :attract_professionals)%></li>
-    <li><a href="/job/index"><%=l(:professional, :add_job)%> </a>- <%=l(:professional, :start_finding)%>!</li>
+    <li>Edit your <%= link_to "Company Profile", :controller => :company_profiles, :action => :edit, :id => session[:employer] %> to let users learn about you</li>
+    <li>Add link here to images</li>
+    <li>Add link here to new job</li>
     </ul>
     
     </div>		

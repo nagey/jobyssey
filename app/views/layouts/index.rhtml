@@ -52,7 +52,7 @@
 			<% else %>
 				<li><%= link_to "Activity", :controller => 'apply', :action => "view_employer_activity" %></li>
 				<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
-				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit" %></li>
+				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
 				<!--<li class="employer">Account</li>
 				<li class="employer">Tips</li>-->
 			<% end %>

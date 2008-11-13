@@ -36,7 +36,7 @@ class ApplyController < ApplicationController
   def invite
     @job_application = JobApplication.new 
     @job_application.user = User.find params[:id]
-    @job_application.job_posting = JobPosting.find_by_id 2 # No!  Don't put in session, pass along 
+    @job_application.job_posting = session[:job_posting]
     session[:job_application] = @job_application
     
     if @job_application.save
@@ -86,7 +86,7 @@ class ApplyController < ApplicationController
   
   def view_employer_activity
     @job_applications = JobApplication.find :all
-    @job_postings = JobPosting.find_all_by_employer_id 1 #session?
+    @job_postings = JobPosting.find_all_by_employer_id session[:employer]
     end
 
   def view_professional_activity
