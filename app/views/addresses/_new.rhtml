@@ -13,7 +13,9 @@
     <%=form.label :town_id %><br />
 	<%= form.collection_select :town_id, @towns, :id, :name %>
 	<br>
-	<%= link_to l(:add_town), new_town_path %>
+
+		<p>Address autocomplete: <%= text_field_with_auto_complete_jquery :town, :name %>
+
   </p>
   <p>
 	 <%=form.label :geo_position_id %><br />

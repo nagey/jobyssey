@@ -70,24 +70,25 @@ class PersonalityController < ApplicationController
 
       def define_job_personality
 
-        @job_posting = session[:job_posting]
-        @trait = nil
-        @job_posting_requirement = JobPostingRequirement.new
-        traits = Trait.find(:all)
-        @total = traits.length
-        traits.each do |t|
-          @trait = t unless @job_posting.traits.member? t
-          @job_posting_requirement.metric = @trait
-          break unless @trait.nil?
-        end
-        @job_posting_requirement.value = 50 if @job_posting_requirement.value.nil?
-        if trait.nil?
-          redirect_to :controller => :job, :action => :view #if @trait.nil?
-          flash[:notice] = "Here's a preview of what your job posting will look like to prospective applicants.  Please use the navbar above to create a new job or return to the homepage." 
-          return
-        end
-        session[:counter] = 1 if session[:counter].nil?
-      end
+              @job_posting = session[:job_posting]
+              @trait = nil
+              @job_posting_requirement = JobPostingRequirement.new
+              traits = Trait.find(:all)
+              @total = traits.length
+              traits.each do |t|
+                @trait = t unless @job_posting.traits.member? t
+                @job_posting_requirement.metric = @trait
+                  @job_posting_requirement.value = 50 if @job_posting_requirement.value.nil?
+               return unless @trait.nil?
+              end
+              
+             #if trait.nil?
+                redirect_to :controller => :job, :action => :view, :id => @job_posting #if @trait.nil?
+                flash[:notice] = "Here's a preview of what your job posting will look like to prospective applicants.  Please use the navbar above to create a new job or return to the homepage." 
+                return
+              #end
+              session[:counter] = 1 if session[:counter].nil?
+            end
 
       def update_job_personality
         @job_posting = session[:job_posting]

@@ -3,35 +3,24 @@
 <table>
   <tr>
     <th>First name</th>
-    <th>Middle names</th>
     <th>Last name</th>
     <th>Email</th>
-    <th>Password</th>
     <th>Code name</th>
     <th>Type</th>
     <th>Employer</th>
-    <th>Search position</th>
-    <th>Work History Items</th>
-    <th>More Info</th>
   </tr>
 
 <% for user in @users %>
   <tr>
     <td><%=h user.first_name %></td>
-    <td><%=h user.middle_names %></td>
     <td><%=h user.last_name %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.password %></td>
-    <td><%=h user.code_name %></td>
+    <td><%= link_to user.code_name, :controller => "professionals", :action => "view", :id => user unless user.code_name.nil? %></td>
     <td><%=h user.type %></td>
     <td><%=h user.employer.name unless user.employer.nil? %></td>
-    <td><%=h user.search_position %></td>
-    <td><%=h user.work_history_items.length%></td>
-     <td><%=h user.more_info %></td>
     <td><%= link_to 'Show', :controller => "users", :action => "show", :id => user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= button_to 'Destroy', { :controller => "users", :action => :destroy, :id => user }, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td><%= link_to 'Other Destroy', :controller => :users, :action => :destroy, :id => user %></td>
   </tr>
 <% end %>
 </table>
