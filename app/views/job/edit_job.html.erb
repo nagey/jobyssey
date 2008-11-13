@@ -1,6 +1,7 @@
 <h1>Edit Job details</h1>
 
 <% form_for(:job, :url => {:action => :commit_edits}) do |form| %>
+  <%= form.hidden_field :id %>
 
   <p>
     <%= form.label :title %><br />

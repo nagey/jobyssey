@@ -3,7 +3,7 @@ class ThreeQuestionsController < ApplicationController
 
   
   
-  def start
+  def commence
     u = session[:user]
     
     if u.differentiator_answers.length >= 3

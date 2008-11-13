@@ -58,15 +58,14 @@ class JobController < ApplicationController
   end
   
   def commit_edits
-    @job = JobPosting.find params[:job]
-       #respond_to do |format|
-         if @job.update_attributes(params[:job])
-           flash[:notice] = 'Changes saved'
-           redirect_to :action => :view, :id => job
-          else
-            flash[:notice] = "We're sorry, an error prevented saving your edits.  Please contact try again or contact Jobyssey for assistance."
-            redirect_to :action => :view_my_jobs
-          end
-     end
+    @job = JobPosting.find params[:job][:id]
+    if @job.update_attributes(params[:job])
+      flash[:notice] = 'Changes saved'
+      redirect_to :action => :view, :id => @job
+    else
+      flash[:notice] = "We're sorry, an error prevented saving your edits.  Please contact try again or contact Jobyssey for assistance."
+      redirect_to :action => :view_my_jobs
+    end
+   end
     
 end

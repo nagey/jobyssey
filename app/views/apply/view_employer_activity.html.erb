@@ -1,18 +1,19 @@
 <h1>Current Activity</h1>
 <% for job_posting in @job_postings %>
+<% next if job_posting.open_applications.empty? %>
   <h2><%= job_posting.title %></h2>
   <table>
-  <% for job_application in @job_applications %>
-    <% if job_application.job_posting == job_posting %>
-      <% if (job_application.job_application_statuses.last.job_application_state.name == "Open Application") %>
-        <tr><td><%= link_to (job_application.user.first_name + " " + job_application.user.last_name), :controller => "professionals", :action => "view", :id => job_application.user %></td><td><%= link_to "Close application", :action => "close_application", :id => job_application %></td></tr>
-      <% elsif (job_application.job_application_statuses.last.job_application_state.name == "Open Invitation") %>
-        <tr><td><%= link_to job_application.user.code_name, :controller => "professionals", :action => "view", :id => job_application.user %></td>td><%= link_to "Close application", :action => "close_application", :id => job_application %></td></tr>
-      <% else %>
-        <% break %>
-      <% end %>
-    <% else %>
-      <% break %>
+  <% for job_application in job_posting.job_applications %>
+    <% if (job_application.status == "Open Application") %>
+      <tr>
+        <td><%= link_to (job_application.user.first_name + " " + job_application.user.last_name), :controller => "professionals", :action => "view", :id => job_application.user %></td>
+        <td><%= link_to "Close application", :action => "close_application", :id => job_application %></td>
+      </tr>
+    <% elsif (job_application.status == "Open Invitation") %>
+      <tr>
+        <td><%= link_to job_application.user.code_name, :controller => "professionals", :action => "view", :id => job_application.user %></td>
+        <td><%= link_to "Close application/invitation", :action => "close_application", :id => job_application %></td>
+      </tr>
     <% end %>
   <% end %>
   </table>

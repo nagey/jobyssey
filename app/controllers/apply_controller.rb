@@ -85,7 +85,6 @@ class ApplyController < ApplicationController
   end  
   
   def view_employer_activity
-    @job_applications = JobApplication.find :all
     @job_postings = JobPosting.find_all_by_employer_id session[:employer]
     end
 

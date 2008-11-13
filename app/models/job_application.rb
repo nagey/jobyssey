@@ -9,4 +9,10 @@ class JobApplication < ActiveRecord::Base
   has_one :feedback_item
   has_many :job_postings
   has_one :employer, :through => :job_postings
+  
+  def status
+    nil
+    job_application_statuses.last.job_application_state.name unless job_application_statuses.empty?
+  end
+  
 end

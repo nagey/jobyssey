@@ -45,15 +45,19 @@ class JobPosting < ActiveRecord::Base
      end
    end
    
-   def name_trait
-        if value < 30
-           return metric.lower_bound + "<br>"
-        elsif value > 70
-           return metric.upper_bound + "<br>"
-        else  
-         return    
-        end
+  def name_trait
+    if value < 30
+       return metric.lower_bound + "<br>"
+    elsif value > 70
+       return metric.upper_bound + "<br>"
+    else  
+     return    
     end
+  end
+  
+  def open_applications
+    job_applications.collect {|x| x unless (x.status == 'Closed Application- by employer' or x.status == 'Closed Application- by professional')  }.compact
+  end
    
 end
 
