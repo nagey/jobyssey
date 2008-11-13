@@ -7,8 +7,8 @@
     <p>We are continually attracting high calibre professionals to the site so make sure all your live jobs are up to date, and your public profile is completed and looking good.</p> 
     <ul>
     <li>Edit your <%= link_to "Company Profile", :controller => :company_profiles, :action => :edit, :id => session[:employer] %> to let users learn about you</li>
-    <li>Add link here to images</li>
-    <li>Add link here to new job</li>
+    <li><%= link_to "Upload an image", :controller => :images, :action => :upload_image %> to attract applicants</li>
+    <li><%= link_to "Add a new job", :controller => :job, :action => :index %> or <%= link_to "review your existing jobs and contact jobseekers", :controller => :job, :action => :view_my_jobs %></li>
     </ul>
     
     </div>		

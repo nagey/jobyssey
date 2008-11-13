@@ -13,16 +13,16 @@ class ImagesController < ApplicationController
   
   def save_image
     @image = Image.new params[:image] 
-    @employer = session[:user].employer
+    @employer = Employer.find_by_id session[:employer]
     debugger
     if @image.save
       @employer.images << @image
       @employer.save
-      redirect_to :controller => "company_profiles", :action => "view"
+      redirect_to :controller => "company_profiles", :action => "view", :id => @employer
       flash[:notice] = "Image saved- thanks!"
       return
     else
-      redirect_to :controller => "company_profiles", :action => "view"
+      redirect_to :controller => "company_profiles", :action => "view", :id => @employer
       flash[:notice] = "Image NOT saved!"
       return
     end
