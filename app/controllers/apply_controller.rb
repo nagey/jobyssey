@@ -73,16 +73,20 @@ class ApplyController < ApplicationController
   end
   
   def close_application 
-    @job_application = session[:job_application] #need to figure out where to get this from for emp and profs 
-    @job_application_status = JobApplicationStatus.find_by_job_application_id @job_application.id
+    @job_application = JobApplication.find_by_id params[:id]
+    @job_application_status = JobApplicationStatus.find_by_job_application_id @job_application
+    @job_application_status.job_application_state = JobApplicationState.find_by_name "Closed Application- by employer"
+    @job_application_status.save
     @job_application_status.active == false
-    @job_application_status.note = params[:note]
+    #@job_application_status.note = params[:note]
+
+    flash[:notice] = "The application has been closed."
+    redirect_to :action => "view_employer_activity"
   end  
   
   def view_employer_activity
     @job_applications = JobApplication.find :all
     @job_postings = JobPosting.find_all_by_employer_id 1 #session?
-      
     end
 
   def view_professional_activity
