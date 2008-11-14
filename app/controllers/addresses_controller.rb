@@ -58,7 +58,7 @@ class AddressesController < ApplicationController
     @address.update_attributes params[:address]
     @towns = Town.find :all
     @geo_positions = GeoPosition.find :all
-    @employer = Employer.find_by_id 1 #params[:employer_id]
+    @employer = Employer.find_by_id params[:employer]
     
     @employer.addresses << @address
     
