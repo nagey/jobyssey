@@ -1,4 +1,5 @@
 <h1>Current Activity</h1>
+<p>Here's a list of all of your job postings with open applications or invitations.</p>
 <% for job_posting in @job_postings %>
 <% next if job_posting.open_applications.empty? %>
   <h2><%= job_posting.title %></h2>

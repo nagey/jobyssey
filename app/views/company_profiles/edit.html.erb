@@ -1,15 +1,16 @@
 <h1>Edit your Profile</h1>
+<p>Your company profile is a way to tell jobseekers more about your company.  Please tell us more about yourselves below: </p>
 <% form_for(:employer, :url => {:action => :save}) do |form| %>
 <%=h @employer.name %>
 
 <%=form.hidden_field :id %>
   <p>
-    <label for="employer_tagline">Tagline</label><br />
+    <label for="employer_tagline">One sentence description</label><br />
     <%= form.text_field :tagline %>
   </p>
 
   <p>
-    <label for="employer_description">Description</label><br />
+    <label for="employer_description">Complete description</label><br />
     <%= form.text_area :description %>
   </p>
   
