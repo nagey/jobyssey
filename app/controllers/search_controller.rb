@@ -8,9 +8,9 @@ class SearchController < ApplicationController
     
   def all_jobs
     @employers = Employer.find :all
-    @jobs = JobPosting.find :all
     @skills = Skill.find :all
-    end
+  end
+
 end
 
 

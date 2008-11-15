@@ -1,2 +1,76 @@
-<h1>Job#preview</h1>
-<p>Find me in app/views/job/preview.html.erb</p>
+<div class ="headsup">
+<h1>Your Job Posting</h1>
+<p>Here's a preview of how your job posting will appear.  You can <%= link_to "edit", :action=> :edit, :id => @job_posting %> your job posting if necessary. </p>
+<h2><%= link_to "Search for Suitable Candidates", :controller => :search, :action => :all_professionals, :id => @job_posting %></h2>
+</div>
+
+
+<div id=jobviewcontainer>
+
+<div id="jobviewtop">
+<b><%=h @job_posting.title %></b> with <span id=employername><%= link_to @job_posting.employer.name, :controller => "company_profiles", :action => "view", :id => @job_posting.employer %></a></span>
+</div>
+
+<fieldset>
+<legend>Fast Facts and Skills Required</legend>
+  
+  <div id="skillsright">
+<h2>Skills Required</h2>
+<table>
+	<% for skill in @job_posting.my_skills %>
+		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
+	<% end %>
+</table>
+</div>
+<div id="benefits">
+<p> 
+	<b>Maximum salary:</b>
+ 	<%=h number_with_delimiter(@job_posting.maximum_salary.to_i) %>
+ 	</p>
+ 	<p>
+ 	<b>Minimum salary:</b>
+ 	<%=h number_with_delimiter(@job_posting.minimum_salary.to_i) %>
+  </p>
+  <p>
+  <b>Education required:</b>
+  <%=h @job_posting.education_required %> (see description)
+  </p>
+  <p>
+  <b>Employment type:</b>
+  <%=h @job_posting.employment_type.name %>
+  </p>
+  <p>
+  <b>Working time:</b>
+  <%=h @job_posting.working_time.name %>
+</p>
+
+  </p>
+</div>  
+
+</fieldset>
+
+<fieldset>
+  <legend>Description</legend>
+  <pre width = 90><%=h @job_posting.description %></pre>
+
+
+
+</fieldset>
+
+<fieldset>
+<legend>Personality Traits and 3 Questions</legend>
+<div id="personalqualitiesleft">
+<h2>Personal Qualities</h2>
+<% for my_trait in @job_posting.my_traits %>
+  <%= my_trait.name_trait %>
+<% end %>
+</table>
+</div>
+
+</fieldset>
+
+<div class ="headsup">
+
+<h2><%= link_to "Search for Suitable Candidates", :controller => :search, :action => :all_professionals, :id => @job_posting %></h2>
+</div>
+</div>

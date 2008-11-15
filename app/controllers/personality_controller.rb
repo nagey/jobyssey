@@ -83,8 +83,7 @@ class PersonalityController < ApplicationController
               end
               
              #if trait.nil?
-                redirect_to :controller => :job, :action => :view, :id => @job_posting #if @trait.nil?
-                flash[:notice] = "Here's a preview of what your job posting will look like to prospective applicants.  Please use the navbar above to create a new job or return to the homepage." 
+                redirect_to :controller => :job, :action => :preview, :id => @job_posting #if @trait.nil? 
                 return
               #end
               session[:counter] = 1 if session[:counter].nil?

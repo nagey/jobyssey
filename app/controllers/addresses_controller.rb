@@ -58,10 +58,10 @@ class AddressesController < ApplicationController
     @address.update_attributes params[:address]
     @towns = Town.find :all
     @geo_positions = GeoPosition.find :all
-    @employer = Employer.find_by_id params[:employer]
-    
+    @employer = Employer.find_by_id params[:address][:employer_id]
+        debugger
     @employer.addresses << @address
-    
+
     respond_to do |format|
       if @address.save
         flash[:notice] = 'Address was successfully created.'
