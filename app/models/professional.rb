@@ -24,7 +24,7 @@ class Professional < User
     if my_skills.nil?
       return
     else
-      my_skills.sort_by { |pq| pq.value }.reverse.delete_if { |pq| pq.value == 0 }
+      my_skills.sort_by { |pq| (pq.nil? or pq.value.nil?) ? 0 : pq.value }.reverse.delete_if { |pq| pq.value == 0 }
     end
   end  
       
