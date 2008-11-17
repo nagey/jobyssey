@@ -78,6 +78,7 @@ class ProfessionalsController < ApplicationController
     @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
     @code_samples = CodeSample.find_all_by_user_id @professional
     @portfolio = Attachment.find_all_by_entity_id @professional
+    @answers = DifferentiatorAnswer.find_all_by_user_id @professional 
     debugger
   end
 

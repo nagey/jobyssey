@@ -8,6 +8,7 @@
     <ul>
     <li>Edit your <%= link_to "Company Profile", :controller => :company_profiles, :action => :edit, :id => session[:employer] %> to let users learn about you</li>
     <li><%= link_to "Upload an image", :controller => :images, :action => :upload_image %> to attract applicants</li>
+    <li>Answer <%= link_to "Three Questions", :controller => :three_questions, :action => :commence %> jobseekser might ask about your company.  </li>
     <li><%= link_to "Add a new job", :controller => :job, :action => :index %> or <%= link_to "review your existing jobs and contact jobseekers", :controller => :job, :action => :view_my_jobs %></li>
     </ul>
     

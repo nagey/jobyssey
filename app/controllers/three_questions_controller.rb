@@ -2,7 +2,6 @@ class ThreeQuestionsController < ApplicationController
   before_filter :authenticate
 
   
-  
   def commence
     u = session[:user]
     
@@ -126,6 +125,11 @@ end
 def view_professional_answers
   @professional = session[:professional]
   @answers = DifferentiatorAnswer.find_all_by_user_id session[:professional]
+end
+
+def view_employer_answers
+  @employer = session[:employer]
+  @answers = DifferentiatorAnswer.find_all_by_employer_id session[:employer]
 end
 
     #def update

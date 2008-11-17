@@ -13,7 +13,7 @@
     <label for="employer_description">Complete description</label><br />
     <%= form.text_area :description %>
   </p>
-  
+  <p>Want to add <%= link_to "Three Questions", :controller => :three_questions, :action => :commence %> to your profile?</p>
     <%= form.submit "Edit my profile" %>
   </p>
 

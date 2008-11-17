@@ -1,0 +1,8 @@
+<h1>Three questions</h1>
+<% if @answers != nil %>
+  <% for answer in @answers %>
+  <%= render :partial => 'view_question_and_answer', :locals => {:answer => answer} %>
+  <% end %>
+<% else %>
+  <p>This employer has not yet added any answers- please check back later.</p>
+<% end %>

@@ -34,7 +34,7 @@ class CompanyProfilesController < ApplicationController
     #end
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
-    @answers = DifferentiatorAnswer.find(:all) #_by_employer_id @employer_id
+    @answers = DifferentiatorAnswer.find_all_by_employer_id @employer_id 
     @map = init_map @employer.addresses.first 
   end
   

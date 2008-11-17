@@ -26,17 +26,21 @@
 
 <pre width=90><%=h @employer.description %></pre>
 
+<% unless @answers.nil? %>
 <fieldset>
 <legend>3 Questions </legend>
 <% for answer in @answers %>
   <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
   <% end %>
 </fieldset>
-</fieldset>
+<% end %>
+
+<% unless @employer.images.nil? %>
 <fieldset>
 <legend>Images</legend>
 <table>
 <%= render :partial => 'images/image.rhtml', :collection => @employer.images %>
 </table>
+<% end %>
 
 </fieldset>

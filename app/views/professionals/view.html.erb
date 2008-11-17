@@ -44,9 +44,16 @@ Check out their <%=  link_to "Portfolio", :controller => "portfolio", :action =>
 <div id="moreinfo">
 <fieldset>
 <legend>More Info</legend><br>
-<%= @professional.more_info %>
+<p><%= @professional.more_info %></p>
 </fieldset>
 </div>
 
+<% unless @answers.nil? %>
+<fieldset>
+<legend>3 Questions </legend>
+<% for answer in @answers %>
+  <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
+  <% end %>
 </fieldset>
+<% end %>
 
