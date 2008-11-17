@@ -4,6 +4,11 @@
 <%=h @employer.name %>
 
 <%=form.hidden_field :id %>
+<p>
+   <label for="employer_size">Company size</label><br />
+   <%= form.text_field :size %>
+ </p>
+
   <p>
     <label for="employer_tagline">One sentence description</label><br />
     <%= form.text_field :tagline %>
