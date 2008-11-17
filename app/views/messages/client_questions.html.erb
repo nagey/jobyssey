@@ -1,0 +1,14 @@
+
+<h1>Client Inquiry</h1>
+<p>Needs content! </p>
+<% form_for(:inquiry, :url => {:action => :send_employer_inquiry}) do |form| %>
+
+  <p>
+    <label for="notes">Needs content!</label><br />
+    <%= form.text_area :notes %>
+  </p>
+    <%= form.submit "Send" %>
+  </p>
+
+  
+<% end %>

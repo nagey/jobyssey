@@ -1,0 +1,20 @@
+
+<h1>General Inquiry</h1>
+<p>We'll be happy to answer any questions you may have about Jobyssey.  Please drop us a line below with any questions you may have and we'll contact you shortly: </p>
+<% form_for(:inquiry, :url => {:action => :send_general_inquiry}) do |form| %>
+<p>
+   <label for="name">Your Name:</label><br />
+   <%= form.text_field :name %>
+ </p>
+     <label for="email">Your email:</label><br />
+     <%= form.text_field :email %>
+   </p>
+  <p>
+    <label for="notes">Please add any specific question you have:</label><br />
+    <%= form.text_area :notes %>
+  </p>
+    <%= form.submit "Send" %>
+  </p>
+
+  
+<% end %>
