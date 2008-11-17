@@ -89,7 +89,7 @@ class ApplyController < ApplicationController
     end
 
   def view_professional_activity
-    @job_applications = JobApplication.find_all_by_user_id session[:user_id]
+    @job_applications = JobApplication.find_all_by_user_id session[:user]
     @applies =[]
     @invites = []
     
