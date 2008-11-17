@@ -1,14 +1,4 @@
 class Emailer < ActionMailer::Base
-  
-      def contact_email(email_params, sent_at = Time.now)
-          # You only need to customize @recipients.
-          @recipients = "info@jobyssey.com" 
-          @from = email_params[:name] + " <" + email_params[:address] + ">" 
-          @subject = email_params[:subject]
-          @sent_on = sent_at
-          @body["email_body"] = email_params[:body]
-          @body["email_name"] = email_params[:name]
-      end
       
       def new_application(employer, job_title, professional, sent_at = Time.now) #cv
           # You only need to customize @recipients.
@@ -32,10 +22,24 @@ class Emailer < ActionMailer::Base
           @from = "info@jobyssey.com"
           @subject = "New invitation to apply for " + job_title + " at " + employer
           @sent_on = sent_at
-         body[:employer] = employer
-         body[:job_title] = job_title
+          body[:employer] = employer
+          body[:job_title] = job_title
           content_type "text/html"
-
       end
+      
+      def employer_inquiry(email, name, company, phone, notes)
+          @recipients   = "richard@jobyssey.com"
+          @from         = email
+          headers         "Reply-to" => "#{email}"
+          @subject      = "Employer Inquiry- " + name + " at " + company
+          @sent_on      = Time.now
+          @content_type = "text/html"
+
+         	body[:name] = name
+        	body[:company] = company
+        	body[:phone] = phone
+        	body[:notes] = notes
+      end
+        
   
 end
