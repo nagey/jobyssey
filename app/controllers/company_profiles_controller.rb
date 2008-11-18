@@ -6,7 +6,9 @@ class CompanyProfilesController < ApplicationController
   end
   
   def edit
+    @user = session[:user]
     @employer = Employer.find_by_id session[:user].employer
+    debugger
   end
   
     

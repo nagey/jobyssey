@@ -21,22 +21,45 @@ class JobysseyController < ApplicationController
   end
 
   def login
-    if request.post?
-      user = User.authenticate(params[:email], params[:password])
-      if user
-        Login.record_login user, request.remote_ip
-        session[:user] = user
-        uri = session[:previous_uri]
-        session[:previous_uri] = nil
-        if user.type == "Professional"
-          redirect_to(uri || { :controller => 'professionals', :action => 'home' })
-        else 
-          redirect_to(uri || { :controller => 'employers', :action => 'home' })
-          session[:employer] = session[:user].employer_id unless session[:user].employer_id.nil?
-        end
-      else
-        flash.now[:notice] = l(:invalid_combination)
+     if request.post?
+       user = User.authenticate(params[:email], params[:password])
+       if user
+         Login.record_login user, request.remote_ip
+         session[:user] = user
+         uri = session[:previous_uri]
+         session[:previous_uri] = nil
+         if user.type == "Professional"
+           redirect_to(uri || { :controller => 'professionals', :action => 'home' })
+         else
+           redirect_to(uri || { :controller => 'employers', :action => 'home' })
+           session[:employer] = session[:user].employer_id unless session[:user].employer_id.nil?
+         end
+       else
+         flash.now[:notice] = l(:invalid_combination)
+       end
       end
     end
-  end
+
+  #def login
+  #  if request.post?
+  #    user = User.authenticate(params[:email], params[:password])
+  #    if user
+  #      Login.record_login user, request.remote_ip
+  #      session[:user] = user
+  #      uri = session[:previous_uri]
+  #      session[:previous_uri] = nil
+  #      if user.type == "Professional"
+  #        redirect_to(uri || { :controller => 'professionals', :action => 'home' })
+  #      elsif user.employer.administrator == user  
+  #        redirect_to(uri || { :controller => 'employers', :action => 'home' })
+  #        session[:employer] = session[:user].employer_id
+  #      else
+  #        redirect_to(uri || { :controller => 'users', :action => 'index' })
+  #      end
+  #    else
+  #      flash.now[:notice] = l(:invalid_combination)
+  #    end
+  #  end
+  #end
+  
 end

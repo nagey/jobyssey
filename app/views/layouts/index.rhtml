@@ -82,7 +82,17 @@
 		<ul>
 			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
 			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
-			<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+			<% if authenticated? %>
+				<% if session[:user].type == "Professional" %>
+				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+				<% else %>
+				<li><%= link_to "Contact Us", :controller => :messages, :action => :client_questions %></li>
+				<% end %>
+			<% else %>
+				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+			<% end %>
+		</ul>
+	</div>
 		</ul>
 </div>
 	<div id="copyright">

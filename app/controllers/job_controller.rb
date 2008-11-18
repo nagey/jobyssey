@@ -32,7 +32,7 @@ class JobController < ApplicationController
 
   def preview
      @job_posting = JobPosting.find_by_id params[:id] #session[:job_posting] 
-     session[:employer] = session[:job_posting].employer_id
+    session[:employer] = @job_posting.employer_id
      @employers = Employer.find :all
      @working_times = WorkingTime.find :all
      @employment_types = EmploymentType.find :all

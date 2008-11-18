@@ -1,33 +1,30 @@
-
 <div id="newsfeed">
-
-		<h1><%=l(:professional, :welcome)%></h1>
-		
-    <p><%=l(:professional, :thanks_text)%></p>
-    <p><%=l(:professional, :meantime_text)%>:</p>
+ 
+    <h1> Welcome to the Beta version of Jobyssey!</h1>
+    
+    <p>Thanks for taking the time to build your profile.  Please bear in mind this is a beta version of the Jobyssey project for you to explore - employers have not yet been added but will be in the next few weeks.</p>
+    <p> In the meantime, you can add to your details and build a complete profile so you are up and running for when we add employers on the site.</p>
     <ul>
-    <li><%=l(:professional, :answer)%> <a href="/three_questions/start"><%=l(:professional, :three_questions)%></a> <%=l(:professional, :know_you)%></li>
-    <li><%=l(:professional, :work_samples)%> <a href="/portfolio/links"><%=l(:professional, :portfolio)%></a> <%=l(:professional, :interview_request)%></li>
-    <li><a href="/invites/import_addresses/"><%=l(:professional, :pass_it_on)%></a>- <%=l(:professional, :let_your_friends)%></li>
-    <li>Answer <%= link_to "Three Questions", :controller => :three_questions, :action => :commence %> employers might ask you in a phone screen or interview. </li>
+    <li>Answer <%= link_to "three questions", :controller => :three_questions, :action => :commence %> employers might want to ask you at interview.  </li>
+    <li>Add work samples to your <%= link_to "portfolio", :controller => :portfolio, :action => :links %></li>
+    <li><%= link_to "Tell others about Jobyssey", :controller => :invites, :action => :import_addresses %></li>
     </ul>
     
-    </div>		
-
-		
-
-			<div id="startpage">
-
-				<H1><%=l(:professional, :start_welcome)%></h1>
-					
-					<fieldset>
-						<Legend><%=l(:professional, :coming_soon)%></legend>
-						<p><%=l(:professional, :migration_complete)%></p>
-						<p><%=l(:professional, :input)%> <a href="/contacts/new"><%=l(:professional, :drop_us_a_line)%></a> <%=l(:professional, :suggestions)%>  </p>
-					</fieldset>
-					
-			
-					
-						</div>
-
-
+    </div>    
+ 
+    
+ 
+      <div id="startpage">
+ 
+        <H1><%=l(:professional, :start_welcome)%></h1>
+          
+          <fieldset>
+            <Legend><%=l(:professional, :coming_soon)%></legend>
+            <p><%=l(:professional, :migration_complete)%></p>
+            <p><%=l(:professional, :input)%> <a href="/contacts/new"><%=l(:professional, :drop_us_a_line)%></a> <%=l(:professional, :suggestions)%> </p>
+          </fieldset>
+          
+      
+          
+            </div>
+ 

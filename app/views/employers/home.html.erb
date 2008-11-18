@@ -23,7 +23,7 @@
 					<fieldset>
 						<Legend><%=l(:professional, :coming_soon)%></legend>
             <p><%=l(:new_features)%>! </p>
-            <p><%=l(:professional, :input)%> <a href="/contacts/new"><%=l(:professional, :drop_us_a_line)%></a> <%=l(:professional, :suggestions)%>  </p>
+            <p><%=l(:professional, :input)%> <%= link_to "Drop us a line!", :controller => :messages, :action => :client_questions %> <%=l(:professional, :suggestions)%>  </p>
 					</fieldset>
 					
 			

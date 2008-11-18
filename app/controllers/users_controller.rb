@@ -48,6 +48,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @employers = Employer.find :all
+    unless params[:user][:employer].nil?
+      employer = params[:user][:employer]
+      employer.administrator = @user
+    end
 
     respond_to do |format|
       if @user.save
