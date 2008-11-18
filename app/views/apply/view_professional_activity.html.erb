@@ -5,7 +5,7 @@
   <p>These employers have viewed your profile and feel you might be right for the role.  If you're interested, you need to select "Apply" at the top of the job posting, so we can release your contact details to them. </p> 
   <table>
     <% for job_application in @invites %>
-      <tr><td><%= link_to job_application.job_posting.title, :controller => :job, :action => :view, :id => job_application.job_posting %></td></tr>
+      <tr><td><%= link_to job_application.job_posting.title, :controller => :job, :action => :view, :id => job_application.job_posting %></td><td>invited <%= time_ago_in_words(job_application.created_at, include_seconds = false) %> ago</td></tr>
     <% end %>
   </table>
 <% end %>
@@ -15,7 +15,7 @@
   <p>You've applied for the following roles.  We've sent the employer your information, and they will contact you directly if they're interested in proceeding.</p>
   <table>
     <% for job_application in @applies %>
-      <tr><td><%= link_to job_application.job_posting.title, :controller => :job, :action => :view, :id => job_application.job_posting  %></td><td><%= job_application.created_at%></tr>
+      <tr><td><%= link_to job_application.job_posting.title, :controller => :job, :action => :view, :id => job_application.job_posting  %></td><td>applied <%= time_ago_in_words(job_application.created_at, include_seconds = false) %> ago</td></tr>
     <% end %>
   </table>
 <% end %>
