@@ -13,7 +13,7 @@
       </tr>
     <% elsif (job_application.status == "Open Invitation") %>
       <tr>
-        <td><%= link_to job_application.user.code_name, :controller => "professionals", :action => "view", :id => job_application.user %></td>
+        <td><%= link_to professional.code_name, :controller => "professionals", :action => "code_name_view", :id => professional.code_name %></td>
         <td>inivted <%= time_ago_in_words(job_application.created_at, include_seconds = false) %> ago</td>
         <td><%= link_to "Close application/invitation", :action => "close_application", :id => job_application %></td>
       </tr>
