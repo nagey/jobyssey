@@ -430,7 +430,7 @@ div.progresswording{
 .b4 {height:2px; background:#FF7800; margin:0 1px; }
 .contentb {background: #FF7800; }
 .contentb div {margin-left: 5px; text-align: center; }
-=======
+
 div.quote{
 	width: 800px;
 }
@@ -438,7 +438,10 @@ div.quote{
 #codename{
 	font-weight: bold;
 }
-
+.headsup {
+	border: 4px solid #242463;
+	padding-left: 20px;
+}
 .question{
 	width: 18px;
 	height: 18px;
