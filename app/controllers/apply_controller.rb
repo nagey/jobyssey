@@ -1,5 +1,7 @@
 class ApplyController < ApplicationController
   
+  before_filter :authenticate
+  
   def apply
     @job_application = JobApplication.new 
     @user = Professional.find session[:user_id]

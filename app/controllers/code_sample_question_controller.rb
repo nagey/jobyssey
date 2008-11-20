@@ -1,4 +1,7 @@
 class CodeSampleQuestionController < ApplicationController
+  
+  before_filter :authenticate
+  
   def index
   end
 

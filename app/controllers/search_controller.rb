@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
   
+    before_filter :authenticate
+  
   def all_professionals
     @professionals = Professional.find :all
     @skills = Skill.find :all
