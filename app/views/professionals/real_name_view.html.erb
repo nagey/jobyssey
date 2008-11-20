@@ -1,0 +1,60 @@
+<h1><%= @professional.first_name %> <%= @professional.last_name %>- (<%= @professional.code_name %>)</h1>
+
+
+<div id="invitelink"><b><%= mail_to ("Contact " + @professional.email) %></b></div>
+<fieldset>
+
+<div id="userlinksright">
+
+ <tr><td><%= link_to "Download CV", :controller => :professionals, :action => :view_cv, :id => @professional.code_id %> for a full work history</td></tr><br><br>
+ 
+<% unless @three_questions.nil? %> 
+Review the answers <%= @professional.code_name %> gave to the <%=  link_to "Three Questions", :controller => "three_questions", :action => "view_professional_answers" %> asked<br><br>
+<% end %>
+
+<% unless @code_samples.nil? %> 
+Review the <%=  link_to "Code Sample", :controller => "code_sample_question", :action => "view_professional_samples" %> they have added<br><br>
+<% end %>
+
+<% unless @portfolio.nil? %> 
+Check out their <%=  link_to "Portfolio", :controller => "portfolio", :action => "view_professional_portfolio" %> of work</li> 
+<% end %>
+<br><br>
+
+</div>
+
+
+
+<div id="personalqualitiesleft">
+<h2>Personal Qualities</h2>
+<% for my_trait in @professional.my_traits %>
+  <%= my_trait.name_trait %>
+<% end %>
+</div>
+
+<div id="skillsright">
+
+<h2>Skills</h2>
+<table>
+	<% for skill in @professional.my_skills %>
+		<%= render :partial => "skillset/view_skill", :locals => {:skill => skill} %>
+	<% end %>
+</table>
+</div>
+
+<div id="moreinfo">
+<fieldset>
+<legend>More Info</legend><br>
+<p><%= @professional.more_info %></p>
+</fieldset>
+</div>
+
+<% unless @answers.nil? %>
+<fieldset>
+<legend>3 Questions </legend>
+<% for answer in @answers %>
+  <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
+  <% end %>
+</fieldset>
+<% end %>
+

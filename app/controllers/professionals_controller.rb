@@ -91,6 +91,16 @@ class ProfessionalsController < ApplicationController
     @answers = DifferentiatorAnswer.find_all_by_user_id @professional 
   end
 
+  def real_name_view
+    @professional = Professional.find_by_code_name params[:id]
+    @skills = @professional.skills
+    session[:professional] = @professional
+    @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
+    @code_samples = CodeSample.find_all_by_user_id @professional
+    @portfolio = Attachment.find_all_by_entity_id @professional
+    @answers = DifferentiatorAnswer.find_all_by_user_id @professional 
+  end
+
   def view_cv
     @professional= Professional.find_by_code_name(Professional.code_name_from_id(params[:id]))
     send_data @professional.cv.attachment, :filename => @professional.cv.file_name, :type => @professional.cv.content_type, :disposition => 'attachment'
