@@ -15,7 +15,7 @@
 
 <div id="fastfactsleft">
 <h2>Location:</h2>
-<%= @map.div(:width => 400, :height => 300) %>
+<%= @map.div(:width => 400, :height => 300) unless @map.nil? %>
 </div>
 
 </fieldset>
