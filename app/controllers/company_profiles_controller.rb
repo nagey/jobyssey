@@ -16,16 +16,15 @@ class CompanyProfilesController < ApplicationController
   def save
     @employer = Employer.find_by_id params[:employer][:id]
     @employer.update_attributes params[:employer]
-    
-    if @employer.save
+
       redirect_to :action => "view", :id => @employer
       flash[:notice] = "Thanks!  We've saved your changes.  Here's how your profile will look to users."
       return
-    else
-      flash[:notice] = "Oops!  We were unable to save your changes.  Please try again, or contact us for assistance."
-      redirect_to :action => "edit"
-      return
-    end  
+    #else
+    #  flash[:notice] = "Oops!  We were unable to save your changes.  Please try again, or contact us for assistance."
+   #   redirect_to :action => "edit"
+    #  return
+  #  end  
   end
   
   def view
@@ -38,10 +37,13 @@ class CompanyProfilesController < ApplicationController
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
     @answers = DifferentiatorAnswer.find_all_by_employer_id @employer_id 
-    address = @employer.addresses.first.nil? ? Address.find(1) : @employer.addresses.first
+    address = @employer.addresses.first
     begin
       @map = init_map address
     rescue
+      address = Address.new
+      address.town = Town.find_by_name 'Dublin 2'
+      @map = init_map address
     end
   end
   
