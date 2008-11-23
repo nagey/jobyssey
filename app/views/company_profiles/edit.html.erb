@@ -19,8 +19,19 @@
     <%= form.text_area :description %>
   </p>
   <p>Want to add <%= link_to "Three Questions", :controller => :three_questions, :action => :commence %> to your profile?</p>
-    <%= form.submit "Edit my profile" %>
+  <fieldset>
+  <legend>Images</legend>
+  <%= link_to "Want to add an image?", :controller => :images, :action => :upload_image %>
+  <table>
+  <% for image in @employer.images %>
+  <%= render :partial => 'images/image_preview.rhtml', :locals => { :image => image } %>
+  <% end %>
+  </table>
+
+  </fieldset>
+    <%= form.submit "Save and view" %>
   </p>
 
-  
 <% end %>
+
+

@@ -78,10 +78,10 @@ class AttachmentsController < ApplicationController
   def destroy
     @attachment = Attachment.find(params[:id])
     @attachment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(attachments_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to back
+    #respond_to do |format|
+    #  format.html { redirect_to(attachments_url) }
+    #  format.xml  { head :ok }
+    #end
   end
 end

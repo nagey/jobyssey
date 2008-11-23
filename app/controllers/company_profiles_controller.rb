@@ -41,4 +41,16 @@ class CompanyProfilesController < ApplicationController
     @map = init_map @employer.addresses.first 
   end
   
+  def remove_image_from_profile
+    e = session[:user].employer
+    image = Image.find params[:id]
+    if e.images.member? image
+      image.destroy
+      flash[:notice] = "Image removed"
+    else
+      flash[:notice] = "Couldn't find the image you were looking for"
+    end
+    redirect_to :action => "edit"
+  end
+  
 end

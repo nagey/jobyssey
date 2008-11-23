@@ -1,5 +1,7 @@
 class JobController < ApplicationController
   
+    before_filter :authenticate
+  
   def index
     @job_specs = JobSpecs.new  
   end

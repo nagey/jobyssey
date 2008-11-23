@@ -1,0 +1,3 @@
+
+<tr><td><img src="/images/show/<%=h image.id%>" height= 250px, width = 300px/></td>
+<td><%= image.description %></td><td><%= link_to 'Delete', { :action => :remove_image_from_profile, :id => image } , { :confirm => 'Are you sure?' } %></td></tr>
