@@ -38,7 +38,8 @@ class CompanyProfilesController < ApplicationController
     @employer = Employer.find_by_id @employer_id
     @industry = Industry.find_by_id @employer.industry_id
     @answers = DifferentiatorAnswer.find_all_by_employer_id @employer_id 
-    @map = init_map @employer.addresses.first 
+    address = @employer.addresses.first.nil? ? Address.find(1) : @employer.addresses.first
+    @map = init_map address
   end
   
   def remove_image_from_profile
