@@ -6,30 +6,57 @@
 	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form' %>
 </head>
 
+
 <body>	
 
 	<div id="container">
 		<div id="header">
-		<p>Your journey starts today</p>
-			<a class= "headerlinks" href="/"><h1><span id="bigj">J</span>obyssey</h1></a>
+		<p><%=l(:your_journey)%></p>
+		
+		<% if authenticated? %>
+			<% if session[:user].type == "Professional" %>
+				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
+			<% else %>
+				<h1><%= link_to "Jobyssey", :controller => 'employers', :action => "home" %></h1>
+			<% end %>
+		<% else %>
+				<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
+		<% end %>
 
+		
 		</div>
 <div id="navbar">
-	<ul>
-		<li><a href="/it-professionals">Professionals</a></li>
-		<li><a href="/it-employers">Employers</a></li>
+
+		<% if authenticated? %>
+			<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
+	<ul>		
+			<% if session[:user].type == "Professional" %>
+				<li><%= link_to "Jobs", :controller => 'search', :action => "all_jobs" %></li>
+				<!--<li class="professional">Profile</li>-->
+				<li><%= link_to "Portfolio", :controller => 'portfolio', :action => "links" %></li>
+				<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
+			<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
+			<% else %>
+				<li><%= link_to "Activity", :controller => 'apply', :action => "view_employer_activity" %></li>
+				<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
+				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
+				<!--<li class="employer">Account</li>
+				<li class="employer">Tips</li>-->
+			<% end %>
+			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
+		<% else %>
+			<li><a href="/jobyssey/employers">For Employers</a></li>
+			<li><a href="/jobyssey/professionals">For Professionals</a></li>
+			<li class="login" style="cursor:pointer">Login</li>
+		<% end %>
 	</ul>
 </div>
 
-<div id="loginbar" style="visibility:hidden;display:none">
-	<form name="frmLogin" method="post" action="{$result->makeUrl('','loginuser','jobs')}">
-		<input type="hidden" name="action" value="login" />
-		<label><%=l(:email)%></label><input type="text" name="user[username]" value="{$result->username}" size="19" maxlength="36"  />
-		<label><%=l(:password)%></label><input type="password" name="user[passwd]" size="19" maxlength="24"  />
-		<input type="submit" name="submittedlogin" value="<%=l(:login)%>"  />
-		<a class="small" href="{$result->makeUrl('','password','jobs')}"><%=l(:forgot_password)%></a>
-	</form>
+<div id = "loginbar" style="display:none">
+	<%=render :partial => "jobyssey/login"%>
 </div>
+
+
 
 <% if flash[:notice] -%> 
 <div id="notice"><%= flash[:notice] %></div> 
@@ -37,8 +64,8 @@
 
 <div id="behindcontent">
 <div id="content">
- <h1>We're sorry, but something went wrong.</h1>
-    <p>We've been notified about this issue and we'll take a look at it shortly.</p>
+ <h1>We're sorry!</h1>
+    <p>Please try refreshing the page.  If you're still not able to reach the page you're looking for, please try again later. </p>
 </div>
 
 <div id="footer">
