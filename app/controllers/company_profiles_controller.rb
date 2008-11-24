@@ -17,7 +17,7 @@ class CompanyProfilesController < ApplicationController
     @employer = Employer.find_by_id params[:employer][:id]
     @employer.update_attributes params[:employer]
 
-      redirect_to :action => "view", :id => @employer
+      redirect_to :action => "preview", :id => @employer
       flash[:notice] = "Thanks!  We've saved your changes.  Here's how your profile will look to users."
       return
     #else
@@ -38,6 +38,24 @@ class CompanyProfilesController < ApplicationController
     @industry = Industry.find_by_id @employer.industry_id
     @answers = DifferentiatorAnswer.find_all_by_employer_id @employer_id 
     address = @employer.addresses.first
+    @address = @employer.addresses.first
+    begin
+      @map = init_map address
+    rescue
+      address = Address.new
+      address.town = Town.find_by_name 'Dublin 2'
+      @map = init_map address
+    end
+  end
+  
+  def preview
+    @employer_id = Employer.find(params[:id])
+   
+    @employer = Employer.find_by_id @employer_id
+    @industry = Industry.find_by_id @employer.industry_id
+    @answers = DifferentiatorAnswer.find_all_by_employer_id @employer_id 
+    address = @employer.addresses.first
+    @address = @employer.addresses.first
     begin
       @map = init_map address
     rescue

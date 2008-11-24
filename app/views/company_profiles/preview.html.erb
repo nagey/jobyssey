@@ -1,0 +1,61 @@
+<div class ="headsup">
+<h1>Your Company Profile</h1>
+<p>Here's a preview of how your company profile will appear.  </p>
+<ul id = "needsbullets">
+<li><%= link_to "Edit your profile", :action=> :edit %> </li>
+<li><%= link_to "Add Three Questions", :controller => :three_questions, :action => :commence %>- answer some typical questions jobseekers might have about your company.</li>
+<li><%= link_to "Add images", :controller => :images, :action => :upload_image %>
+</div>
+
+
+<h1><%=h @employer.name %></h1>
+
+<Fieldset>
+<legend>Fast Facts</legend>
+
+<div id="fastfactsright">
+
+<span id="detailsheader">Details: </span>
+<br><br>
+<b>Short Description: </b><%=h @employer.tagline unless @employer.tagline.nil? %><br>
+<b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
+<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br><br>
+<b>Address: </b><br>
+<%= @address.address1 %><%= ", " + @address.address2 unless @address.address2 %> <br>
+<%= @address.town.name %>, <%= @address.town.administrative_division.name %>
+</div>
+
+<div id="fastfactsleft">
+<h2>Location:</h2>
+<%= @map.div(:width => 400, :height => 300) unless @map.nil? %>
+<% if @map.nil? %>
+  <h2>Map Unavailable</h2>
+<% end %>
+</div>
+
+</fieldset>
+
+
+<fieldset>
+<legend>About <%=h @employer.name %></legend>
+
+<pre><%=h @employer.description %></pre>
+
+<% unless @answers.nil? %>
+<fieldset>
+<legend>3 Questions </legend>
+<% for answer in @answers %>
+  <%= render :partial => 'three_questions/view_question_and_answer.rhtml', :locals => {:answer => answer} %>
+  <% end %>
+</fieldset>
+<% end %>
+
+<% unless @employer.images.nil? %>
+<fieldset>
+<legend>Images</legend>
+<table>
+<%= render :partial => 'images/image.rhtml', :collection => @employer.images %>
+</table>
+<% end %>
+
+</fieldset>
