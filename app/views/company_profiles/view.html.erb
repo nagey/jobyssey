@@ -9,13 +9,18 @@
 <br><br>
 <b>Short Description: </b><%=h @employer.tagline unless @employer.tagline.nil? %><br>
 <b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
-<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %>
-
+<b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br><br>
+<b>Address: </b><br>
+<%= @address.address1 %><%= ", " + @address.address2 unless @address.address2 %> <br>
+<%= @address.town.name %>, <%= @address.town.administrative_division.name %>
 </div>
 
 <div id="fastfactsleft">
 <h2>Location:</h2>
 <%= @map.div(:width => 400, :height => 300) unless @map.nil? %>
+<% if @map.nil? %>
+  <h2>Map Unavailable</h2>
+<% end %>
 </div>
 
 </fieldset>
