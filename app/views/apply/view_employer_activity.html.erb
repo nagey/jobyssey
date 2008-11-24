@@ -6,17 +6,21 @@
   <table>
   <% for job_application in job_posting.job_applications %>
     <% if (job_application.status == "Open Application") %>
+        <% unless job_application.user.nil? %>
       <tr>
         <td><%= link_to (job_application.user.first_name + " " + job_application.user.last_name), :controller => "professionals", :action => "real_name_view", :id => job_application.user.code_name %>- <%= mail_to job_application.user.email %></td>
         <td>applied <%= time_ago_in_words(job_application.created_at, include_seconds = false) %> ago</td>
         <td><%= link_to "Close application", :action => "close_application", :id => job_application %></td>
       </tr>
+      <% end %>
     <% elsif (job_application.status == "Open Invitation") %>
+      <% unless job_application.user.nil? %>
       <tr>
         <td><%= link_to job_application.user.code_name, :controller => "professionals", :action => "code_name_view", :id => job_application.user.code_name %></td>
         <td>inivted <%= time_ago_in_words(job_application.created_at, include_seconds = false) %> ago</td>
         <td><%= link_to "Close application/invitation", :action => "close_application", :id => job_application %></td>
       </tr>
+      <% end %>
     <% end %>
   <% end %>
   </table>
