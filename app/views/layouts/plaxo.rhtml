@@ -23,15 +23,14 @@
 		<p><%=l(:your_journey)%></p>
 		
 		<% if authenticated? %>
-			<% if professional?%>
+			<% if session[:user].type == "professional" %>
 				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
 			<% else %>
-				<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
+				<h1><%= link_to "Jobyssey", :controller => 'employers', :action => "home" %></h1>
 			<% end %>
 		<% else %>
-			<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
-			<% end %>
-
+				<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
+		<% end %>
 		
 		</div>
 <div id="navbar">

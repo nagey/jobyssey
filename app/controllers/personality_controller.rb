@@ -3,7 +3,7 @@ class PersonalityController < ApplicationController
   before_filter :authenticate
 
 
-  #layout 'index'
+  layout 'index'
   #layout 'signup', :only => [ :start, :define ]
 
   def begin
@@ -60,6 +60,40 @@ class PersonalityController < ApplicationController
       end
     end
   end
+      
+  #EDIT PERSONALITY SECTION BEGINS HERE
+
+  def edit
+     @personal_quality = PersonalQuality.new
+     @professional = session[:user]
+     @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }
+     
+     traits = Trait.find(:all)
+     for trait in traits
+      unless PersonalQuality.exists?(:user_id => @professional.id, :metric_id => trait.id)
+        pq = PersonalQuality.new
+        pq.user = @professional
+        pq.metric = trait
+        pq.value = 50
+          @professional.personal_qualities << pq
+      end
+     end
+     
+     @personal_qualities= @professional.personal_qualities
+   end
+
+   def save_edits
+     @p = session[:user]
+     @p.set_search_position
+     redirect_to :controller => :professionals, :action => :home 
+   end
+
+  # def destroy
+  #    pq = PersonalQuality.find_by_metric_id params[:id]
+  #    pq.destroy
+  #    render :text => 'foo'
+  # end      
+      
       
 #Employer stuff from here down
       

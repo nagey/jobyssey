@@ -65,6 +65,7 @@ class ProfessionalsController < ApplicationController
       render :action => :signup
       return
     end
+    Emailer.deliver_new_professional(@professional.name)
   end
   
   def home

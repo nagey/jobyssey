@@ -1,0 +1,54 @@
+
+<fieldset>
+<legend>Need to edit your skills?</legend>
+<p>Move the slider along to indicate your proficiency with each skill below.  Not sure where your experience falls?  Here are some guidelines:</p>
+
+<ul id ="needsbullets">
+<li><b>0-20:</b>  Some general knowledge but little hands-on experience; only comfortably performing very simple tasks.</li>
+<li><b>21-40: </b> Junior level experience; can perform common tasks comfortably but still learing the ropes with more complex or unusual problems.</li>
+<li><b>41-60: </b> Solid professional experience; can easily handle any routine tasks, works at a normal pace with few errors, comfortable tackling new tasks. </li>
+<li><b>61-80:</b>  Very proficient; easily able to accomplish all reasonable tasks, works very quickly and accurately, sought out by others with questions in this area.</li>
+<li><b>81-100:</b>  Exceptional proficiency; more familiar/competent than most other users, develops unique solutions or functionality, known for expertise in area (speaks at conferences, heavily involved in developing new features, etc.)</li>
+</ul><br>
+
+	<ul id="skill-list" class="skills-list">
+	<% @professional.personal_qualities.each do |pq| %>
+		<% if pq.metric.class == Skill %>
+		<% @pq = pq %>		
+		<% form_for @pq.metric.name.to_sym, @pq, :url => {:action => :update_value}, :html => { :id => @pq.metric.id.to_s+'_form'} do |form| %>
+			<%=form.hidden_field :value, { :id => @pq.metric.id.to_s+"_value" } %>
+			<%=form.hidden_field :id %>
+			<%=hidden_field_tag 'object_name', @pq.metric.name %>
+			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
+				<label class="skillname"><%= pq.metric.display_name %></label>		
+					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>"><%=l(:remove)%></a></div>
+				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
+			
+			</li>
+			<% end %>
+	
+		<% end %>
+	<% end %>
+</ul>
+<br>
+<div class="addskillfieldset">
+<fieldset>
+<legend><%=l(:add_skill_legend)%></legend>
+<p>Any skills you add on here should be specific and technical (a language, framework, etc.)  Personal qualities (assertive, client-facing, etc.) are covered in personal qualities, and any further details should be covered in your portfolio or in Three Questions. </p>
+<ul>
+<% form_for(:skill, :url => {:action => :edit_add}) do |form| %>
+  
+	<li><%= form.text_field 'name' %>
+	<%= submit_tag l(:skills, :add_skill )%></li> 
+<% end %>
+</ul>
+</fieldset>
+</div>
+<div id="roundbuttoncontainer">
+<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+ <div class="contentb">
+        <div><%= link_to "Update Skills", :action => :save_edits %></div>
+    </div>
+<b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+</div>
+</fieldset>

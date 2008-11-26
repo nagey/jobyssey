@@ -62,4 +62,14 @@ class Emailer < ActionMailer::Base
         	body[:notes] = notes
       end 
   
+      def new_professional(name)
+          @recipients   = "richard@jobyssey.com, christina@jobyssey.com"
+          @from         = "info@jobyssey.com"
+          headers         "Reply-to" => "info@jobyssey.com"
+          @subject      = "New professional- " + name
+          @sent_on      = Time.now
+          @content_type = "text/html"
+
+         	body[:name] = name
+      end
 end

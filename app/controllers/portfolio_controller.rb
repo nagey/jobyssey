@@ -1,6 +1,6 @@
 class PortfolioController < ApplicationController
 
-  before_filter :authenticate_professional
+  before_filter :authenticate
   
   def links
     @attachment = Attachment.new

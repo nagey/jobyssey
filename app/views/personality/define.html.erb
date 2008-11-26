@@ -14,7 +14,9 @@
 	<span class="personalitybigorange"><%= @trait.name %></span><br>
 	<span class="personalitybigorangecounter"><%= session[:counter].to_s + ' of ' + @total.to_s %></span>
 </div>
+
 	<% form_for :personal_quality, :url => {:action => :update}, :html => { :id => 'form_'+@personal_quality.metric.id.to_s} do |form| %>
+	  
 <div class="personalitypagebottom">
 	<div id="lowertrait"><%= @trait.lower_bound %></div>
 	<div id="uppertrait"><%= @trait.upper_bound %></div>

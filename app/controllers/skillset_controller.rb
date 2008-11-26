@@ -15,7 +15,6 @@ class SkillsetController < ApplicationController
   end
  
   def define
-   
     @skill = Skill.new
     @professional = session[:user]
     @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }
@@ -65,10 +64,62 @@ class SkillsetController < ApplicationController
      render :text => 'foo'
   end
   
-  def view_skill
-    @professional = Professional.find_by_id 1 #session[:professional]
-        @skills = Skill.find(session[:user_id])
-  end
+  #def view_skill
+  #  @professional = Professional.find_by_id 1 #session[:professional]
+  #      @skills = Skill.find(session[:user_id])
+  #end
+  
+#EDIT SKILLS SECTION BEGINS HERE
+
+def edit
+   @skill = Skill.new
+   @professional = session[:user]
+   @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }
+ end
+ 
+# def autocomplete_name
+#   @skills = Skills.find :all
+#   render :layout => :false
+# end
+
+ def edit_add
+  skills = Skill.find_all_by_name(params[:skill][:name].downcase)
+   if skills.length == 1
+     @skill = skills.first
+   elsif skills.length == 0
+     @skill = Skill.new params[:skill]
+   end
+   @user = session[:user]
+   begin
+     @user.metrics << @skill
+     unless @user.save
+       flash[:notice] = l(:skills, :couldnt_add_skill)
+     end
+   rescue
+     flash[:notice] = l(:skills, :skill_taken)
+   end
+   redirect_to :action => :edit
+end
+ 
+# def update_value
+#   pq = PersonalQuality.find params[params[:object_name].to_sym][:id]
+#   pq.update_attributes params[params[:object_name].to_sym]
+#   #flash[:notice] = "Updated %s" % pq.metric.name if pq.save
+   #redirect_to :action => :define
+#   render :text => flash[:notice]
+# end
+ 
+ def save_edits
+   @p = session[:user]
+   @p.set_search_position
+   redirect_to :controller => :professionals, :action => :home 
+ end
+ 
+# def destroy
+#    pq = PersonalQuality.find_by_metric_id params[:id]
+#    pq.destroy
+#    render :text => 'foo'
+# end
  
 #JOB POSTING SECTION BEGINS HERE
  
