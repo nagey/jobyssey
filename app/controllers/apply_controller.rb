@@ -97,10 +97,12 @@ class ApplyController < ApplicationController
     
     for job_application in @job_applications
       next if job_application.job_application_statuses.empty?
+      next if job_application.job_application_statuses.last.job_application_state.nil?
       if (job_application.job_application_statuses.last.job_application_state.name == "Open Application") 
         @applies << job_application
       end
       next if job_application.job_application_statuses.empty?
+            next if job_application.job_application_statuses.last.job_application_state.nil?
       if (job_application.job_application_statuses.last.job_application_state.name == "Open Invitation")
         @invites << job_application
       end
