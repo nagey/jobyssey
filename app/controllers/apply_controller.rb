@@ -4,7 +4,7 @@ class ApplyController < ApplicationController
   
   def apply
     @job_application = JobApplication.new 
-    @user = Professional.find session[:user_id]
+    @user = Professional.find_by_id session[:user]
     @job_application.user = @user
     @job_application.job_posting = JobPosting.find params[:id]
     if @job_application.save
