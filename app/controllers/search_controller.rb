@@ -69,6 +69,8 @@ class SearchController < ApplicationController
       end
       #Calculate position relative to professional skills position here, add job and distance or percentage to results array
       skills_distance = distance(professional_skills_position, job_skills_position)
+      total_skills= Math.sqrt(professional_skills_position.length*10000)
+      skills_percent = (skills_distance/total_skills)*100
       
       #find personality position and % match.
       job_personality_position =[]
@@ -83,15 +85,18 @@ class SearchController < ApplicationController
         end
       end
       personality_distance = distance(professional_personality_position, job_personality_position)
+      #If we change the number of personality metrics this line needs to be changed!
       personality_percent = (personality_distance/447)*100
       
   
-      job_rank = [job, skills_distance, personality_percent]
+      job_rank = [job, skills_percent, personality_percent]
       @jobs_list << job_rank
 
   end
     
     #Sort results by skill %. 
+    @jobs_list.sort_by { |job| job[1] }
+    @jobs_list.reverse!
   end
   
   #def find_matching_professionals

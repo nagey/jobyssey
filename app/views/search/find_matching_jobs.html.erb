@@ -2,6 +2,6 @@
 <table>
 <tr><td>Job Title</td><td>Skills Match</td><td>Personality Match</td></tr>
 <% for job in @jobs_list %>
-  <tr><td><%= job[0].title %></td><td><%= job[1].round(2) %></td><td><%= job[2].round(2) %>%</td></tr>
+  <tr><td><%= job[0].title %></td><td><%= job[1].round(2) %>%</td><td><%= job[2].round(2) %>%</td></tr>
   <% end %>
   </table>
