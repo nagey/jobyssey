@@ -26,7 +26,7 @@ class Emailer < ActionMailer::Base
           @recipients   = "richard@jobyssey.com"
           @from         = email
           headers         "Reply-to" => "#{email}"
-          @subject      = "Employer Inquiry- " + name + " at " + company
+          @subject      = "Employer Inquiry- " + name +" at " + company unless name.nil? or company.nil?
           @sent_on      = Time.now
           @content_type = "text/html"
 
@@ -48,17 +48,16 @@ class Emailer < ActionMailer::Base
         	body[:notes] = notes
       end
        
-      def client_inquiry(email, name, company, phone, notes)
+      def client_inquiry(email, name, company, notes)
           @recipients   = "richard@jobyssey.com"
           @from         = email
           headers         "Reply-to" => "#{email}"
-          @subject      = "Client Inquiry- " + name + " at " + company
+          @subject      = "Client Inquiry- " + name.to_s + " at " + company.to_s
           @sent_on      = Time.now
           @content_type = "text/html"
 
          	body[:name] = name
         	body[:company] = company
-        	body[:phone] = phone
         	body[:notes] = notes
       end 
   

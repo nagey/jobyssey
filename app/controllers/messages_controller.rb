@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
     def send_client_inquiry
       @employer = session[:user].employer
       @employee = session[:user]
-      Emailer.deliver_client_inquiry(@employee, @employee.name, @employer, @employee.phone, params[:inquiry][:notes])
+      Emailer.deliver_client_inquiry(@employee, @employee.name, @employer, params[:inquiry][:notes])
        flash[:notice] = "Thanks for your email.  We'll get back to you as soon as possible."
        redirect_to :controller => :employers, :action => :home  
      end
