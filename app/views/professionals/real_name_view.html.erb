@@ -1,7 +1,7 @@
 <h1><%= @professional.first_name %> <%= @professional.last_name %>- (<%= @professional.code_name %>)</h1>
 
 
-<div id="invitelink"><b><%= mail_to ("Contact " + @professional.email) %></b></div>
+<div id="invitelink"><b>Contact <%= mail_to (@professional.email) %></b></div>
 <fieldset>
 
 <div id="userlinksright">
