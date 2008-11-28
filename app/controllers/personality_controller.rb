@@ -24,7 +24,7 @@ class PersonalityController < ApplicationController
       break unless @trait.nil?
     end
     @personal_quality.value = 50 if @personal_quality.value.nil?
-    redirect_to :controller => :invites, :action => :import_addresses if @trait.nil?
+    redirect_to :controller => :professionals, :action => :home if @trait.nil? #:controller => :invites, :action => :import_addresses if @trait.nil?
     flash[:notice] = 'Welcome to Jobyssey!' if @trait.nil?
     session[:counter] = 1 if session[:counter].nil?
   end
