@@ -70,7 +70,8 @@ class SearchController < ApplicationController
       #Calculate position relative to professional skills position here, add job and distance or percentage to results array
       skills_distance = distance(professional_skills_position, job_skills_position)
       total_skills= Math.sqrt(professional_skills_position.length*10000)
-      skills_percent = (skills_distance/total_skills)*100
+      skills_total = (skills_distance/total_skills)*100
+      skills_percent = 100 - skills_total
       
       #find personality position and % match.
       job_personality_position =[]
