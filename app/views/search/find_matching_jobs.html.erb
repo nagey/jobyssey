@@ -1,0 +1,7 @@
+<h1>Jobs that Suit You</h1>
+<table>
+<tr><td>Job Title</td><td>Skills Match</td><td>Personality Match</td></tr>
+<% for job in @jobs_list %>
+  <tr><td><%= job.first.title %></td><td></td><td><%= job.last.round(2) %>%</td></tr>
+  <% end %>
+  </table>
