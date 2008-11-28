@@ -8,7 +8,7 @@
     <% if (job_application.status == "Open Application") %>
         <% unless job_application.user.nil? %>
       <tr>
-        <td><%= link_to (job_application.user.first_name + " " + job_application.user.last_name), :controller => "professionals", :action => "real_name_view", :id => job_application.user.code_name %>- <%= mail_to job_application.user.email %></td>
+        <td><%= link_to (job_application.user.first_name + " " + job_application.user.last_name + "- (" + job_application.user.code_name + ")"), :controller => "professionals", :action => "real_name_view", :id => job_application.user.code_name %>- <%= mail_to job_application.user.email %></td>
         <td>applied <%= time_ago_in_words(job_application.created_at, include_seconds = false) %> ago</td>
         <td><%= link_to "Close application", :action => "close_application", :id => job_application %></td>
       </tr>
