@@ -11,8 +11,8 @@
 <b>Size: </b><%=h @employer.size unless @employer.size.nil? %> employees<br>
 <b>Industry: </b><%=h @industry.name unless @industry.name.nil? %><br><br>
 <b>Address: </b><br>
-<%= @address.address1 %><%= ", " + @address.address2 unless @address.address2 %> <br>
-<%= @address.town.name %>, <%= @address.town.administrative_division.name %>
+<%= @address.address1 unless @address.nil? %><%= ", " + @address.address2 unless @address.address2.nil? %> <br>
+<%= @address.town.name unless @address.nil?%>, <%= @address.town.administrative_division.name unless @address.nil? %>
 </div>
 
 <div id="fastfactsleft">
