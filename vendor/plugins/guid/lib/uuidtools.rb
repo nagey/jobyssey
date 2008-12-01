@@ -471,6 +471,7 @@ class UUID
             @@mac_address = mac_addresses.first.first.downcase.gsub(/-/, ":")
           end
         rescue
+          @@mac_address = '00:16:cb:be:b4:91'
         end
       else
         begin
@@ -502,6 +503,7 @@ class UUID
             @@mac_address = mac_addresses.first.first
           end
         rescue
+          @@mac_address = '00:16:cb:be:b4:91'
         end
       end
     end
