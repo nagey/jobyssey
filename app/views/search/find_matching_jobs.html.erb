@@ -1,7 +1,10 @@
 <h1>Jobs that Suit You</h1>
 <table>
-<tr><td>Job Title</td><td>Skills Match</td><td>Personality Match</td></tr>
+<tr><td><b>Job Title</b></td><td><b>Employer Name</b></td><td><b>Skills Match</b></td><td><b>Personality Match</b></td></tr>
 <% for job in @jobs_list %>
-  <tr><td><%= job[0].title %></td><td><%= job[1].round(2) %>%</td><td><%= job[2].round(2) %>%</td></tr>
+<tr><td><%= link_to job[0].title, :controller => "job", :action => "view", :id => job[0] %></td>
+ <td><%= link_to job[0].employer.name, :controller => "company_profiles", :action => "view", :id => job[0].employer_id %></td>
+  <td><%= job[1].round(2) %>%</td>
+  <td><%= job[2].round(2) %>%</td></tr>
   <% end %>
   </table>
