@@ -44,14 +44,15 @@
 			<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
 	<ul>		
 			<% if session[:user].type == "Professional" %>
-				<li><%= link_to "Jobs", :controller => 'search', :action => "all_jobs" %></li>
+				<li><%= link_to "Jobs", :controller => 'search', :action => "find_matching_jobs" %></li>
 				<!--<li class="professional">Profile</li>-->
 				<li><%= link_to "Portfolio", :controller => 'portfolio', :action => "links" %></li>
 				<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
 			<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
 			<% else %>
-				<li><%= link_to "Activity", :controller => 'apply', :action => "view_employer_activity" %></li>
-				<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
+			<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
+			<li><%= link_to "Applies and Invites", :controller => 'apply', :action => "view_employer_activity" %></li>
+			<li><%= link_to "All My Jobs", :controller => 'job', :action => "view_my_jobs" %></li>
 				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
 				<!--<li class="employer">Account</li>
 				<li class="employer">Tips</li>-->
