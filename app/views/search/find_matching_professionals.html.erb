@@ -1,0 +1,7 @@
+<h1>Professionals matching <%= @job.title %></h1>
+<table>
+<tr><td>Professional Code Name</td><td>Skills Match</td><td>Personality Match</td></tr>
+<% for professional in @professionals_list %>
+  <tr><td><%= professional[0].code_name %></td><td><%= professional[1].round(2) %>%</td><td><%= professional[2].round(2) %>%</td></tr>
+  <% end %>
+  </table>

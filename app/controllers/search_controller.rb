@@ -100,38 +100,75 @@ class SearchController < ApplicationController
     @jobs_list.reverse!
   end
   
-  #def find_matching_professionals
-     #define jobs' skills position
-  #    j = JobPosting.find params[:id]
-  #    j.skills.each do |s|
-  #      job_skills_position << s.value
-  #    end
+  def find_matching_professionals
+    #define jobs skills position
+    j = JobPosting.find_by_id params[:id]
+    @job = j
+    job_skills_position = []
+    j.job_posting_requirements.each do |s|
+       if s.metric.class == Skill
+         unless s.value.nil?
+           job_skills_position << s.value
+          end
+         if s.value.nil?
+           job_skills_position << 0
+         end
+       end
+    end
+    #define jobs personality position
+    job_personality_position = []
+    j.job_posting_requirements.each do |t| #we should give profs and jobs all traits set to 50 when created, so they will have them all even if they skip the personality page
+      if t.metric.class == Trait
+        job_personality_position << t.value
+      end
+    end
+    #for each professional, create skills position, find % match 
+    professionals = Professional.find :all
+    @professionals_list = []
+    for professional in professionals
+    professional_skills_position = []
+      j.job_posting_requirements.each do |s|
+        if s.metric.class == Skill
+          if professional.personal_qualities.exists?(:metric_id => s.metric.id)
+            p = PersonalQuality.find_by_user_id_and_metric_id(professional, s.metric)
+            professional_skills_position << p.value
+          else
+            professional_skills_position << 0
+          end
+        end
+      end
+      #Calculate position relative to job skills position here, add job and distance or percentage to results array
+      skills_distance = distance(job_skills_position, professional_skills_position)
+      total_skills= Math.sqrt(job_skills_position.length*10000)
+      skills_total = (skills_distance/total_skills)*100
+      skills_percent = 100 - skills_total
+      
+      #find personality position and % match.
+      professional_personality_position =[]
+      j.job_posting_requirements.each do |t|
+        if t.metric.class == Trait
+          if professional.personal_qualities.exists?(:metric_id => t.metric.id)
+            p = PersonalQuality.find_by_user_id_and_metric_id(professional, t.metric)
+            professional_personality_position << p.value
+          else
+            professional_personality_position << 50
+          end
+        end
+      end
+      personality_distance = distance(job_personality_position, professional_personality_position)
+      #If we change the number of personality metrics this line needs to be changed!
+      personality_percent = (personality_distance/447)*100
+      
+  
+      professional_rank = [professional, skills_percent, personality_percent]
+      @professionals_list << professional_rank
 
-      #define jobs' personality position
-  #    j.traits.each do |t| #we should give profs and jobs all traits set to 50 when created, so they will have them all even if they skip the personality page
-  #      job_personality_position << t.value
-  #    end
-
-      #for each professional, create skills position, find % match, then find personality position and % match. 
-  #    professionals = Professional.find :all
-  #    for professional in professionals
-  #      j.skills each do |s|
-  #        if professional.skill.exists?(:name => j.skill.name)
-  #          professional_skills_position << s.value
-  #        else
-  #          professional_skills_position << 0
-  #        end
-        #Calculate position relative to job skills position here, add professional and distance or percentage to results array
-  #      j.traits each do |t|
-  #        if professional.trait.exists?(:name => j.trait.name)
-  #          professional_personality_position << t.value
-  #        else
-  #          professional_personality_position << 50
-  #        end
-        #Calculate position relative to job personality position here, add distance or percentage to results array
-  #    end
-      #Sort results by skill %.
-  #end
+  end
+    
+    #Sort results by skill %. 
+    @professionals_list.sort_by { |job| job[1] }
+    @professionals_list.reverse!
+  end
 
 end
 
