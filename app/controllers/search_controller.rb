@@ -54,7 +54,7 @@ class SearchController < ApplicationController
     #for each job, create skills position, find % match 
     #job= JobPosting.find_by_id 1
     jobs = JobPosting.find :all
-    @jobs_list = []
+    jobs_list = []
     for job in jobs
     job_skills_position = []
       p.personal_qualities.each do |s|
@@ -87,16 +87,17 @@ class SearchController < ApplicationController
       end
       personality_distance = distance(professional_personality_position, job_personality_position)
       #If we change the number of personality metrics this line needs to be changed!
-      personality_percent = (personality_distance/447)*100
+     personality_total = (personality_distance/447)*100
+     personality_percent = 100 - personality_total
       
   
       job_rank = [job, skills_percent, personality_percent]
-      @jobs_list << job_rank
+      jobs_list << job_rank
 
   end
     
     #Sort results by skill %. 
-    @jobs_list.sort_by { |job| job[1] }
+    @jobs_list = jobs_list.sort_by { |job| job[1] }
     @jobs_list.reverse!
   end
   
@@ -124,7 +125,7 @@ class SearchController < ApplicationController
     end
     #for each professional, create skills position, find % match 
     professionals = Professional.find :all
-    @professionals_list = []
+    professionals_list = []
     for professional in professionals
     professional_skills_position = []
       j.job_posting_requirements.each do |s|
@@ -161,12 +162,12 @@ class SearchController < ApplicationController
       
   
       professional_rank = [professional, skills_percent, personality_percent]
-      @professionals_list << professional_rank
+      professionals_list << professional_rank
 
   end
     
     #Sort results by skill %. 
-    @professionals_list.sort_by { |job| job[1] }
+    @professionals_list= professionals_list.sort_by { |job| job[1] }
     @professionals_list.reverse!
   end
 
