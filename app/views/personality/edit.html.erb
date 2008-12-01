@@ -18,7 +18,7 @@
 				<td><label class="editskillname"><%= personal_quality.metric.name %></label></td>		
 				<td><%= personal_quality.metric.lower_bound %></td>
 
-				<td><%= render :partial => 'slider', :locals => {:name => personal_quality.id, :value => personal_quality.value} %></td>
+				<td><%= render :partial => 'slider', :locals => {:name => personal_quality.id, :value => personal_quality.value, :ajax => true } %></td>
 				<td><%= personal_quality.metric.upper_bound %></td>
 				<%=form.hidden_field :value, { :id => personal_quality.metric.id.to_s+"_value" } %>
       	<%=form.hidden_field :metric_id %>

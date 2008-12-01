@@ -20,7 +20,11 @@
 					$('#<%=name%>_value').val(Math.round(ui.value))
 					
 					if (document['foo'+<%=name%>]) {
-						$('#form_<%=name%>').ajaxSubmit();
+						<% if ajax %>
+							$('#form_<%=name%>').ajaxSubmit();
+						<% else %>
+							document.getElementById('form_<%=name%>').submit();
+						<% end %>
 					}
 					document['foo'+<%=name%>] = true;
 					
