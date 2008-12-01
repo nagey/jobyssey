@@ -38,7 +38,7 @@
 <ul>
 <% form_for(:skill, :url => {:action => :edit_add}) do |form| %>
   
-	<li><%= form.text_field 'name' %>
+	<li><%= text_field_with_auto_complete :skill, :name, {}, {:method => :get} %></li
 	<%= submit_tag l(:skills, :add_skill )%></li> 
 <% end %>
 </ul>
@@ -47,7 +47,7 @@
 <div id="roundbuttoncontainer">
 <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
  <div class="contentb">
-        <div><%= link_to "Update Skills", :action => :save_edits %></div>
+        <div><%= link_to "Back to my profile", :action => :my_details, :controller => :professionals %></div>
     </div>
 <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
 </div>

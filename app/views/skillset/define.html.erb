@@ -33,7 +33,7 @@
 <ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
   
-	<li><%= form.text_field 'name' %>
+	<li><%= text_field_with_auto_complete :skill, :name,  %>
 	<%= submit_tag l(:skills, :add_skill )%></li> 
 <% end %>
 </ul>

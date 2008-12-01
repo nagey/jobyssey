@@ -38,6 +38,14 @@ class PersonalityController < ApplicationController
     redirect_to :action => :define if @professional.save
   end
 
+  def update_value
+    pq = PersonalQuality.find params[:personal_quality][:id]
+    pq.update_attributes params[:personal_quality]
+    #flash[:notice] = "Updated %s" % pq.metric.name if pq.save
+    #redirect_to :action => :define
+    render :text => flash[:notice]
+  end
+
   def details
     @professional_id = Professional.find_by_id 1 #session[:professional]
     @personal_qualities = PersonalQuality.find_by_user_id @professional_id

@@ -20,10 +20,11 @@ class SkillsetController < ApplicationController
     @professional.personal_qualities.each { |p| p.value = 0 if p.value.nil? }
   end
   
-  def autocomplete_name
-    @skills = Skills.find :all
-    render :layout => :false
-  end
+  #def autocomplete_name
+  #def autocomplete_for_skills_name
+  #  @skills = Skills.find :all
+  #  render :layout => :false
+  #end
  
   def add
     skills = Skill.find_all_by_name(params[:skill][:name].downcase)

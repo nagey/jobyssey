@@ -19,10 +19,10 @@
 					
 					$('#<%=name%>_value').val(Math.round(ui.value))
 					
-					if (document.foo) {
-						document.getElementById('form_<%=name%>').submit();
+					if (document['foo'+<%=name%>]) {
+						$('#form_<%=name%>').ajaxSubmit();
 					}
-					document.foo = true;
+					document['foo'+<%=name%>] = true;
 					
                 }, 
                 slide: function(e, ui) { 

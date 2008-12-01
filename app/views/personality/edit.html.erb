@@ -8,7 +8,7 @@
 				<table>
 	<% for personal_quality in @personal_qualities %>	
 		<% if personal_quality.metric.class == Trait %>	
-		<% form_for personal_quality.metric.name.to_sym, @pq, :url => {:action => :update_value}, :html => { :id => personal_quality.id.to_s+'_form'} do |form| %>
+		<% form_for personal_quality, @pq, :url => {:action => :update_value}, :html => { :id => 'form_'+personal_quality.id.to_s} do |form| %>
 			<%=form.hidden_field :value, { :id => personal_quality.id.to_s+"_value" } %>
 			<%=form.hidden_field :id %>
 			<%=hidden_field_tag 'object_name', personal_quality.metric.name %>
@@ -18,7 +18,7 @@
 				<td><label class="editskillname"><%= personal_quality.metric.name %></label></td>		
 				<td><%= personal_quality.metric.lower_bound %></td>
 
-				<td><%= render :partial => 'slider', :locals => {:name => personal_quality.metric.id, :value => personal_quality.value} %></td>
+				<td><%= render :partial => 'slider', :locals => {:name => personal_quality.id, :value => personal_quality.value} %></td>
 				<td><%= personal_quality.metric.upper_bound %></td>
 				<%=form.hidden_field :value, { :id => personal_quality.metric.id.to_s+"_value" } %>
       	<%=form.hidden_field :metric_id %>
@@ -33,7 +33,7 @@
 <div id="roundbuttoncontainer">
 <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
  <div class="contentb">
-        <div><%= link_to "Update Personality Traits", :action => :save_edits %></div>
+        <div><%= link_to "Back to my profile", :action => :my_details, :controller => :professionals %></div>
     </div>
 <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
 </div>

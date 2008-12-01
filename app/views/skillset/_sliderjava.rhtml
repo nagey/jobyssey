@@ -17,8 +17,11 @@
                     } 
                     $('#slider_callout_<%=name%>').fadeOut('fast', function() { calloutVisible = false; }); 
 					
-					$('#<%=name%>_value').val(Math.round(ui.value))
-					$('#<%=name%>_form').ajaxSubmit();
+					$('#<%=name%>_value').val(Math.round(ui.value));
+					if (document['foo'+<%=name%>]) {
+						$('#<%=name%>_form').ajaxSubmit();
+					}
+					document['foo'+<%=name%>] = true
 					
 	
 
