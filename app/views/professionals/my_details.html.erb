@@ -1,0 +1,13 @@
+<h1>Your Account Details</h1>
+<p>Giving employers a better picture of yourself means more job invites, more interviews, and more information about jobs that suit you best. </p>
+<h2>Basic Account Information</h2>
+<ul class = "needsbullets">
+<li><%= link_to "Edit skills", :controller => :skillset, :action => :edit %> </li>
+<li><%= link_to "Edit work personality", :controller => :personality, :action => :edit %> </li>
+</ul>
+<h2>Bells and Whistles</h2>
+<ul class = "needsbullets">
+<li><%= link_to "Add past projectst to your portfolio", :controller => :portfolio, :action => :links %></li>
+<li><%= link_to "Try a coding challenge", :controller => :code_sample_question, :action => :explanation %></li>
+<li><%= link_to "Answer three sample interview questions", :controller => :three_questions, :action => :commence %></li>
+</ul>

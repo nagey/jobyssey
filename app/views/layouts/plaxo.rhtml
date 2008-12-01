@@ -41,7 +41,7 @@
 		<% if session[:user].type == "Professional" %>
 			<li><%= link_to "Jobs", :controller => 'search', :action => "find_matching_jobs" %></li>
 			<!--<li class="professional">Profile</li>-->
-			<li><%= link_to "Portfolio", :controller => 'portfolio', :action => "links" %></li>
+			<li><%= link_to "My Details", :controller => 'professionals', :action => "my_details" %></li>
 			<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
 		<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
 		<% else %>
