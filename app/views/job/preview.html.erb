@@ -1,7 +1,7 @@
 <div class ="headsup">
 <h1>Your Job Posting</h1>
 <p>Here's a preview of how your job posting will appear.  You can <%= link_to "edit", :action=> :edit, :id => @job_posting %> your job posting if necessary. </p>
-<h2><%= link_to "Search for Suitable Candidates", :controller => :search, :action => :all_professionals, :id => @job_posting %></h2>
+<h2><%= link_to "Search for Suitable Candidates", :controller => :search, :action => :find_matching_professionals, :id => @job_posting %></h2>
 </div>
 
 

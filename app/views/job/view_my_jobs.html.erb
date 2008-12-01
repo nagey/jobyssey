@@ -5,7 +5,7 @@
 Job Title </th></tr>
 <% for job in @jobs %>
 <tr><td><%= link_to job.title, :action => :preview, :id => job %></td>
-<td><%= link_to 'Invite someone to apply', :controller => :search, :action => :all_professionals, :id => job %></td>  
+<td><%= link_to 'Invite someone to apply', :controller => :search, :action => :find_matching_professionals, :id => job %></td>  
 <td><%= link_to 'Edit', :action => :edit_job, :id => job %></td> 
 <td><%= button_to 'Delete', { :controller => :job, :action => :destroy, :id => job }, :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
