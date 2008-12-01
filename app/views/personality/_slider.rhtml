@@ -1,3 +1,7 @@
+<% begin ajax.nil?
+	rescue
+		ajax = false
+	end%>
 <%= render :partial => 'sliderjava', :locals => {:name => name, :value => value, :ajax => ajax } %>
 
 <div id="container-slider-personality"> 
