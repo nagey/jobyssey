@@ -507,6 +507,7 @@ class UUID
         end
       end
     end
+    @@mac_address = '00:16:cb:be:b4:91' if @@mac_address.nil?
     return @@mac_address
   end
   
