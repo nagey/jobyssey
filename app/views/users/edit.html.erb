@@ -1,6 +1,6 @@
 <h1>Editing user</h1>
 
-<% form_for(@user) do |f| %>
+<% form_for(@user, :action => :update) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -23,32 +23,12 @@
      <%= f.label :email_confirmation %> <br />
      <%= f.text_field :email_confirmation %>
    </p>
-   <p>
-     <%= f.label :password %><br />
-     <%= f.text_field :password %> 
-     </p> 
-     <p> 
-     <%= f.label :password_confirmation %> <br />
-     <%= f.text_field :password_confirmation %>
-  </p>
+
   <p>
     <%= f.label :code_name %><br />
     <%= f.text_field :code_name %>
   </p>
-  <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p>
-  <p>
-  <%= f.label :employer %><br />
-  <%= f.collection_select :employer_id, @employers, :id, :name %>
-	<br>
-	<%= link_to l(:add_employer), new_employer_path %>
-  </p>
-  <p>
-    <%= f.label :search_position %><br />
-    <%= f.text_field :search_position %>
-  </p>
+
   <p>
     <%= f.submit "Update" %>
   </p>
