@@ -58,6 +58,11 @@ class ProfessionalsController < ApplicationController
       session[:user_id] = @professional.id
       session[:user] = @professional
       session[:professional] = nil
+      unless session[:invite_id].nil?
+        invite = Invite.find session[:invite_id]
+        invite.signed_up_as_user = @professional
+        invite.save
+      end
       redirect_to :controller => :skillset, :action => :begin
     else
       @employment_types = EmploymentType.find :all
@@ -105,6 +110,15 @@ class ProfessionalsController < ApplicationController
   def view_cv
     @professional= Professional.find_by_code_name(Professional.code_name_from_id(params[:id]))
     send_data @professional.cv.attachment, :filename => @professional.cv.file_name, :type => @professional.cv.content_type, :disposition => 'attachment'
+  end
+
+  def edit_account_details
+    @professional= Professional.find_by_id session[:user]
+     @employment_types = EmploymentType.find :all
+      @working_times = WorkingTime.find :all
+  end
+  
+  def save_changes
   end
 
 end

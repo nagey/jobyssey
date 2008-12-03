@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :feedback_items
   belongs_to :working_time
   belongs_to :employment_type
+  has_one :invite, :foreign_key => :signed_up_as_user_id
   
   validates_confirmation_of :email
 
@@ -33,6 +34,10 @@ class User < ActiveRecord::Base
 attr_accessor :password_confirmation
 
 #validate :password_non_blank
+
+  def invited_by
+    invite.user unless invite.nil?
+  end
 
   def name=(name_field)
     names = name_field.split(' ')

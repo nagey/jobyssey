@@ -1,4 +1,9 @@
 <p>
+  <b>Invited By:</b>
+  <%=h @user.invited_by.name unless @user.invited_by.nil? %>
+</p>
+
+<p>
   <b>First name:</b>
   <%=h @user.first_name %>
 </p>
