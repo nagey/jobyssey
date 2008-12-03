@@ -9,7 +9,7 @@ class Invite < ActiveRecord::Base
   def recipient_list
   end
 
-  def valid?
+  def valid_invite?
     (email_sent == true and signed_up_as_user.nil?)
   end
 
