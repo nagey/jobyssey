@@ -29,14 +29,14 @@ class SkillsetController < ApplicationController
   def add
     skills = Skill.find_all_by_name(params[:skill][:name].downcase)
     if skills.length == 1
-      @skill = skills.first
+      skill = skills.first
     elsif skills.length == 0
-      @skill = Skill.new params[:skill]
+      skill = Skill.new params[:skill]
     end
-    @user = session[:user]
+    user = session[:user]
     begin
-      @user.metrics << @skill
-      unless @user.save
+      user.metrics << skill
+      unless user.save
         flash[:notice] = l(:skills, :couldnt_add_skill)
       end
     rescue
@@ -54,8 +54,8 @@ class SkillsetController < ApplicationController
   end
   
   def finalize
-    @p = session[:user]
-    @p.set_search_position
+    p = session[:user]
+    p.set_search_position
     redirect_to :controller => :personality, :action => :begin if @p.save
   end
   
