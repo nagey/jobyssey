@@ -56,7 +56,7 @@ class SkillsetController < ApplicationController
   def finalize
     p = session[:user]
     p.set_search_position
-    redirect_to :controller => :personality, :action => :begin if @p.save
+    redirect_to :controller => :personality, :action => :begin if p.save
   end
   
   def destroy
