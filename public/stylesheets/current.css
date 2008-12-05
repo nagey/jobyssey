@@ -558,13 +558,16 @@ div.progresswording{
 }
 
 #bellcurveimage{
- 	padding: 10px 10px 10px 10px;
+ 	padding: 30px 0px 10px 0px;
 	width: 270px;
+	float: left;
 }
 #bellcurvecontent{
 	float: right;
 	display: inline-block;
-	width: 400px;
+	width: 450px;
+	padding: 0 auto;
+	margin: 0 auto;
 }
 
 /* Font Styling */
