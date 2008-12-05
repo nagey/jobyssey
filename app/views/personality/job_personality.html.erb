@@ -1,0 +1,40 @@
+<% debugger %>
+<fieldset>
+<legend>Job Personality</legend>
+<p>Content here!</p>
+<br>
+
+	<ul id="skill-list" class="skills-list">
+				<table>
+	<% for job_posting_requirement in @job_posting_requirements %>	
+		<% if job_posting_requirement.metric.class == Trait %>	
+		<% form_for personality, @pq, :url => {:action => :update_value}, :html => { :id => 'form_'+job_posting_requirement.id.to_s} do |form| %>
+			<%=form.hidden_field :value, { :id => job_posting_requirement.id.to_s+"_value" } %>
+			<%=form.hidden_field :id %>
+			<%=hidden_field_tag 'object_name', job_posting_requirement.metric.name %>
+			
+
+			<tr>
+				<td><label class="editskillname"><%= job_posting_requirement.metric.name %></label></td>		
+				<td><%= job_posting_requirement.metric.lower_bound %></td>
+
+				<td><%= render :partial => 'slider', :locals => {:name => job_posting_requirement.id, :value => job_posting_requirement.value, :ajax => true } %></td>
+				<td><%= job_posting_requirement.metric.upper_bound %></td>
+				<%=form.hidden_field :value, { :id => job_posting_requirement.metric.id.to_s+"_value" } %>
+      	<%=form.hidden_field :metric_id %>
+				</tr>
+		<% end %>
+	<% end %>
+	<% end %>
+	</table>
+</ul>
+<br>
+
+<div id="roundbuttoncontainer">
+<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+ <div class="contentb">
+        <div><%= link_to "Back to my profile", :action => :my_details, :controller => :professionals %></div>
+    </div>
+<b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+</div>
+</fieldset>
