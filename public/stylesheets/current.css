@@ -384,6 +384,9 @@ div.progresswording{
 	margin-right: 0px;
 	font-size: 12px;
 }	
+.personality_name{
+	width: 100px;
+}	
 .addskillfieldset{
 	margin: 0px 70px 0px 70px;
 }
@@ -554,6 +557,15 @@ div.progresswording{
 	font-weight: bold;
 }
 
+#bellcurveimage{
+ 	padding: 10px 10px 10px 10px;
+	width: 270px;
+}
+#bellcurvecontent{
+	float: right;
+	display: inline-block;
+	width: 400px;
+}
 
 /* Font Styling */
 
