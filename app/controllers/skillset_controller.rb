@@ -166,9 +166,9 @@ end
   end
   
   def finalize_job_posting_skills
-    @jp = session[:job_posting]
-    @jp.set_search_position
-    redirect_to :controller => :personality, :action => :start_job_personality, :id => @jp if @jp.save
+    jp = session[:job_posting]
+    jp.set_search_position
+    redirect_to :controller => :personality, :action => :job_personality, :id => jp if jp.save
   end
   
   def view_skill_job_posting_skills

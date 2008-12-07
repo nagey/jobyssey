@@ -120,6 +120,12 @@ class ProfessionalsController < ApplicationController
   end
   
   def save_changes
+    @professional = Professional.find_by_id session[:user]
+    @professional.update_attributes params[:professional]
+    
+    pd = ProfessionalDetails.new params[:professional_details]
+    pd.save
+    redirect_to :action => :home
   end
 
 end
