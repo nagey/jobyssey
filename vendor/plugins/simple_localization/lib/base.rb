@@ -87,7 +87,6 @@ def simple_localization(options)
   lang.load(*languages)
   
   feature_manager.localization_init_features.each do |feature|
-    RAILS_DEFAULT_LOGGER.info feature.to_s + 'foo'
     require File.dirname(__FILE__) + "/features/#{feature}"
   end
   

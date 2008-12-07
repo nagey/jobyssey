@@ -8,14 +8,15 @@ class PortfolioController < ApplicationController
   end
   
   def add_a_link
-    @attachment = Attachment.new params[:attachment]
-    @professional = Professional.find session[:user].id
-    if @attachment.save
-      @professional.attachments << @attachment
+    attachment = Attachment.new params[:attachment]
+    professional = Professional.find session[:user].id
+    if attachment.save
+      professional.attachments << @attachment
       #@professional.save
       flash[:message] = l(:link_saved)
       redirect_to :action => :links
     else
+      @attachment = attachment
       render :action => :links
     end
   end  
@@ -33,8 +34,8 @@ class PortfolioController < ApplicationController
   end
 
   def update
-    @attachment = Attachment.find params[:id]
-    @attachment.update_attributes params[:attachment]
+    attachment = Attachment.find params[:id]
+    attachment.update_attributes params[:attachment]
     if true
       flash[:notice] = 'Thanks! Your portfolio has been updated.'
       redirect_to :action => :links
@@ -45,14 +46,13 @@ class PortfolioController < ApplicationController
   end
 
   def destroy
-    @attachment = Attachment.find params[:id]
-    @attachment.destroy
-    flash[:notice] = 'all gone!'
+    attachment = Attachment.find params[:id]
+    attachment.destroy
+    flash[:notice] = 'All Gone!'
     redirect_to :action => :links
   end
 
   def view_professional_portfolio
     @professional = session[:professional]
-    @attachments = Attachment.find @professional
   end
 end

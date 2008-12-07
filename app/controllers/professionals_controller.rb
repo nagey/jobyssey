@@ -15,27 +15,28 @@ class ProfessionalsController < ApplicationController
       return
     end
     
-    @cv = Cv.new params[:cv] 
-    @cv = session[:cv] if @cv.nil?
+    cv = Cv.new params[:cv] 
+    cv = session[:cv] if cv.nil?
     @professional = Professional.new
     @employment_types = EmploymentType.find :all
     @working_times = WorkingTime.find :all
     
-    session[:cv] = @cv
-    if @cv.valid?
+    session[:cv] = cv
+    if cv.valid?
       code_name = false
       p = Preposition.find :all
       v = Verb.find :all
       n = Noun.find :all
       while !code_name
-        @code_name = v[rand(v.length)].verb + ' ' + p[rand(p.length)].preposition + ' ' + n[rand(n.length)].noun
-        uu = User.find_by_code_name @code_name
+        codename = v[rand(v.length)].verb + ' ' + p[rand(p.length)].preposition + ' ' + n[rand(n.length)].noun
+        uu = User.find_by_code_name codename
         code_name = true if uu.nil?
       end
-      session[:code_name] = @code_name
+      session[:code_name] = codename
+      @code_name = codename
       render :action => "signup", :layout => "signup" 
     else
-      render :action => :index, :layout => "signup" unless @cv.valid? 
+      render :action => :index, :layout => "signup" unless cv.valid? 
     end
 
   end
