@@ -1,0 +1,41 @@
+div.outer {              
+position:absolute;
+top:50%;
+}
+
+div.ie {                 
+position:relative;
+ top:-50%;
+}
+
+#header h2 {            
+width:400px;
+}
+
+#content_wrapper {
+padding:0 10px;
+}
+
+#sidebar {  
+padding:0;
+margin-right:-11px;
+}
+
+#content {               
+margin-left:30px;
+}
+
+#sidebar div.title, #sidebar li h2 {
+width:95%;
+margin-left:10px;
+}
+
+#sidebar div.widget_sideblogwidget li {
+width:160px;
+margin-right:5px;
+}
+
+#commentform ul {                     
+margin-left:0;
+padding:0 15px;
+}

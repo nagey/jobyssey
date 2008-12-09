@@ -1,0 +1,410 @@
+/* 
+	Theme Name: jd-sky
+	Theme URI: http://www.jdblog.net/wordpress
+	Description: A two columns theme.
+	Author: John Doe
+	Author URI: http://www.jdblog.net
+	Version: 1.0.0
+		
+/* Structure Divs */
+
+
+body {
+	color: #333;
+	font-family: Verdana, "Trebuchet MS", "Bitstream Vera Serif", Utopia, "Times New Roman", times, serif;
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-color: #939DD0;
+	background-image: url(images/sf-body.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+	
+#content {
+	margin: 0 auto;
+	padding: 0;
+	width: 795px;
+	background-image: url(images/sf-content.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: #FFFFFF;
+	background-position: center top;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #3C4A8C;
+	border-bottom-color: #3C4A8C;
+	border-left-color: #3C4A8C;
+	}
+
+#header {
+	height: 70px;
+	margin: 0;
+	padding: 0;
+	}
+
+#pages {
+	font-size: 12px;
+	margin: 0;
+	padding: 15px 0 6px 20px;
+	background-color: #3C4A8C;
+	}
+	
+#search {
+	float: right;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	right: 10px;
+	top: -22px;
+}	
+	
+#notice {
+	float: left;
+	margin: 0;
+	padding: 0 0 20px 20px;
+	width: 550px;
+	}
+
+#sidebar {
+	float: right;
+	font-size: 11px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0 10px;
+	width: 170px;
+	}
+
+#credits {
+	font-family: "Small Fonts", VT100, Arial, Helvetica;
+	font-size: 9px;
+	margin: 0;
+	padding: 5px 20px;
+	text-align: center;
+	background-color: #3c4a8c;
+	color: #FFFFFF;
+	}
+
+	
+/* Config Structure Divs */
+
+	/* Header */
+	#header h1 {
+	font-size: 30px;
+	letter-spacing: 0.1em;
+	margin: 0;
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;		
+}
+		
+	#header a, #header a:hover {
+		background: transparent;
+		color: #3c4a8c;
+		text-decoration: none;
+		}
+	
+	/* Pages */
+	#pages li {
+		display: inline;
+		list-style-type: none;
+		}
+		
+	#pages ul, ol {
+		margin: 0;
+	    padding-left: 20px;		
+		}
+		
+	#pages a {
+		background: #fff;
+		color: #1E4C62;
+		font-weight: bold;
+		margin: 0 3px 0 0;
+		padding: 6px 10px;
+		}
+		
+	#pages a:hover {
+		background: #3c4a8c;
+		color: #fff;
+		}
+		
+	.current_page_item a, .current_page_item a:hover {
+		background: #3c4a8c!important;
+		color: #fff !important;
+		}
+		
+	/* Search */
+	#search input {
+		border: 1px solid #66A8CC;
+		font-size: 12px;
+		padding: 2px;
+		width: 160px;
+		}
+			
+	/* notice */
+	#notice p {
+	font-size: 11px;
+	line-height: 1.6em;
+	text-align: justify;
+		}
+		
+	#notice ul, #notice ol {
+		font-size: 11px;
+		line-height: 1.6em;
+		}
+			
+	#notice ul {
+		list-style-type: circle;
+		margin: 0 0 0 30px;
+		padding: 0;
+		}
+			
+	#notice li {
+		margin: 0;
+		padding: 0;
+		}
+
+	#notice h2, #notice h2 a {
+		color: #3c4a8c;
+		font-size: 18px;
+		font-weight: normal;
+		margin: 20px 0 0 0;
+		padding: 0;
+		text-decoration: none;
+		}
+		
+	#notice h2 a:hover {
+		background: transparent;
+		color: #B8C7E8;
+		}
+		
+	#notice h3 {
+		color: #016CA3;
+		font-size: 13px;
+		font-weight: normal;
+		margin: 0;
+		padding: 20px 0 5px 0;
+		}
+
+	#notice small {
+		font-family: Arial, Helvetica, Sans-Serif;
+		font-size: 10px;
+		}
+		
+	.feedback {
+		color: #898A8A;
+		font-size: 11px;
+		margin: 0;
+		padding: 0 20px;
+		text-align: center;
+		}
+		
+	/* entrance */
+	.entrance {
+		margin: 0;
+		padding: 0;
+		}
+
+	/* Comments */
+	#commentlist {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		}
+
+	#commentlist li {
+		margin: 10px 0;
+		padding: 5px 10px;
+		}
+			
+	#commentlist p {
+		margin: 0;
+		padding: 0;
+		}
+			
+	#commentlist small {
+		font-size: 11px;
+		}
+
+	.class_comment1 { background: #E9E9EA; border: 1px solid #E0DEDE; }
+	.class_comment2 { background: #F4F3F3; border: 1px solid #E0DEDE; }
+	
+	#comments, #postcomment {
+		color: #2e4f8e;
+		font-size: 11px !important;
+		font-weight: normal;
+		margin: 40px 0 10px 10px;
+		text-transform: uppercase;
+		}
+			
+	#commentform {
+		background: #EAEFF8;
+		border: 1px solid #D8D8D8;
+		padding: 5px 20px;
+		}
+		
+	#commentform input, #commentform textarea {
+		background: #F9FBFF;
+		border: 1px solid #B8D4FF;
+		font-size: 11px;
+		padding: 1px;
+		}
+		
+	#commentform input:focus, #commentform textarea:focus {
+		background: #EEF5FF;
+		}
+	
+	/* Sidebar */
+	#sidebar h3 {
+		background: url(images/dot.gif) repeat-x bottom;
+		color: #174B65;
+		font-size: 11px;
+		font-weight: normal;
+		letter-spacing: 0.2em;
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
+		}
+		
+	#sidebar ul, #sidebar ol {
+		list-style: none;
+		margin: 0;
+		padding: 5px;
+		}
+		
+	#sidebar li, #sidebar li:hover {
+		margin: 0;
+		padding: 0;
+		}
+		
+	#sidebar a {
+		color: #0B76AE;
+		}
+		
+	#sidebar a:hover {
+		background: url(images/dot.gif) repeat-x bottom;
+		color: #0B76AE;
+		}
+		
+	#sidebar div { 
+		margin: 20px 0;
+		padding: 0;
+		}
+
+	/*	Credits */
+	#credits a {
+		color: #FFFFFF;
+		}
+		
+	#credits a:hover {
+		background: transparent;
+		color: #939DD0;
+		}
+		
+	#credits p {
+		margin: 0;
+		padding: 0;
+		}
+
+/* General */
+a {
+	color: #0B76AE;
+	text-decoration: none;
+	}
+
+a:hover {
+	background: #2e4f8e;
+	color: #fff;
+	}
+
+acronym, abbr, span.caps {
+	cursor: help;
+	border-bottom: 1px dotted #000;
+	}
+	
+blockquote {
+	padding: 5px 20px 30px 35px;
+	margin: 1em;
+	background-image: url(images/blockquote.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #FFFFFF;
+	} /* Idea from ShadedGrey of http://wpthemes.info/ */
+
+cite {
+	text-decoration: none;
+	}
+	
+code {
+	font-family: 'Courier New', Courier, Fixed, sans-serif;
+	font-size: 1.1em;
+	}
+
+img {
+	border: 0;
+	}
+
+h4 {
+	color: #858585;
+	}
+	
+/* Float and Clear */
+div.floatleft {
+	float: left;
+	}
+
+div.floatright {
+	float: right;
+	}
+	
+div.both {
+	clear: both;
+	}
+	
+/* Images align */
+img.border {
+	border: 1px solid #C6C6C6;
+	padding: 4px;
+	margin: 0;
+	}
+
+img.border:hover {
+	background: #E3F5FE;
+	}
+
+img.center {
+	display: block; 
+	margin: auto;   
+	}
+
+img.alignright {
+	float: right;
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	float: left;
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+	
+/* Text align */
+.center {
+	text-align: center;
+	}
+	
+.alignright {
+	text-align: right;
+	}
+
+.alignleft {
+	text-align: left;
+	}
