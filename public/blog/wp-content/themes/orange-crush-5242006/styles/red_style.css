@@ -1,0 +1,95 @@
+/*------------------------------- Defaults -------------------------------*/
+
+a, a:link, a:visited {          color:#AA0A01;}
+
+a:hover, a:active {             color:#EA0000;}
+
+blockquote p {                  color:#8B4B48;}
+
+blockquote blockquote p {       color:#A02019;}
+
+
+
+
+
+/*------------------------------- Div ID's -------------------------------*/
+
+#wrapper{			background-image:url("../images/content_bg.gif");}
+
+#header{			background-image:url("../images/header_red.gif");}
+
+
+
+
+
+/*----------------------------- Header Tags -------------------------------*/
+
+h2 {                            color:#AA0A01;
+                                border-bottom:1px solid #AA0A01;}
+
+h3 {                            border-top:1px solid #AA0A01;}
+
+
+
+
+/*----------------------------- Form Styles -------------------------------*/
+
+#search input.button {          background-image:url("../images/search_red.gif");
+                                background-repeat:no-repeat;}
+
+
+
+
+/*----------------------------- Link Styles -------------------------------*/
+
+a p.more, a:link p.more, a:visited p.more {    
+				color:#AA0A01;}
+
+a:hover p.more, a:active p.more {             
+				color:#C00000;}
+
+
+
+
+/*----------------------------- List Styles -------------------------------*/
+
+#content ol, #content ul {	color:#8B4B48;}
+
+
+
+
+/*-------------------------- Paragraph Styles ------------------------------*/
+
+p.date {                        color:#AA0A01;}
+
+
+
+
+/*------------------- Sidebar Styles - Widgetize Me! ------------------------*/
+
+#sidebar div.title, #sidebar li h2 {     
+                                color:#AA0A01;
+                                border-bottom:1px solid #AA0A01;}
+
+table#wp-calendar caption {     background-color:#C00000;}
+
+table#wp-calendar a, table#wp-calendar a:link, table#wp-calendar a:visited {
+                                color:#AA0A01;}
+
+table#wp-calendar a:hover, table#wp-calendar a:active {
+                                color:#EA0000;}
+
+div.widget_sideblogwidget {     border:5px solid #C00000;}
+
+#sidebar div.widget_sideblogwidget ul {  
+                                background-image:url("../images/quote_left_red.gif");}
+
+div.widget_sideblogwidget li {  background-image:url("../images/quote_right_red.gif");}
+
+
+
+
+
+/*---------------------- Alternate Comment Styles ---------------------------*/
+
+#comments_wrap h2 {           	border:none;}

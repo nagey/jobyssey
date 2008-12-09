@@ -1,0 +1,17 @@
+div.outer {              
+position:absolute;
+top:50%;
+}
+
+div.ie {                 
+position:relative;
+ top:-50%;
+}
+
+table#wp-calendar thead th { 
+border-right:1px solid #777;
+}
+
+table#wp-calendar tfoot {
+margin-left:-1px;
+}

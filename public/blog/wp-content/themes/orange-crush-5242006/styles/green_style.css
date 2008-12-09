@@ -1,0 +1,84 @@
+/*------------------------------- Defaults -------------------------------*/
+
+a, a:link, a:visited {          color:#057305;}
+
+a:hover, a:active {             color:#2CA22C;}
+
+
+
+
+
+/*------------------------------- Div ID's -------------------------------*/
+
+#wrapper{			background-image:url("../images/content_bg.gif");}
+
+#header{			background-image:url("../images/header_green.gif");}
+
+
+
+
+
+/*----------------------------- Header Tags -------------------------------*/
+
+h2 {                            color:#057305;
+                                border-bottom:1px solid #057305;}
+
+h3 {                            border-top:1px solid #057305;}
+
+
+
+
+/*----------------------------- Form Styles -------------------------------*/
+
+#search input.button {          background-image:url("../images/search_green.gif");
+                                background-repeat:no-repeat;}
+
+
+
+
+/*----------------------------- Link Styles -------------------------------*/
+
+a p.more, a:link p.more, a:visited p.more {    
+				color:#057305;}
+
+a:hover p.more, a:active p.more {             
+				color:#2CA22C;}
+
+
+
+
+/*-------------------------- Paragraph Styles ------------------------------*/
+
+p.date {                        color:#057305;}
+
+
+
+
+/*------------------- Sidebar Styles - Widgetize Me! ------------------------*/
+
+#sidebar div.title, #sidebar li h2 {     
+                                color:#057305;
+                                border-bottom:1px solid #057305;}
+
+table#wp-calendar caption {     background-color:#2CA22C;}
+
+table#wp-calendar a, table#wp-calendar a:link, table#wp-calendar a:visited {
+                                color:#2CA22C;}
+
+table#wp-calendar a:hover, table#wp-calendar a:active {
+                                color:#057305;}
+
+div.widget_sideblogwidget {     border:5px solid #2CA22C;}
+
+#sidebar div.widget_sideblogwidget ul {  
+                                background-image:url("../images/quote_left_green.gif");}
+
+div.widget_sideblogwidget li {  background-image:url("../images/quote_right_green.gif");}
+
+
+
+
+
+/*---------------------- Alternate Comment Styles ---------------------------*/
+
+#comments_wrap h2 {           	border:none;}
