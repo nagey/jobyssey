@@ -1,27 +1,86 @@
 <?php
 
+function wp_signon( $credentials = '', $secure_cookie = '' ) {
+	if ( empty($credentials) ) {
+		if ( ! empty($_POST['log']) )
+			$credentials['user_login'] = $_POST['log'];
+		if ( ! empty($_POST['pwd']) )
+			$credentials['user_password'] = $_POST['pwd'];
+		if ( ! empty($_POST['rememberme']) )
+			$credentials['remember'] = $_POST['rememberme'];
+	}
+
+	if ( !empty($credentials['user_login']) )
+		$credentials['user_login'] = sanitize_user($credentials['user_login']);
+	if ( !empty($credentials['user_password']) )
+		$credentials['user_password'] = trim($credentials['user_password']);
+	if ( !empty($credentials['remember']) )
+		$credentials['remember'] = true;
+	else
+		$credentials['remember'] = false;
+
+	do_action_ref_array('wp_authenticate', array(&$credentials['user_login'], &$credentials['user_password']));
+
+	if ( '' === $secure_cookie )
+		$secure_cookie = is_ssl() ? true : false;
+	
+	// If no credential info provided, check cookie.
+	if ( empty($credentials['user_login']) && empty($credentials['user_password']) ) {
+			$user = wp_validate_auth_cookie();
+			if ( $user )
+				return new WP_User($user);
+
+			if ( $secure_cookie )
+				$auth_cookie = SECURE_AUTH_COOKIE;
+			else
+				$auth_cookie = AUTH_COOKIE;
+
+			if ( !empty($_COOKIE[$auth_cookie]) )
+				return new WP_Error('expired_session', __('Please log in again.'));
+
+			// If the cookie is not set, be silent.
+			return new WP_Error();
+	}
+
+	if ( empty($credentials['user_login']) || empty($credentials['user_password']) ) {
+		$error = new WP_Error();
+
+		if ( empty($credentials['user_login']) )
+			$error->add('empty_username', __('<strong>ERROR</strong>: The username field is empty.'));
+		if ( empty($credentials['user_password']) )
+			$error->add('empty_password', __('<strong>ERROR</strong>: The password field is empty.'));
+		return $error;
+	}
+
+	$user = wp_authenticate($credentials['user_login'], $credentials['user_password']);
+	if ( is_wp_error($user) )
+		return $user;
+
+	wp_set_auth_cookie($user->ID, $credentials['remember'], $secure_cookie);
+	do_action('wp_login', $credentials['user_login']);
+	return $user;
+}
+
 function get_profile($field, $user = false) {
 	global $wpdb;
 	if ( !$user )
 		$user = $wpdb->escape($_COOKIE[USER_COOKIE]);
-	return $wpdb->get_var("SELECT $field FROM $wpdb->users WHERE user_login = '$user'");
+	return $wpdb->get_var( $wpdb->prepare("SELECT $field FROM $wpdb->users WHERE user_login = %s", $user) );
 }
 
 function get_usernumposts($userid) {
 	global $wpdb;
 	$userid = (int) $userid;
-	return $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts WHERE post_author = '$userid' AND post_type = 'post' AND " . get_private_posts_cap_sql('post'));
+	return $wpdb->get_var( $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->posts WHERE post_author = %d AND post_type = 'post' AND ", $userid) . get_private_posts_cap_sql('post'));
 }
 
 // TODO: xmlrpc only.  Maybe move to xmlrpc.php.
 function user_pass_ok($user_login,$user_pass) {
-	global $cache_userdata;
-	if ( empty($cache_userdata[$user_login]) ) {
-		$userdata = get_userdatabylogin($user_login);
-	} else {
-		$userdata = $cache_userdata[$user_login];
-	}
-	return (md5($user_pass) == $userdata->user_pass);
+	$user = wp_authenticate($user_login, $user_pass);
+	if ( is_wp_error($user) )
+		return false;
+
+	return true;
 }
 
 //
@@ -31,17 +90,20 @@ function user_pass_ok($user_login,$user_pass) {
 function get_user_option( $option, $user = 0 ) {
 	global $wpdb;
 
+	$option = preg_replace('|[^a-z0-9_]|i', '', $option);
 	if ( empty($user) )
 		$user = wp_get_current_user();
 	else
 		$user = get_userdata($user);
 
 	if ( isset( $user->{$wpdb->prefix . $option} ) ) // Blog specific
-		return $user->{$wpdb->prefix . $option};
+		$result = $user->{$wpdb->prefix . $option};
 	elseif ( isset( $user->{$option} ) ) // User specific and cross-blog
-		return $user->{$option};
+		$result = $user->{$option};
 	else // Blog global
-		return get_option( $option );
+		$result = get_option( $option );
+	
+	return apply_filters("get_user_option_{$option}", $result, $option, $user);
 }
 
 function update_user_option( $user_id, $option_name, $newvalue, $global = false ) {
@@ -76,13 +138,11 @@ function delete_usermeta( $user_id, $meta_key, $meta_value = '' ) {
 	$meta_value = trim( $meta_value );
 
 	if ( ! empty($meta_value) )
-		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE user_id = '$user_id' AND meta_key = '$meta_key' AND meta_value = '$meta_value'");
+		$wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = %s AND meta_value = %s", $userid, $meta_key, $meta_value) );
 	else
-		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE user_id = '$user_id' AND meta_key = '$meta_key'");
+		$wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = %s", $user_id, $meta_key) );
 
-	$user = get_userdata($user_id);
 	wp_cache_delete($user_id, 'users');
-	wp_cache_delete($user->user_login, 'userlogins');
 
 	return true;
 }
@@ -96,9 +156,14 @@ function get_usermeta( $user_id, $meta_key = '') {
 
 	if ( !empty($meta_key) ) {
 		$meta_key = preg_replace('|[^a-z0-9_]|i', '', $meta_key);
-		$metas = $wpdb->get_results("SELECT meta_key, meta_value FROM $wpdb->usermeta WHERE user_id = '$user_id' AND meta_key = '$meta_key'");
+		$user = wp_cache_get($user_id, 'users');
+		// Check the cached user object
+		if ( false !== $user && isset($user->$meta_key) )
+			$metas = array($user->$meta_key);
+		else
+			$metas = $wpdb->get_col( $wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = %s", $user_id, $meta_key) );
 	} else {
-		$metas = $wpdb->get_results("SELECT meta_key, meta_value FROM $wpdb->usermeta WHERE user_id = '$user_id'");
+		$metas = $wpdb->get_col( $wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d", $user_id) );
 	}
 
 	if ( empty($metas) ) {
@@ -108,13 +173,12 @@ function get_usermeta( $user_id, $meta_key = '') {
 			return '';
 	}
 
-	foreach ($metas as $meta) 
-		$values[] = maybe_unserialize($meta->meta_value);
+	$metas = array_map('maybe_unserialize', $metas);
 
-	if ( count($values) == 1 )
-		return $values[0];
+	if ( count($metas) == 1 )
+		return $metas[0];
 	else
-		return $values;
+		return $metas;
 }
 
 function update_usermeta( $user_id, $meta_key, $meta_value ) {
@@ -127,26 +191,23 @@ function update_usermeta( $user_id, $meta_key, $meta_value ) {
 	if ( is_string($meta_value) )
 		$meta_value = stripslashes($meta_value);
 	$meta_value = maybe_serialize($meta_value);
-	$meta_value = $wpdb->escape($meta_value);
 
 	if (empty($meta_value)) {
 		return delete_usermeta($user_id, $meta_key);
 	}
 
-	$cur = $wpdb->get_row("SELECT * FROM $wpdb->usermeta WHERE user_id = '$user_id' AND meta_key = '$meta_key'");
+	$cur = $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = %s", $user_id, $meta_key) );
 	if ( !$cur ) {
-		$wpdb->query("INSERT INTO $wpdb->usermeta ( user_id, meta_key, meta_value )
+		$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->usermeta ( user_id, meta_key, meta_value )
 		VALUES
-		( '$user_id', '$meta_key', '$meta_value' )");
+		( %d, %s, %s )", $user_id, $meta_key, $meta_value) );
 	} else if ( $cur->meta_value != $meta_value ) {
-		$wpdb->query("UPDATE $wpdb->usermeta SET meta_value = '$meta_value' WHERE user_id = '$user_id' AND meta_key = '$meta_key'");
+		$wpdb->query( $wpdb->prepare("UPDATE $wpdb->usermeta SET meta_value = %s WHERE user_id = %d AND meta_key = %s", $meta_value, $user_id, $meta_key) );
 	} else {
 		return false;
 	}
 
-	$user = get_userdata($user_id);
 	wp_cache_delete($user_id, 'users');
-	wp_cache_delete($user->user_login, 'userlogins');
 
 	return true;
 }
@@ -169,7 +230,7 @@ function setup_userdata($user_id = '') {
 
 	$userdata = $user->data;
 	$user_login	= $user->user_login;
-	$user_level	= (int) $user->user_level;
+	$user_level	= (int) isset($user->user_level) ? $user->user_level : 0;
 	$user_ID	= (int) $user->ID;
 	$user_email	= $user->user_email;
 	$user_url	= $user->user_url;
@@ -240,6 +301,37 @@ function wp_dropdown_users( $args = '' ) {
 		echo $output;
 
 	return $output;
+}
+
+function _fill_user( &$user ) {
+	global $wpdb;
+
+	$show = $wpdb->hide_errors();
+	$metavalues = $wpdb->get_results($wpdb->prepare("SELECT meta_key, meta_value FROM $wpdb->usermeta WHERE user_id = %d", $user->ID));
+	$wpdb->show_errors($show);
+
+	if ( $metavalues ) {
+		foreach ( $metavalues as $meta ) {
+			$value = maybe_unserialize($meta->meta_value);
+			$user->{$meta->meta_key} = $value;
+		}
+	}
+
+	$level = $wpdb->prefix . 'user_level';
+	if ( isset( $user->{$level} ) )
+		$user->user_level = $user->{$level};
+
+	// For backwards compat.
+	if ( isset($user->first_name) )
+		$user->user_firstname = $user->first_name;
+	if ( isset($user->last_name) )
+		$user->user_lastname = $user->last_name;
+	if ( isset($user->description) )
+		$user->user_description = $user->description;
+
+	wp_cache_add($user->ID, $user, 'users');
+	wp_cache_add($user->user_login, $user->ID, 'userlogins');
+	wp_cache_add($user->user_email, $user->ID, 'useremail');
 }
 
 ?>

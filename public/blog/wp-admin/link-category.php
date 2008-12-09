@@ -28,21 +28,30 @@ case 'delete':
 		wp_die(__('Cheatin&#8217; uh?'));
 
 	$cat_name = get_term_field('name', $cat_ID, 'link_category');
+	$default_cat_id = get_option('default_link_category');
 
 	// Don't delete the default cats.
-    if ( $cat_ID == get_option('default_link_category') )
+    if ( $cat_ID == $default_cat_id )
 		wp_die(sprintf(__("Can&#8217;t delete the <strong>%s</strong> category: this is the default one"), $cat_name));
 
-	wp_delete_term($cat_ID, 'link_category');
+	wp_delete_term($cat_ID, 'link_category', array('default' => $default_cat_id));
 
-	wp_redirect('edit-link-categories.php?message=2');
+	$location = 'edit-link-categories.php';
+	if ( $referer = wp_get_original_referer() ) {
+		if ( false !== strpos($referer, 'edit-link-categories.php') )
+			$location = $referer;
+	}
+
+	$location = add_query_arg('message', 2, $location);
+
+	wp_redirect($location);
 	exit;
 
 break;
 
 case 'edit':
 	$title = __('Categories');
-	$parent_file = 'link-manager.php';
+	$parent_file = 'edit.php';
 	$submenu_file = 'edit-link-categories.php';
 	require_once ('admin-header.php');
 	$cat_ID = (int) $_GET['cat_ID'];
@@ -59,11 +68,20 @@ case 'editedcat':
 	if ( !current_user_can('manage_categories') )
 		wp_die(__('Cheatin&#8217; uh?'));
 
-	if ( wp_update_term($cat_ID, 'link_category', $_POST) )
-		wp_redirect('edit-link-categories.php?message=3');
-	else
-		wp_redirect('edit-link-categories.php?message=5');
+	$location = 'edit-link-categories.php';
+	if ( $referer = wp_get_original_referer() ) {
+		if ( false !== strpos($referer, 'edit-link-categories.php') )
+			$location = $referer;
+	}
 
+	$update =  wp_update_term($cat_ID, 'link_category', $_POST);
+
+	if ( $update && !is_wp_error($update) )
+		$location = add_query_arg('message', 3, $location);
+	else
+		$location = add_query_arg('message', 5, $location);
+
+	wp_redirect($location);
 	exit;
 break;
 }

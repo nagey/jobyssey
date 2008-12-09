@@ -1,12 +1,12 @@
 <?php
 
-if ( file_exists(ABSPATH . 'wp-content/install.php') )
-	require (ABSPATH . 'wp-content/install.php');
+if ( file_exists(WP_CONTENT_DIR . '/install.php') )
+	require (WP_CONTENT_DIR . '/install.php');
 require_once(ABSPATH . 'wp-admin/includes/admin.php');
 require_once(ABSPATH . 'wp-admin/includes/schema.php');
 
 if ( !function_exists('wp_install') ) :
-function wp_install($blog_title, $user_name, $user_email, $public, $meta='') {
+function wp_install($blog_title, $user_name, $user_email, $public, $deprecated='') {
 	global $wp_rewrite;
 
 	wp_check_mysql_version();
@@ -18,12 +18,8 @@ function wp_install($blog_title, $user_name, $user_email, $public, $meta='') {
 	update_option('blogname', $blog_title);
 	update_option('admin_email', $user_email);
 	update_option('blog_public', $public);
-	$schema = ( isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on' ) ? 'https://' : 'http://';
 
-	if ( defined('WP_SITEURL') && '' != WP_SITEURL )
-		$guessurl = WP_SITEURL;
-	else
-		$guessurl = preg_replace('|/wp-admin/.*|i', '', $schema . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+	$guessurl = wp_guess_url();
 
 	update_option('siteurl', $guessurl);
 
@@ -35,7 +31,7 @@ function wp_install($blog_title, $user_name, $user_email, $public, $meta='') {
 	// being shared among blogs.  Just set the role in that case.
 	$user_id = username_exists($user_name);
 	if ( !$user_id ) {
-		$random_password = substr(md5(uniqid(microtime())), 0, 6);
+		$random_password = wp_generate_password();
 		$user_id = wp_create_user($user_name, $random_password, $user_email);
 	} else {
 		$random_password = __('User already exists.  Password inherited.');
@@ -62,13 +58,13 @@ function wp_install_defaults($user_id) {
 
 	// Default category
 	$cat_name = $wpdb->escape(__('Uncategorized'));
-	$cat_slug = sanitize_title(__('Uncategorized'));
+	$cat_slug = sanitize_title(_c('Uncategorized|Default category slug'));
 	$wpdb->query("INSERT INTO $wpdb->terms (name, slug, term_group) VALUES ('$cat_name', '$cat_slug', '0')");
 	$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('1', 'category', '', '0', '1')");
 
 	// Default link category
 	$cat_name = $wpdb->escape(__('Blogroll'));
-	$cat_slug = sanitize_title(__('Blogroll'));
+	$cat_slug = sanitize_title(_c('Blogroll|Default link category slug'));
 	$wpdb->query("INSERT INTO $wpdb->terms (name, slug, term_group) VALUES ('$cat_name', '$cat_slug', '0')");
 	$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('2', 'link_category', '', '0', '7')");
 
@@ -98,14 +94,15 @@ function wp_install_defaults($user_id) {
 	$now = date('Y-m-d H:i:s');
 	$now_gmt = gmdate('Y-m-d H:i:s');
 	$first_post_guid = get_option('home') . '/?p=1';
-	$wpdb->query("INSERT INTO $wpdb->posts (post_author, post_date, post_date_gmt, post_content, post_excerpt, post_title, post_category, post_name, post_modified, post_modified_gmt, guid, comment_count, to_ping, pinged, post_content_filtered) VALUES ($user_id, '$now', '$now_gmt', '".$wpdb->escape(__('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!'))."', '', '".$wpdb->escape(__('Hello world!'))."', '0', '".$wpdb->escape(__('hello-world'))."', '$now', '$now_gmt', '$first_post_guid', '1', '', '', '')");
+	$wpdb->query("INSERT INTO $wpdb->posts (post_author, post_date, post_date_gmt, post_content, post_excerpt, post_title, post_category, post_name, post_modified, post_modified_gmt, guid, comment_count, to_ping, pinged, post_content_filtered) VALUES ($user_id, '$now', '$now_gmt', '".$wpdb->escape(__('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!'))."', '', '".$wpdb->escape(__('Hello world!'))."', '0', '".$wpdb->escape(_c('hello-world|Default post slug'))."', '$now', '$now_gmt', '$first_post_guid', '1', '', '', '')");
 	$wpdb->query( "INSERT INTO $wpdb->term_relationships (`object_id`, `term_taxonomy_id`) VALUES (1, 1)" );
 
 	// Default comment
 	$wpdb->query("INSERT INTO $wpdb->comments (comment_post_ID, comment_author, comment_author_email, comment_author_url, comment_date, comment_date_gmt, comment_content) VALUES ('1', '".$wpdb->escape(__('Mr WordPress'))."', '', 'http://wordpress.org/', '$now', '$now_gmt', '".$wpdb->escape(__('Hi, this is a comment.<br />To delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.'))."')");
 
 	// First Page
-	$wpdb->query("INSERT INTO $wpdb->posts (post_author, post_date, post_date_gmt, post_content, post_excerpt, post_title, post_category, post_name, post_modified, post_modified_gmt, post_status, post_type, to_ping, pinged, post_content_filtered) VALUES ($user_id, '$now', '$now_gmt', '".$wpdb->escape(__('This is an example of a WordPress page, you could edit this to put information about yourself or your site so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress.'))."', '', '".$wpdb->escape(__('About'))."', '0', '".$wpdb->escape(__('about'))."', '$now', '$now_gmt', 'publish', 'page', '', '', '')");
+	$first_post_guid = get_option('home') . '/?page_id=2';
+	$wpdb->query("INSERT INTO $wpdb->posts (post_author, post_date, post_date_gmt, post_content, post_excerpt, post_title, post_category, post_name, post_modified, post_modified_gmt, guid, post_status, post_type, to_ping, pinged, post_content_filtered) VALUES ($user_id, '$now', '$now_gmt', '".$wpdb->escape(__('This is an example of a WordPress page, you could edit this to put information about yourself or your site so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress.'))."', '', '".$wpdb->escape(__('About'))."', '0', '".$wpdb->escape(_c('about|Default page slug'))."', '$now', '$now_gmt','$first_post_guid', 'publish', 'page', '', '', '')");
 }
 endif;
 
@@ -198,6 +195,18 @@ function upgrade_all() {
 	if ( $wp_current_db_version < 6124 )
 		upgrade_230_old_tables();
 
+	if ( $wp_current_db_version < 7499 )
+		upgrade_250();
+
+	if ( $wp_current_db_version < 7796 )
+		upgrade_251();
+
+	if ( $wp_current_db_version < 7935 )
+		upgrade_252();
+
+	if ( $wp_current_db_version < 8201 )
+		upgrade_260();
+
 	maybe_disable_automattic_widgets();
 
 	$wp_rewrite->flush_rules();
@@ -214,7 +223,7 @@ function upgrade_100() {
 		foreach($posts as $post) {
 			if ('' == $post->post_name) {
 				$newtitle = sanitize_title($post->post_title);
-				$wpdb->query("UPDATE $wpdb->posts SET post_name = '$newtitle' WHERE ID = '$post->ID'");
+				$wpdb->query( $wpdb->prepare("UPDATE $wpdb->posts SET post_name = %s WHERE ID = %d", $newtitle, $post->ID) );
 			}
 		}
 	}
@@ -223,7 +232,7 @@ function upgrade_100() {
 	foreach ($categories as $category) {
 		if ('' == $category->category_nicename) {
 			$newtitle = sanitize_title($category->cat_name);
-			$wpdb->query("UPDATE $wpdb->categories SET category_nicename = '$newtitle' WHERE cat_ID = '$category->cat_ID'");
+			$wpdb->query( $wpdb->prepare("UPDATE $wpdb->categories SET category_nicename = %s WHERE cat_ID = %d", $newtitle, $category->cat_ID) );
 		}
 	}
 
@@ -246,14 +255,12 @@ function upgrade_100() {
 	if ($allposts) :
 		foreach ($allposts as $post) {
 			// Check to see if it's already been imported
-			$cat = $wpdb->get_row("SELECT * FROM $wpdb->post2cat WHERE post_id = $post->ID AND category_id = $post->post_category");
+			$cat = $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->post2cat WHERE post_id = %d AND category_id = %d", $post->ID, $post->post_category) );
 			if (!$cat && 0 != $post->post_category) { // If there's no result
-				$wpdb->query("
-					INSERT INTO $wpdb->post2cat
+				$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->post2cat
 					(post_id, category_id)
-					VALUES
-					('$post->ID', '$post->post_category')
-					");
+					VALUES (%s, %s)
+					", $post->ID, $post->post_category) );
 			}
 		}
 	endif;
@@ -281,7 +288,7 @@ function upgrade_110() {
 	foreach ($users as $user) {
 		if ('' == $user->user_nicename) {
 			$newname = sanitize_title($user->user_nickname);
-			$wpdb->query("UPDATE $wpdb->users SET user_nicename = '$newname' WHERE ID = '$user->ID'");
+			$wpdb->query( $wpdb->prepare("UPDATE $wpdb->users SET user_nicename = %s WHERE ID = %d", $newname, $user->ID) );
 		}
 	}
 
@@ -397,7 +404,7 @@ function upgrade_130() {
 	foreach ( $options as $option ) {
 		if ( 1 != $option->dupes ) { // Could this be done in the query?
 			$limit = $option->dupes - 1;
-			$dupe_ids = $wpdb->get_col("SELECT option_id FROM $wpdb->options WHERE option_name = '$option->option_name' LIMIT $limit");
+			$dupe_ids = $wpdb->get_col( $wpdb->prepare("SELECT option_id FROM $wpdb->options WHERE option_name = %s LIMIT %d", $option->option_name, $limit) );
 			$dupe_ids = join($dupe_ids, ',');
 			$wpdb->query("DELETE FROM $wpdb->options WHERE option_id IN ($dupe_ids)");
 		}
@@ -441,8 +448,7 @@ function upgrade_160() {
 			if ($idmode == 'namefl') $id = $user->user_firstname.' '.$user->user_lastname;
 			if ($idmode == 'namelf') $id = $user->user_lastname.' '.$user->user_firstname;
 			if (!$idmode) $id = $user->user_nickname;
-			$id = $wpdb->escape( $id );
-			$wpdb->query("UPDATE $wpdb->users SET display_name = '$id' WHERE ID = '$user->ID'");
+			$wpdb->query( $wpdb->prepare("UPDATE $wpdb->users SET display_name = %s WHERE ID = %d", $id, $user->ID) );
 		endif;
 
 		// FIXME: RESET_CAPS is temporary code to reset roles and caps if flag is set.
@@ -464,7 +470,7 @@ function upgrade_160() {
 	$comments = $wpdb->get_results( "SELECT comment_post_ID, COUNT(*) as c FROM $wpdb->comments WHERE comment_approved = '1' GROUP BY comment_post_ID" );
 	if( is_array( $comments ) ) {
 		foreach ($comments as $comment) {
-			$wpdb->query( "UPDATE $wpdb->posts SET comment_count = $comment->c WHERE ID = '$comment->comment_post_ID'" );
+			$wpdb->query( $wpdb->prepare("UPDATE $wpdb->posts SET comment_count = %d WHERE ID = %d", $comment->c, $comment->comment_post_ID) );
 		}
 	}
 
@@ -473,10 +479,10 @@ function upgrade_160() {
 	if ( $wp_current_db_version > 2541 && $wp_current_db_version <= 3091 ) {
 		$objects = $wpdb->get_results("SELECT ID, post_type FROM $wpdb->posts WHERE post_status = 'object'");
 		foreach ($objects as $object) {
-			$wpdb->query("UPDATE $wpdb->posts SET post_status = 'attachment',
-			post_mime_type = '$object->post_type',
+			$wpdb->query( $wpdb->prepare("UPDATE $wpdb->posts SET post_status = 'attachment',
+			post_mime_type = %s,
 			post_type = ''
-			WHERE ID = $object->ID");
+			WHERE ID = %d", $object->post_type, $object->ID) );
 
 			$meta = get_post_meta($object->ID, 'imagedata', true);
 			if ( ! empty($meta['file']) )
@@ -504,7 +510,7 @@ function upgrade_210() {
 				$type = 'attachment';
 			}
 
-			$wpdb->query("UPDATE $wpdb->posts SET post_status = '$status', post_type = '$type' WHERE ID = '$post->ID'");
+			$wpdb->query( $wpdb->prepare("UPDATE $wpdb->posts SET post_status = %s, post_type = %s WHERE ID = %d", $status, $type, $post->ID) );
 		}
 	}
 
@@ -537,45 +543,46 @@ function upgrade_230() {
 	$categories = $wpdb->get_results("SELECT * FROM $wpdb->categories ORDER BY cat_ID");
 	foreach ($categories as $category) {
 		$term_id = (int) $category->cat_ID;
-		$name = $wpdb->escape($category->cat_name);
-		$description = $wpdb->escape($category->category_description);
-		$slug = $wpdb->escape($category->category_nicename);
-		$parent = $wpdb->escape($category->category_parent);
+		$name = $category->cat_name;
+		$description = $category->category_description;
+		$slug = $category->category_nicename;
+		$parent = $category->category_parent;
 		$term_group = 0;
 
 		// Associate terms with the same slug in a term group and make slugs unique.
-		if ( $exists = $wpdb->get_results("SELECT term_id, term_group FROM $wpdb->terms WHERE slug = '$slug'") ) {
+		if ( $exists = $wpdb->get_results( $wpdb->prepare("SELECT term_id, term_group FROM $wpdb->terms WHERE slug = %s", $slug) ) ) {
 			$term_group = $exists[0]->term_group;
 			$id = $exists[0]->term_id;
 			$num = 2;
 			do {
 				$alt_slug = $slug . "-$num";
 				$num++;
-				$slug_check = $wpdb->get_var("SELECT slug FROM $wpdb->terms WHERE slug = '$alt_slug'");
+				$slug_check = $wpdb->get_var( $wpdb->prepare("SELECT slug FROM $wpdb->terms WHERE slug = %s", $alt_slug) );
 			} while ( $slug_check );
 
 			$slug = $alt_slug;
 
 			if ( empty( $term_group ) ) {
 				$term_group = $wpdb->get_var("SELECT MAX(term_group) FROM $wpdb->terms GROUP BY term_group") + 1;
-				$wpdb->query("UPDATE $wpdb->terms SET term_group = '$term_group' WHERE term_id = '$id'");
+				$wpdb->query( $wpdb->prepare("UPDATE $wpdb->terms SET term_group = %d WHERE term_id = %d", $term_group, $id) );
 			}
 		}
 
-		$wpdb->query("INSERT INTO $wpdb->terms (term_id, name, slug, term_group) VALUES ('$term_id', '$name', '$slug', '$term_group')");
+		$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->terms (term_id, name, slug, term_group) VALUES 
+		(%d, %s, %s, %d)", $term_id, $name, $slug, $term_group) );
 
 		$count = 0;
 		if ( !empty($category->category_count) ) {
 			$count = (int) $category->category_count;
 			$taxonomy = 'category';
-			$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('$term_id', '$taxonomy', '$description', '$parent', '$count')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ( %d, %s, %s, %d, %d)", $term_id, $taxonomy, $description, $parent, $count) );
 			$tt_ids[$term_id][$taxonomy] = (int) $wpdb->insert_id;
 		}
 
 		if ( !empty($category->link_count) ) {
 			$count = (int) $category->link_count;
 			$taxonomy = 'link_category';
-			$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('$term_id', '$taxonomy', '$description', '$parent', '$count')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ( %d, %s, %s, %d, %d)", $term_id, $taxonomy, $description, $parent, $count) );
 			$tt_ids[$term_id][$taxonomy] = (int) $wpdb->insert_id;
 		}
 
@@ -583,14 +590,14 @@ function upgrade_230() {
 			$have_tags = true;
 			$count = (int) $category->tag_count;
 			$taxonomy = 'post_tag';
-			$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('$term_id', '$taxonomy', '$description', '$parent', '$count')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ( %d, %s, %s, %d, %d)", $term_id, $taxonomy, $description, $parent, $count) );
 			$tt_ids[$term_id][$taxonomy] = (int) $wpdb->insert_id;
 		}
 
 		if ( empty($count) ) {
 			$count = 0;
 			$taxonomy = 'category';
-			$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('$term_id', '$taxonomy', '$description', '$parent', '$count')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ( %d, %s, %s, %d, %d)", $term_id, $taxonomy, $description, $parent, $count) );
 			$tt_ids[$term_id][$taxonomy] = (int) $wpdb->insert_id;
 		}
 	}
@@ -610,7 +617,7 @@ function upgrade_230() {
 		if ( empty($tt_id) )
 			continue;
 
-		$wpdb->query("INSERT INTO $wpdb->term_relationships (object_id, term_taxonomy_id) VALUES ('$post_id', '$tt_id')");
+		$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_relationships (object_id, term_taxonomy_id) VALUES ( %d, %d)", $post_id, $tt_id) );
 	}
 
 	// < 3570 we used linkcategories.  >= 3570 we used categories and link2cat.
@@ -629,20 +636,20 @@ function upgrade_230() {
 			$term_group = 0;
 
 			// Associate terms with the same slug in a term group and make slugs unique.
-			if ( $exists = $wpdb->get_results("SELECT term_id, term_group FROM $wpdb->terms WHERE slug = '$slug'") ) {
+			if ( $exists = $wpdb->get_results( $wpdb->prepare("SELECT term_id, term_group FROM $wpdb->terms WHERE slug = %s", $slug) ) ) {
 				$term_group = $exists[0]->term_group;
 				$term_id = $exists[0]->term_id;
 			}
 
 			if ( empty($term_id) ) {
-				$wpdb->query("INSERT INTO $wpdb->terms (name, slug, term_group) VALUES ('$name', '$slug', '$term_group')");
+				$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->terms (name, slug, term_group) VALUES (%s, %s, %d)", $name, $slug, $term_group) );
 				$term_id = (int) $wpdb->insert_id;
 			}
 
 			$link_cat_id_map[$cat_id] = $term_id;
 			$default_link_cat = $term_id;
 
-			$wpdb->query("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES ('$term_id', 'link_category', '', '0', '0')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_taxonomy (term_id, taxonomy, description, parent, count) VALUES (%d, 'link_category', '', '0', '0')", $term_id) );
 			$tt_ids[$term_id] = (int) $wpdb->insert_id;
 		}
 
@@ -658,7 +665,7 @@ function upgrade_230() {
 			if ( empty($tt_id) )
 				continue;
 
-			$wpdb->query("INSERT INTO $wpdb->term_relationships (object_id, term_taxonomy_id) VALUES ('$link->link_id', '$tt_id')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_relationships (object_id, term_taxonomy_id) VALUES ( %d, %d)", $link->link_id, $tt_id) );
 		}
 
 		// Set default to the last category we grabbed during the upgrade loop.
@@ -673,7 +680,7 @@ function upgrade_230() {
 			if ( empty($tt_id) )
 				continue;
 
-			$wpdb->query("INSERT INTO $wpdb->term_relationships (object_id, term_taxonomy_id) VALUES ('$link_id', '$tt_id')");
+			$wpdb->query( $wpdb->prepare("INSERT INTO $wpdb->term_relationships (object_id, term_taxonomy_id) VALUES ( %d, %d)", $link_id, $tt_id) );
 		}
 	}
 
@@ -686,10 +693,10 @@ function upgrade_230() {
 	$terms = $wpdb->get_results("SELECT term_taxonomy_id, taxonomy FROM $wpdb->term_taxonomy");
 	foreach ( (array) $terms as $term ) {
 		if ( ('post_tag' == $term->taxonomy) || ('category' == $term->taxonomy) )
-			$count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->term_relationships, $wpdb->posts WHERE $wpdb->posts.ID = $wpdb->term_relationships.object_id AND post_status = 'publish' AND post_type = 'post' AND term_taxonomy_id = '$term->term_taxonomy_id'");
+			$count = $wpdb->get_var( $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->term_relationships, $wpdb->posts WHERE $wpdb->posts.ID = $wpdb->term_relationships.object_id AND post_status = 'publish' AND post_type = 'post' AND term_taxonomy_id = %d", $term->term_taxonomy_id) );
 		else
-			$count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->term_relationships WHERE term_taxonomy_id = '$term->term_taxonomy_id'");
-		$wpdb->query("UPDATE $wpdb->term_taxonomy SET count = '$count' WHERE term_taxonomy_id = '$term->term_taxonomy_id'");
+			$count = $wpdb->get_var( $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->term_relationships WHERE term_taxonomy_id = %d", $term->term_taxonomy_id) );
+		$wpdb->query( $wpdb->prepare("UPDATE $wpdb->term_taxonomy SET count = %d WHERE term_taxonomy_id = %d", $count, $term->term_taxonomy_id) );
 	}
 }
 
@@ -715,6 +722,38 @@ function upgrade_old_slugs() {
 	$wpdb->query("UPDATE $wpdb->postmeta SET meta_key = '_wp_old_slug' WHERE meta_key = 'old_slug'");
 }
 
+
+function upgrade_250() {
+	global $wp_current_db_version;
+
+	if ( $wp_current_db_version < 6689 ) {
+		populate_roles_250();
+	}
+	
+}
+
+function upgrade_251() {
+	global $wp_current_db_version;
+
+	// Make the secret longer
+	update_option('secret', wp_generate_password(64));
+}
+
+function upgrade_252() {
+	global $wpdb;
+
+	$wpdb->query("UPDATE $wpdb->users SET user_activation_key = ''");
+}
+
+function upgrade_260() {
+	if ( $wp_current_db_version < 8000 )
+		populate_roles_260();
+
+	if ( $wp_current_db_version < 8201 ) {
+		update_option('enable_app', 1);
+		update_option('enable_xmlrpc', 1);
+	}
+}
 
 // The functions we use to actually do stuff
 
@@ -810,7 +849,7 @@ function __get_option($setting) {
 		return preg_replace( '|/+$|', '', constant( 'WP_SITEURL' ) );
 	}
 
-	$option = $wpdb->get_var("SELECT option_value FROM $wpdb->options WHERE option_name = '$setting'");
+	$option = $wpdb->get_var( $wpdb->prepare("SELECT option_value FROM $wpdb->options WHERE option_name = %s", $setting) );
 
 	if ( 'home' == $setting && '' == $option )
 		return __get_option('siteurl');
@@ -845,7 +884,7 @@ function deslash($content) {
 function dbDelta($queries, $execute = true) {
 	global $wpdb;
 
-	// Seperate individual queries into an array
+	// Separate individual queries into an array
 	if( !is_array($queries) ) {
 		$queries = explode( ';', $queries );
 		if('' == $queries[count($queries) - 1]) array_pop($queries);
@@ -1060,7 +1099,7 @@ function make_db_current_silent() {
 
 function make_site_theme_from_oldschool($theme_name, $template) {
 	$home_path = get_home_path();
-	$site_dir = ABSPATH . "wp-content/themes/$template";
+	$site_dir = WP_CONTENT_DIR . "/themes/$template";
 
 	if (! file_exists("$home_path/index.php"))
 		return false;
@@ -1079,7 +1118,7 @@ function make_site_theme_from_oldschool($theme_name, $template) {
 		if ($oldfile == 'index.php') { // Check to make sure it's not a new index
 			$index = implode('', file("$oldpath/$oldfile"));
 			if (strpos($index, 'WP_USE_THEMES') !== false) {
-				if (! @copy(ABSPATH . 'wp-content/themes/default/index.php', "$site_dir/$newfile"))
+				if (! @copy(WP_CONTENT_DIR . '/themes/default/index.php', "$site_dir/$newfile"))
 					return false;
 				continue; // Don't copy anything
 				}
@@ -1127,8 +1166,8 @@ function make_site_theme_from_oldschool($theme_name, $template) {
 }
 
 function make_site_theme_from_default($theme_name, $template) {
-	$site_dir = ABSPATH . "wp-content/themes/$template";
-	$default_dir = ABSPATH . 'wp-content/themes/default';
+	$site_dir = WP_CONTENT_DIR . "/themes/$template";
+	$default_dir = WP_CONTENT_DIR . '/themes/default';
 
 	// Copy files from the default theme to the site theme.
 	//$files = array('index.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebar.php', 'style.css');
@@ -1185,7 +1224,7 @@ function make_site_theme() {
 	// Name the theme after the blog.
 	$theme_name = __get_option('blogname');
 	$template = sanitize_title($theme_name);
-	$site_dir = ABSPATH . "wp-content/themes/$template";
+	$site_dir = WP_CONTENT_DIR . "/themes/$template";
 
 	// If the theme already exists, nothing to do.
 	if ( is_dir($site_dir)) {
@@ -1193,7 +1232,7 @@ function make_site_theme() {
 	}
 
 	// We must be able to write to the themes dir.
-	if (! is_writable(ABSPATH . "wp-content/themes")) {
+	if (! is_writable(WP_CONTENT_DIR . "/themes")) {
 		return false;
 	}
 
@@ -1244,12 +1283,10 @@ function translate_level_to_role($level) {
 }
 
 function wp_check_mysql_version() {
-	global $wp_version;
-
-	// Make sure the server has MySQL 4.0
-	$mysql_version = preg_replace('|[^0-9\.]|', '', @mysql_get_server_info());
-	if ( version_compare($mysql_version, '4.0.0', '<') )
-		die(sprintf(__('<strong>ERROR</strong>: WordPress %s requires MySQL 4.0.0 or higher'), $wp_version));
+	global $wpdb;
+	$result = $wpdb->check_database_version();
+	if ( is_wp_error( $result ) )
+		die( $result->get_error_message() );
 }
 
 function maybe_disable_automattic_widgets() {

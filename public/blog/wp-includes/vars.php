@@ -1,4 +1,16 @@
 <?php
+/**
+ * Creates common globals for the rest of WordPress
+ *
+ * Sets $pagenow global which is the current page. Checks
+ * for the browser to set which one is currently being used.
+ *
+ * Detects which user environment WordPress is being used on.
+ * Only attempts to check for Apache and IIS. Two web servers
+ * with known permalink capability.
+ *
+ * @package WordPress
+ */
 
 // On which page are we ?
 if ( is_admin() ) {
@@ -22,10 +34,12 @@ if ( is_admin() ) {
 }
 
 // Simple browser detection
-$is_lynx = $is_gecko = $is_winIE = $is_macIE = $is_opera = $is_NS4 = false;
+$is_lynx = $is_gecko = $is_winIE = $is_macIE = $is_opera = $is_NS4 = $is_safari = false;
 
 if (strpos($_SERVER['HTTP_USER_AGENT'], 'Lynx') !== false) {
 	$is_lynx = true;
+} elseif ( strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'webkit') !== false ) {
+	$is_safari = true;
 } elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Gecko') !== false) {
 	$is_gecko = true;
 } elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false && strpos($_SERVER['HTTP_USER_AGENT'], 'Win') !== false) {
@@ -41,7 +55,17 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'Lynx') !== false) {
 $is_IE = ( $is_macIE || $is_winIE );
 
 // Server detection
+
+/**
+ * Whether the server software is Apache or something else
+ * @global bool $is_apache
+ */
 $is_apache = ((strpos($_SERVER['SERVER_SOFTWARE'], 'Apache') !== false) || (strpos($_SERVER['SERVER_SOFTWARE'], 'LiteSpeed') !== false)) ? true : false;
+
+/**
+ * Whether the server software is IIS or something else
+ * @global bool $is_IIS
+ */
 $is_IIS = (strpos($_SERVER['SERVER_SOFTWARE'], 'Microsoft-IIS') !== false) ? true : false;
 
 ?>

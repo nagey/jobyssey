@@ -14,7 +14,7 @@
 					<?php the_content('Read the rest of this entry &raquo;'); ?>
 				</div>
 
-				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?><br />Author: <?php the_author(); ?><br /> </p>
+				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
 			</div>
 
 		<?php endwhile; ?>
@@ -34,15 +34,6 @@
 
 	</div>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-3701319-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

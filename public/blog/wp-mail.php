@@ -1,8 +1,18 @@
 <?php
-require(dirname(__FILE__) . '/wp-config.php');
+/**
+ * Gets the email message from the user's mailbox to add as
+ * a WordPress post. Will only run if this is setup and enabled.
+ *
+ * @package WordPress
+ */
 
+/** Make sure that the WordPress bootstrap has ran before continuing. */
+require(dirname(__FILE__) . '/wp-load.php');
+
+/** Get the POP3 class for which to access the mailbox. */
 require_once(ABSPATH.WPINC.'/class-pop3.php');
 
+// WTF is this? Use constants instead.
 error_reporting(2037);
 
 $time_difference = get_option('gmt_offset') * 3600;
@@ -14,9 +24,14 @@ $pop3 = new POP3();
 if (!$pop3->connect(get_option('mailserver_url'), get_option('mailserver_port')))
 	wp_die(wp_specialchars($pop3->ERROR));
 
-$count = $pop3->login(get_option('mailserver_login'), get_option('mailserver_pass'));
-if (0 == $count) wp_die(__('There doesn&#8217;t seem to be any new mail.'));
+if (!$pop3->user(get_option('mailserver_login')))
+	wp_die(wp_specialchars($pop3->ERROR));
 
+$count = $pop3->pass(get_option('mailserver_pass'));
+if (false === $count)
+	wp_die(wp_specialchars($pop3->ERROR));
+if (0 == $count)
+	echo "<p>There doesn't seem to be any new mail.</p>\n"; // will fall-through to end of for loop
 
 for ($i=1; $i <= $count; $i++) :
 
@@ -27,6 +42,8 @@ for ($i=1; $i <= $count; $i++) :
 	$content_transfer_encoding = '';
 	$boundary = '';
 	$bodysignal = 0;
+	$post_author = 1;
+	$author_found = false;
 	$dmonths = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
 	foreach ($message as $line) :
 		if (strlen($line) < 3) $bodysignal = 1;
@@ -70,14 +87,18 @@ for ($i=1; $i <= $count; $i++) :
 				$author = sanitize_email($author);
 				if ( is_email($author) ) {
 					echo "Author = {$author} <p>";
-					$author = $wpdb->escape($author);
-					$result = $wpdb->get_row("SELECT ID FROM $wpdb->users WHERE user_email='$author' LIMIT 1");
-					if (!$result)
+					$userdata = get_user_by_email($author);
+					if (!$userdata) {
 						$post_author = 1;
-					else
-						$post_author = $result->ID;
-				} else
+						$author_found = false;
+					} else {
+						$post_author = $userdata->ID;
+						$author_found = true;
+					}
+				} else {
 					$post_author = 1;
+					$author_found = false;
+				}
 			}
 
 			if (preg_match('/Date: /i', $line)) { // of the form '20 Mar 2002 20:32:37'
@@ -111,6 +132,18 @@ for ($i=1; $i <= $count; $i++) :
 		}
 	endforeach;
 
+	// Set $post_status based on $author_found and on author's publish_posts capability
+	if ($author_found) {
+		$user = new WP_User($post_author);
+		if ($user->has_cap('publish_posts'))
+			$post_status = 'publish';
+		else
+			$post_status = 'pending';
+	} else {
+		// Author not found in DB, set status to pending.  Author already set to admin.
+		$post_status = 'pending';
+	}
+
 	$subject = trim($subject);
 
 	if ($content_type == 'multipart/alternative') {
@@ -141,14 +174,11 @@ for ($i=1; $i <= $count; $i++) :
 
 	$post_category = $post_categories;
 
-	// or maybe we should leave the choice to email drafts? propose a way
-	$post_status = 'publish';
-
 	$post_data = compact('post_content','post_title','post_date','post_date_gmt','post_author','post_category', 'post_status');
 	$post_data = add_magic_quotes($post_data);
 
 	$post_ID = wp_insert_post($post_data);
-	if ( is_wp_error( $post_ID ) ) 
+	if ( is_wp_error( $post_ID ) )
 		echo "\n" . $post_ID->get_error_message();
 
 	if (!$post_ID) {

@@ -34,7 +34,7 @@ class WP_Roles {
 		}
 	}
 
-	function add_role($role, $display_name, $capabilities = '') {
+	function add_role($role, $display_name, $capabilities = array()) {
 		if ( isset($this->roles[$role]) )
 			return;
 
@@ -138,7 +138,6 @@ class WP_User {
 	var $allcaps = array();
 
 	function WP_User($id, $name = '') {
-		global $wpdb;
 
 		if ( empty($id) && empty($name) )
 			return;
@@ -291,7 +290,9 @@ function map_meta_cap($cap, $user_id) {
 		$caps[] = 'delete_users';
 		break;
 	case 'edit_user':
-		$caps[] = 'edit_users';
+		if ( !isset($args[0]) || $user_id != $args[0] ) {
+			$caps[] = 'edit_users';
+		}
 		break;
 	case 'delete_post':
 		$author_data = get_userdata($user_id);
@@ -464,7 +465,7 @@ function get_role($role) {
 	return $wp_roles->get_role($role);
 }
 
-function add_role($role, $display_name, $capabilities = '') {
+function add_role($role, $display_name, $capabilities = array()) {
 	global $wp_roles;
 
 	if ( ! isset($wp_roles) )

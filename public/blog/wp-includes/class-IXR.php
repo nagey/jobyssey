@@ -1,12 +1,24 @@
 <?php
-/*
-   IXR - The Inutio XML-RPC Library - (c) Incutio Ltd 2002-2005
-   Version 1.7 (beta) - Simon Willison, 23rd May 2005
-   Site:   http://scripts.incutio.com/xmlrpc/
-   Manual: http://scripts.incutio.com/xmlrpc/manual.php
-   Made available under the BSD License: http://www.opensource.org/licenses/bsd-license.php
-*/
+/**
+ * IXR - The Inutio XML-RPC Library
+ *
+ * @package IXR
+ * @since 1.5
+ *
+ * @copyright Incutio Ltd 2002-2005
+ * @version 1.7 (beta) 23rd May 2005
+ * @author Simon Willison
+ * @link http://scripts.incutio.com/xmlrpc/ Site
+ * @link http://scripts.incutio.com/xmlrpc/manual.php Manual
+ * @license BSD License http://www.opensource.org/licenses/bsd-license.php
+ */
 
+/**
+ * IXR_Value
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Value {
     var $data;
     var $type;
@@ -114,7 +126,12 @@ class IXR_Value {
     }
 }
 
-
+/**
+ * IXR_Message
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Message {
     var $message;
     var $messageType;  // methodCall / methodResponse / fault
@@ -257,7 +274,12 @@ class IXR_Message {
     }
 }
 
-
+/**
+ * IXR_Server
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Server {
     var $data;
     var $callbacks = array();
@@ -418,6 +440,12 @@ EOD;
     }
 }
 
+/**
+ * IXR_Request
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Request {
     var $method;
     var $args;
@@ -448,7 +476,12 @@ EOD;
     }
 }
 
-
+/**
+ * IXR_Client
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Client {
     var $server;
     var $port;
@@ -559,13 +592,18 @@ class IXR_Client {
     }
 }
 
-
+/**
+ * IXR_Error
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Error {
     var $code;
     var $message;
     function IXR_Error($code, $message) {
         $this->code = $code;
-        $this->message = $message;
+        $this->message = htmlspecialchars($message);
     }
     function getXml() {
         $xml = <<<EOD
@@ -591,7 +629,12 @@ EOD;
     }
 }
 
-
+/**
+ * IXR_Date
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Date {
     var $year;
     var $month;
@@ -635,7 +678,12 @@ class IXR_Date {
     }
 }
 
-
+/**
+ * IXR_Base64
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_Base64 {
     var $data;
     function IXR_Base64($data) {
@@ -646,7 +694,12 @@ class IXR_Base64 {
     }
 }
 
-
+/**
+ * IXR_IntrospectionServer
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_IntrospectionServer extends IXR_Server {
     var $signatures;
     var $help;
@@ -790,7 +843,12 @@ class IXR_IntrospectionServer extends IXR_Server {
     }
 }
 
-
+/**
+ * IXR_ClientMulticall
+ *
+ * @package IXR
+ * @since 1.5
+ */
 class IXR_ClientMulticall extends IXR_Client {
     var $calls = array();
     function IXR_ClientMulticall($server, $path = false, $port = 80) {
