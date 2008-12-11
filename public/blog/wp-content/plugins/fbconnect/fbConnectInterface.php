@@ -26,10 +26,13 @@ class WPfbConnect_Interface {
 	 **/
 	function style() {
 		$css_path = get_option('siteurl') . '/' . PLUGINDIR . '/fbconnect/fbconnect.css?ver='.FBCONNECT_PLUGIN_REVISION;
-		echo '
-			<link rel="stylesheet" type="text/css" href="'.$css_path.'" />
-			<link rel="stylesheet" href="'.get_static_root().'/css/fb_connect.css" type="text/css" />
-			';
+		echo '<link rel="stylesheet" type="text/css" href="'.$css_path.'" />';
+		/*if (get_option('fb_use_ssl')){
+			echo '<link rel="stylesheet" href="'.get_ssl_root().'/css/fb_connect.css" type="text/css" />';
+		}else{*/
+			echo '<link rel="stylesheet" href="'.get_static_root().'/css/fb_connect.css" type="text/css" />';
+		//}
+		
 	}
 
 
@@ -39,7 +42,7 @@ class WPfbConnect_Interface {
 	 * @action: comment_form
 	 **/
 	function comment_form() {
-		$fb_user = facebook_client()->get_loggedin_user();
+		$fb_user = fb_get_loggedin_user();
 		if (is_user_logged_in() && $fb_user) {
 			echo '<img src="'.get_option('siteurl') . '/' . PLUGINDIR . '/fbconnect/images/facebook.png"/>';
 			echo '<input style="width:20px;" type="checkbox" name="sendToFacebook" id="sendToFacebook" checked="checked" /> Publish this comment to Facebook';
@@ -79,9 +82,8 @@ class WPfbConnect_Interface {
 	                         'template_body' => $fb_short_stories_body);
 	  $full_stories = array('template_title' => $fb_full_stories_title,
 	                         'template_body' => $fb_full_stories_body);
-	
-	  $form_id = facebook_client()->api_client->feed_registerTemplateBundle($one_line_stories,$short_stories,$full_stories);
-
+	  $form_id = fb_feed_registerTemplateBundle($one_line_stories,$short_stories,$full_stories);
+		
 	  return $form_id;
 	}
 
@@ -95,7 +97,6 @@ class WPfbConnect_Interface {
 
 			// if we're posted back an update, let's set the values here
 			if ( isset($_POST['info_update']) ) {
-			
 				check_admin_referer('wp-fbconnect-info_update');
 
 				$error = '';
@@ -104,11 +105,12 @@ class WPfbConnect_Interface {
 				update_option( 'fb_enable_commentform', isset($_POST['enable_commentform']) ? true : false );
 				update_option( 'fb_enable_approval', isset($_POST['enable_approval']) ? true : false );
 				update_option( 'fb_enable_email_mapping', isset($_POST['enable_email_mapping']) ? true : false );
+				update_option( 'fb_use_ssl', isset($_POST['fb_use_ssl']) ? true : false );
 
 				if ($error !== '') {
-					echo '<div class="error"><p><strong>'.__('At least one of Social Webtop options was NOT updated', 'fbconnect').'</strong>'.$error.'</p></div>';
+					echo '<div class="error"><p><strong>'.__('At least one of Facebook Connector options was NOT updated', 'fbconnect').'</strong>'.$error.'</p></div>';
 				} else {
-					echo '<div class="updated"><p><strong>'.__('Social Webtop options updated', 'fbconnect').'</strong></p></div>';
+					echo '<div class="updated"><p><strong>'.__('Facebook Connector options updated', 'fbconnect').'</strong></p></div>';
 				}
 
 			
@@ -123,7 +125,11 @@ class WPfbConnect_Interface {
 				update_option( 'fb_full_stories_title', $_POST['fb_full_stories_title'] );
 				update_option( 'fb_full_stories_body', $_POST['fb_full_stories_body'] );
 				$templatesId = WPfbConnect_Interface::register_feed_forms($_POST['fb_online_stories'],$_POST['fb_short_stories_title'],$_POST['fb_short_stories_body'], $_POST['fb_full_stories_title'], $_POST['fb_full_stories_body']);
-				update_option( 'fb_templates_id', $templatesId );
+				if ($templatesId!=""){
+					update_option( 'fb_templates_id', $templatesId );
+				}else{
+					$error = " ";
+				}	
 				if ($error !== '') {
 					echo '<div class="error"><p><strong>'.__('Error updating Facebook templates!', 'fbconnect').'</strong>'.$error.'</p></div>';
 				} else {
@@ -134,7 +140,8 @@ class WPfbConnect_Interface {
 				switch($_REQUEST['action']) {
 					case 'delete_template' :
 						check_admin_referer('wp-fbconnect-info_delete_template');
-						facebook_client()->api_client->feed_deactivateTemplateBundleByID($_REQUEST['template_id']);
+						fb_feed_deactivateTemplateBundleByID($_REQUEST['template_id']);
+						
 						$fb_templates_id = get_option('fb_templates_id');
 						if ($_REQUEST['template_id'] == $fb_templates_id){
 							update_option( 'fb_templates_id', "" );
@@ -143,7 +150,8 @@ class WPfbConnect_Interface {
 						break;
 					case 'activate_template' :
 						check_admin_referer('wp-fbconnect-info_activate_template');
-						$template = facebook_client()->api_client->feed_getRegisteredTemplateBundleByID($_REQUEST['template_id']);
+						$template = fb_feed_getRegisteredTemplateBundleByID($_REQUEST['template_id']);
+
 						if (isset($template) && $template!="" ){
 								update_option( 'fb_templates_id', $_REQUEST['template_id'] );
 								update_option( 'fb_online_stories', $template["one_line_story_templates"][0] );
@@ -166,11 +174,16 @@ class WPfbConnect_Interface {
 
 				<form method="post">
 
-					<?php if ($wp_version < '2.3') { ?>
-     				<p class="submit"><input type="submit" name="info_update" value="<?php _e('Update Options') ?> &raquo;" /></p>
-					<?php } ?>
+
 					<h3><?php _e('Facebook Application Configuration', 'fbconnect') ?></h3>
      				<table class="form-table" cellspacing="2" cellpadding="5" width="100%">
+						<tr valign="top">
+							<th style="width: 33%" scope="row">Facebook App. Config.</th>
+							<td>
+							<a href="http://www.facebook.com/developers/" target="_blank">Go to Facebook Developer App</a>
+							</td>
+						</tr>
+
 						<tr valign="top">
 							<th style="width: 33%" scope="row"><label for="fb_api_key"><?php _e('Facebook API Key:', 'fbconnect') ?></label></th>
 							<td>
@@ -202,7 +215,16 @@ class WPfbConnect_Interface {
 
 							</td>
 						</tr>
+						<tr valign="top">
+							<th style="width: 33%" scope="row"><?php _e('Secure login:', 'fbconnect') ?></th>
+							<td>
+								<p><input type="checkbox" name="fb_use_ssl" id="fb_use_ssl" <?php
+								if( get_option('fb_use_ssl') ) echo 'checked="checked"'
+								?> />
+									<label for="fb_use_ssl"><?php _e('Facebook Connect Via SSL.', 'fbconnect') ?></label></p>
 
+							</td>
+						</tr>
 
      				</table>
 
@@ -216,11 +238,10 @@ class WPfbConnect_Interface {
 
 					<h3><?php _e('Comment templates', 'fbconnect') ?></h3>
 					<?php
-						try { 
 							$fb_templates_id = get_option('fb_templates_id');
-							
-							$templates = facebook_client()->api_client->feed_getRegisteredTemplateBundles();
-							
+							$templates = fb_feed_getRegisteredTemplateBundles();
+
+							//print_r($templates);
 							if ($fb_templates_id == '' && isset($templates) && $templates!="" ){
 								echo '<div class="error"><p><strong>'.__('No active Facebook template, please activate a template or create a new one!', 'fbconnect').'</strong>'.$error.'</p></div>';
 							}else if ($fb_templates_id == ''){
@@ -238,31 +259,32 @@ class WPfbConnect_Interface {
 									if ($fb_templates_id == $template["template_bundle_id"]){
 										echo '<b style="color:red;"> <- Active Facebook template</b>';
 									}
+
 									echo "<br/>One line story: ".$template["one_line_story_templates"][0];
 									echo "<br/>Short story title: ".$template["short_story_templates"][0]["template_title"];
 									echo "<br/>Short story body: ".$template["short_story_templates"][0]["template_body"];
-									echo "<br/>Full story title: ".$template["full_story_templates"][0]["template_title"];
-									echo "<br/>Full story body: ".$template["full_story_templates"][0]["template_body"];
+									echo "<br/>Full story title: ".$template["full_story_template"]["template_title"];
+									echo "<br/>Full story body: ".$template["full_story_template"]["template_body"];
 									echo "<br/>";
 								}
 							}
 								//print_r($templates);
 							$fb_online_stories = get_option('fb_online_stories');
 							if (!$fb_online_stories){
-								$fb_online_stories = '{*actor*} commented on <a href="'.get_option('siteurl').'">'.get_option('blogname').'</a>, post title: {*post_title*}, {*body*} ';
+								$fb_online_stories = '{*actor*} commented on {*blogname*}, post title: {*post_title*}, {*body_short*} ';
 							}
 		
 							$fb_short_stories_title = get_option('fb_short_stories_title');
 							if (!$fb_short_stories_title){
-								$fb_short_stories_title = '{*actor*} commented on <a href="'.get_option('siteurl').'">'.get_option('blogname').'</a>, post title: {*post_title*} ';
+								$fb_short_stories_title = '{*actor*} commented on {*blogname*}, post title: {*post_title*} ';
 							}
 							$fb_short_stories_body = get_option('fb_short_stories_body');
 							if (!$fb_short_stories_body){
-								$fb_short_stories_body = '{*body*}';
+								$fb_short_stories_body = '{*body_short*}';
 							}
 							$fb_full_stories_title = get_option('fb_full_stories_title');
 							if (!$fb_full_stories_title){
-								$fb_full_stories_title = '{*actor*} commented on <a href="'.get_option('siteurl').'">'.get_option('blogname').'</a>, post title: {*post_title*} ';
+								$fb_full_stories_title = '{*actor*} commented on {*blogname*}, post title: {*post_title*} ';
 							}
 							$fb_full_stories_body = get_option('fb_full_stories_body');
 							if (!$fb_full_stories_body){
@@ -301,16 +323,8 @@ class WPfbConnect_Interface {
 						<?php wp_nonce_field('wp-fbconnect-info_update'); ?>
 	     				<p class="submit"><input type="submit" name="template_update" value="<?php _e('Create Template') ?> &raquo;" /></p>
 	     			</form>
-				<?php
-					}catch (FacebookRestClientException $e) {
-						echo "ERROR:".$e->getCode();
-				    }
-				?>
 			</div>
     			<?php
-			if ($wp_version < '2.3') {
-				echo '<br />';
-			}
 	} // end function options_page
 
 

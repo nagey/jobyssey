@@ -24,21 +24,32 @@ body.login form#registerform a.legacy {
 
 #fbconnect_rollup div div { margin: 0.5em; }
 #fbconnect_rollup ul { margin: 0; padding: 0 0 0 5em; }
-.fbconnet_userprofile{
+
+.fbconnect_userprofile{
+	display: block;
+	width: 100%;
+}
+
+.fbconnect_profiletexts{
 		float: left;
 		margin-left:10px;
+		display: block;
 }
+
 .fbconnect_LastUsers{
 	background-color: #d5d6d7;
 	margin-top:5px;
 	padding:3px;
 }
+
 .fbconnect_userpicmain{
+		display: block;
 	float: left;
 	border: 2px solid #d5d6d7;
 	margin-right:5px;
 	margin-bottom:2px;
 	overflow: hidden;
+	cursor:hand;
 }
 .fbconnect_miniprofiletext{
 	float: left;

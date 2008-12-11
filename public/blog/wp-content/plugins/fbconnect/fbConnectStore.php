@@ -41,29 +41,19 @@ class WPfbConnect_Store {
 			require_once(ABSPATH . 'wp-admin/admin-db.php');
 			require_once(ABSPATH . 'wp-admin/upgrade-functions.php');
 		}
+
 		// add column to comments table
 		$result = maybe_add_column($this->comments_table_name, 'fbconnect',
 				"ALTER TABLE $this->comments_table_name ADD `fbconnect` varchar(50) NOT NULL DEFAULT '0'");
 
-		if (!$result) {
-			$fbconnect->log->err('unable to add column `fbconnect` to comments table.');
-		}
-		
 		// add column to users table
 		$result = maybe_add_column($this->users_table_name, 'fbconnect_lastlogin',
 				"ALTER TABLE $this->users_table_name ADD `fbconnect_lastlogin` int(14) NOT NULL DEFAULT '0'");
-
-		if (!$result) {
-			$fbconnect->log->err('unable to add column `fbconnect_lastlogin` to users table.');
-		}
 
 		// add column to users table
 		$result = maybe_add_column($this->users_table_name, 'fbconnect_userid',
 				"ALTER TABLE $this->users_table_name ADD `fbconnect_userid` varchar(250) NOT NULL DEFAULT '0'");
 
-		if (!$result) {
-			$fbconnect->log->err('unable to add column `fbconnect_userid` to users table.');
-		}
 	}
 
 }

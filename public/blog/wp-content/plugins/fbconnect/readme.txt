@@ -35,13 +35,36 @@ This plugin follows the [standard WordPress installation method][]:
 6. Use the Facebook App info (step 2) to configure the plugin
 7. Create a new template for comments.
 8. Activate the Facebook Connector widget from the 'Design / Widtgets' menu.
+9. If you dont see the Facebook Connect login button, and the user images, you need to modify
+your header.php theme file:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 
+ 
 [standard WordPress installation method]: http://codex.wordpress.org/Managing_Plugins#Installing_Plugins
 
 == Help and Updates ==
 http://www.sociable.es/facebook-connect
 
 == Changelog ==
+= version 0.9 =
+*SSL Support
+*Include pages from user theme (MyHome and Community)
+
+= version 0.8 =
+*Removed site_url usage
+*Changed order on comments list and community users
+*Community users pagination
+
+= version 0.7 =
+*Facebook Connect comment dialog
+*Solved problems with Community page (sidebar.php  not found)
+
+= version 0.0.4 =
+*PHP4 support
+*New page for friends invite
+*CSS Styles
+*Some bugs
 
 = version 0.0.1 =
 -

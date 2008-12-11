@@ -5,12 +5,12 @@
  Description: Allows the use of Facebook Connect for account registration, authentication, and commenting. 
  Author: Javier Reyes
  Author URI: http://www.sociable.es/
- Version: 0.0.1
+ Version: 0.9.1
  License: GPL (http://www.fsf.org/licensing/licenses/info/GPLv2.html) 
  */
 
 define ( 'FBCONNECT_PLUGIN_REVISION', preg_replace( '/\$Rev: (.+) \$/', 'svn-\\1',
-	'$Rev: 31 $') ); 
+	'$Rev: 50 $') ); 
 
 define ( 'FBCONNECT_DB_REVISION', 5);
 
@@ -23,14 +23,11 @@ require_once('fbConnectLogic.php');
 require_once('fbConnectInterface.php');
 
 
-@include_once('Log.php');                   
-if (!class_exists('Log')) {                 
-	require_once('fbConnectLog.php');       
-}
-
 restore_include_path();
 
 @session_start();
+
+
 
 if  (!class_exists('WPfbConnect')):
 class WPfbConnect {
@@ -93,7 +90,7 @@ function fbconnect_init() {
 }
 endif;
 
-wp_enqueue_script( 'prototype' );
+//wp_enqueue_script( 'prototype' );
 // -- Register actions and filters -- //
 
 register_activation_hook('fbconnect/fbConnectCore.php', array('WPfbConnect_Logic', 'activate_plugin'));
@@ -114,6 +111,7 @@ add_action( 'init', array( 'WPfbConnect', 'textdomain' ) ); // load textdomain
 
 // Comment filtering
 add_action( 'comment_post', array( 'WPfbConnect_Logic', 'comment_fbconnect' ), 5 );
+
 //add_filter( 'comment_post_redirect', array( 'WPfbConnect_Logic', 'comment_post_redirect'), 0, 2);
 if( get_option('fb_enable_approval') ) {
 	add_filter( 'pre_comment_approved', array('WPfbConnect_Logic', 'comment_approval'));
@@ -130,19 +128,30 @@ if( get_option('fb_enable_commentform') ) {
 
 add_action( 'wp_footer', array( 'WPfbConnect_Logic', 'fbconnect_init_scripts'), 10);
 
+if(!function_exists('carga_template')):
 function carga_template() {
 	if (isset($_REQUEST['fbconnect_action'])){
 		if($_REQUEST['fbconnect_action']=="community"){
-			include( 'community.php');
+			if(file_exists (TEMPLATEPATH.'/community.php')){
+				include( TEMPLATEPATH.'/community.php');
+			}else{
+				include( WP_PLUGIN_DIR.'/fbconnect/community.php');
+			}
 		}else if($_REQUEST['fbconnect_action']=="myhome"){
-			include( 'myhome.php');
+			if(file_exists (TEMPLATEPATH.'/myhome.php')){
+				include( TEMPLATEPATH.'/myhome.php');
+			}else{
+				include( WP_PLUGIN_DIR.'/fbconnect/myhome.php');
+			}
+		}else if($_REQUEST['fbconnect_action']=="invite"){
+			include( WP_PLUGIN_DIR.'/fbconnect/invitefriends.php');
 		}
 		
 	//include(TEMPLATEPATH . '/all.php');
 		exit;
 	}
 }
-
+endif;
 add_action('template_redirect', 'carga_template');
 
 
@@ -175,36 +184,14 @@ function is_user_fbconnect($id = null) {
 }
 endif;
 
-
+if(!function_exists('render_friends_invite')):
 function render_friends_invite($invitetext){
-   echo "<input type=\"button\" value=\"".$invitetext."\" style=\"width:100%;\" onclick=\"toggleLayer('invitar');\"/>
-	<div id=\"invitar\" style=\"width: 630px;border: 20px solid #959596;position: relative;left: -500px;display: none;\" >
-	  <fb:serverfbml style=\"width: 630px;\">
-	    <script type=\"text/fbml\">
-	      <fb:fbml>
-	          <fb:request-form
-	                    action=\"".get_option('siteurl')."\"
-	                    method=\"GET\"
-	                    invite=\"true\"
-	                    type=\"XFBML\"
-	                    content=\"".get_option('blogname')." : ".get_option('blogdescription')."
-	                 <fb:req-choice url='".get_option('siteurl')."'
-	                       label='Become a Member!' />
-	              \"
-	              >
-	 
-	                    <fb:multi-friend-selector
-	                    showborder=\"false\"
-	                    actiontext=\"Select the friends you want to invite.\">
-	        </fb:request-form>
-	      </fb:fbml>
-	 
-	    </script>
-	  </fb:serverfbml>
-	 </div>";  
+   echo "<input type=\"button\" value=\"".$invitetext."\" style=\"width:100%;\" onclick=\"location.href='".get_option('siteurl')."/?fbconnect_action=invite'\"/>";
 } 
+endif;
 
 //MAIN WIDGET
+if(!function_exists('widget_FacebookConnector_init')):
 function widget_FacebookConnector_init() {
 if (!function_exists('register_sidebar_widget')) return;
 function widget_FacebookConnector($args) {
@@ -212,6 +199,12 @@ function widget_FacebookConnector($args) {
 		extract($args);
 
 		$options = get_option('widget_FacebookConnector');
+
+		if (!isset($options) || $options==""){
+			$before_title ="<h2>";
+			$after_title ="</h2>";
+			$options = widget_FacebookConnector_init_options($options);
+		}
 		$title = $options['title'];
 		$welcometext = $options['welcometext'];
 		$footertext = $options['footertext'];
@@ -223,20 +216,20 @@ function widget_FacebookConnector($args) {
 
 		echo $before_widget . $before_title . $title . $after_title;
 		//get_flickrRSS();
+		$fb_user = fb_get_loggedin_user();
 
-		$fb_user = facebook_client()->get_loggedin_user();
 		$user = wp_get_current_user();
-		//print_r($user);
+
 		if ( $user->ID ) {
 			echo "<div class=\"fbconnect_miniprofile\">";
-			echo "<div class=\"fbconnect_userpicmain\"><a href=\"./?fbconnect_action=myhome&userid=".$user->ID."\"><fb:profile-pic uid=\"".$user->fbconnect_userid."\" size=\"thumb\" linked=\"false\"></fb:profile-pic></a></div>";
-			echo "<div class=\"fbconnect_miniprofiletext;\">".$welcometext."<br/><a href=\"./?fbconnect_action=myhome&userid=".$user->ID."\">".$user->display_name."</a>";
-			echo "<br/><a href=\"./wp-admin/profile.php\">Edit profile</a>";
-			echo '<br/><a href="#" onclick="FB.Connect.logout(function() { window.location = \'./wp-login.php?action=logout\'; })">Logout</a></div>';
+			echo "<div class=\"fbconnect_userpicmain\"><a onclick=\"location.href='".get_option('siteurl')."/?fbconnect_action=myhome&userid=".$user->ID."';\" href=\"".get_option('siteurl')."/?fbconnect_action=myhome&userid=".$user->ID."\"><fb:profile-pic uid=\"".$user->fbconnect_userid."\" size=\"thumb\" linked=\"false\"></fb:profile-pic></a></div>";
+			echo "<div class=\"fbconnect_miniprofiletext;\">".$welcometext."<br/><a href=\"".get_option('siteurl')."/?fbconnect_action=myhome&userid=".$user->ID."\">".$user->display_name."</a>";
+			echo "<br/><a href=\"".get_option('siteurl')."/wp-admin/profile.php"."\">Edit profile</a>";
+			echo '<br/><a href="#" onclick="FB.Connect.logout(function() { window.location = \''.get_option('siteurl').'/wp-login.php?action=logout'.'\'; })">Logout</a></div>';
 			echo "</div>";
 		}else{
 			echo $alreadytext."<br/>";
-			echo '<a href="./wp-login.php"><b>Login</b></a><br/>';
+			echo '<a href="'.get_option('siteurl').'/wp-login.php'.'"><b>Login</b></a><br/>';
 		}
 		echo "<div class=\"invitebutton\">";
 		if ($fb_user){
@@ -259,27 +252,13 @@ function widget_FacebookConnector($args) {
 		}
 
 		echo "</div>";
-		echo '<div style="text-align:right;"><a href="./?fbconnect_action=community">view more...</a></div>';
+		echo '<div style="text-align:right;"><a href="'.get_option('siteurl').'/?fbconnect_action=community'.'">view more...</a></div>';
 		echo "</div>";
 
 		echo $footertext . $after_widget;
 	}
 
-	function widget_FacebookConnector_control() {
-		$options = get_option('widget_FacebookConnector');
-
-		if ( $_POST['FacebookConnector-submit'] ) {
-			$options['title'] = strip_tags(stripslashes($_POST['FacebookConnector-title']));
-			$options['welcometext'] = stripslashes($_POST['FacebookConnector-welcometext']);
-			$options['footertext'] = stripslashes($_POST['FacebookConnector-footertext']);
-			$options['invitetext'] = stripslashes($_POST['FacebookConnector-invitetext']);
-			$options['lastvisittext'] = stripslashes($_POST['FacebookConnector-lastvisittext']);
-			$options['logintext'] = stripslashes($_POST['FacebookConnector-logintext']);
-			$options['alreadytext'] = stripslashes($_POST['FacebookConnector-alreadytext']);
-			$options['maxlastusers'] = (int)$_POST['FacebookConnector-maxlastusers'];
-			update_option('widget_FacebookConnector', $options);
-		}
-
+	function widget_FacebookConnector_init_options($options){
 		if (!isset($options['title'])){
 			$options['title'] = "Community";
 		}
@@ -299,11 +278,31 @@ function widget_FacebookConnector($args) {
 			$options['alreadytext'] = "Already a member?";
 		}
 		if (!isset($options['footertext'])){
-			$options['footertext'] = 'Powered by <a href="www.sociable.es">Sociable!</a>';
+			$options['footertext'] = 'Powered by <a href="http://www.sociable.es">Sociable!</a>';
 		}
 		if (!isset($options['maxlastusers'])){
 			$options['maxlastusers'] = "9";
 		}
+		return $options;
+	}
+	
+	function widget_FacebookConnector_control() {
+		$options = get_option('widget_FacebookConnector');
+
+		if ( $_POST['FacebookConnector-submit'] ) {
+			$options['title'] = strip_tags(stripslashes($_POST['FacebookConnector-title']));
+			$options['welcometext'] = stripslashes($_POST['FacebookConnector-welcometext']);
+			$options['footertext'] = stripslashes($_POST['FacebookConnector-footertext']);
+			$options['invitetext'] = stripslashes($_POST['FacebookConnector-invitetext']);
+			$options['lastvisittext'] = stripslashes($_POST['FacebookConnector-lastvisittext']);
+			$options['logintext'] = stripslashes($_POST['FacebookConnector-logintext']);
+			$options['alreadytext'] = stripslashes($_POST['FacebookConnector-alreadytext']);
+			$options['maxlastusers'] = (int)$_POST['FacebookConnector-maxlastusers'];
+			update_option('widget_FacebookConnector', $options);
+		}
+
+		$options = widget_FacebookConnector_init_options($options);
+		
 		$title = htmlspecialchars($options['title'], ENT_QUOTES);
 		$welcometext = htmlspecialchars($options['welcometext'], ENT_QUOTES);
 		$footertext = htmlspecialchars($options['footertext'], ENT_QUOTES);
@@ -328,11 +327,12 @@ function widget_FacebookConnector($args) {
 	register_sidebar_widget('FacebookConnector', 'widget_FacebookConnector');
 	register_widget_control('FacebookConnector', 'widget_FacebookConnector_control', 300, 100);
 }
-
+endif;
 
 add_action('plugins_loaded', 'widget_FacebookConnector_init');
 
 //WIDGET
+if(!function_exists('widget_fbconnect_usercomments_init')):
 function widget_fbconnect_usercomments_init() {
 if (!function_exists('register_sidebar_widget')) return;
 function widget_fbconnect_usercomments($args) {
@@ -350,7 +350,7 @@ function widget_fbconnect_usercomments($args) {
 		if (isset($_REQUEST['userid']) && $_REQUEST['userid']!=""){
 			$fb_user = $_REQUEST['userid'];
 		}else{
-			$fb_user = facebook_client()->get_loggedin_user();
+			$fb_user = fb_get_loggedin_user();
 		}
 		if ($fb_user){
 			$comments = WPfbConnect_Logic::get_user_comments($fb_user);
@@ -383,11 +383,12 @@ function widget_fbconnect_usercomments($args) {
 	//register_sidebar_widget('fbconnect_usercomments', 'widget_fbconnect_usercomments');
 	//register_widget_control('fbconnect_usercomments', 'widget_fbconnect_usercomments_control', 300, 100);
 }
-
+endif;
 
 //add_action('plugins_loaded', 'widget_fbconnect_usercomments_init');
 
 //WIDGET
+if(!function_exists('widget_fbconnect_userprofile_init')):
 function widget_fbconnect_userprofile_init() {
 if (!function_exists('register_sidebar_widget')) return;
 function widget_fbconnect_userprofile($args) {
@@ -408,7 +409,7 @@ function widget_fbconnect_userprofile($args) {
 		}if (isset($_REQUEST['fbuserid']) && $_REQUEST['fbuserid']!=""){
 			$fb_user = $_REQUEST['fbuserid'];
 		}else{
-			$fb_user = facebook_client()->get_loggedin_user();
+			$fb_user = fb_get_loggedin_user();
 		}
 		if ($fb_user){
 			//$userprofile= get_userdatabylogin("FB_".$fb_user);
@@ -446,7 +447,7 @@ function widget_fbconnect_userprofile($args) {
 	//register_sidebar_widget('fbconnect_userprofile', 'widget_fbconnect_userprofile');
 	//register_widget_control('fbconnect_userprofile', 'widget_fbconnect_userprofile_control', 300, 100);
 }
-
+endif;
 
 //add_action('plugins_loaded', 'widget_fbconnect_userprofile_init');
 ?>

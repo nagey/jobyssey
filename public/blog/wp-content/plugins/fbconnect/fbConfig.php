@@ -4,8 +4,13 @@
  * @date: 05/10/2008
  * @license: GPLv2
  */
-include_once 'facebook-client/facebook.php';
-  
+if (version_compare("5", phpversion(),"<")){
+	include_once 'facebook-client/facebook.php';
+	include_once 'fbConfig_php5.php';
+}else{	
+	include_once 'facebook-client4/facebook.php';
+	include_once 'fbConfig_php4.php';
+}
 
 function is_config_setup() {
   return (get_api_key() && get_api_secret() &&
@@ -37,12 +42,21 @@ function get_api_secret() {
 	}
   
 }
+
 function get_base_fb_url() {
   return "connect.facebook.com";
 }
+
+function get_ssl_root() {
+  return 'https://www.'.get_base_fb_url();
+}
+
+
 function get_static_root() {
   return 'http://static.ak.'.get_base_fb_url();
 }
+
+
 function get_feed_bundle_id() {
   return get_option('fb_templates_id');
 }
@@ -52,13 +66,10 @@ function get_feed_bundle_id() {
  */
 function facebook_client() {
   static $facebook = null;
-  if ($facebook === null) {
-    $facebook = new Facebook(get_api_key(), get_api_secret(), false, get_base_fb_url());
-
-    if (!$facebook) {
-      error_log('Could not create facebook client.');
-    }
-
+  $api_key = get_api_key();
+  $api_secret = get_api_secret();
+  if ($facebook === null && $api_key!="" && $api_secret!="") {
+	$facebook = new Facebook($api_key, $api_secret, false, get_base_fb_url());
   }
   return $facebook;
 }
