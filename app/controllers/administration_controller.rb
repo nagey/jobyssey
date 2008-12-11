@@ -1,6 +1,6 @@
 class AdministrationController < ApplicationController
   
-    #before_filter :authorize_admin
+    before_filter :authorize_admin
   
   def view_all_professionals
     @professionals = Professional.find :all
