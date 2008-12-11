@@ -1,0 +1,35 @@
+
+<% form_for(:professional, :url => {:controller => :administration, :action => :save_changed_professional, :id => @professional}) do |form| %>
+<div class="error-messages" id="error-messages-for-professional-signup">
+	<%=form.error_messages%>
+</div>
+
+<fieldset>
+
+<ul>
+	<li>
+		<label for="professional[name]"><%=l(:professional, :name)%></label>
+		<%= form.text_field "name" %>
+	</li>
+	<li>
+		<label for="professional[password]"><%=l(:professional, :password)%></label>
+		<%= form.text_field 'password' %>
+	</li>
+	<li>
+		<label for="professional[password_confirmation]"><%=l(:professional, :password_confirmation)%></label>
+		<%= form.text_field 'password_confirmation'%>
+	</li>
+	<li>
+		<label for="professional[desired_job_title]">Desired job title(s):</label>
+		<%= form.text_field "desired_job_title" %>
+	</li>
+	<li>
+		<label for="professional[code_name]">Code name:</label>
+		<%= form.text_field 'code_name' %>
+	</ul>
+	<br>
+  <%=form.hidden_field :id %>
+	<%= submit_tag "Save Changes"%>
+
+</fieldset>
+<% end %>
