@@ -12,8 +12,8 @@
 
 <% for user in @professionals %>
   <tr>
-    <td><%=h user.first_name %></td>
-    <td><%=h user.last_name %></td>
+    <td><%= link_to user.first_name, :controller => "professionals", :action => "view", :id => user unless user.code_name.nil? %></td>
+    <td><%= link_to user.last_name, :controller => "professionals", :action => "view", :id => user unless user.code_name.nil? %></td>
     <td><%=h user.email %></td>
     <td><%= link_to user.code_name, :controller => "professionals", :action => "view", :id => user unless user.code_name.nil? %></td>
 
