@@ -11,8 +11,8 @@ class PortfolioController < ApplicationController
     attachment = Attachment.new params[:attachment]
     professional = Professional.find session[:user].id
     if attachment.save
-      professional.attachments << @attachment
-      #@professional.save
+      professional.attachments << attachment
+      #professional.update_attributes
       flash[:message] = l(:link_saved)
       redirect_to :action => :links
     else
