@@ -1,6 +1,7 @@
 <h1><%=l(:portfolio)%></h1>
 <p><%=l(:portfolio_instructions)%> </p>
-<p>Don't have any good code samples on hand?  <%= link_to "Try our coding problems!", :controller => :code_sample_question, :action => :explanation %>
+<p>Don't have any good past work on hand?  <%= link_to "Try our coding problems!", :controller => :code_sample_question, :action => :explanation %></p>
+<p>Want to add some lines of code for hiring managers to review?  <%= link_to "Add your own code samples", :controller => :code_sample_question, :action => :own_code %>
 <% form_for(:attachment , :url => {:action => :add_a_link}) do |form| %>
 <div class="error-messages" id="error-messages-for-professional-signup">
 	<%=form.error_messages%>
