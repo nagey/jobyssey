@@ -54,7 +54,7 @@ class CodeSampleQuestionController < ApplicationController
   def view_samples
     @user = session[:user]
     @code_sample_questions = CodeSampleQuestion.find :all
-    @code_samples = CodeSample.find_all_by_user_id @user.id
+    @code_samples = CodeSample.find_all_by_user_id session[:user]
   end
 
   def view_professional_samples
@@ -64,6 +64,21 @@ class CodeSampleQuestionController < ApplicationController
   end
 
   def view
+  end
+
+  def own_code
+  end
+  
+  def save_own_code
+    code_sample = CodeSample.new params[:code_sample]
+    code_sample.user_id = session[:user].id
+      if code_sample.save
+        redirect_to :action => :index
+        flash[:notice]= "It worked!"
+      else
+        render :action => :index
+        flash[:notice]= "It didn't!"
+      end
   end
 
 end

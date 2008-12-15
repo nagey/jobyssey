@@ -1,6 +1,8 @@
-<h2><%=h code_sample.code_sample_question.code_sample_question %></h2>
+
+<h2><%=h code_sample.code_sample_question.code_sample_question unless code_sample.code_sample_question.nil? %></h2>
+<h2><%=h "Sample provided by " + code_sample.user.code_name if code_sample.code_sample_question.nil? %></h2>
 <ul>
-	<li><label>Time to Answer:</label><%=h code_sample.time_to_answer.round %> minutes</li>
+	<li><label>Time to Answer:</label><%=h code_sample.time_to_answer.round unless code_sample.time_to_answer.nil? %> minutes</li>
 	<li><label>Language used:</label><%=h code_sample.language_used %></li>
 	</ul>
 	<div class="code_sample">

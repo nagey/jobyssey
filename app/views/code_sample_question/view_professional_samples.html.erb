@@ -1,5 +1,5 @@
 <h1><%= @professional.code_name %>- Code Samples</h1>
-<p>The timed answers below are to questions we give users at random.</p>
+<p>The questions below are selected at random from our question set.  Users can also upload samples of their own, in which case there's no question and no time associated with the sample.</p>
 
 <% for code_sample in @code_samples %>
   <%= render :partial => 'sample_question_and_answer', :locals => {:code_sample => code_sample} %>

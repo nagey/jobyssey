@@ -1,0 +1,24 @@
+
+
+<% form_for(:code_sample, :url => {:action => :save_own_code}) do |form| %>
+  <div class="error-messages" id="error-messages-for-code_sample">
+  	<%=form.error_messages%>
+  </div>
+  
+  <fieldset>
+    <legend>Add your own code sample</legend>
+ <p>Add a section of code that you've written below.  It's a good idea to preface it with some explanation of what it does and how you went about it. </p>
+ <p><b>Note: </b>Are you looking to show off a completed projects that's online?  In that case, you should add it to your <%= link_to 'Portfolio', :controller => :portfolio, :action => :links %></p>
+    <ul>
+      <li>
+
+        <%=form.text_area(:code_sample, :rows => 30) %>
+      </li>
+      <li><label>Language used:</label><%= form.text_field "language_used" %></li>
+      <li><%=form.submit "I'm all done"%></li>
+    </ul>
+  </fieldset>
+  <%=form.hidden_field :code_sample_question_id %>
+  <% user_id = session[:user] %>
+  <%=form.hidden_field :user_id %>
+<% end %>
