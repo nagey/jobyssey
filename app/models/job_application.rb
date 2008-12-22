@@ -12,7 +12,7 @@ class JobApplication < ActiveRecord::Base
   
   def status
     nil
-    job_application_statuses.last.job_application_state.name unless job_application_statuses.empty?
+    job_application_statuses.last.job_application_state.name unless job_application_statuses.empty? or job_application_statuses.last.job_application_state.nil?
   end
   
 end

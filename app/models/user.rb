@@ -20,13 +20,13 @@ class User < ActiveRecord::Base
   belongs_to :employment_type
   has_one :invite, :foreign_key => :signed_up_as_user_id
   
-  validates_confirmation_of :email
+  validates_confirmation_of :email, :on => :create
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you don't remember your password.", :on => :create
 
   validates_presence_of :first_name, :last_name
   validates_acceptance_of :terms_of_service, :message => "You must agree to the Terms of Service to continue.", :on => :create
   validates_presence_of :password_confirmation, :if => :password_changed?
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
-  validates_uniqueness_of :email, :message => "We've already got someone registered to this email address.  Please click on Forgot Password in the login bar if you don't remember your password."
   validates_length_of :password, :minimum => 6, :too_short => "pick a longer password", :if => :password_changed?
   validates_format_of :name, :with => /(\S+)\s/, :on => :update, :message => "Use your whole name, Prince."
 
