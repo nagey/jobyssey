@@ -1,0 +1,84 @@
+
+<% form_for(:professional_details, :url => {:controller => "it-professionals", :action => :save_changes}) do |form| %>
+<div class="error-messages" id="error-messages-for-professional-signup">
+	<%=form.error_messages%>
+</div>
+
+<h1>Edit your Account Information</h1>
+<h2>Name and Contact Information</h2>
+<br>
+<ul>
+	<li>
+		<label for="professional[name]"><%=l(:professional, :name)%></label>
+		<%= form.text_field "name" %>
+	</li>
+	</ul>
+	<br>
+<H2>Desired Job Details</h2>
+<ul>
+	<li>
+		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
+		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
+	</li>
+	<li>
+		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
+		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
+	</li>
+	<li>
+		<label for="professional[desired_job_title]">Desired job title(s):</label>
+		<%= form.text_field "desired_job_title" %>
+	</li>
+  <li><label for "current_salary">Current Salary:<%= form.text_field :current_salary %></li>
+    <li><label for "desired_salary">Target Salary:<%= form.text_field :desired_salary %></li>
+</ul>
+<h2>Location, location, location...</h2>
+<ul>
+<li>
+	<label for="town">Town you live in:</label>
+	<%= form.text_field "town" %>
+</li>
+<li>
+	<label for="professional_details[county]">County you live in:</label>
+	<%= form.text_field "county" %>
+</li>
+<h3>If you're in the Dublin area: </h3>
+<li><%= form.check_box :dart %><%= form.label "Somewhere on the DART?" %></li>
+<li><%= form.check_box :green_luas %><%= form.label "Somewhere on the green LUAS?" %></li>
+<li><%= form.check_box :red_luas %><%= form.label "Somewhere on the red LUAS?" %></li>
+<li><%= form.check_box :south_dublin %><%= form.label "Somewhere in south Dublin?" %></li>
+<li><%= form.check_box :north_dublin %><%= form.label "Somewhere in north Dublin?" %></li>
+<li><%= form.check_box :center_dublin %><%= form.label "Somewhere in City Centre?" %></li>
+</ul><br>
+
+<p>Not in the Dublin area?  Have more specific location requirements?</p>
+	<%= form.text_area :location, :rows => 3 %>
+
+<h3>Job Search Stage</h3>
+<ul>
+<li><%= form.label "Actively looking for a new job at the moment and ready to move." %><%= form.check_box :active %></li>
+<li><%= form.check_box :passive %><%= form.label "Not actively looking, but I would move if the right thing came along. " %></li>
+<li><%= form.check_box :inactive %><%= form.label "Not looking at all- I would not consider a new job at the moment."%></li>
+</ul>
+<h3>When can you start?</h3>
+<ul>
+<li><%= form.label "Within a week- I'm immediately available." %><%= form.check_box :immediate %></li>
+<li><%= form.check_box :one_month %><%= form.label "One month notice or less." %></li>
+<li><%= form.check_box :more_than_one_month %><%= form.label "More than a month notice." %></li>
+<li><%= form.check_box :specific_date %><%= form.label "I'm available on a specific date (please tell us what it is in the box below)." %></li>
+</ul>
+<p>Need to give more details about your availability? </p>
+	<%= form.text_area :availability, :rows => 3 %>
+
+
+
+
+
+	<p><%=l(:professional, :more_info)%></p>
+		<%= form.text_area :more_info, :rows => 10 %>
+
+</fieldset>
+
+	<%= submit_tag l(:professional, :create_account)%>
+
+</fieldset>
+<% end %>

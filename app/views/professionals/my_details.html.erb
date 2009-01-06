@@ -1,4 +1,7 @@
 <h1>Your Account Details</h1>
+<div class ="headsup">
+<h2 align="center"><%= link_to "Want to see your profile as it appears to employers?", :action => :code_name_view, :id => session[:user].code_name %></h2>
+</div>
 <p>Giving employers a better picture of yourself means more job invites, more interviews, and more information about jobs that suit you best. </p>
 <h2>Basic Account Information</h2>
 <ul class = "needsbullets">
@@ -7,7 +10,7 @@
 </ul>
 <h2>Bells and Whistles</h2>
 <ul class = "needsbullets">
-<li><%= link_to "Add past projectst to your portfolio", :controller => :portfolio, :action => :links %></li>
+<li><%= link_to "Add past projects to your portfolio", :controller => :portfolio, :action => :links %></li>
 <li><%= link_to "Try a coding challenge", :controller => :code_sample_question, :action => :explanation %></li>
 <li><%= link_to "Answer three sample interview questions", :controller => :three_questions, :action => :commence %></li>
 </ul>
