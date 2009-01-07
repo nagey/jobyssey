@@ -55,6 +55,7 @@ class ProfessionalsController < ApplicationController
       render :action => :signup
       return
     end
+    
     if @professional.save
       session[:user_id] = @professional.id
       session[:user] = @professional
@@ -64,7 +65,9 @@ class ProfessionalsController < ApplicationController
         invite.signed_up_as_user = @professional
         invite.save
       end
+      
       redirect_to :controller => :skillset, :action => :begin
+    
     else
       @employment_types = EmploymentType.find :all
       @working_times = WorkingTime.find :all
@@ -80,7 +83,16 @@ class ProfessionalsController < ApplicationController
 
   def view
     @professional = Professional.find params[:id]
-    @skills = @professional.skills
+    
+    @professional.personal_qualities.each do |pq| 
+              if pq.metric.class == Skill
+            if pq.value.nil?
+              pq.value = 0
+              pq.save
+            end
+          end
+        end
+  
     session[:professional] = @professional
     @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
     @code_samples = CodeSample.find_all_by_user_id @professional
@@ -90,7 +102,17 @@ class ProfessionalsController < ApplicationController
 
   def code_name_view
     @professional = Professional.find_by_code_name params[:id]
-    @skills = @professional.skills
+    
+    @professional.personal_qualities.each do |pq| 
+              if pq.metric.class == Skill
+            if pq.value.nil?
+              pq.value = 0
+              pq.save
+            end
+          end
+        end
+  
+    #@skills = @professional.skills
     session[:professional] = @professional
     @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
     @code_samples = CodeSample.find_all_by_user_id @professional
@@ -100,7 +122,17 @@ class ProfessionalsController < ApplicationController
 
   def real_name_view
     @professional = Professional.find_by_code_name params[:id]
-    @skills = @professional.skills
+    
+    @professional.personal_qualities.each do |pq| 
+              if pq.metric.class == Skill
+            if pq.value.nil?
+              pq.value = 0
+              pq.save
+            end
+          end
+        end    
+    
+    #@skills = @professional.skills
     session[:professional] = @professional
     @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
     @code_samples = CodeSample.find_all_by_user_id @professional
@@ -128,4 +160,14 @@ class ProfessionalsController < ApplicationController
     redirect_to :action => :home
   end
 
+  def change_password
+  end
+  
+  def save_changed_password
+    professional = Professional.find_by_id session[:user]
+    professional.update_attributes params[:professional] 
+    professional.set_password(params[:professional][:password])
+    redirect_to :action => :home
+    flash[:notice] = "Your password has been changed."
+  end
 end

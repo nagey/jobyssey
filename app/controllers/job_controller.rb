@@ -3,7 +3,8 @@ class JobController < ApplicationController
     before_filter :authenticate
   
   def index
-    @job_specs = JobSpecs.new  
+    @job_specs = JobSpecs.new 
+    session[:job_specs] == nil 
   end
 
   def create

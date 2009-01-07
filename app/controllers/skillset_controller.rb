@@ -55,6 +55,16 @@ class SkillsetController < ApplicationController
   
   def finalize
     p = session[:user]
+    
+    p.personal_qualities.each do |pq| 
+          if pq.metric.class == Skill
+            if pq.value.nil?
+              pq.value = 0
+              pq.save
+            end
+          end
+        end
+    
     p.set_search_position
     redirect_to :controller => :personality, :action => :begin if p.save
   end
