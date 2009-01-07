@@ -21,7 +21,7 @@ class SearchController < ApplicationController
     end
     c = 0
     a.length.times do |x|
-      c += (a[x]-d[x])**2
+      c += (a[x].to_i-d[x].to_i)**2
       if c1!=0 and c1<c
         return c1
       end
