@@ -518,6 +518,7 @@ div.progresswording{
 #skillsright{
 	float: left;
 	display: inline-block;
+	width: 100px;
 }
 #benefits{
 	float:right;
@@ -526,7 +527,7 @@ div.progresswording{
 }	
 #personalqualitiesleft{
 	float:left;
-	width: 350px;
+	width: 270px;
 	padding-right: 30px;
 }		
 #userlinksright{
