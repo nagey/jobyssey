@@ -95,12 +95,7 @@ class PersonalityController < ApplicationController
      @p.set_search_position
      redirect_to :controller => :professionals, :action => :home 
    end
-
-  # def destroy
-  #    pq = PersonalQuality.find_by_metric_id params[:id]
-  #    pq.destroy
-  #    render :text => 'foo'
-  # end      
+    
       
       
 #Employer stuff from here down
@@ -140,27 +135,29 @@ class PersonalityController < ApplicationController
         redirect_to :action => :define_job_personality #if @job_posting.save
       end
 
-      #def details
-      #  @professional_id = Professional.find_by_id 1 #session[:professional]
-      #  @personal_qualities = PersonalQuality.find_by_user_id @professional_id
-      #  for each in @personal_qualities
-      #    if value < 25 
-      #      valuename = "Strongly" + personal_quality.metric.lower_bound
-      #      return
-      #    elsif value < 45
-      #      valuename = "Somewhat" + personal_quality.metric.lower_bound
-      #      return
-      #    elsif value < 55
-      #      valuename = "No strong preference"
-      #      return
-      #    elsif value < 75
-      #      valuename = "Somewhat" + personal_quality.metric.upper_bound
-      #      return
-      #    else  
-      #      valuename = "Strongly" + personal_quality.metric.upper_bound
-      #      return      
-      #    end
-      #  end
-      #end
-      
+
+#New Employer method
+
+  def job_personality
+   @job_posting = JobPosting.find_by_id session[:job_posting] #params[:id]
+   
+
+   @job_posting_requirements = []
+   traits = Trait.find(:all)
+   for trait in traits
+      pq = JobPostingRequirement.new
+      pq.job_posting = @job_posting
+      pq.metric = trait
+      pq.value = 50
+      pq.save
+      @job_posting_requirements << pq
+   end
+  end
+
+ def save_job_personality
+   @p = session[:job_posting]
+   @p.set_search_position
+   redirect_to :controller => :job, :action => :preview, :id => @job_posting 
+ end
+ 
 end

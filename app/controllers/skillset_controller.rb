@@ -188,7 +188,7 @@ end
         end
     
     jp.set_search_position
-    redirect_to :controller => :personality, :action => :define_job_personality, :id => jp if jp.save
+    redirect_to :controller => :personality, :action => :start_job_personality, :id => jp if jp.save
   end
   
   def view_skill_job_posting_skills
