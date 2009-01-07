@@ -177,6 +177,16 @@ end
   
   def finalize_job_posting_skills
     jp = session[:job_posting]
+    
+    jp.job_posting_requirements.each do |pq| 
+          if pq.metric.class == Skill
+            if pq.value.nil?
+              pq.value = 0
+              pq.save
+            end
+          end
+        end
+    
     jp.set_search_position
     redirect_to :controller => :personality, :action => :define_job_personality, :id => jp if jp.save
   end
