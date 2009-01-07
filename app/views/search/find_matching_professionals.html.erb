@@ -1,9 +1,9 @@
 <h1>Professionals matching <%= @job.title %></h1>
 <table>
-<tr><td><b>Professional Code Name</b></td><td><b>Skills Match</b></td><td><b>Personality Match</b></td></tr>
+<tr><td><b>Professional Code Name (Target Job Title)</b></td><td><b>Skills Match</b></td><td><b>Personality Match</b></td></tr>
 <% for professional in @professionals_list %>
   <tr>
-  <td><%= link_to professional[0].code_name, :controller => "professionals", :action => "code_name_view", :id => professional[0].code_name %></td>
+  <td><%= link_to professional[0].code_name, :controller => "professionals", :action => "code_name_view", :id => professional[0].code_name %> (<%= professional[0].desired_job_title unless professional[0].desired_job_title.nil? %>)</td>
   <td><%= professional[1].round(2) %>%</td>
   <td><%= professional[2].round(2) %>%</td>
   </tr>
