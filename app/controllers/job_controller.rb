@@ -13,13 +13,13 @@ class JobController < ApplicationController
     session[:job_posting] = @job_posting
     @job_posting.job_specs = session[:job_specs] unless session[:job_specs].nil?
 
-    if @job_posting.save!
+    if @job_posting.save
       session[:job_posting] = @job_posting
       redirect_to :controller => "skillset", :action => "start_job_posting_skills", :id => @job_posting.id
       return
     else
       redirect_to :action => "new"
-      flash[:notice] = "Didn't work- please email your Jobyssey contact for further assistance."
+      flash[:notice] = "We weren't able to save this job- please check that you've filled in all the fields below (including salary, with no punctuation).  Please contact us if the problem continues."
       return
     end
   end
