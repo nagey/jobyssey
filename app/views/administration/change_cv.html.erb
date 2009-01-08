@@ -1,0 +1,23 @@
+
+
+<% # this requires having a new professional in @professional%>
+<% form_for(:cv, :url => {:controller => :administration, :action => :save_changed_cv}, :html => {:multipart => true}) do |form| %>
+
+<fieldset>
+	<legend>Change CV</legend>
+<p><%=@user.id %></p>
+<div id="error-messages-for-cv-upload" class="error-messages">
+
+	<%= form.error_messages %>
+</div>
+<p>NOTE:  This will destroy the exisiting CV.  Please be sure you wish to do so before proceeding. </p>
+<ul>
+		<li><%= form.file_field :attachment%></li>
+		<li><%= form.hidden_field (:id,:value => @user.id) %></li>
+    
+		<%= submit_tag "Change CV"%></li>
+</ul>
+
+</fieldset>
+<% end %>
+

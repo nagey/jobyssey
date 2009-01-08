@@ -22,4 +22,25 @@ class AdministrationController < ApplicationController
       render :action => :edit_professional
     end
   end
+  
+  def change_cv
+    @cv = Cv.new
+    @cv.entity = User.find params[:id]
+    @user = User.find params[:id]
+  end
+  
+  def save_changed_cv
+    user = Professional.find_by_id params[:cv][:id]
+    cv = Cv.find_by_entity_id params[:cv][:id]
+    cv.destroy unless cv.nil?
+    new_cv = Cv.new params[:cv]
+    user.cv = new_cv
+    if user.cv.save
+      flash[:notice]= "It worked!"
+      redirect_to :action => :view_all_professionals 
+    else
+      flash[:notice] = "It didn't!"
+    end
+  end
+  
 end
