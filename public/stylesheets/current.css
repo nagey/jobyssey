@@ -412,6 +412,13 @@ div.progresswording{
 #roundbuttoncontainerapplylong{
 	color: #fff;
 }	
+.button{
+	font-weight: bold;
+	text-align: center;
+	border-style: none;
+}
+.button img
+	{border-style: none;}
 
 #roundbuttoncontainerapplylong a{
 	text-decoration: none;
