@@ -20,6 +20,7 @@ class JobController < ApplicationController
     else
       redirect_to :action => "new"
       flash[:notice] = "We weren't able to save this job- please check that you've filled in all the fields below (including salary, with no punctuation).  Please contact us if the problem continues."
+      logger.info @job_posting.errors.full_messages
       return
     end
   end
