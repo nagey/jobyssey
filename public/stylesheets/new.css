@@ -1,6 +1,6 @@
 /* Header */
 #mainpage{
-	width: 400px;
+	width: 350px;
 	display: inline;
 	float: left;
 	color: #000000;	
@@ -116,24 +116,26 @@
 	text-align:right;
 	float: right;
 	display: block;
-	margin-top: -17px;
-	
+	margin-top: 54px;
 }
+
 #navbar a{
-	color:#FFF;
+	color:#fff;
 	text-decoration:none;
 }
+
 #navbar ul {
 	list-style-type: none;
-	display: inline;
+
 }
+
 #navbar li {
 	list-style-type: none;
-	display: inline;
+    display: inline;
 	margin-right:10px;
-	margin-top: -20px;
+	margin-top: 40px;
 	font-weight: bold;
-	color: #ffffff;
+	color: #fff;
 }
 
 #loginbar {
