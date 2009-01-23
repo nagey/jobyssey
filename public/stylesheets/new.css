@@ -139,20 +139,22 @@
 }
 
 #loginbar {
-	background-color:#FC7C14;
+	background-color:#ffffff;
+	border: 2px solid #00133F;
 	position:relative;
 	text-align:right;
-	height: 24px;
+	height: 120px;
+	width: 200px; 
+	float: right;
 	margin-right: 5px;
-	width: 650px;
 }
 #loginbar a{
-	color:#FFF;
+	color:#00133F;
 	text-decoration:none;
 }
 #loginbar ul{
 	list-style-type: none;
-	display:inline;
+/*	display:inline;*/
 }
 #loginbar li{
 	margin-right:10px;
@@ -160,7 +162,7 @@
 	display:inline;
 }
 #loginbar label{
-	color: #fff;
+	color: #00133F;
 	font-weight: bold;
 }
 #loginbar form{
