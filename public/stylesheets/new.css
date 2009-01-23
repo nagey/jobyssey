@@ -141,10 +141,10 @@
 #loginbar {
 	background-color:#FC7C14;
 	position:relative;
-	text-align:left;
+	text-align:right;
 	height: 24px;
 	margin-right: 5px;
-	width: 600px;
+	width: 650px;
 }
 #loginbar a{
 	color:#FFF;
@@ -456,10 +456,10 @@ div.progresswording{
 	width: 350px;
 	float: right;
 	color: #fff;
-	margin-right: 30px;
+	margin-right: -20px;
 	font-size: 40px;
 	font-weight: bold;
-	margin-top: 0px;
+	margin-top: 15px;
 }
 #roundbuttoncontainer{
 	width: 200px;
