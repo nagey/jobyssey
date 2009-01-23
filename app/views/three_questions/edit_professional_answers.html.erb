@@ -1,0 +1,12 @@
+<% form_for(:answer, :url => {:action => :save_professional_answers}) do |form| %>
+<h1>Three Questions</h1>
+<% if @answers != nil %>
+  <% for answer in @answers %>
+  <label class="answer_name"><%=answer.differentiator_question.name%></label>
+   <%=form.text_area :name %>
+  <% end %>
+  <%=form.submit "Save my changes"%>
+<% else %>
+  <p>You haven't answered any questions yet- <%= link_to "please go here", :action => :commence %></p>
+<% end %>
+

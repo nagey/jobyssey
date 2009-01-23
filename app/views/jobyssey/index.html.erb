@@ -12,7 +12,21 @@
   
     </ul>
     </div>
+    <div id="signup-button" style="display:block;">
+    click me!
+    </div>
+    <div id="cvupload">
     <%= render :partial => 'professionals/upload_cv' %>
+    </div>
+    <script type="text/javascript">
+    <!--
+    $('#signup-button').click(function () {
+      $(this).toggle();
+      $('#cvupload').toggle();
+    });
+
+    //-->
+    </script>
 		
     <p><a href="/jobyssey/professionals">Find out more about how Jobyssey works.</a></p>
     </div>		

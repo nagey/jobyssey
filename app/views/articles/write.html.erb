@@ -1,0 +1,17 @@
+
+
+<% form_for(:article, :url => {:action => :save}) do |form| %>
+  <div class="error-messages">
+  	<%=form.error_messages%>
+  </div>
+  
+  <fieldset>
+    <legend>Write an Article</legend>
+        <p><label>Title:</label><%= form.text_field :title %></p>
+        <p><label>Body:</label></p><%=form.text_area(:body, :rows => 30) %>
+        
+        <%=form.submit "Save article"%></li>
+    
+  </fieldset>
+
+<% end %>

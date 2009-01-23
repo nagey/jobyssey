@@ -3,18 +3,12 @@
 <% # this requires having a new professional in @professional%>
 <% form_for(:cv, :url => {:controller => :professionals, :action => :signup}, :html => {:multipart => true}) do |form| %>
 
-<fieldset>
-	<legend>Want to give it a try?</legend>
-<div id="error-messages-for-cv-upload" class="error-messages">
 
-	<%= form.error_messages %>
-</div>
+	<H2>Upload Your CV to start your Search!</H2>
+	We'll scan your CV for skills to show you best match jobs. 
+<%= form.file_field("attachment")%>
 
-<ul>
-		<li><%= form.file_field("attachment")%>
-
-		<%= submit_tag l(:professional, :get_started)%></li>
-</ul>
+		<%= submit_tag l(:professional, :get_started)%>
 <br>
 Why do I need my CV and what about privacy<span class="question" style="cursor:pointer">?</span>
 <div class="answer" style="display:none">
@@ -23,6 +17,6 @@ Why do I need my CV and what about privacy<span class="question" style="cursor:p
 	<p> Thanks for your understanding, and please drop us an email at info@jobyssey.com if you'd like more information or have any concerns about privacy.  </p>  
 	</div>
 
-</fieldset>
+
 <% end %>
 

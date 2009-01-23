@@ -1,5 +1,4 @@
 
-<fieldset>
 
 <p><b>Thanks for uploading the job description!</b></p>
 <p>The following skills have been taken from the spec you uploaded.  Please move the sliders to indicate the level of proficiency required.</p>
@@ -19,6 +18,7 @@
 </ul>
 </div>
 </fieldset>
+<div id="sliders">
 <ul id="skill-list" class="skills-list">
 	
 	<% @job_posting.job_posting_requirements.each do |pq| %>
@@ -39,6 +39,7 @@
 		<% end %>
 	<% end %>
 </ul>
+</div>
 <br>
 <div class="addskillfieldset">
 <fieldset>
@@ -60,4 +61,3 @@
     </div>
 <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
 </div>
-</fieldset>

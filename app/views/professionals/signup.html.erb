@@ -4,54 +4,49 @@
 	<%=form.error_messages%>
 </div>
 
-<fieldset>
 <div class="progressbar"><%=l(:professional, :your_details)%><div class="progresscounter"><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
 <div class="progresswording"><%=l(:professional, :progress_wording_one)%></div></div>
 </div>
 <p><%=l(:professional, :cvupload_thanks)%>.</p>
 <p><%=l(:professional, :confidentiality_text)%>.</p>
 <br>
+
+<H2>Account Details</H2>
 <ul>
 	<li>
-		<label for="professional[name]"><%=l(:professional, :name)%></label>
+		<label for="professional[name]">Full Name</label>
 		<%= form.text_field "name" %>
 	</li>
 	<li>
-		<label for="professional[email]"><%=l(:professional, :email)%></label>
+		<label for="professional[email]">Email address</label>
 		<%= form.text_field 'email' %>
 	</li>
 	<li>
-		<label for="professional[email_confirmation]"><%=l(:professional, :email_confirmation)%></label>
+		<label for="professional[email_confirmation]">Confirm email</label>
 		<%= form.text_field 'email_confirmation' %>
 	</li>
 	<li>
-		<label for="professional[password]"><%=l(:professional, :password)%></label>
+		<label for="professional[password]">Password</label>
 		<%= form.password_field 'password' %>
 	</li>
 	<li>
-		<label for="professional[password_confirmation]"><%=l(:professional, :password_confirmation)%></label>
+		<label for="professional[password_confirmation]">Confirm password</label>
 		<%= form.password_field 'password_confirmation'%>
 	</li>
 	<li>
 		<label for="professional[desired_job_title]">Desired job title(s):</label>
 		<%= form.text_field "desired_job_title" %>
 	</li>
-	</ul>
-	<br>
-<div id = "codename">
+	<li><label><b><%=l(:professional, :code_name)%>:</label> <%= @code_name %></b>
+	<span class="question" style="cursor:pointer">?</span>
 
-<label><b><%=l(:professional, :code_name)%>:</label> <%= @code_name %></b>
+  <div class="answer" style="display:none">
+  	<p><%=l(:professional, :code_name_explanation)%>. </p></li>
+  	</ul>
 
-<span class="question" style="cursor:pointer">?</span>
-
-<div class="answer" style="display:none">
-	<p><%=l(:professional, :code_name_explanation)%>. </p>  
-	</div>
-</div>
-
-<fieldset>
-<legend><%=l(:professional, :looking_for_legend)%>... </legend>
+<H2>What you're looking for</H2>
 <br>
+
 <ul>
 	<li>
 		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
@@ -64,12 +59,12 @@
 </ul>
 <br>
 	<p><%=l(:professional, :more_info)%></p>
-		<%= form.text_area :more_info %>
+		<%= form.text_area :more_info, :rows => 4%>
 
-</fieldset>
-<label class="tsandcs"><input type="checkbox" id="tsandcs" name="tsandcs" value="1" /><%=l(:professional, :agree_terms)%> <a href="/jobyssey/tsandcs"><%=l(:professional, :terms_link)%>.</a></label>
 
-	<%= submit_tag l(:professional, :create_account)%>
+<label class="tsandcs"><input type="checkbox" id="tsandcs" name="tsandcs" value="1" /><%=l(:professional, :agree_terms)%> <%= link_to "T's and C's", "http://www.jobyssey.com/jobyssey/tsandcs", :popup => true %><%=l(:professional, :terms_link)%>.</a></label>
 
-</fieldset>
+	<%= submit_tag "Create my account!" %>
+
+
 <% end %>

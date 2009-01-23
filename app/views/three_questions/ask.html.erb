@@ -3,17 +3,17 @@
   	<%=form.error_messages%>
   </div>
   
-  <fieldset>
-    <legend>Three Questions</legend>
+ 
+    <h1>Three Questions</h1>
  <p>The questions below are similar to ones you might be asked at an interview.  Once you've answered them, they'll be added to your profile. </p>
     <ul>
       <li>
         <label class="answer_name"><%=@answer.differentiator_question.name%></label>
-        <%=form.text_area :name %>
+        <%=form.text_area :name, :rows => 10%>
       </li>
       <li><%=form.submit "Hit Me"%></li>
     </ul>
-  </fieldset>
+
   <%=form.hidden_field :differentiator_question_id %>
   <%=form.hidden_field :user_id %>
 <% end %>

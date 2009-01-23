@@ -1,6 +1,24 @@
+<div id= "frontpagewrapper">
 
-<h1>Employer Inquiry</h1>
-<p>We'll be happy to answer any question you may have about Jobyssey or arrange a demonstration of our software.  Please drop us a line below with any questions you may have and we'll contact you shortly: </p>
+		<h1>Finding you the IT right people</h1>
+		<div id ="mainpage">
+    
+    <div id="needsbullets">
+    <ul>
+      <li><b>The Best Candidates-</b> No recruitment agencies means more experienced jobseekers. </li>
+      <li><b>The Best Details-</b> Detailed skills and personality profiles, plus full CV, portfolio and code samples for all candidates. </li>
+      <li><b>The Best Tools-</b> Skills based searching, candidate contact messenger, and activity tracker.</li>
+      <li><b>
+ 
+      </ul>
+    </div></div></div>
+
+
+<div id ="productshot">
+<img src="/productshot.png">
+</div>
+
+<p>Want more information or to arrange a sale:</p>
 <% form_for(:inquiry, :url => {:action => :send_employer_inquiry}) do |form| %>
 <p>
    <label for="name">Your Name:</label><br />
@@ -27,3 +45,4 @@
 
   
 <% end %>
+</div>

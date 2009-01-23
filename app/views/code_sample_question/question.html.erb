@@ -5,8 +5,7 @@
   	<%=form.error_messages%>
   </div>
   
-  <fieldset>
-    <legend>Your Question</legend>
+    <h1>Your Question</h1>
  <p>Here's your problem.  Take as long as is necessary to devise the best solution, and write it below.  When you've finished, note the language you used below and hit submit. </p>
  <p><b>Note: Please remember that we record the time you take to answer.  No need to rush, but you should work on your solution without intrruption and submit it as soon as you're done. </b></p>
     <ul>
@@ -18,7 +17,6 @@
       <li><label>Language used:</label><%= form.text_field "language_used" %></li>
       <li><%=form.submit "I'm all done"%></li>
     </ul>
-  </fieldset>
   <%=form.hidden_field :code_sample_question_id %>
   <%=form.hidden_field :user_id %>
 <% end %>

@@ -1,8 +1,9 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 	<title><%= title :site_name => "Jobyssey – IT Jobs in Ireland" %></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
-	<%= stylesheet_link_tag "current" %>
+	<%= stylesheet_link_tag "new" %>
 	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form', 'jquery.autocomplete' %>
 	<script language="Javascript">
 	$(document).ready(function(){
@@ -15,10 +16,10 @@
 
 <body>	
 
-	<div id="container">
 		<div id="header">
-		<p><%=l(:your_journey)%></p>
-		
+			<div id ="headercontainer">
+			<div id ="headertext">
+				
 		<% if authenticated? %>
 			<% if session[:user].type == "Professional" %>
 				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
@@ -30,48 +31,58 @@
 		<% end %>
 
 
-<% if flash[:notice] -%> 
-<div id="notice"><%= flash[:notice] %></div> 
-<% end -%> 
+	
+	</div>
+	</div>
+	</div>
 
-<div id="behindcontent">
-<div id="content">
-<div id="liner">
-<%=@content_for_layout%>
+		<div id="container">
+	<div id="content">
+	<div id="liner">
 
-</div>
+		<% if flash[:notice] -%> 
+		<div id="notice"><%= flash[:notice] %></div> 
+		<% end -%>
+	<%=@content_for_layout%>
 
-<div id="footer">
-	<div id="bottomnavbar">
-		<ul>
-			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
-			<li><a href="/about"><%=l(:about_us)%></a></li>
-			<% if authenticated? %>
-				<% if session[:user].type == "Professional" %>
-				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+	</div></div>
+	</div>
+
+
+
+		<div id="bottomnavbar">
+			<div id ="footercontainer">
+			<ul>
+				<li><a href="http://www.jobyssey.com/it_professionals_in_ireland/job_search_ideas_and_cv_tips.html">Jobseeker Tips</a></li>
+				<li><a href="http://www.jobyssey.com/it_employers_in_ireland/hiring_help_and_recruiting_tips.html">Employer Tips</a></li>
+				<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
+				<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
+				<% if authenticated? %>
+					<% if session[:user].type == "Professional" %>
+					<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+					<% else %>
+					<li><%= link_to "Contact Us", :controller => :messages, :action => :client_questions %></li>
+					<% end %>
 				<% else %>
-				<li><%= link_to "Contact Us", :controller => :messages, :action => :client_questions %></li>
+					<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
 				<% end %>
-			<% else %>
-				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
-			<% end %>
-		</ul>
+			</ul>
+		</div>
 	</div>
 
-	<div id="copyright">
-		<p class="snug"><%=l(:copyright_footer)%> 
-	</div>
-</div>
-</div>
-</div>	
-</div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-3701319-1");
-pageTracker._trackPageview();
-</script>
-</body>
-</html>
+
+
+
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-3701319-1");
+	pageTracker._trackPageview();
+	</script>
+	</body>
+	</html>
+
+
+
