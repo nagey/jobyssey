@@ -6,11 +6,11 @@
     
     <div id="fancylist">
     <ul>
-    <li>We rock</li>
-    <li>We fucking rock</li>
-    <li>No, seriously, we kick ass.</li>
-    <li>And so on.</li>
-    <li>And so forth.</li>
+    <li>I need to try adding some longer text here</li>
+    <li>And see if pushing the orange button down some fixes the layout</li>
+    <li>It would be great if this did the trick</li>
+    <li>Simple and easy</li>
+    <li>Actually, maybe just a little bit more text.  Tiny bit more.</li>
     </ul>
     </div>
 <br><br>
@@ -24,25 +24,33 @@
       <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
       </div>
       </div>
-      <div id="cvupload">
-      <%= render :partial => 'professionals/upload_cv' %>
-      </div>
+
       <script type="text/javascript">
       <!--
       $('#signup-button').click(function () {
-        $(this).toggle();
         $('#cvupload').toggle();
+        $('#productshot').toggle();
       });
 
       //-->
       </script>
     
 </div>
+<div id="productandcv">
 
 <div id ="productshot">
 <img src="/productshot.png">
 </div>
 
+<div id="cvupload">
+<%= render :partial => 'professionals/upload_cv' %>
+<br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+</div>
 </div></div></div>
 
 <div id ="dailytip">

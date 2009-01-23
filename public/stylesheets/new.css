@@ -10,6 +10,10 @@
 	color: #000000;
 	font-weight: bold;
 }
+#productandcv{
+	display: inline;
+	width: 460px;
+}
 #productshot{
 	display: inline;
 }
