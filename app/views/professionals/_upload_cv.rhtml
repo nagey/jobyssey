@@ -4,17 +4,15 @@
 <% form_for(:cv, :url => {:controller => :professionals, :action => :signup}, :html => {:multipart => true}) do |form| %>
 
 
-	<H2>Upload Your CV to start your Search!</H2>
+	<H2 class="bigorange">Upload Your CV to start your Search!</H2>
 	We'll scan your CV for skills to show you best match jobs. 
 <%= form.file_field("attachment")%>
 
 		<%= submit_tag l(:professional, :get_started)%>
 <br>
-Why do I need my CV and what about privacy<span class="question" style="cursor:pointer">?</span>
-<div class="answer" style="display:none">
-	<p>Unlike other job sites, Jobyssey does not allow any agencies- it's just direct employers.  Because of that, and since many of our users are hiring managers or heads of HR at smaller companies, all users need to upload a CV to their account otherwise there isn't enough information for employers to go on.</p>
-	  <p>We know you don't want to receive unsolicited calls and are concerned about privacy, so we only share your contact details with employers when you apply for a job.  Employers are able to view your CV, however, so we advise that you remove your name and contact information from your CV (including the file name!) before you upload it if privacy is a concern.</p>
-	<p> Thanks for your understanding, and please drop us an email at info@jobyssey.com if you'd like more information or have any concerns about privacy.  </p>  
+<h3>Why do I need my CV and what about privacy?</h3>
+
+	<p>Jobyssey's skills based matching system works best when we use your CV to identify all your skills, and to make our no-recruiter system work we need lots of information about you.  <br>We only share your contact details with employers when you apply for a job.  Employers are able to view your CV, however, so we advise that you remove your name and contact information from your CV (including the file name!) before you upload it if privacy is a concern.</p> 
 	</div>
 
 

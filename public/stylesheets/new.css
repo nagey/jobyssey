@@ -1,10 +1,11 @@
 /* Header */
 #mainpage{
-	width: 350px;
+	width: 370px;
 	display: inline;
 	float: left;
 	color: #000000;	
 	text-align: left;
+	padding-right: 10px;
 }
 #mainpage h1{
 	color: #000000;
@@ -12,12 +13,12 @@
 }
 #productandcv{
 	display: inline;
-	width: 460px;
+	width: 430px;
 }
 #productshot{
 	display: inline;
 }
-#cvupload {display:none; margin-left: 20px;}
+#cvupload {display:none; margin-right: 5px;	text-align: left; width: 400px; position: relative; left: 400px; top: -300px; height: 350px;}
 #frontpagewrapper{
 	display: block;
 	height: 50%;
@@ -462,7 +463,7 @@ div.progresswording{
 	width: 350px;
 	float: right;
 	color: #fff;
-	margin-right: -20px;
+	margin-right: -5px;
 	font-size: 40px;
 	font-weight: bold;
 	margin-top: 15px;
@@ -731,9 +732,9 @@ h4{
 	font-weight: bold;
 }
 .bigorange{
-	width: 250px;
+	width: 425px;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 22px;
 	color: #FC7C14;
 	float: left;
 	text-align: left;
