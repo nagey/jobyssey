@@ -18,7 +18,7 @@
 #productshot{
 	display: inline;
 }
-#cvupload {display:none; margin-right: 5px;	text-align: left; width: 400px; position: relative; left: 400px; top: -300px; height: 350px;}
+#cvupload {display:none; margin-right: 5px;	text-align: left; width: 400px; position: relative; left: 400px; top: -300px; height: 125px;}
 #frontpagewrapper{
 	display: block;
 	height: 50%;
