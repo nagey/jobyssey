@@ -21,7 +21,7 @@
 			<div id ="headertext">
 				
 		<% if authenticated? %>
-			<% if session[:user].type == "Professional" %>
+			<% if session[:user].class == "Professional" %>
 				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
 			<% else %>
 				<h1><%= link_to "Jobyssey", :controller => 'employers', :action => "home" %></h1>
@@ -58,7 +58,7 @@
 				<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
 				<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
 				<% if authenticated? %>
-					<% if session[:user].type == "Professional" %>
+					<% if session[:user].class == "Professional" %>
 					<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
 					<% else %>
 					<li><%= link_to "Contact Us", :controller => :messages, :action => :client_questions %></li>

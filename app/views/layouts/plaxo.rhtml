@@ -3,7 +3,7 @@
 <head>
 	<title><%= title :site_name => "Jobyssey – IT Jobs in Ireland" %></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
-	<%= stylesheet_link_tag "current" %>
+	<%= stylesheet_link_tag "new" %>
 	<%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form' %>
 	<script src="http://www.plaxo.com/css/m/js/util.js" type="text/javascript"></script>
 	<script src="http://www.plaxo.com/css/m/js/basic.js" type="text/javascript"></script>
@@ -19,12 +19,13 @@
 
 <body>	
 
-	<div id="container">
+	
 		<div id="header">
-		<p><%=l(:your_journey)%></p>
-		
+			<div id ="headercontainer">
+			<div id ="headertext">
+				
 		<% if authenticated? %>
-			<% if session[:user].type == Professional %>
+			<% if session[:user].class == Professional %>
 				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
 			<% else %>
 				<h1><%= link_to "Jobyssey", :controller => 'employers', :action => "home" %></h1>
@@ -32,57 +33,65 @@
 		<% else %>
 				<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
 		<% end %>
-		
-		</div>
-<div id="navbar">
 
-	<% if authenticated? %>
-		<div class="info">Welcome, <%=authenticated?.first_name.capitalize %></div>
-<ul>		
-		<% if session[:user].type == Professional %>
-			<li><%= link_to "Jobs", :controller => 'search', :action => "find_matching_jobs" %></li>
-			<!--<li class=Professional>Profile</li>-->
-			<li><%= link_to "My Details", :controller => 'professionals', :action => "my_details" %></li>
-			<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
-		<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
+
+		</div>
+	<div id="navbar">
+
+		<% if authenticated? %>
+	<ul>		
+			<% if session[:user].class == Professional %>
+				<li><%= link_to "Jobs", :controller => 'search', :action => "find_matching_jobs" %></li>
+				<!--<li class=Professional>Profile</li>-->
+				<li><%= link_to "My Details", :controller => 'professionals', :action => "my_details" %></li>
+				<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
+			<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
+			<% else %>
+					<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
+					<li><%= link_to "Applies and Invites", :controller => 'apply', :action => "view_employer_activity" %></li>
+					<li><%= link_to "All My Jobs", :controller => 'job', :action => "view_my_jobs" %></li>
+				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
+			<% end %>
+			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
 		<% else %>
-				<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
-				<li><%= link_to "Applies and Invites", :controller => 'apply', :action => "view_employer_activity" %></li>
-				<li><%= link_to "All My Jobs", :controller => 'job', :action => "view_my_jobs" %></li>
-			<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
-			<!--<li class="employer">Account</li>
-			<li class="employer">Tips</li>-->
+			<li><a href="/jobyssey/employers">For Employers</a></li>
+			<li><a href="/jobyssey/professionals">For Professionals</a></li>
+			<li class="login" style="cursor:pointer">Login</li>
 		<% end %>
-		<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
-	<% else %>
-		<li><a href="/jobyssey/employers">For Employers</a></li>
-		<li><a href="/jobyssey/professionals">For Professionals</a></li>
-		<li class="login" style="cursor:pointer">Login</li>
-	<% end %>
-</ul>
-</div>
+	</ul>
+
 
 <div id = "loginbar" style="display:none">
 	<%=render :partial => "jobyssey/login"%>
 </div>
 
-
-<% if flash[:notice] -%> 
-<div id="notice"><%= flash[:notice] %></div> 
-<% end -%> 
-
-<div id="behindcontent">
-<div id="content">
-<%=@content_for_layout%>
+	</div>
+</div>
 </div>
 
-<div id="footer">
+	<div id="container">
+<div id="content">
+<div id="liner">
+	
+	<% if flash[:notice] -%> 
+	<div id="notice"><%= flash[:notice] %></div> 
+	<% end -%>
+<%=@content_for_layout%>
+
+</div></div>
+</div>
+
+
+
 	<div id="bottomnavbar">
+		<div id ="footercontainer">
 		<ul>
+			<li><a href="http://www.jobyssey.com/it_professionals_in_ireland/job_search_ideas_and_cv_tips.html">Jobseeker Tips</a></li>
+			<li><a href="http://www.jobyssey.com/it_employers_in_ireland/hiring_help_and_recruiting_tips.html">Employer Tips</a></li>
 			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
-			<li><a href="/about"><%=l(:about_us)%></a></li>
+			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
 			<% if authenticated? %>
-				<% if session[:user].type == Professional %>
+				<% if session[:user].class == Professional %>
 				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
 				<% else %>
 				<li><%= link_to "Contact Us", :controller => :messages, :action => :client_questions %></li>
@@ -92,14 +101,11 @@
 			<% end %>
 		</ul>
 	</div>
+</div>
 
-	<div id="copyright">
-		<p class="snug"><%=l(:copyright_footer)%> 
-	</div>
-</div>
-</div>
-</div>	
-</div>
+
+
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
