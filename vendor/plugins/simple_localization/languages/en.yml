@@ -648,13 +648,11 @@ app:
         looking_for_legend: What I'm looking for
         agree_terms: I agree to
         terms_link: Jobyssey's Terms and Conditions
-        welcome: Welcome to the Beta version of Jobyssey!
-        thanks_text: Thanks for taking the time to build your profile.  Please bear in mind this is a beta version of the Jobyssey project for you to explore - employers have not yet been added but will be in the next few weeks.
-        thanks_text_employer: Thanks for joining! This is your Newsfeed page. Check this space for announcements of any new features we have added to enhance your Jobyssey experience. 
-        meantime_text: In the meantime, you can add to your details and build a complete profile so you are up and running for when we add employers on the site.
-        continually_attracting: We are continually attracting high calibre professionals to the site so make sure all your live jobs are up to date, and your public profile is completed and looking good.
-        answer: Answer
-        three_questions: 3 Questions
+        welcome:
+        thanks_text: 
+    
+        meantime_text:
+
         know_you: to let employers get to know you better.
         know_you_employer: and complete your profile to let professionals get to know your company better.
         work_samples: Add work samples to your

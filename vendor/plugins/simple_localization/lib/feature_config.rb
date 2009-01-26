@@ -55,7 +55,8 @@ module ArkanisDevelopment #:nodoc:
     # Debug mode will raise nice entry format errors (see localized_application
     # feature) which exactly show whats wrong with an entry. However in a
     # production environment we should avoid these nice HTTP 500 errors...
-    Language.debug = true if ENV['RAILS_ENV'] != 'production'
+    #Language.debug = true if ENV['RAILS_ENV'] != 'production'
+    Language.debug = false
     
   end
 end
