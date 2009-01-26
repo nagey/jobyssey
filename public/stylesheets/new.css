@@ -6,6 +6,7 @@
 	color: #000000;	
 	text-align: left;
 	padding-right: 10px;
+	margin-top: 20px;
 }
 #mainpage h1{
 	color: #000000;
@@ -680,11 +681,12 @@ div.progresswording{
 #bottomdiv{
 	width: 810px;
 }
-#fancylist ul{
+#fancylist li{
 	list-style-type: square;
 	margin-left: 50px;
 	font-weight: bold;
 	font-size: 16px;
+	margin-bottom: 5px;
 }
 
 #bellcurveimage{
