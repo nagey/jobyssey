@@ -16,7 +16,8 @@
 <div id ="productshot">
 <img src="/productshot.png">
 </div>
-<h2>Want to give it a try?</h2>
+<fieldset>
+<Legend>Want to give it a try?</legend>
 <p>We'd be happy to send you on further information or arrange a trial, just drop us a line:</p>
 <% form_for(:inquiry, :url => {:action => :send_employer_inquiry}) do |form| %>
 <p>
@@ -41,7 +42,7 @@
   </p>
     <%= form.submit "Send" %>
   </p>
-
+</fieldset>
   
 <% end %>
 </div>
