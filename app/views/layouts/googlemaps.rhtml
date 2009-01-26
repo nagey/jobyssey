@@ -57,7 +57,7 @@
 			<% end %>
 			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
 		<% else %>
-			<li><a href="/jobyssey/employers">For Employers</a></li>
+						<li><%= link_to "For Employers", :controller => :messages, :action => :employer_questions %></li>
 			<li><a href="/jobyssey/professionals">For Professionals</a></li>
 			<li class="login" style="cursor:pointer">Login</li>
 		<% end %>

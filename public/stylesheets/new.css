@@ -12,19 +12,28 @@
 	font-weight: bold;
 }
 #productandcv{
-	display: inline;
+	display: inline-block;
 	width: 430px;
 }
 #productshot{
 	display: inline;
 }
-#cvupload {display:none; margin-right: 5px;	text-align: left; width: 400px; position: relative; left: 400px; top: -300px; height: 125px;}
+#cvupload {
+	display: none; 
+	margin-right: 5px;	
+	margin-top: -20px;
+	padding-top: 10px;
+	text-align: left; 
+	width: 400px; 
+	padding-left: 10px;
+	padding-bottom: 60px;
+	height: 125px;
+}
 #frontpagewrapper{
-	display: block;
+	display: inline;
 	height: 50%;
-	padding-top: 5px;
+	padding-top: 10px;
 	text-align: center;
-	padding-bottom: 20px;
 }
 #frontpagewrapper h1{
 	font-size: 36px;
@@ -35,11 +44,10 @@
 	width: 850px;
 	background-color: #7D98C9;
 	text-align: center;
-	display: block;
-	margin: 0 auto;
+	display: inline-block;
+	margin-bottom: 40px;
 	padding-bottom: 10px;
 }
-
 #dailytip h2{
 	color: #fff;
 	font-weight: bold;
@@ -71,6 +79,7 @@
 	background-repeat: repeat-x;
 	/*background-position: top center;*/
 	height: 75px;
+	right: 0;
 	width: 100%;
 	/*border-bottom: 3px solid #ffffff;*/
 	margin: 0 auto;
@@ -188,6 +197,7 @@
 	/*background-position: top center;*/
 	height: 40px;
 	width: 100%;
+	right: 0;
 	/*border-bottom: 3px solid #ffffff;*/
 	margin: 0 auto;
 	text-align: right;
@@ -283,8 +293,6 @@ div#container{
 	text-align: left;
 	background: #ffffff;
 	color: #000000;
-
-
 }
 div#behindcontent{
 	height: 100%;
@@ -467,6 +475,7 @@ div.progresswording{
 	font-size: 40px;
 	font-weight: bold;
 	margin-top: 15px;
+	cursor: pointer;
 }
 #roundbuttoncontainer{
 	width: 200px;
@@ -739,6 +748,7 @@ h4{
 	float: left;
 	text-align: left;
 }
+
 .personalitybigorange{
 	width: 400px;
 	font-weight: bold;
