@@ -13,7 +13,7 @@
 </ul>
 </div>
 
-
+<div id ="sliders">
 	<ul id="skill-list" class="skills-list">
 	<% @professional.personal_qualities.each do |pq| %>
 		<% if pq.metric.class == Skill %>
@@ -33,6 +33,7 @@
 		<% end %>
 	<% end %>
 </ul>
+</div>
 <br>
 <div class="addskillfieldset">
 <fieldset>
