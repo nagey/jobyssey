@@ -467,6 +467,16 @@ div.progresswording{
 .addskillfieldset{
 	margin: 0px 70px 0px 70px;
 }
+#roundbuttonprofessionalpage{
+	width: 350px;
+	float: right;
+	color: #fff;
+	margin-right: -5px;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: -20px;
+	cursor: pointer;
+}
 #roundbuttonmainpage{
 	width: 350px;
 	float: right;

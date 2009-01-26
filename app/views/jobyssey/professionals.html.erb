@@ -1,13 +1,73 @@
-<br><br><br><br>
-<div id="needsbullets">
-<h1>What's Jobyssey all about?</h1>
 
-<p>Jobyssey is a best match job search site.  When you upload your CV and tell us a bit about yourself we'll use that information to show you jobs that suit you best.  A little more about how Jobyssey works:</p>
-  <ul>
-  <li>Detailed skills profiles help employers understand you better.</li>
-  <li>Work personality profiles let you find a position and company that suit how you like to work.</li>
-  <li>We keep your search confidential- you'll be known to employers by a code name until you agree to an interview.</li>
-  <li>You'll be dealing directly with employers- no pressure from agencies or phantom jobs.</li>
-  </ul>
-<p>Still feeling a little gun shy?  We know that starting your job search by putting your CV out there can be a leap of faith, and we want you to know there's real people on the other end here.  Please <%= link_to "let us know", :controller => :messages, :action => :general_questions %> if you have any questions about how Jobyssey works or who we are and we'll email you right back. </p>
+  
+  <div id= "frontpagewrapper">
+
+
+  		<h1>Finding you the Perfect Job</h1>
+  		<div id ="mainpage">
+<p><b>Better Searching on Jobyssey:</b></p>
+       <div id="needsbullets">
+        <ul>
+        <li><b>Only employers</b>- no recruitment agencies; you speak directly to companies that are hiring.</b>
+        <li><b>Skills based job matching-</b> We'll search your CV for skills, and show you jobs that suit you best.</li>
+        <li><b>Work personality profiles-</b> Find a company and position that matches your personality.</li>
+        <li><b>Privacy- </b>You're identified with a code name until you decide to apply for a job.</li>
+        </ul>
+      <p>Got more questions?  <%= link_to "Email us", :controller => :messages, :action => :general_questions %>, we're happy to help.</p>
+      </div>
+  <br><br>
+
+       <div id="signup-button" style="display:block;">
+        <div id="roundbuttonprofessionalpage">
+        <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+         <div class="contentc">
+                <div>Try it now!</div>
+            </div>
+        <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+        </div>
+        </div>
+
+        <script type="text/javascript">
+        <!--
+        $('#signup-button').click(function () {
+          $('#cvupload').toggle();
+          $('#productshot').toggle();
+
+             });
+
+        //-->
+        </script>
+
   </div>
+  <div id="productandcv">
+
+  <div id ="productshot">
+  <img src="/productshot.png">
+  </div>
+
+  <div id="cvupload">
+  <%= render :partial => 'professionals/upload_cv' %>
+  <br><br><br><br><br><br><br><br><br>
+  </div>
+
+
+
+
+  </div>
+  </div></div></div>
+
+  <div id ="dailytip">
+
+  <h2>Daily Jobseeker Tip</h2>
+
+  <p>Tutorial Blog, ha realizado una recopilación de 30 Diseños Web, en el título de la entrada dicen “Great” (Grandiosos), pero la verdad es que algunos dejan mucho que desear y de grandiosos no tienen nada</p>
+
+
+  </div>
+
+
+
+
+
+
+  
