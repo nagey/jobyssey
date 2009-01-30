@@ -1,15 +1,15 @@
 <p>
-  <b><%=l(:show_employer)%>:</b>
+  <b>Show Employer:</b>
   <%=h @account.employer_id %>
 </p>
 
 <p>
-  <b><%=l(:show_balance)%>:</b>
+  <b>Show balance:</b>
   <%=h @account.balance %>
 </p>
 
 <% # show transactions %>
-<h2><%=l(:transactions)%></h2>
+<h2>Transactions</h2>
 <table>
 <%= render :partial => 'transactions/transaction_header' %>
 <%= render :partial => 'transactions/transactions', :collection => @account.transactions %>

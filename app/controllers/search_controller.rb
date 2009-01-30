@@ -3,9 +3,15 @@ class SearchController < ApplicationController
     before_filter :authenticate
   
   def all_professionals
-    @professionals = Professional.find :all
-    @skills = Skill.find :all
-    session[:job_posting] = JobPosting.find_by_id params[:id] unless params[:id].nil?
+    employer = session[:user].employer
+    if employer.premium?
+      @professionals = Professional.find :all
+      @skills = Skill.find :all
+      session[:job_posting] = JobPosting.find_by_id params[:id] unless params[:id].nil?
+    else
+      redirect_to :controller => :employers, :action => :home
+      flash[:notice] = "Restricted."
+    end
   end
     
   def all_jobs
@@ -103,6 +109,7 @@ class SearchController < ApplicationController
   
   def find_matching_professionals
     #define jobs skills position
+    @professionals = Professional.find :all
     j = JobPosting.find_by_id params[:id]
     @job = j
     job_skills_position = []
@@ -162,13 +169,22 @@ class SearchController < ApplicationController
       
   
       professional_rank = [professional, skills_percent, personality_percent]
-      professionals_list << professional_rank
-
+     
+      #Adds cutoff point for results
+      if professional_rank[1] > 55
+        professionals_list << professional_rank
+      end
+      
   end
     
     #Sort results by skill %. 
     @professionals_list= professionals_list.sort_by { |job| job[1] }
     @professionals_list.reverse!
+    
+    employer = Employer.find_by_id session[:employer]
+    unless employer.premium?
+      render :action => :professional_search_summary
+    end
   end
 
 end

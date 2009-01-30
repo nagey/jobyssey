@@ -1,0 +1,15 @@
+<h1>Administration Tools</h1>
+
+<h2>Views</h2>
+<p>Note: To upgrade an employer or swap a CV, use the buttons within the professional and employer tables.</p>
+<ul class="fancylist">
+<li><%= link_to "View and edit professionals", :action => :view_all_professionals %></li>
+<li><%= link_to "View and edit employers", :action => :view_all_employers %></li>
+<li><%= link_to "Current job postings", :controller => :job_postings, :action => :index %></li>
+</ul>
+<h2>New Employer functions</h2>
+<ul class="fancylist">
+<li><%= link_to "Add new employer", :controller => :employers, :action => :new %></li>
+<li><%= link_to "Add new employee", :controller => :employees, :action => :new %></li>
+<li><%= link_to "Add new address", :controller => :addresses, :action => :new %></li>
+</ul>

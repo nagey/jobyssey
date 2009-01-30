@@ -7,13 +7,13 @@
     <%= f.label :user %><br />
     <%= f.collection_select :user_id, @users, :id, :name %>
 	<br>
-	<%= link_to l(:add_user), new_user_path %>
+	<%= link_to "Add user", new_user_path %>
   </p>
   <p>
     <%= f.label :metric %><br />
    	<%= f.collection_select :metric_id, @metrics, :id, :name %>
 	<br>
-	<%= link_to l(:add_metric), new_metric_path %>
+	<%= link_to "Add metric", new_metric_path %>
   </p>
   <p>
     <%= f.label :value %><br />

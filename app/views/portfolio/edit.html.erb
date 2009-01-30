@@ -1,19 +1,19 @@
 
-<h1><%=l(:portfolio_edit)%></h1>
+<h1>Edit Project</h1>
 
 <% form_for(:attachment , :url => {:action => :update, :id => @attachment.id}) do |form| %>
 
 <ul>
 <li>
-<label><%=l(:portfolio_name)%>:</label>
+<label>Name:</label>
 	<%= form.text_field "name" %>
 </li>
 <li>
-<label><%=l(:portfolio_url)%>:</label>
+<label>URL:</label>
 	<%= form.text_field "url" %>
 </li>
 <li>
-<label><%=l(:portfolio_description)%>:</label>
+<label>Description:</label>
 	<%= form.text_field "description" %>
 </li>
 

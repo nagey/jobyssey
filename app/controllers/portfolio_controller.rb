@@ -13,7 +13,7 @@ class PortfolioController < ApplicationController
     if attachment.save
       professional.attachments << attachment
       #professional.update_attributes
-      flash[:message] = l(:link_saved)
+      flash[:message] = "Link saved"
       redirect_to :action => :links
     else
       @attachment = attachment

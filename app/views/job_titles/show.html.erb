@@ -3,7 +3,7 @@
   <%=h @job_title.name %>
 </p>
 <% # show work history %>
-<h2><%=l(:work_history_items)%></h2>
+<h2>Work History Items</h2>
 <table>
 <%= render :partial => 'work_history_items/work_history_header' %>
 <%= render :partial => 'work_history_items/work_history_item', :collection => @job_title.work_history_items %>

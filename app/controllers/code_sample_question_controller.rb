@@ -58,9 +58,14 @@ class CodeSampleQuestionController < ApplicationController
   end
 
   def view_professional_samples
-    @professional = session[:professional]
-    @code_sample_questions = CodeSampleQuestion.find :all
-    @code_samples = CodeSample.find_all_by_user_id @professional.id
+   employer = Employer.find_by_id session[:employer]
+    if employer.premium?
+      @professional = session[:professional]
+      @code_sample_questions = CodeSampleQuestion.find :all
+      @code_samples = CodeSample.find_all_by_user_id @professional.id
+    else 
+      redirect_to :controller => :employers, :action => :premium
+    end
   end
 
   def view

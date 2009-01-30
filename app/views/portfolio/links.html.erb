@@ -1,5 +1,5 @@
-<h1><%=l(:portfolio)%></h1>
-<p><%=l(:portfolio_instructions)%> </p>
+<h1>Portfolio</h1>
+<p>Link to past projects you've worked on or online portfolions to let prospective employers get to know you better.</p>
 <p>Don't have any good past work on hand?  <%= link_to "Try our coding problems!", :controller => :code_sample_question, :action => :explanation %></p>
 <p>Want to add some lines of code for hiring managers to review?  <%= link_to "Add your own code samples", :controller => :code_sample_question, :action => :own_code %>
 <% form_for(:attachment , :url => {:action => :add_a_link}) do |form| %>
@@ -9,28 +9,28 @@
 
 
 <table>
-<Caption><%=l(:portfolio_caption)%></caption>
+<Caption>My Projects</caption>
   <tr>
-    <th><%=l(:portfolio_name)%></th>
-    <th><%=l(:portfolio_url)%></th>
-    <th><%=l(:portfolio_description)%></th>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Description</th>
   </tr>
   <%= render :partial => 'view_link', :collection => @user.attachments %>
 </table>
 <fieldset>
-<legend><%=l(:portfolio_add)%></legend>
+<legend>Add a Project</legend>
 <br>
 <ul>
 <li>
-<label><%=l(:portfolio_name)%></label>
+<label>Name</label>
 	<%= form.text_field "name" %>
 </li>
 <li>
-<label><%=l(:portfolio_url)%></label>
+<label>URL</label>
 	<%= form.text_field "url" %>
 </li>
 <li>
-<label><%=l(:portfolio_description)%></label>
+<label>Description</label>
 		<%= form.text_area(:description, :rows => 5) %>
 </li>
 

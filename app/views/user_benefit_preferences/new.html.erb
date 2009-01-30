@@ -7,13 +7,13 @@
    	 <%=f.label :user %><br />
   	<%= f.collection_select :user_id, @users, :id, :name %>
 	<br>
-	<%= link_to l(:add_user), new_user_path %>
+	<%= link_to "Add user", new_user_path %>
   </p>
   <p>
    	 <%=f.label :benefit %><br />
  	<%= f.collection_select :benefit_id, @benefits, :id, :name %>
 	<br>
-	<%= link_to l(:add_benefit), new_benefit_path %>
+	<%= link_to "Add benefit", new_benefit_path %>
   </p>
   <p>
     <%= f.label :benefit_preference %><br />

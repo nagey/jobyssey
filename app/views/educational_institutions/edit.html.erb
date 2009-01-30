@@ -1,4 +1,4 @@
-<h1>Editing educational_institution</h1>
+<h1>Editing Educational Institutions</h1>
 
 <% form_for(@educational_institution) do |f| %>
   <%= f.error_messages %>
@@ -13,15 +13,15 @@
   </p>
   <p>
     <%= f.collection_select :town_id, @towns, :id, :name  %><br />
-    <%= link_to l(:add_town), new_town_path %>
+    <%= link_to "Add town", new_town_path %>
   </p>
   <p>
     <%= f.collection_select :country_id, @countries, :id, :name %><br />
-    <%= link_to l(:add_country), new_country_path %>
+    <%= link_to "Add country", new_country_path %>
   </p>
   <p>
     <%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %><br />
-    <%= link_to l(:add_geo_position), new_geo_position_path %>
+    <%= link_to "Add geo position", new_geo_position_path %>
   </p>
   <p>
     <%= f.submit "Update" %>

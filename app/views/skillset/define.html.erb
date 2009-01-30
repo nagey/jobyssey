@@ -1,6 +1,6 @@
 
-<div class="progressbar"><%=l(:your_skills)%><div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div>
-<div class="progresswording"><%=l(:professional, :progress_wording_two)%></div></div>
+<div class="progressbar">Your Skills<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littlewhitesquare"></div><div class="littleorangesquare"></div>
+<div class="progresswording">2 of 3</div></div>
 </div>
 <h1>Rating your Skills</h1>
 <div id="bellcurveimage">
@@ -29,7 +29,7 @@
 			<%=hidden_field_tag 'object_name', @pq.metric.form_name %>
 			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
-					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>"><%=l(:remove)%></a></div>
+					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>">Remove</a></div>
 				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
 			
 			</li>
@@ -42,13 +42,13 @@
 <br>
 <div class="addskillfieldset">
 <fieldset>
-<legend><%=l(:add_skill_legend)%></legend>
-<p><%=l(:add_skill_instruction)%></p>
+<legend> Need to Add a Skill?</legend>
+<p>Keep it specific and technical- "Good with People" isn't a technical skill! Donkey Kong champ doesn't count either...</p>
 <ul>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
   
 	<li><%= form.text_field 'name' %>
-	<%= submit_tag l(:skills, :add_skill )%></li> 
+	<%= submit_tag "Add a skill" %></li> 
 <% end %>
 </ul>
 </fieldset>
@@ -56,7 +56,7 @@
 <div id="roundbuttoncontainer">
 <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
  <div class="contentb">
-        <div><%= link_to l(:skills, :done_skills), :action => :finalize %></div>
+        <div><%= link_to "That's all my skills, thanks", :action => :finalize %></div>
     </div>
 <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
 </div>

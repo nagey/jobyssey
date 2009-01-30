@@ -1,5 +1,5 @@
 class JobSpecs < Attachment
-  validates_format_of :content_type, :with => /(word|pdf)/, :message => l(:upload_only_word_or_pdf)
+  validates_format_of :content_type, :with => /(word|pdf)/, :message => "Please upload a word or pdf file"
   
   def skills
     #TODO make this handle synonyms please!

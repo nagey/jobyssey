@@ -7,7 +7,7 @@
   <%=f.label :job_application %><br />
 	<%= f.collection_select :job_application_id, @job_applications, :id, :job_title%>
 	<br>
-	<%= link_to l(:add_job_application), new_job_application_path %>
+	<%= link_to "Add job application", new_job_application_path %>
   </p>
   </p>
   <p>

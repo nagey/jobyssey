@@ -1,0 +1,23 @@
+<h1>Employers</h1>
+<h2>Total employers on site: <b><%= @employers.length %></b></h2>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Employee</th>
+    
+  </tr>
+
+<% for employer in @employers %>
+  <tr>
+    <td><%= employer.name %></td>
+    <td><%= employer.administrator.name %></td>
+    <td><%= link_to "Upgrade", :action => :upgrade_employer, :id => employer %></td>
+    <td><%= link_to 'Edit', :action => :edit_employer, :id => employer %></td>
+    <td><%= button_to 'Destroy', { :controller => "employers", :action => :destroy, :id => employer }, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

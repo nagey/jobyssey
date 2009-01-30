@@ -24,7 +24,7 @@
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
 			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
-					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>"><%=l(:remove)%></a></div>
+					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>">remove</a></div>
 				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
 			
 			</li>
@@ -37,13 +37,13 @@
 <br>
 <div class="addskillfieldset">
 <fieldset>
-<legend><%=l(:add_skill_legend)%></legend>
+<legend>Need to Add a Skill?</legend>
 <p>Any skills you add on here should be specific and technical (a language, framework, etc.)  Personal qualities (assertive, client-facing, etc.) are covered in personal qualities, and any further details should be covered in your portfolio or in Three Questions. </p>
 <ul>
 <% form_for(:skill, :url => {:action => :edit_add}) do |form| %>
   
 	<li><%= text_field_with_auto_complete :skill, :name, {}, {:method => :get} %></li
-	<%= submit_tag l(:skills, :add_skill )%></li> 
+	<%= submit_tag "Add a Skill"%></li> 
 <% end %>
 </ul>
 </fieldset>

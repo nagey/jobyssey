@@ -30,7 +30,7 @@
 			<%=hidden_field_tag 'object_name', @pq.metric.name %>
 			<li class="skills_list_skill_item" id="skill_<%=@pq.metric.id%>">
 				<label class="skillname"><%= pq.metric.display_name %></label>		
-					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>"><%=l(:remove)%></a></div>
+					<div class="removeskill"><a id="remove_<%=@pq.metric.id.to_s%>">Remove</a></div>
 				<%= render :partial => 'slider', :locals => {:name => @pq.metric.id, :value => @pq.value} %>
 			
 			</li>
@@ -43,13 +43,13 @@
 <br>
 <div class="addskillfieldset">
 <fieldset>
-<legend><%=l(:add_skill_legend)%></legend>
+<legend>Need to Add a Skill?</legend>
 <p>Type any other specific, technical skills required below.  Soft skills ("Good with people", "Works well in a pressurized environment") should be entered on the next page.</p>
 <ul>
 <% form_for(:skill, :url => {:action => :add_job_posting_skills}) do |form| %>
   
 <li><%= form.text_field 'name' %>
-	<%= submit_tag l(:skills, :add_skill )%></li> 
+	<%= submit_tag "Add a Skill"%></li> 
 <% end %>
 </ul>
 </fieldset>

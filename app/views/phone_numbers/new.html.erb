@@ -11,19 +11,19 @@
     <%= f.label :phone_number_type %><br />
     <%= f.collection_select :phone_number_type_id, @phone_number_types, :id, :name %>
 	<br>
-	<%= link_to l(:add_phone_number_type), new_phone_number_type_path %>
+	<%= link_to "Add phone number type", new_phone_number_type_path %>
   </p>
   <p>
     <%= f.label :country %><br />
    	<%= f.collection_select :country_id, @countries, :id, :name %>
 	<br>
-	<%= link_to l(:add_country), new_country_path %>
+	<%= link_to "Add country", new_country_path %>
   </p>
   <p>
     <%= f.label :user %><br />
    	<%= f.collection_select :user_id, @users, :id, :name %>
 	<br>
-	<%= link_to l(:add_user), new_user_path %>
+	<%= link_to "Add user", new_user_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

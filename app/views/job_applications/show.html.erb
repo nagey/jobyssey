@@ -10,7 +10,7 @@
 
 
 <% # show job application attachments %>
-<h2><%=l(:job_application_attachments)%></h2>
+<h2>Job application attachments:</h2>
 <table>
 <%= render :partial => 'job_application_attachments/job_application_attachment_header' %>
 <%= render :partial => 'job_application_attachments/job_application_attachment', :collection => @job_application.job_application_attachments %>

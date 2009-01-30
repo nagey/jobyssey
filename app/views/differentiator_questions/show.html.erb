@@ -8,7 +8,7 @@
   <%=h @differentiator_question.name %>
 </p>
 <% # show differentiator answers %>
-<h2><%=l(:differentiator_answers)%></h2>
+<h2>Differentiator Answers</h2>
 <table>
 <%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
 <%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @differentiator_question.differentiator_answers %>

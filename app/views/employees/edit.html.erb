@@ -1,0 +1,44 @@
+<h1>Editing employee</h1>
+
+<% form_for(@employee) do |f| %>
+  <%= f.error_messages %>
+
+      <p>
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name %>
+      </p>
+      <p>
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name %>
+      </p>
+      <p>
+        <%= f.label :email %><br />
+        <%= f.text_field :email %>
+        </p>
+        <p> 
+        <%= f.label :email_confirmation %> <br />
+        <%= f.text_field :email_confirmation %>
+      </p>
+      <p>
+        <%= f.label :password %><br />
+        <%= f.text_field :password %> 
+        </p> 
+        <p> 
+        <%= f.label :password_confirmation %> <br />
+        <%= f.text_field :password_confirmation %> 
+        </p> 
+
+          <p>
+      <p>
+        <%= f.label :employer %><br />
+        <%= f.collection_select :employer_id, @employers, :id, :name %>
+    	<br>
+    	<%= link_to "Add employer", :controller => "employers", :action => "new" %>
+      </p>
+  
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @employee %> |
+<%= link_to 'Back', employees_path %>

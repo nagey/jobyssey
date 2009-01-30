@@ -8,19 +8,19 @@
   <%= f.label :job_posting %><br />
  	<%= f.collection_select :job_posting_id, @job_postings, :id, :title %>
 	<br>
-	<%= link_to l(:add_job_posting), new_job_posting_path %>
+	<%= link_to "Add job posting", new_job_posting_path %>
 </p>
 <p>
 	 <%= f.label :education_concentration %><br />
   <%= f.collection_select :education_concentration_id, @education_concentrations, :id, :name %>
 	<br>
-	<%= link_to l(:add_education_concentration), new_education_concentration_path %>
+	<%= link_to "Add educational concentration", new_education_concentration_path %>
 </p>
 <p>
  	<%= f.label :educational_level %><br />
 	<%= f.collection_select :educational_level_id, @educational_levels, :id, :level %>
 	<br>
-	<%= link_to l(:add_educational_level), new_educational_level_path %>
+	<%= link_to "Add educational level", new_educational_level_path %>
   </p>
   </p>
   <p>

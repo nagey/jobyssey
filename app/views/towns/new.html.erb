@@ -11,19 +11,19 @@
     <%= f.label :administrative_division %><br />
     <%= f.collection_select :administrative_division_id, @administrative_divisions, :id, :name %>
 	<br>
-	<%= link_to l(:add_administrative_division), new_administrative_division_path %>
+	<%= link_to "Add administrative division", new_administrative_division_path %>
   </p>
   <p>
     <%= f.label :country %><br />
     <%= f.collection_select :country_id, @countries, :id, :name %>
 	<br>
-	<%= link_to l(:add_country), new_country_path %>
+	<%= link_to "Add country", new_country_path %>
   </p>
   <p>
   <%= f.label :geo_position %><br />
     <%= f.collection_select :geo_position_id, @geo_positions, :id, :name %>
 	<br>
-	<%= link_to l(:add_country), new_geo_position_path %>
+	<%= link_to "Add geo position", new_geo_position_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

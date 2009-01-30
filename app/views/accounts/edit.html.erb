@@ -1,4 +1,4 @@
-<h1><%=l(:edit_account)%></h1>
+<h1>Edit Account</h1>
 
 <% form_for(@account) do |f| %>
   <%= f.error_messages %>
@@ -7,7 +7,7 @@
     <%= f.label :employer_id %><br />
     <%= f.collection_select :employer, @employers, :name, :name %>
 	<br />
-	<%= link_to l(:add_employer), :controller => 'admin/employers', :action => "new" %>
+	<%= link_to "Add employer", :controller => 'admin/employers', :action => "new" %>
   </p>
   <p>
     <%= f.label :balance %><br />

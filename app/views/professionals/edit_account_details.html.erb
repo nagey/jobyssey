@@ -9,7 +9,7 @@
 <br>
 <ul>
 	<li>
-		<label for="professional[name]"><%=l(:professional, :name)%></label>
+		<label for="professional[name]">Name:</label>
 		<%= form.text_field "name" %>
 	</li>
 	</ul>
@@ -17,11 +17,11 @@
 <H2>Desired Job Details</h2>
 <ul>
 	<li>
-		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
+		<label for="professional[working_time_id]">Working time:</label>
 		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
 	</li>
 	<li>
-		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
+		<label for="professional[employment_type_id]">Employment type:</label>
 		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
 	</li>
 	<li>
@@ -73,12 +73,12 @@
 
 
 
-	<p><%=l(:professional, :more_info)%></p>
+	<p>More Info</p>
 		<%= form.text_area :more_info, :rows => 10 %>
 
 </fieldset>
 
-	<%= submit_tag l(:professional, :create_account)%>
+	<%= submit_tag "Save Changes"%>
 
 </fieldset>
 <% end %>

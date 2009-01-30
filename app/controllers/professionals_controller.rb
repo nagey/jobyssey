@@ -49,7 +49,7 @@ class ProfessionalsController < ApplicationController
     @professional.code_name = session[:code_name]
     
     if params[:tsandcs].to_i != 1
-      @professional.errors.add l(:tsandcs)
+      @professional.errors.add "You must agree to our Terms and Conditions to proceed. "
       @employment_types = EmploymentType.find :all
       @working_times = WorkingTime.find :all
       render :action => :signup
@@ -101,9 +101,11 @@ class ProfessionalsController < ApplicationController
   end
 
   def code_name_view
-    @professional = Professional.find_by_code_name params[:id]
+    employer = Employer.find_by_id session[:employer]
+    if employer.premium?
+      @professional = Professional.find_by_code_name params[:id]
     
-    @professional.personal_qualities.each do |pq| 
+      @professional.personal_qualities.each do |pq| 
               if pq.metric.class == Skill
             if pq.value.nil?
               pq.value = 0
@@ -113,11 +115,15 @@ class ProfessionalsController < ApplicationController
         end
   
     #@skills = @professional.skills
-    session[:professional] = @professional
-    @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
-    @code_samples = CodeSample.find_all_by_user_id @professional
-    @portfolio = Attachment.find_all_by_entity_id @professional
-    @answers = DifferentiatorAnswer.find_all_by_user_id @professional 
+      session[:professional] = @professional
+      @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
+      @code_samples = CodeSample.find_all_by_user_id @professional
+      @portfolio = Attachment.find_all_by_entity_id @professional
+      @answers = DifferentiatorAnswer.find_all_by_user_id @professional
+    else
+      redirect_to :controller => :employers, :action => :home
+      flash[:notice] = "You are not authorized to view this information.  If you feel you're recieved this message in error please contact your Jobyssey representative."
+    end
   end
 
   def real_name_view

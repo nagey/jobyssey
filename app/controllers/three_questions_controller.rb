@@ -132,6 +132,27 @@ def view_employer_answers
   @answers = DifferentiatorAnswer.find_all_by_employer_id session[:employer]
 end
 
+def edit_professional_answers
+  user = session[:user]
+  @answers = DifferentiatorAnswer.find_all_by_user_id session[:professional]
+end
+
+def save_professional_answers
+   answers = DifferentiatorAnswer.new params[:answer]
+   if session[:user].employer_id.nil?
+     @answer.user = session[:user]
+   else
+     @employer_id = session[:user].employer_id
+     @employer = Employer.find_by_id @employer_id
+     @answer.employer = @employer
+   end
+   
+   if @answer.save
+     redirect_to :action => :ask
+   else
+     render :action => :ask
+   end
+ end
     #def update
     #  @answers = DifferentiatorAnswers.find(params[:user_id])
     #  @answers.update_attributes params[:attachment]

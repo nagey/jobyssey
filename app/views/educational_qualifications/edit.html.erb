@@ -11,7 +11,7 @@
   	<%= f.label :educational_level %><br \>
     <%= f.collection_select :educational_level_id, @educational_levels, :id, :level %>
 	<br>
-	<%= link_to l(:add_educational_level), new_educational_level_path %>
+	<%= link_to "Add educational level", new_educational_level_path %>
   </p>
   <p>
     <%= f.submit "Update" %>

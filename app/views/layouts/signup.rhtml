@@ -55,8 +55,8 @@
 			<ul>
 				<li><a href="http://www.jobyssey.com/it_professionals_in_ireland/job_search_ideas_and_cv_tips.html">Jobseeker Tips</a></li>
 				<li><a href="http://www.jobyssey.com/it_employers_in_ireland/hiring_help_and_recruiting_tips.html">Employer Tips</a></li>
-				<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
-				<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
+				<li><a href="/wordpress/">Our Blog</a></li>
+				<li><a href="/jobyssey/about">About Us</a></li>
 				<% if authenticated? %>
 					<% if session[:user].class == "Professional" %>
 					<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>

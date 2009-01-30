@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
   require 'google_geocode'
   
   
+  #before_filter :set_locale
+
+    #def set_locale
+    #  locale = params[:locale] || 'en-IE'
+    #  I18n.locale = locale
+    #  I18n.load_path += Dir[ File.join(RAILS_ROOT, 'lib', 'locale', '*.{rb,yml}') ]
+    #end
+  
+  
   def init_map(address,name='',control_options={},interface_options={},marker_options={})
     geocoder = GoogleGeocode.new "ABQIAAAAZAVm-mpajx99YuizrWDWYxQIkn2H0N7M-ZYoFDdHwoMzZRvYqBQqO6uJ6gczxIlZaSPYdkieKT3JDg"
     loc = geocoder.locate address.to_gmap 
@@ -52,7 +61,7 @@ class ApplicationController < ActionController::Base
     employer_id = nil
     if session[:user].nil?
       session[:previous_uri] = request.request_uri
-      flash[:notice] = l(:please_login)
+      flash[:notice] = "Please login"
       redirect_to :controller => "jobyssey", :action => "login" if session[:user].nil?
     end
     options.each_pair do |key,value|

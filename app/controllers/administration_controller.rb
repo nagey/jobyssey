@@ -43,4 +43,26 @@ class AdministrationController < ApplicationController
     end
   end
   
+  def view_all_employers
+    @employers = Employer.find :all
+  end
+  
+  
+  def upgrade_employer
+    @employer = Employer.find_by_id params[:id]
+  end
+  
+  def save_upgrade
+     employer = Employer.find_by_id params[:administration][:id]
+     employer.update_attribute(:premium, true)
+     redirect_to :action => :view_all_employers
+     if employer.premium?
+       flash[:notice] = "Account Upgraded."
+      else
+        flash[:notice] = "Didn't work."
+      end
+  end
+  
+  def home
+  end
 end

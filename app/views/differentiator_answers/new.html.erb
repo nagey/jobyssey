@@ -1,4 +1,4 @@
-<h1>New differentiator_answer</h1>
+<h1>New Differentiator Answer</h1>
 
 <% form_for(@differentiator_answer) do |f| %>
   <%= f.error_messages %>
@@ -6,22 +6,22 @@
   <p>
     <%= f.collection_select :differentiator_question_id, @differentiator_questions, :id, :name %>
 	<br>
-	<% link_to l(:add_differentiator_question), new_differentiator_question_path %>
+	<% link_to "Add differentiatior question", new_differentiator_question_path %>
   </p>
   <p>
     <%= f.collection_select :employer_id, @employers, :id, :name %>
 	<br>
-	<% link_to l(:add_employer), new_employer_path %>
+	<% link_to "Add employer", new_employer_path %>
   </p>
   <p>
     <%= f.collection_select :user_id, @users, :id, :name %>
 	<br>
-	<% link_to l(:add_user), new_user_path %>
+	<% link_to "Add user", new_user_path %>
   </p>
   <p>
   <%= f.collection_select :job_posting_id, @job_postings, :id, :name %>
 	<br>
-	<% link_to l(:add_job_posting), new_job_posting_path %>
+	<% link_to "Add job posting", new_job_posting_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

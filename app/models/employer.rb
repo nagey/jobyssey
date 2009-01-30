@@ -14,6 +14,9 @@ class Employer < ActiveRecord::Base
   
   validates_presence_of :name
   
- 
+  def premium?
+    self.premium
+  end
+  
   
 end

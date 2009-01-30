@@ -7,7 +7,7 @@
     <%= f.label :account %><br />
     <%= f.collection_select :account_id, @accounts, :id, :name %>
 	<br>
-	<%= link_to l(:add_account), new_account_path %>
+	<%= link_to "Add account", new_account_path %>
   </p>
   <p>
     <%= f.label :transaction_type %><br />
@@ -26,7 +26,7 @@
     <%= f.label :job_application %><br />
     <%= f.collection_select :job_application_id, @job_applications, :id, :name %>
 	<br>
-	<%= link_to l(:add_job_application), new_job_application_path %>
+	<%= link_to "add job application", new_job_application_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

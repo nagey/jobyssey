@@ -37,10 +37,10 @@ class SkillsetController < ApplicationController
     begin
       user.metrics << skill
       unless user.save
-        flash[:notice] = l(:skills, :couldnt_add_skill)
+        flash[:notice] = "Error adding skill"
       end
     rescue
-      flash[:notice] = l(:skills, :skill_taken)
+      flash[:notice] = "Skill already selected"
     end
     redirect_to :action => :define
   end
@@ -104,10 +104,10 @@ def edit
    begin
      @user.metrics << @skill
      unless @user.save
-       flash[:notice] = l(:skills, :couldnt_add_skill)
+       flash[:notice] = "Error adding skill"
      end
    rescue
-     flash[:notice] = l(:skills, :skill_taken)
+     flash[:notice] = "Skill already selected"
    end
    redirect_to :action => :edit
 end
@@ -159,10 +159,10 @@ end
     begin
       @job_posting.metrics << @skill
       unless @job_posting.save
-        flash[:notice] = l(:skills, :couldnt_add_skill)
+        flash[:notice] = "Error adding skill"
       end
     rescue
-      flash[:notice] = l(:skills, :skill_taken)
+      flash[:notice] = "Skill already selected"
     end
     redirect_to :action => :define_job_posting_skills
   end

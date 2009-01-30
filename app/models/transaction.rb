@@ -4,7 +4,7 @@ class Transaction < ActiveRecord::Base
 
   @@transaction_types = %w( credit debit refund )
     
-  validates_inclusion_of :transaction_type, :in => @@transaction_types, :message => l(:invalid_transaction_type)
+  validates_inclusion_of :transaction_type, :in => @@transaction_types, :message => "Invalid transaction type"
 
   def transaction_types
     @@transaction_types

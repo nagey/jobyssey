@@ -2,11 +2,11 @@
 <h1>Spread the Word</h1>
 
 
-<p><%=l(:invites_instructions)%></p>  
+<p>We hope you've found Jobyssey unique and interesting so far.  Know anyone else that might find it useful?</p>  
 
 <ul>
 <% form_for @invite, :url => { :action => :create_invites} do |f| %>
-	<li><%=l(:invites_send)%>:
+	<li>Send them an invite:
 	<%= f.text_area(:recipient_list, :rows => 7) %></li>
 	<li>
 	<a id="plaxo_link" href="#" onclick="showPlaxoABChooser('invite_recipient_list', '/invites/address_popup'); return false"><img src="http://www.plaxo.com/images/abc/buttons/add_button.gif" alt="Add from my address book" /></a></li>

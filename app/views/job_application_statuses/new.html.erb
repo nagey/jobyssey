@@ -7,13 +7,13 @@
     <%= f.label :job_application %><br />
    	<%= f.collection_select :job_application_id, @job_applications, :id, :job_title %>
 	<br>
-	<%= link_to l(:add_job_application), new_job_application_path %>
+	<%= link_to "Add job application", new_job_application_path %>
   </p>
   <p>
     <%= f.label :job_application_state %><br />
    	<%= f.collection_select :job_application_state_id, @job_application_states, :id, :name %>
 	<br>
-	<%= link_to l(:add_job_application_state), new_job_application_state_path %>
+	<%= link_to "Add job application state", new_job_application_state_path %>
   </p>
   <p>
     <%= f.label :note %><br />
@@ -27,7 +27,7 @@
     <%= f.label :user %><br />
     <%= f.collection_select :user_id, @users, :id, :name %>
 	<br>
-	<%= link_to l(:add_user), new_user_path %>
+	<%= link_to "Add user", new_user_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

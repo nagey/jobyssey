@@ -4,7 +4,7 @@
 </p>
 
 <% # show job postings %>
-<h2><%=l(:job_postings)%></h2>
+<h2>Job Postings</h2>
 <table>
 <%= render :partial => 'job_postings/job_posting_header' %>
 <%= render :partial => 'job_postings/job_posting', :collection => @employment_type.job_postings %>

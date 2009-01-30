@@ -8,16 +8,43 @@
 	padding-right: 10px;
 	margin-top: 20px;
 }
+#searchmainpage{
+	width: 370px;
+	display: inline;
+	float: left;
+	color: #000000;	
+	text-align: left;
+	padding-right: 10px;
+	margin-top: 0px;
+}
+#salespage{
+	width: 370px;
+	display: inline;
+	float: left;
+	color: #000000;	
+	text-align: left;
+	padding-right: 10px;
+	margin-top: 0px;
+}
 #mainpage h1{
+	color: #000000;
+	font-weight: bold;
+}
+#searchmainpage h1{
 	color: #000000;
 	font-weight: bold;
 }
 #productandcv{
 	display: inline-block;
 	width: 430px;
+	
 }
 #productshot{
 	display: inline;
+}
+#salespoints{
+	display: inline;
+	text-align: left;
 }
 #cvupload {
 	display: none; 
@@ -36,10 +63,28 @@
 	padding-top: 10px;
 	text-align: center;
 }
+#prices{
+	border: 2px solid #CCC;
+	padding: 0px 0px 0px 0px;
+	margin: 20px 0px 20px 0px;
+}
 #frontpagewrapper h1{
 	font-size: 36px;
 	color: #000;
 	font-weight: bold;
+}
+#frontsaleswrapper{
+	display: inline;
+	height: 50%;
+	padding-top: 10px;
+	text-align: center;
+}
+#frontsaleswrapper h1{
+	font-size: 36px;
+	color: #000;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 #dailytip{
 	width: 850px;
@@ -478,6 +523,27 @@ div.progresswording{
 	margin-top: -20px;
 	cursor: pointer;
 }
+#roundbuttonsearchpage{
+	width: 350px;
+	float: right;
+	color: #fff;
+	margin-right: 15px;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: 0px;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+#roundbuttonsalespage{
+	width: 100%;
+	float: right;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: -40px;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
 #roundbuttonmainpage{
 	width: 350px;
 	float: right;
@@ -670,7 +736,7 @@ div.progresswording{
 }
 #invitelink{
 	float:right;
-	margin-top: -40;
+	margin-top: -40px;
 }
 #images{
 	display:inline-block;
@@ -743,7 +809,7 @@ h1 {
 	letter-spacing: -1.5px;
 	}
 h2{
-	font-size: 16px;
+	font-size: 18px;
 }
 h3 {
 	font-size: 14px;

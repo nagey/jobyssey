@@ -1,0 +1,2 @@
+class KnowledgeBaseController < ApplicationController
+end

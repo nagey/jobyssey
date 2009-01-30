@@ -32,7 +32,12 @@ class InvitesController < ApplicationController
   end
 
   def join
-    session[:invite_id] = params[:id] if Invite.find(params[:id]).valid_invite?
+    invite = Invite.find(params[:id])
+    if invite.valid_invite?
+      session[:invite_id] = params[:id] 
+      invite.viewed = true
+      invite.save
+    end
     redirect_to :controller => :jobyssey, :action => :index
   end
 

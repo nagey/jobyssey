@@ -100,4 +100,9 @@ class EmployersController < ApplicationController
   def home
     @home
   end
+  
+  def premium
+  end
+  
+  
 end

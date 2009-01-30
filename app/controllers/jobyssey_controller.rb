@@ -28,14 +28,16 @@ class JobysseyController < ApplicationController
          session[:user] = user
          uri = session[:previous_uri]
          session[:previous_uri] = nil
-         if user.type == "Professional"
+         if user.class == Professional
            redirect_to(uri || { :controller => 'professionals', :action => 'home' })
-         else
+         elsif user.class == Employee
            redirect_to(uri || { :controller => 'employers', :action => 'home' })
            session[:employer] = session[:user].employer_id unless session[:user].employer_id.nil?
+         else
+             redirect_to(uri || { :controller => 'administration', :action => 'home' })
          end
        else
-         flash.now[:notice] = l(:invalid_combination)
+         flash.now[:notice] = "Invalid user/password combination"
        end
       end
     end
@@ -57,7 +59,7 @@ class JobysseyController < ApplicationController
   #        redirect_to(uri || { :controller => 'users', :action => 'index' })
   #      end
   #    else
-  #      flash.now[:notice] = l(:invalid_combination)
+  #      flash.now[:notice] = "Invalid user/password combination"
   #    end
   #  end
   #end

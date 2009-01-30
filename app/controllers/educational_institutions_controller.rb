@@ -49,7 +49,6 @@ class EducationalInstitutionsController < ApplicationController
   # POST /educational_institutions
   # POST /educational_institutions.xml
   def create
-    debugger
     @educational_institution = EducationalInstitution.new(params[:educational_institution])
     @towns = Town.find :all
     @countries = Country.find :all

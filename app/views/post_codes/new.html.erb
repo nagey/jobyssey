@@ -11,13 +11,13 @@
     <%= f.label :town %><br />
     <%= f.collection_select :town_id, @towns, :id, :name %>
 	<br>
-	<%= link_to l(:add_town), new_town_path %>
+	<%= link_to "Add town", new_town_path %>
   </p>
   <p>
     <%= f.label :geo_position %><br />
     <%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
 	<br>
-	<%= link_to l(:add_geo_position), new_geo_position_path %>
+	<%= link_to "Add geo position", new_geo_position_path %>
   </p>
   <p>
     <%= f.submit "Create" %>

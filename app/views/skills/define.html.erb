@@ -8,14 +8,14 @@ Your Skills:
 				<%= pq.metric.name %>
 				<%=form.text_field :value, {:size => 2} %>
 				<%=form.hidden_field :id %>
-				<%= submit_tag l(:skills, :update_skill)%>
+				<%= submit_tag "Update skill" %>
 			<% end %>
 			</li>
 		<% end %>
 	<% end %>
 <% form_for(:skill, :url => {:action => :add}) do |form| %>
 	<li><%= form.text_field :name, :update => :autocomplete_skill %></li>
-	<%= submit_tag l(:skills, :add_skill )%> 
+	<%= submit_tag "Add skill"%> 
 <% end %>
 </ul>
-<%= link_to l(:skills, :done_skills), :action => :finalize %>
+<%= link_to "That's all my skills, thanks", :action => :finalize %>

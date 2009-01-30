@@ -49,7 +49,7 @@
 </p>
 
 <% # show phone numbers %>
-<h2><%=l(:phone_numbers)%></h2>
+<h2>Phone Numbers</h2>
 <table>
 <%= render :partial => 'phone_numbers/phone_number_header' %>
 <%= render :partial => 'phone_numbers/phone_number', :collection => @user.phone_numbers %>
@@ -57,7 +57,7 @@
 <% # end phone numbers %>
 
 <% # show differentiator answers %>
-<h2><%=l(:differentiator_answers)%></h2>
+<h2>Differentiator Answers</h2>
 <table>
 <%= render :partial => 'differentiator_answers/differentiator_answer_header' %>
 <%= render :partial => 'differentiator_answers/differentiator_answer', :collection => @user.differentiator_answers %>
@@ -65,7 +65,7 @@
 <% # end differentiator answers %>
 
 <% # show work history %>
-<h2><%=l(:work_history_items)%></h2>
+<h2>Work History</h2>
 <table>
 <%= render :partial => 'work_history_items/work_history_header' %>
 <%= render :partial => 'work_history_items/work_history_item', :collection => @user.work_history_items %>
@@ -73,7 +73,7 @@
 <% # end work history %>
 
 <% # show job applications %>
-<h2><%=l(:job_applications)%></h2>
+<h2>Job applications</h2>
 <table>
 <%= render :partial => 'job_applications/job_application_header' %>
 <%= render :partial => 'job_applications/job_application', :collection => @user.job_applications %>

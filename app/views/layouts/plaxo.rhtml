@@ -46,12 +46,14 @@
 				<li><%= link_to "My Details", :controller => 'professionals', :action => "my_details" %></li>
 				<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
 			<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
-			<% else %>
-					<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
-					<li><%= link_to "Applies and Invites", :controller => 'apply', :action => "view_employer_activity" %></li>
-					<li><%= link_to "All My Jobs", :controller => 'job', :action => "view_my_jobs" %></li>
-				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
-			<% end %>
+				<% elsif session[:user].class == Employee %>
+						<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
+						<li><%= link_to "Applies and Invites", :controller => 'apply', :action => "view_employer_activity" %></li>
+						<li><%= link_to "All My Jobs", :controller => 'job', :action => "view_my_jobs" %></li>
+					<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
+					<% else %>
+					<li>Admin Navbar Goes Here!  </li>
+				<% end %>
 			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
 		<% else %>
 						<li><%= link_to "For Employers", :controller => :messages, :action => :employer_questions %></li>
@@ -88,8 +90,8 @@
 		<ul>
 			<li><a href="http://www.jobyssey.com/it_professionals_in_ireland/job_search_ideas_and_cv_tips.html">Jobseeker Tips</a></li>
 			<li><a href="http://www.jobyssey.com/it_employers_in_ireland/hiring_help_and_recruiting_tips.html">Employer Tips</a></li>
-			<li><a href="/wordpress/"><%=l(:our_blog)%></a></li>
-			<li><a href="/jobyssey/about"><%=l(:about_us)%></a></li>
+			<li><a href="/wordpress/">Our Blog</a></li>
+			<li><a href="/jobyssey/about">About Us</a></li>
 			<% if authenticated? %>
 				<% if session[:user].class == Professional %>
 				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>

@@ -1,0 +1,18 @@
+
+
+
+<% form_for(:administration, :url => {:action => :save_upgrade}) do |form| %>
+
+<fieldset>
+	<legend>Upgrade <%= @employer.name %> to a Premium Account</legend>
+
+<p>Notes go here as needed </p>
+<ul>
+		<li><%= form.hidden_field(:id,:value => @employer.id) %></li>
+    
+		<%= submit_tag "Upgrade Account"%></li>
+</ul>
+
+</fieldset>
+<% end %>
+

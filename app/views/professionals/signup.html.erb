@@ -4,11 +4,11 @@
 	<%=form.error_messages%>
 </div>
 
-<div class="progressbar"><%=l(:professional, :your_details)%><div class="progresscounter"><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
-<div class="progresswording"><%=l(:professional, :progress_wording_one)%></div></div>
+<div class="progressbar">Your Details<div class="progresscounter"><div class="littlewhitesquare"></div><div class="littleorangesquare"></div><div class="littleorangesquare"></div>
+<div class="progresswording">1 of 3</div></div>
 </div>
-<p><%=l(:professional, :cvupload_thanks)%>.</p>
-<p><%=l(:professional, :confidentiality_text)%>.</p>
+<p>Thanks! We'll use your CV to identify your skills, and to let prospective employers find out about your work history. We'll also need some basic information so we can save your details, and we'll need to find out about your work personality and office culture preferences.</p>
+<p>Your name and contact information are stored confidentially until you agree to interview for a job.</p>
 <br>
 
 <H2>Account Details</H2>
@@ -37,11 +37,11 @@
 		<label for="professional[desired_job_title]">Desired job title(s):</label>
 		<%= form.text_field "desired_job_title" %>
 	</li>
-	<li><label><b><%=l(:professional, :code_name)%>:</label> <%= @code_name %></b>
+	<li><label><b>Code name:</label> <%= @code_name %></b>
 	<span class="question" style="cursor:pointer">?</span>
 
   <div class="answer" style="display:none">
-  	<p><%=l(:professional, :code_name_explanation)%>. </p></li>
+  	<p>Your code name is what we'll use to identify you to employers until you agree to interview to protect your confidentiality. Yeah, we know some of the nicknames are a bit silly, but we'll go to any length to protect your privacy. </p></li>
   	</ul>
 
 <H2>What you're looking for</H2>
@@ -49,20 +49,20 @@
 
 <ul>
 	<li>
-		<label for="professional[working_time_id]"><%=l(:professional, :working_time)%></label>
+		<label for="professional[working_time_id]">Working time:</label>
 		<%= form.collection_select :working_time_id, @working_times, :id, :name %>
 	</li>
 	<li>
-		<label for="professional[employment_type_id]"><%=l(:professional, :employment_type)%></label>
+		<label for="professional[employment_type_id]">Employment type:</label>
 		<%= form.collection_select :employment_type_id, @employment_types, :id, :name %>
 	</li>
 </ul>
 <br>
-	<p><%=l(:professional, :more_info)%></p>
+	<p>More Info:</p>
 		<%= form.text_area :more_info, :rows => 4%>
 
 
-<label class="tsandcs"><input type="checkbox" id="tsandcs" name="tsandcs" value="1" /><%=l(:professional, :agree_terms)%> <%= link_to "T's and C's", "http://www.jobyssey.com/jobyssey/tsandcs", :popup => true %><%=l(:professional, :terms_link)%>.</a></label>
+<label class="tsandcs"><input type="checkbox" id="tsandcs" name="tsandcs" value="1" />I agree to <%= link_to "Jobyssey's Terms and Conditions", "http://www.jobyssey.com/jobyssey/tsandcs", :popup => true %>.</label>
 
 	<%= submit_tag "Create my account!" %>
 

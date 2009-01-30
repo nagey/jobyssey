@@ -1,4 +1,4 @@
-<h1><%=l(:new_address)%></h1>
+<h1>New Address</h1>
 
 <% form_for(:address, @address, :url => { :action => :create } ) do |f| %>
   <%= f.error_messages %>
@@ -14,13 +14,13 @@
     <%=f.label :town_id %><br />
 	<%= f.collection_select :town_id, @towns, :id, :name %>
 	<br>
-	<%= link_to l(:add_town), :controller => "towns", :action => "new" %>
+	<%= link_to "Add town", :controller => "towns", :action => "new" %>
   </p>
   <p>
 	 <%=f.label :geo_position_id %><br />
    	<%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
 	<br>
-	<%= link_to l(:add_geo_position), :controller => "geoposition", :action => "new" %>
+	<%= link_to "Add geo position", :controller => "geoposition", :action => "new" %>
 
   </p>
   

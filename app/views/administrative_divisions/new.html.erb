@@ -1,4 +1,4 @@
-<h1><%=l(:new_division)%></h1>
+<h1>New Administrative Division</h1>
 
 <% form_for(@administrative_division) do |f| %>
   <%= f.error_messages %>
@@ -11,13 +11,13 @@
 	<%=f.label :country %><br />
 	<%= f.collection_select :country_id, @countries, :id, :name %>
 	<br>
-	<%= link_to l(:add_country), new_country_path %>
+	<%= link_to "Add country", new_country_path %>
 
 	<br>
 	<%=f.label :geo_position_id %><br />
    	<%= f.collection_select :geo_position_id, @geo_positions, :id, :latitude %>
 	<br>
-	<%= link_to l(:add_geo_position), new_geo_position_path %>
+	<%= link_to "Add geo position", new_geo_position_path %>
 	
   <p>
     <%= f.submit "Create" %>
