@@ -5,6 +5,7 @@
   <tr>
     <th>Name</th>
     <th>Employee</th>
+    <th>Premium</th>
     
   </tr>
 
@@ -12,6 +13,10 @@
   <tr>
     <td><%= employer.name %></td>
     <td><%= employer.administrator.name %></td>
+    <td>
+      <% if employer.premium? %>
+        Yes
+        <% end %>
     <td><%= link_to "Upgrade", :action => :upgrade_employer, :id => employer %></td>
     <td><%= link_to 'Edit', :action => :edit_employer, :id => employer %></td>
     <td><%= button_to 'Destroy', { :controller => "employers", :action => :destroy, :id => employer }, :confirm => 'Are you sure?', :method => :delete %></td>
