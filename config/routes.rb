@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :employees
+
 
   map.resources :contacts
 
@@ -54,7 +56,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :towns
 
-  map.resources :addresses
+  #map.resources :addresses
 
   map.resources :phone_number_types
 
@@ -92,12 +94,15 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :countries
 
-  map.resources :skills
+  map.resources :articles
+  
+  map.resources :skills, :collection => {:auto_complete_for_skill_name => :get }
 
   map.resources :traits
   
   map.resources :professionals
 
+  #map.resources :administration
 
   # The priority is based upon order of creation: first created -> highest priority.
 

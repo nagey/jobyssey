@@ -10,6 +10,7 @@ RAILS_GEM_VERSION = '2.1.0  ' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'memory'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -81,14 +82,25 @@ Rails::Initializer.run do |config|
 #  ActionMailer::Base.delivery_method = :smtp
 config.action_mailer.delivery_method = :smtp
 
-config.action_mailer.server_settings = {
-  :address => "mail.jobyssey.com",
-  :port => 25,
-  :domain => "jobyssey.com",
-  :authentication => :login,
-  :user_name => "info",
-  :password => "jobysseyclyde"
-  }
-  
+#config.action_mailer.server_settings = {
+#  :address => "mail.jobyssey.com",
+#  :port => 25,
+#  :domain => "jobyssey.com",
+#  :authentication => :login,
+#  :user_name => "info",
+#  :password => "jobysseyclyde"
+#  }
+
+#config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my','locales','*.{rb,yml}')]
+#config.i18n.default_locale = :en
+
+#I18n.default_locale = 'en'
+#LOCALES_DIRECTORY = "#{RAILS_ROOT}/config/locales"
+#LOCALES_AVAILABLE = Dir["#{LOCALES_DIRECTORY}/*.{rb,yml}"].collect do |locale_file|
+#  I18n.load_path << locale_file
+#  File.basename(File.basename(locale_file, '.rb'), '.yml')
+#end.uniq.sort
+
+MemoryProfiler.start
 end
 
