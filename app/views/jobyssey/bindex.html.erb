@@ -16,6 +16,7 @@ NOTE: Needs unique layout that shuts off liner and repositions orange button
     </ul>
     </div>
 <br><br>
+<div id="signup-button">
     <div id="roundbuttonbindex">
     <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
      <div class="contentc">
@@ -23,6 +24,27 @@ NOTE: Needs unique layout that shuts off liner and repositions orange button
         </div>
     <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
     </div>
+    </div>
+   
+    <script type="text/javascript">
+    <!--
+    $('#signup-button').click(function () {
+      $('#bcvupload').toggle();
+      $('#signup-button').toggle();
+     
+         });
+
+    //-->
+    </script>
+  
+</div>
+
+
+<div id="bcvupload">
+<%= render :partial => 'professionals/upload_cv' %>
+</div>
+
+
 
 <div id ="dailytip">
 
