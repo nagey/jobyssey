@@ -554,6 +554,17 @@ div.progresswording{
 	margin-top: 15px;
 	cursor: pointer;
 }
+#roundbuttonbindex{
+	width: 350px;
+	/*float: right;*/
+	color: #fff;
+	margin-left: 425px;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: -130px;
+	margin-bottom: 70px;
+	cursor: pointer;
+}
 #roundbuttoncontainer{
 	width: 200px;
 	color: #fff;

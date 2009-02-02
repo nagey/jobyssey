@@ -1,7 +1,7 @@
 class JobysseyController < ApplicationController
 
-  layout 'index'
-
+  layout "index", :except => :bindex
+  
   def about
   end
 
@@ -40,6 +40,10 @@ class JobysseyController < ApplicationController
          flash.now[:notice] = "Invalid user/password combination"
        end
       end
+    end
+
+    def bindex
+      render :action => :bindex, :layout => "foo"
     end
 
   #def login
