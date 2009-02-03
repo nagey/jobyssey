@@ -102,10 +102,11 @@ class ProfessionalsController < ApplicationController
 
   def code_name_view
     employer = Employer.find_by_id session[:employer]
-    if employer.premium?
-      @professional = Professional.find_by_code_name params[:id]
+    unless employer.nil?
+      if employer.premium? 
+        @professional = Professional.find_by_code_name params[:id]
     
-      @professional.personal_qualities.each do |pq| 
+        @professional.personal_qualities.each do |pq| 
               if pq.metric.class == Skill
             if pq.value.nil?
               pq.value = 0
@@ -120,7 +121,9 @@ class ProfessionalsController < ApplicationController
       @code_samples = CodeSample.find_all_by_user_id @professional
       @portfolio = Attachment.find_all_by_entity_id @professional
       @answers = DifferentiatorAnswer.find_all_by_user_id @professional
-    elsif session[:user].class == Professional
+    end
+  end
+    if session[:user].class == Professional
       @professional = Professional.find_by_code_name params[:id]
     
       @professional.personal_qualities.each do |pq| 
