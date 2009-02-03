@@ -120,6 +120,25 @@ class ProfessionalsController < ApplicationController
       @code_samples = CodeSample.find_all_by_user_id @professional
       @portfolio = Attachment.find_all_by_entity_id @professional
       @answers = DifferentiatorAnswer.find_all_by_user_id @professional
+    elsif session[:user].class == Professional
+      @professional = Professional.find_by_code_name params[:id]
+    
+      @professional.personal_qualities.each do |pq| 
+              if pq.metric.class == Skill
+            if pq.value.nil?
+              pq.value = 0
+              pq.save
+            end
+          end
+        end
+  
+    #@skills = @professional.skills
+      session[:professional] = @professional
+      @three_questions = DifferentiatorAnswer.find_all_by_user_id @professional
+      @code_samples = CodeSample.find_all_by_user_id @professional
+      @portfolio = Attachment.find_all_by_entity_id @professional
+      @answers = DifferentiatorAnswer.find_all_by_user_id @professional
+      flash[:notice] = "This is how your profile will appear to employers searching our database.  Please use the navbar to return to My Details if you'd like to add more information or adjust your skills and personality information."
     else
       redirect_to :controller => :employers, :action => :home
       flash[:notice] = "You are not authorized to view this information.  If you feel you're recieved this message in error please contact your Jobyssey representative."
