@@ -21,7 +21,7 @@ class ApplyController < ApplicationController
       @employer_employee = @employer.administrator
       @employer_email = @employer_employee.email
       @job_title = @job_application.job_posting.title
-      @cv = @job_application.user.cv.attachment
+      @cv = @job_application.user.cv.attachment unless @job_application.user.cv.nil?
       @professional = @job_application.user
       Emailer.deliver_new_application(@employer_email, @job_title, @professional) #@cv
       
