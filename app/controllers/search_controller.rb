@@ -108,6 +108,14 @@ class SearchController < ApplicationController
   end
   
   def find_matching_professionals
+    
+    #Delete this once search is refactored
+    employer = Employer.find_by_id session[:employer]
+    unless employer.premium?
+      render :action => :professional_search_summary
+      return
+    end
+    
     #define jobs skills position
     @professionals = Professional.find :all
     j = JobPosting.find_by_id params[:id]
