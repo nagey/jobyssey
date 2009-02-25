@@ -1,6 +1,6 @@
 class JobysseyController < ApplicationController
 
-  layout "index", :except => :bindex
+  layout "index"
   
   def about
   end

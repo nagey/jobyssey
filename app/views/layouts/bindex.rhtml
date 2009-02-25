@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<link rel="icon" href="/favicon.ico" type="image/ico" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+	<title><%= title :site_name => "IT Jobs in Ireland - Jobyssey" %></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+<meta name="verify-v1" content="h/nveaQrUUqM5WDtvOSNwfuDdt/x4Jyy/w+c8oFYU1s=" />
+	<%= stylesheet_link_tag "new" %>
+	<%= javascript_include_tag :defaults, 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form', 'jquery.autocomplete' %>
+
+	<script language="Javascript">
+	$(document).ready(function(){
+	   $(".login").click(function(){
+			$("#loginbar").show(); 
+	});
+	});
+		$(document).ready(function(){
+	$(".question").click(function(){
+		$(".answer").toggle("slow");
+	});
+	});
+	</script>
+
+</head>
+
+<body>	
+
+	
+		<div id="header">
+			<div id ="headercontainer">
+			<div id ="headertext">
+				
+		<% if authenticated? %>
+			<% if session[:user].class == Professional %>
+				<H1><%= link_to "Jobyssey", :controller => 'professionals', :action => "home" %></h1>
+			<% else %>
+				<h1><%= link_to "Jobyssey", :controller => 'employers', :action => "home" %></h1>
+			<% end %>
+		<% else %>
+				<a class= "headerlinks" href="/"><h1>Jobyssey</h1></a>
+		<% end %>
+
+
+		</div>
+	<div id="navbar">
+
+		<% if authenticated? %>
+	<ul>		
+			<% if session[:user].class == Professional %>
+				<li><%= link_to "Jobs", :controller => 'search', :action => "find_matching_jobs" %></li>
+				<!--<li class=Professional>Profile</li>-->
+				<li><%= link_to "My Details", :controller => 'professionals', :action => "my_details" %></li>
+				<li><%= link_to "Activity", :controller => 'apply', :action => "view_professional_activity" %></li>
+			<li><%= link_to "Tips", :controller => 'jobyssey', :action => "job_search_tips" %></li>
+			<% elsif session[:user].class == Employee %>
+					<li><%= link_to "New Job", :controller => 'job', :action => "index" %></li>
+					<li><%= link_to "Applies and Invites", :controller => 'apply', :action => "view_employer_activity" %></li>
+					<li><%= link_to "All My Jobs", :controller => 'job', :action => "view_my_jobs" %></li>
+				<li><%= link_to "Company Profile", :controller => 'company_profiles', :action => "edit", :id => session[:employer] %></li>
+				<% else %>
+				<li>Admin Navbar Goes Here!  </li>
+			<% end %>
+			<li class="logout"><a href="/jobyssey/logout">Logout</a></li>
+		<% else %>
+			<li><%= link_to "For Employers", :controller => :messages, :action => :employer_questions %></li>
+			<li><a href="/jobyssey/professionals">For Professionals</a></li>
+			<li class="login" style="cursor:pointer">Login</li>
+		<% end %>
+	</ul>
+
+
+<div id = "loginbar" style="display:none">
+	<%=render :partial => "jobyssey/login"%>
+</div>
+
+	</div>
+</div>
+</div>
+
+	<div id="container">
+<div id="content">
+<div id="liner">
+	<% if flash[:notice] -%> 
+	<div id="notice"><%= flash[:notice] %></div> 
+	<% end -%>
+<%=@content_for_layout%>
+
+</div></div>
+</div>
+
+
+
+	<div id="bottomnavbar">
+		<div id ="footercontainer">
+		<ul>
+			<li><a href="http://www.jobyssey.com/it_professionals_in_ireland/job_search_ideas_and_cv_tips.html">Jobseeker Tips</a></li>
+			<li><a href="http://www.jobyssey.com/it_employers_in_ireland/hiring_help_and_recruiting_tips.html">Employer Tips</a></li>
+			<li><a href="/wordpress/">Our Blog</a></li>
+			<li><a href="/jobyssey/about">About Us</a></li>
+			<% if authenticated? %>
+				<% if session[:user].class == Professional %>
+				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+				<% else %>
+				<li><%= link_to "Contact Us", :controller => :messages, :action => :client_questions %></li>
+				<% end %>
+			<% else %>
+				<li><%= link_to "Contact Us", :controller => :messages, :action => :general_questions %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3701319-1");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
