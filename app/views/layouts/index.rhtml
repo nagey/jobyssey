@@ -8,6 +8,18 @@
 <meta name="verify-v1" content="h/nveaQrUUqM5WDtvOSNwfuDdt/x4Jyy/w+c8oFYU1s=" />
 	<%= stylesheet_link_tag "new" %>
 	<%= javascript_include_tag :defaults, 'jquery', 'jquery-ui', 'jrails', 'application','jquery.form', 'jquery.autocomplete' %>
+	<script>
+	function utmx_section(){}function utmx(){}
+	(function(){var k='2629546834',d=document,l=d.location,c=d.cookie;function f(n){
+	if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.indexOf(';',i);return c.substring(i+n.
+	length+1,j<0?c.length:j)}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;
+	d.write('<sc'+'ript src="'+
+	'http'+(l.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com'
+	+'/siteopt.js?v=1&utmxkey='+k+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='
+	+new Date().valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+	'" type="text/javascript" charset="utf-8"></sc'+'ript>')})();
+	</script><script>utmx("url",'A/B');</script>
+	
 
 	<script language="Javascript">
 	$(document).ready(function(){
@@ -122,5 +134,15 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-3701319-1");
 pageTracker._trackPageview();
 </script>
+<script type="text/javascript">
+if(typeof(_gat)!='object')document.write('<sc'+'ript src="http'+
+(document.location.protocol=='https:'?'s://ssl':'://www')+
+'.google-analytics.com/ga.js"></sc'+'ript>')</script>
+<script type="text/javascript">
+try {
+var pageTracker=_gat._getTracker("UA-7106234-1");
+pageTracker._trackPageview("/2629546834/test");
+}catch(err){}</script>
+
 </body>
 </html>
